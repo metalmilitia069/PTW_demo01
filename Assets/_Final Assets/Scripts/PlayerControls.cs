@@ -175,9 +175,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             ""id"": ""870c0d2d-2159-4c29-9a7e-3c64e1199db5"",
             ""actions"": [
                 {
-                    ""name"": ""New action"",
-                    ""type"": ""Button"",
+                    ""name"": ""VerticalMove"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""35291e57-cec3-444e-9af9-139589bb1ed2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ForwardMove"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""bb81c25f-cb2e-4b44-8e4f-f21c3ac3211a"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -185,15 +193,136 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": """",
-                    ""id"": ""187c252f-5a35-4279-a74c-37265e33ee06"",
-                    ""path"": """",
+                    ""name"": ""Keyboard"",
+                    ""id"": ""d4183e39-35e3-4841-9bbe-475a8abe3ee4"",
+                    ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
-                    ""isComposite"": false,
+                    ""action"": ""VerticalMove"",
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""c070438c-0e1f-4ce0-bc91-8153d8c99c04"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VerticalMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""47393df4-8ebb-4e63-8896-1608ad2f8946"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VerticalMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Xbox"",
+                    ""id"": ""86a716e6-91cc-470d-bd23-c7afa19ccdb8"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VerticalMove"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""17e8c969-eb59-4bdd-8ec7-3f3261c43275"",
+                    ""path"": ""<XInputController>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VerticalMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""107e34ee-34fa-49f0-aa6f-b18f88c47e68"",
+                    ""path"": ""<XInputController>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VerticalMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Keyboard"",
+                    ""id"": ""78a764b7-1ec6-417c-a9f9-91f6a9fb6c28"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ForwardMove"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""55c50324-d8c1-407c-a6ad-c6daa1b909d2"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ForwardMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""e57471f3-6bd4-4f36-b19e-abbdf346deb7"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ForwardMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Xbox"",
+                    ""id"": ""fcef9b08-b10e-4606-bd1f-3ce9bd110bce"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ForwardMove"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""3432fb5f-1b32-4958-85c8-f02d9fb89e97"",
+                    ""path"": ""<XInputController>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ForwardMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""0d04d3d5-dcd7-42b0-a551-330c50ec356b"",
+                    ""path"": ""<XInputController>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ForwardMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -206,7 +335,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_LocomotionTopView_ForwardMove = m_LocomotionTopView.FindAction("ForwardMove", throwIfNotFound: true);
         // LocomotionSideView
         m_LocomotionSideView = asset.FindActionMap("LocomotionSideView", throwIfNotFound: true);
-        m_LocomotionSideView_Newaction = m_LocomotionSideView.FindAction("New action", throwIfNotFound: true);
+        m_LocomotionSideView_VerticalMove = m_LocomotionSideView.FindAction("VerticalMove", throwIfNotFound: true);
+        m_LocomotionSideView_ForwardMove = m_LocomotionSideView.FindAction("ForwardMove", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -297,12 +427,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     // LocomotionSideView
     private readonly InputActionMap m_LocomotionSideView;
     private ILocomotionSideViewActions m_LocomotionSideViewActionsCallbackInterface;
-    private readonly InputAction m_LocomotionSideView_Newaction;
+    private readonly InputAction m_LocomotionSideView_VerticalMove;
+    private readonly InputAction m_LocomotionSideView_ForwardMove;
     public struct LocomotionSideViewActions
     {
         private @PlayerControls m_Wrapper;
         public LocomotionSideViewActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Newaction => m_Wrapper.m_LocomotionSideView_Newaction;
+        public InputAction @VerticalMove => m_Wrapper.m_LocomotionSideView_VerticalMove;
+        public InputAction @ForwardMove => m_Wrapper.m_LocomotionSideView_ForwardMove;
         public InputActionMap Get() { return m_Wrapper.m_LocomotionSideView; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -312,16 +444,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_LocomotionSideViewActionsCallbackInterface != null)
             {
-                @Newaction.started -= m_Wrapper.m_LocomotionSideViewActionsCallbackInterface.OnNewaction;
-                @Newaction.performed -= m_Wrapper.m_LocomotionSideViewActionsCallbackInterface.OnNewaction;
-                @Newaction.canceled -= m_Wrapper.m_LocomotionSideViewActionsCallbackInterface.OnNewaction;
+                @VerticalMove.started -= m_Wrapper.m_LocomotionSideViewActionsCallbackInterface.OnVerticalMove;
+                @VerticalMove.performed -= m_Wrapper.m_LocomotionSideViewActionsCallbackInterface.OnVerticalMove;
+                @VerticalMove.canceled -= m_Wrapper.m_LocomotionSideViewActionsCallbackInterface.OnVerticalMove;
+                @ForwardMove.started -= m_Wrapper.m_LocomotionSideViewActionsCallbackInterface.OnForwardMove;
+                @ForwardMove.performed -= m_Wrapper.m_LocomotionSideViewActionsCallbackInterface.OnForwardMove;
+                @ForwardMove.canceled -= m_Wrapper.m_LocomotionSideViewActionsCallbackInterface.OnForwardMove;
             }
             m_Wrapper.m_LocomotionSideViewActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Newaction.started += instance.OnNewaction;
-                @Newaction.performed += instance.OnNewaction;
-                @Newaction.canceled += instance.OnNewaction;
+                @VerticalMove.started += instance.OnVerticalMove;
+                @VerticalMove.performed += instance.OnVerticalMove;
+                @VerticalMove.canceled += instance.OnVerticalMove;
+                @ForwardMove.started += instance.OnForwardMove;
+                @ForwardMove.performed += instance.OnForwardMove;
+                @ForwardMove.canceled += instance.OnForwardMove;
             }
         }
     }
@@ -333,6 +471,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     }
     public interface ILocomotionSideViewActions
     {
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnVerticalMove(InputAction.CallbackContext context);
+        void OnForwardMove(InputAction.CallbackContext context);
     }
 }

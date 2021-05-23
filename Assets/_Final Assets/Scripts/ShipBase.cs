@@ -11,8 +11,11 @@ public class ShipBase : MonoBehaviour
     private PlayerControls _playerControls;
 
     private float _playerMovementX;
+    private float _playerMovementY;
     private float _playerMovementZ;
     private Vector3 _playerMovement = new Vector3();
+
+    private bool _movementSwitch = true;
 
     private Vector3 playerPos;
 
@@ -40,23 +43,39 @@ public class ShipBase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _movementInput = _playerControls.LocomotionTopView.SideMove.ReadValue<float>();
+        switch (_movementSwitch)
+        {
+            case true:
+                TopViewMovement();
+                break;
+            case false:
+                SideViewMovement();
+                break;
+        }
 
+        this.transform.position += _playerMovement;
+
+
+
+
+    }
+
+    private void SideViewMovement()
+    {
+        _playerMovementY = _playerControls.LocomotionSideView.VerticalMove.ReadValue<float>() * _speed * Time.deltaTime;
+        _playerMovementZ = _playerControls.LocomotionSideView.ForwardMove.ReadValue<float>() * _speed * Time.deltaTime;
+
+        _playerMovement = new Vector3(0, _playerMovementY, _playerMovementZ);
+    }
+
+    private void TopViewMovement()
+    {
         _playerMovementX = _playerControls.LocomotionTopView.SideMove.ReadValue<float>() * _speed * Time.deltaTime;
         _playerMovementZ = _playerControls.LocomotionTopView.ForwardMove.ReadValue<float>() * _speed * Time.deltaTime;
 
         _playerMovement = new Vector3(_playerMovementX, 0, _playerMovementZ);
-
-
-
-        this.transform.position += _playerMovement;
-
-        //playerPos = this.transform.position;
-
-        //playerPos.x += (_movementInput * _speed * Time.deltaTime);
-
-        //this.transform.position = playerPos;
-
-
     }
+
+
+
 }
