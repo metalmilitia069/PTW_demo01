@@ -1,22 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7978978998762629637
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
-  m_Name: CinemachineShot
-  m_EditorClassIdentifier: 
-  DisplayName: 
-  VirtualCamera:
-    exposedName: db110dd0c1cc21e4880776348055d365
-    defaultValue: {fileID: 0}
---- !u!114 &-5335206276264094676
+--- !u!114 &-6870224661182066204
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39,7 +23,23 @@ MonoBehaviour:
   m_Clips: []
   m_Markers:
     m_Objects: []
---- !u!114 &-1318768123599922762
+--- !u!114 &-6186304587792019735
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
+  m_Name: CinemachineShot
+  m_EditorClassIdentifier: 
+  DisplayName: 
+  VirtualCamera:
+    exposedName: b1836eb9644f7534f841dabc06f7b5bb
+    defaultValue: {fileID: 0}
+--- !u!114 &-4848731720289754144
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,10 +63,10 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 0
     m_ClipIn: 0
-    m_Asset: {fileID: 6910971345034378319}
+    m_Asset: {fileID: -6186304587792019735}
     m_Duration: 4.5
     m_TimeScale: 1
-    m_ParentTrack: {fileID: -1318768123599922762}
+    m_ParentTrack: {fileID: -4848731720289754144}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
@@ -128,18 +128,18 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: vcamTop
+    m_DisplayName: vcamSide
   - m_Version: 1
     m_Start: 2
     m_ClipIn: 0
-    m_Asset: {fileID: -7978978998762629637}
-    m_Duration: 5
+    m_Asset: {fileID: 4125199380116390651}
+    m_Duration: 4.999999999999999
     m_TimeScale: 1
-    m_ParentTrack: {fileID: -1318768123599922762}
+    m_ParentTrack: {fileID: -4848731720289754144}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: 2.5
-    m_BlendOutDuration: 2.5
+    m_BlendOutDuration: 2.499999999999999
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -201,13 +201,13 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 4.5
     m_ClipIn: 0
-    m_Asset: {fileID: 2391409732770458127}
-    m_Duration: 3.999999999999
+    m_Asset: {fileID: -1991733989191697380}
+    m_Duration: 4.5
     m_TimeScale: 1
-    m_ParentTrack: {fileID: -1318768123599922762}
+    m_ParentTrack: {fileID: -4848731720289754144}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 2.5
+    m_BlendInDuration: 2.499999999999999
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
@@ -266,9 +266,25 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: vcamSide
+    m_DisplayName: vcamTop
   m_Markers:
     m_Objects: []
+--- !u!114 &-1991733989191697380
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
+  m_Name: CinemachineShot
+  m_EditorClassIdentifier: 
+  DisplayName: 
+  VirtualCamera:
+    exposedName: fa7d0b00df37e704e929a5dbe9eb2136
+    defaultValue: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,18 +295,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfda56da833e2384a9677cd3c976a436, type: 3}
-  m_Name: Top-Side_Timeline
+  m_Name: Side-Top_Timeline
   m_EditorClassIdentifier: 
   m_Version: 0
   m_Tracks:
-  - {fileID: -1318768123599922762}
+  - {fileID: -4848731720289754144}
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60
     m_ScenePreview: 1
   m_DurationMode: 0
-  m_MarkerTrack: {fileID: -5335206276264094676}
---- !u!114 &2391409732770458127
+  m_MarkerTrack: {fileID: -6870224661182066204}
+--- !u!114 &4125199380116390651
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -304,21 +320,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: 
   VirtualCamera:
-    exposedName: 46c4484180ef1ef45ba6b63267fb34e1
-    defaultValue: {fileID: 0}
---- !u!114 &6910971345034378319
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
-  m_Name: CinemachineShot
-  m_EditorClassIdentifier: 
-  DisplayName: 
-  VirtualCamera:
-    exposedName: cf77e42050b20574c92ca87c3d6d92d7
+    exposedName: 8a6005f37e1e53f448a6011ed45e03cd
     defaultValue: {fileID: 0}

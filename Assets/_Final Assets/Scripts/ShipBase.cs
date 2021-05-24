@@ -14,7 +14,7 @@ public class ShipBase : MonoBehaviour
     private float _playerMovementY;
     private float _playerMovementZ;
     private Vector3 _playerMovement = new Vector3();
-
+    [SerializeField]
     private bool _movementSwitch = true;
 
     private Vector3 playerPos;
@@ -53,6 +53,8 @@ public class ShipBase : MonoBehaviour
                 break;
         }
 
+        BackViewMovement();
+
         this.transform.position += _playerMovement;
 
 
@@ -76,6 +78,13 @@ public class ShipBase : MonoBehaviour
         _playerMovement = new Vector3(_playerMovementX, 0, _playerMovementZ);
     }
 
+    private void BackViewMovement()
+    {
+        _playerMovementY = _playerControls.LocomotionSideView.VerticalMove.ReadValue<float>() * _speed * Time.deltaTime;
+        _playerMovementX = _playerControls.LocomotionTopView.SideMove.ReadValue<float>() * _speed * Time.deltaTime;
+
+        _playerMovement = new Vector3(_playerMovementX, _playerMovementY, 0);
+    }
 
 
 }
