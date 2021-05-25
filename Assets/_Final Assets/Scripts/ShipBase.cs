@@ -63,11 +63,8 @@ public class ShipBase : MonoBehaviour
             default:
                 break;
         }
-
-        
-            this.transform.position += _playerMovement;
-
-
+                
+        this.transform.position += _playerMovement;
     }
 
     private void SideViewMovement()
