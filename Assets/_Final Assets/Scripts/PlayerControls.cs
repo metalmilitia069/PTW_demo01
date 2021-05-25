@@ -325,6 +325,162 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""LocomotionBackView"",
+            ""id"": ""c81918e8-d560-46be-8aa4-2d7018f1b8ed"",
+            ""actions"": [
+                {
+                    ""name"": ""VerticalMove"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""67701dbe-15a3-4318-95e8-c027a7998271"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SideMove"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""6949623e-6520-4c34-b011-863110ef1389"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""Keyboard"",
+                    ""id"": ""a2eff13e-2892-4985-9bbd-a0e11f79ed90"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VerticalMove"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""4fa84a08-e876-4485-aed1-1f4b8b4fe5af"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VerticalMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""cb8ab873-e484-4ee0-9030-81c46fd8715b"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VerticalMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Xbox"",
+                    ""id"": ""b737be20-baa9-4b28-a73e-d3e07b072946"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VerticalMove"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""7886924f-5735-4d0b-96ad-b2818f16663b"",
+                    ""path"": ""<XInputController>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VerticalMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""bb91baf7-a546-4c60-872f-98956f8e5d55"",
+                    ""path"": ""<XInputController>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VerticalMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Keyboard"",
+                    ""id"": ""cfa1d8fc-bfe9-4813-a37f-96037fedd826"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": ""AxisDeadzone"",
+                    ""groups"": """",
+                    ""action"": ""SideMove"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""a3f355ec-6a6e-4945-b281-6cbc86aeae67"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SideMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""3f071046-adb8-4080-a4a7-63b359f10280"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SideMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Gamepad"",
+                    ""id"": ""04fd5ce4-a9a9-4a34-9b8b-eaa7796e3a8c"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SideMove"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""80322ff0-47e6-4b35-b7a1-57e04d250f3f"",
+                    ""path"": ""<XInputController>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SideMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""bad5194d-412a-4c3a-adda-3c81c5c895d9"",
+                    ""path"": ""<XInputController>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SideMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -337,6 +493,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_LocomotionSideView = asset.FindActionMap("LocomotionSideView", throwIfNotFound: true);
         m_LocomotionSideView_VerticalMove = m_LocomotionSideView.FindAction("VerticalMove", throwIfNotFound: true);
         m_LocomotionSideView_ForwardMove = m_LocomotionSideView.FindAction("ForwardMove", throwIfNotFound: true);
+        // LocomotionBackView
+        m_LocomotionBackView = asset.FindActionMap("LocomotionBackView", throwIfNotFound: true);
+        m_LocomotionBackView_VerticalMove = m_LocomotionBackView.FindAction("VerticalMove", throwIfNotFound: true);
+        m_LocomotionBackView_SideMove = m_LocomotionBackView.FindAction("SideMove", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -464,6 +624,47 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public LocomotionSideViewActions @LocomotionSideView => new LocomotionSideViewActions(this);
+
+    // LocomotionBackView
+    private readonly InputActionMap m_LocomotionBackView;
+    private ILocomotionBackViewActions m_LocomotionBackViewActionsCallbackInterface;
+    private readonly InputAction m_LocomotionBackView_VerticalMove;
+    private readonly InputAction m_LocomotionBackView_SideMove;
+    public struct LocomotionBackViewActions
+    {
+        private @PlayerControls m_Wrapper;
+        public LocomotionBackViewActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @VerticalMove => m_Wrapper.m_LocomotionBackView_VerticalMove;
+        public InputAction @SideMove => m_Wrapper.m_LocomotionBackView_SideMove;
+        public InputActionMap Get() { return m_Wrapper.m_LocomotionBackView; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(LocomotionBackViewActions set) { return set.Get(); }
+        public void SetCallbacks(ILocomotionBackViewActions instance)
+        {
+            if (m_Wrapper.m_LocomotionBackViewActionsCallbackInterface != null)
+            {
+                @VerticalMove.started -= m_Wrapper.m_LocomotionBackViewActionsCallbackInterface.OnVerticalMove;
+                @VerticalMove.performed -= m_Wrapper.m_LocomotionBackViewActionsCallbackInterface.OnVerticalMove;
+                @VerticalMove.canceled -= m_Wrapper.m_LocomotionBackViewActionsCallbackInterface.OnVerticalMove;
+                @SideMove.started -= m_Wrapper.m_LocomotionBackViewActionsCallbackInterface.OnSideMove;
+                @SideMove.performed -= m_Wrapper.m_LocomotionBackViewActionsCallbackInterface.OnSideMove;
+                @SideMove.canceled -= m_Wrapper.m_LocomotionBackViewActionsCallbackInterface.OnSideMove;
+            }
+            m_Wrapper.m_LocomotionBackViewActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @VerticalMove.started += instance.OnVerticalMove;
+                @VerticalMove.performed += instance.OnVerticalMove;
+                @VerticalMove.canceled += instance.OnVerticalMove;
+                @SideMove.started += instance.OnSideMove;
+                @SideMove.performed += instance.OnSideMove;
+                @SideMove.canceled += instance.OnSideMove;
+            }
+        }
+    }
+    public LocomotionBackViewActions @LocomotionBackView => new LocomotionBackViewActions(this);
     public interface ILocomotionTopViewActions
     {
         void OnSideMove(InputAction.CallbackContext context);
@@ -473,5 +674,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     {
         void OnVerticalMove(InputAction.CallbackContext context);
         void OnForwardMove(InputAction.CallbackContext context);
+    }
+    public interface ILocomotionBackViewActions
+    {
+        void OnVerticalMove(InputAction.CallbackContext context);
+        void OnSideMove(InputAction.CallbackContext context);
     }
 }
