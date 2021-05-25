@@ -14,8 +14,13 @@ public class ShipBase : MonoBehaviour
     private float _playerMovementY;
     private float _playerMovementZ;
     private Vector3 _playerMovement = new Vector3();
+    //[SerializeField]
+    //private bool _movementSwitch = true;
     [SerializeField]
-    private bool _movementSwitch = true;
+    [Range(-1, 1)]
+    private int _movementSwitch;
+
+    public ControllerManager_SO controllerManager_SO;
 
     private Vector3 playerPos;
 
@@ -43,21 +48,24 @@ public class ShipBase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch (_movementSwitch)
+
+        switch (controllerManager_SO.controlSwitcher)//(_movementSwitch)
         {
-            case true:
+            case -1:
                 TopViewMovement();
                 break;
-            case false:
+            case 0:
                 SideViewMovement();
+                break;
+            case 1:
+                BackViewMovement();
+                break;
+            default:
                 break;
         }
 
-        BackViewMovement();
-
-        this.transform.position += _playerMovement;
-
-
+        
+            this.transform.position += _playerMovement;
 
 
     }
