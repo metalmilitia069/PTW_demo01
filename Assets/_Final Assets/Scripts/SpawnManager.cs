@@ -20,8 +20,8 @@ public class SpawnManager : MonoBehaviour
         
     }
 
-    public mozo aiai;
-    public mozo[] teucu;
+    public WaveConfig aiai;
+    public WaveConfig[] teucu;
 
     //public struct WaveConfig
     //{

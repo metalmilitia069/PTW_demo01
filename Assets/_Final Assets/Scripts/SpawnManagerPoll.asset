@@ -13,22 +13,16 @@ MonoBehaviour:
   m_Name: SpawnManagerPoll
   m_EditorClassIdentifier: 
   number: 0
-  teucu:
-  - mozoa: 0
-    alala: 0
-    prefab: {fileID: 0}
-  - mozoa: 0
-    alala: 0
-    prefab: {fileID: 0}
-  - mozoa: 0
-    alala: 0
-    prefab: {fileID: 0}
-  - mozoa: 0
-    alala: 0
-    prefab: {fileID: 0}
-  - mozoa: 0
-    alala: 0
-    prefab: {fileID: 0}
-  - mozoa: 0
-    alala: 0
-    prefab: {fileID: 0}
+  waveConfig:
+  - isRandomSpawn: 0
+    timeToTheNextWave: 0
+    timeBetweenSpawns: 0
+    numberOfSimultaneousSpawns: 
+    numberOfEnemiesByType: 
+    waveEnemyTypes: []
+  - isRandomSpawn: 0
+    timeToTheNextWave: 0
+    timeBetweenSpawns: 0
+    numberOfSimultaneousSpawns: 
+    numberOfEnemiesByType: 
+    waveEnemyTypes: []

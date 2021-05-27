@@ -17,15 +17,18 @@ public class SpawnManager_SO : ScriptableObject
 
     //public WaveConfig[] waves = new WaveConfig[1];
 
-    public mozo[] teucu;
+    public WaveConfig[] waveConfig;
 }
 
 [System.Serializable]
-public struct mozo
+public struct WaveConfig
 {
-    public int mozoa;
-    public int alala;
-    public GameObject prefab;
+    public bool isRandomSpawn;
+    public float timeToTheNextWave;
+    public float timeBetweenSpawns;
+    public int[] numberOfSimultaneousSpawns;
+    public int[] numberOfEnemiesByType;
+    public GameObject[] waveEnemyTypes;
 }
 
 
