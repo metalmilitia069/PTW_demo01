@@ -4,35 +4,73 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    
+
     //public WaveConfig[] waves = new WaveConfig[1];
+    public SpawnManager_SO spawnManager_so;
 
-
-    // Start is called before the first frame update
+    public int numberOfWaves;
+    private int _waveIndex = 0;
+    private int _spawnIndex = 0;
+    
     void Start()
     {
-        
+        numberOfWaves = spawnManager_so.waveConfig.Length;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        if (spawnManager_so._currentEnemiesList.Count == 0)
+        {
+            SpawnEnemies();
+        }
     }
 
-    public WaveConfig aiai;
-    public WaveConfig[] teucu;
+    public void SpawnEnemies()
+    {
+        if (_spawnIndex > spawnManager_so.waveConfig[_waveIndex].waveEnemyTypes.Length -1)
+        {
+            _spawnIndex = 0;
+            _waveIndex++;
+            if (_waveIndex > spawnManager_so.waveConfig.Length -1) //or its the spawn process is paused TODO
+            {
+                return;
+            }            
+        }
 
-    //public struct WaveConfig
-    //{
-    //    public int numberOfEnemies;
-    //    public GameObject enemyType;
-    //}
+        for (int i = 0; i < spawnManager_so.waveConfig[_waveIndex].numberOfEnemiesByType[_spawnIndex]; i++)
+        {
+            spawnManager_so._currentEnemiesList.Add(Instantiate(spawnManager_so.waveConfig[_waveIndex].waveEnemyTypes[_spawnIndex], new Vector3(0, 0, 0), Quaternion.identity));
+
+        }
+
+        _spawnIndex++;
+    }
+
+    public IEnumerable TimeBetweenSpawns()
+    {
+        yield return new WaitForSeconds(spawnManager_so.waveConfig[_waveIndex].timeBetweenSpawns);
+        _spawnIndex++; 
+    }
+
+    public IEnumerable TimeToTheNextWave()
+    {
+        yield return new WaitForSeconds(spawnManager_so.waveConfig[_waveIndex].timeToTheNextWave);
+    }
+
+    
+
+    
 }
 
 //[System.Serializable]
-//public struct mozo
+//public struct WaveConfig
 //{
-//    public int mozoa;
-//    public int alala;
+//    public bool isRandomSpawn;
+//    public float timeToTheNextWave;
+//    public float timeBetweenSpawns;
+//    public int numberOfSpawns;
+//    public int[] numberOfSimultaneousSpawns;
+//    public int[] numberOfEnemiesByType;
+//    public GameObject[] waveEnemyTypes;
 //}
