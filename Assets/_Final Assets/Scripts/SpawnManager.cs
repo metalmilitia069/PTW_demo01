@@ -20,9 +20,10 @@ public class SpawnManager : MonoBehaviour
     
     void Update()
     {
-        if (spawnManager_so._currentEnemiesList.Count == 0)
+        if (spawnManager_so.isPaused == false)
         {
-            //SpawnEnemies();
+            SpawnEnemies3();
+            spawnManager_so.isPaused = true;
         }
     }
 
@@ -114,6 +115,14 @@ public class SpawnManager : MonoBehaviour
         _waveIndex++;
         _spawnIndex = 0;
     }
+
+    //public void CheckWave()
+    //{
+    //    if (spawnManager_so._currentEnemiesList.Count == 0)
+    //    {
+    //        SpawnEnemies3();
+    //    }
+    //}
 
 
 

@@ -13,16 +13,10 @@ MonoBehaviour:
   m_Name: SpawnManagerPoll
   m_EditorClassIdentifier: 
   number: 0
+  isPaused: 1
+  _currentEnemiesList: []
   waveConfig:
-  - isRandomSpawn: 0
+  - viewToSpawn: -1
     timeToTheNextWave: 0
-    timeBetweenSpawns: 0
-    numberOfSimultaneousSpawns: 
-    numberOfEnemiesByType: 
-    waveEnemyTypes: []
-  - isRandomSpawn: 0
-    timeToTheNextWave: 0
-    timeBetweenSpawns: 0
-    numberOfSimultaneousSpawns: 
     numberOfEnemiesByType: 
     waveEnemyTypes: []

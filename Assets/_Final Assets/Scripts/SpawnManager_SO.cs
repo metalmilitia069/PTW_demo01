@@ -7,12 +7,21 @@ public class SpawnManager_SO : ScriptableObject
 {
     [Header("something")]
     public int number;
-
+    public bool isPaused = true;
     public List<GameObject> _currentEnemiesList = new List<GameObject>();
+
+    public void CheckWave()
+    {
+        if (_currentEnemiesList.Count == 0)
+        {
+            isPaused = false;
+        }
+    }
 
 
     private void OnDisable()
     {
+        isPaused = true;
         _currentEnemiesList = new List<GameObject>();
     }
     
@@ -23,12 +32,15 @@ public class SpawnManager_SO : ScriptableObject
 public struct WaveConfig
 {
     //public bool isRandomSpawn;
+    [Range(-1, 1)] // -1 = TopView , 0 = SideView, 1 = BackView
+    public int viewToSpawn;
     public float timeToTheNextWave;
     //public float timeBetweenSpawns;
     //public int numberOfSpawns;
     //public int[] numberOfSimultaneousSpawns;
     public int[] numberOfEnemiesByType;
     public GameObject[] waveEnemyTypes;
+    
 }
 
 

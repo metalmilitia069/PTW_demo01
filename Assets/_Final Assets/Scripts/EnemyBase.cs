@@ -30,6 +30,7 @@ public class EnemyBase : MonoBehaviour
         if (spawnManager_so != null)
         {
             spawnManager_so._currentEnemiesList.Remove(this.gameObject);
+            
         }
         Destroy(this.gameObject);
     }
