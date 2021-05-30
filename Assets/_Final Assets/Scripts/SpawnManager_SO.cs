@@ -7,6 +7,7 @@ public class SpawnManager_SO : ScriptableObject
 {
     [Header("something")]
     public int number;
+
     public List<GameObject> _currentEnemiesList = new List<GameObject>();
 
 
@@ -14,27 +15,18 @@ public class SpawnManager_SO : ScriptableObject
     {
         _currentEnemiesList = new List<GameObject>();
     }
-    //public WaveConfig[] waveConfig;
-
-    //public class WaveConfig
-    //{
-    //    public int numberOfEnemies;
-    //    public GameObject enemyType;
-    //}
-
-    //public WaveConfig[] waves = new WaveConfig[1];
-
+    
     public WaveConfig[] waveConfig;
 }
 
 [System.Serializable]
 public struct WaveConfig
 {
-    public bool isRandomSpawn;
+    //public bool isRandomSpawn;
     public float timeToTheNextWave;
-    public float timeBetweenSpawns;
-    public int numberOfSpawns;
-    public int[] numberOfSimultaneousSpawns;
+    //public float timeBetweenSpawns;
+    //public int numberOfSpawns;
+    //public int[] numberOfSimultaneousSpawns;
     public int[] numberOfEnemiesByType;
     public GameObject[] waveEnemyTypes;
 }
