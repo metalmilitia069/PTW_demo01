@@ -11,19 +11,30 @@ public class SpawnManager : MonoBehaviour
     public int numberOfWaves;
     private int _waveIndex = 0;
     private int _spawnIndex = 0;
+    private Vector3 _spawnPlace;
+    public GameObject[] TopViewSpawnPoints;
+    public GameObject[] SideViewSpawnPoints;
+    public GameObject[] BackViewSpawnPoints;
     
+
     void Start()
     {
-        numberOfWaves = spawnManager_so.waveConfig.Length;
+        if (spawnManager_so != null)
+        {
+            numberOfWaves = spawnManager_so.waveConfig.Length;
+        }
     }
 
     
     void Update()
     {
-        if (spawnManager_so.isPaused == false)
+        if (spawnManager_so != null)
         {
-            SpawnEnemies3();
-            spawnManager_so.isPaused = true;
+            if (spawnManager_so.isPaused == false)
+            {
+                SpawnEnemies3();
+                spawnManager_so.isPaused = true;
+            }
         }
     }
 
@@ -101,19 +112,43 @@ public class SpawnManager : MonoBehaviour
         {
             //TODO END OF STAGE
             return;
-        }
+        }        
 
         for (int i = 0; i < spawnManager_so.waveConfig[_waveIndex].waveEnemyTypes.Length; i++)
         {
-            for (int j = 0; j < spawnManager_so.waveConfig[_waveIndex].numberOfEnemiesByType[_spawnIndex]; i++)
+            for (int j = 0; j < spawnManager_so.waveConfig[_waveIndex].numberOfEnemiesByType[_spawnIndex]; j++)
             {
-                spawnManager_so._currentEnemiesList.Add(Instantiate(spawnManager_so.waveConfig[_waveIndex].waveEnemyTypes[_spawnIndex], new Vector3(0, 0, 0), Quaternion.identity));
+                spawnManager_so._currentEnemiesList.Add(Instantiate(spawnManager_so.waveConfig[_waveIndex].waveEnemyTypes[_spawnIndex], RandomSpawnLocation(), Quaternion.identity));
             }
             _spawnIndex++;
         }
 
         _waveIndex++;
         _spawnIndex = 0;
+    }
+
+    public Vector3 RandomSpawnLocation()
+    {
+        switch (spawnManager_so.waveConfig[_waveIndex].viewToSpawn)
+        {
+            //-1 = TopView , 0 = SideView, 1 = BackView
+            case -1:
+                _spawnPlace = new Vector3(Random.Range(TopViewSpawnPoints[0].transform.position.x, TopViewSpawnPoints[1].transform.position.x), 0, TopViewSpawnPoints[0].transform.position.z);
+                break;
+            case 0:
+                _spawnPlace = new Vector3(0, Random.Range(SideViewSpawnPoints[0].transform.position.y, SideViewSpawnPoints[1].transform.position.y), SideViewSpawnPoints[0].transform.position.z);
+                break;
+            case 1:
+                _spawnPlace = new Vector3(Random.Range(BackViewSpawnPoints[0].transform.position.x, BackViewSpawnPoints[1].transform.position.x),
+                Random.Range(BackViewSpawnPoints[2].transform.position.y, BackViewSpawnPoints[3].transform.position.y), BackViewSpawnPoints[0].transform.position.z);
+                break;
+            default:
+                _spawnPlace = new Vector3(0, 0, 0);
+                Debug.Log("place to spawn was not defined!!!!!!");
+                break;
+        }
+
+        return _spawnPlace;
     }
 
     //public void CheckWave()

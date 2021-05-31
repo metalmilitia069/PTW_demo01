@@ -32,8 +32,10 @@ public class SpawnManager_SO : ScriptableObject
 public struct WaveConfig
 {
     //public bool isRandomSpawn;
+    [Header("View To Spawn Setup: -1 = TopView, 0 = SideView, 1 = BackView")]
     [Range(-1, 1)] // -1 = TopView , 0 = SideView, 1 = BackView
     public int viewToSpawn;
+
     public float timeToTheNextWave;
     //public float timeBetweenSpawns;
     //public int numberOfSpawns;
