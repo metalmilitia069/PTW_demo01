@@ -53,18 +53,21 @@ public class ShipBase : MonoBehaviour
         {
             case -1:
                 TopViewMovement();
+                this.transform.position += _playerMovement;
                 break;
             case 0:
                 SideViewMovement();
+                this.transform.position += _playerMovement;
                 break;
             case 1:
                 BackViewMovement();
+                this.transform.position += _playerMovement;
                 break;
             default:
                 break;
         }
                 
-        this.transform.position += _playerMovement;
+        //this.transform.position += _playerMovement;
     }
 
     private void SideViewMovement()
@@ -80,36 +83,7 @@ public class ShipBase : MonoBehaviour
         _playerMovementX = _playerControls.LocomotionTopView.SideMove.ReadValue<float>() * _speed * Time.deltaTime;
         _playerMovementZ = _playerControls.LocomotionTopView.ForwardMove.ReadValue<float>() * _speed * Time.deltaTime;
 
-        Vector3 axis = new Vector3();
-
-        //if (_playerMovementX < 0 && this.transform.localEulerAngles.z < 15)// && this.transform.localEulerAngles.z < 16)
-        //{
-        //    this.transform.Rotate(new Vector3(0,0, Mathf.Lerp(0, 15, 1)));
-        //}
-        //else if (_playerMovementX > 0 && this.transform.localEulerAngles.z > -15 && this.transform.localEulerAngles.z <= 0)
-        //{
-        //    this.transform.Rotate(new Vector3(0, 0, Mathf.Lerp(0, -15, 1)));
-        //}
-        //else
-        //{
-        //    //this.transform.rotation.z = 0;
-        //}
-
-        //this.transform.rotation = Quaternion.AngleAxis(1.0f, Vector3.forward * Mathf.Lerp(Random.Range(-2, 2), Random.Range(-2, 2), 1) * Time.deltaTime);
-
-        //if (_playerMovementX != 0)
-        //{
-        //    //this.gameObject.GetComponent<Animator>().SetBool("SteerBool", true);
-        //    this.gameObject.GetComponent<Animator>().SetFloat("SteerFloat", _playerMovementX);
-        //}
-        //else
-        //{
-        //    this.gameObject.GetComponent<Animator>().SetBool("SteerBool", false);
-        //}
-
-
-
-        //this.transform.rotation = Quaternion.AngleAxis(15.0f, Vector3.forward * _playerMovementX * -1);
+        Vector3 axis = new Vector3();        
 
         Debug.Log(_playerMovementX);
         this.gameObject.GetComponent<Animator>().SetFloat("SteerFloat", _playerMovementX);

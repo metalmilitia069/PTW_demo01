@@ -961,7 +961,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1daec65ffd5726549b0a44db57bde97f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controllerManager_SO: {fileID: 0}
+  cameraTransitionsPool_SO: {fileID: 11400000, guid: 4cbfda2b40723734eaacfdaf492b6720, type: 2}
+  controllerManager_SO: {fileID: 11400000, guid: 9d2f92ac2af652541a4aa30b77a49ee9, type: 2}
   camTransitionsArray:
   - {fileID: 2117322165}
   - {fileID: 1330767991}
@@ -1389,9 +1390,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea24de191bdee649a55df05c72a31a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraTransitionsPool_SO: {fileID: 11400000, guid: 4cbfda2b40723734eaacfdaf492b6720, type: 2}
   _originCoordinates: {x: 0, y: 0, z: 0}
   _speed: 5
-  unlock: 0
+  isLockControls: 0
+  controlOptions: 1
+  cameraOptions: 0
 --- !u!1 &1330767991 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8131400630469590847, guid: 59515dc3f60da8847bb3ed4ea41a5d60, type: 3}

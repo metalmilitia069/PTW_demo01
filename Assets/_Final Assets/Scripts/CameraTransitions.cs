@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraTransitions : MonoBehaviour
 {
-    //public CameraTransitionsPool_SO cameraTransitionsPool_SO;
+    public CameraTransitionsPool_SO cameraTransitionsPool_SO;
     public ControllerManager_SO controllerManager_SO;
 
     public GameObject[] camTransitionsArray = new GameObject[1];
@@ -12,7 +12,7 @@ public class CameraTransitions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //cameraTransitionsPool_SO.camTransitionsArray = camTransitionsArray;
+        cameraTransitionsPool_SO.camTransitionsArray = camTransitionsArray;
 
     }
 

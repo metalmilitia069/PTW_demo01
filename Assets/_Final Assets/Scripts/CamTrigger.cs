@@ -4,14 +4,39 @@ using UnityEngine;
 
 public class CamTrigger : MonoBehaviour
 {
+    public CameraTransitionsPool_SO cameraTransitionsPool_SO;
+
     [SerializeField]
     private Vector3 _originCoordinates;
     [SerializeField]
     private float _speed;
     [SerializeField]
-    private bool unlock = false;
+    private bool isLockControls = false;
 
     private ShipBase shipBase;
+
+    private GameObject _cameraGroup;
+    
+    public enum controlOptionsEnum
+    {
+        topControls,
+        sideControls,
+        backControls
+    }
+
+    public enum cameraOptionsEnum
+    {
+        topToSide,
+        sideToTop,
+        topToBack,
+        backToTop,
+        backToSide,
+        sideToBack,
+        none
+    }
+
+    public controlOptionsEnum controlOptions;
+    public cameraOptionsEnum cameraOptions;
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +47,14 @@ public class CamTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (unlock)
+        if (isLockControls)
         {
             float componentX;
             float componentY;
             float componentZ;
+
+            shipBase.controllerManager_SO.controlSwitcher = 2;
+
             if (Vector3.Distance(shipBase.transform.position, _originCoordinates) > 1f)
             {
                 if (shipBase.transform.position.x - _originCoordinates.x > 0)
@@ -55,12 +83,69 @@ public class CamTrigger : MonoBehaviour
                 {
                     componentZ = _speed * Time.deltaTime;
                 }
-
+                Debug.Log("Z:" + componentZ);
                 shipBase.transform.position += new Vector3(componentX, componentY, componentZ);
             }
             else
             {
-                unlock = false;
+                switch (cameraOptions)
+                {
+                    case cameraOptionsEnum.topToSide:
+                        cameraTransitionsPool_SO.camTransitionsArray[0].gameObject.SetActive(true);
+                        _cameraGroup = cameraTransitionsPool_SO.camTransitionsArray[0];
+                        cameraOptions = cameraOptionsEnum.none;
+                        break;
+                    case cameraOptionsEnum.sideToTop:
+                        cameraTransitionsPool_SO.camTransitionsArray[1].gameObject.SetActive(true);
+                        _cameraGroup = cameraTransitionsPool_SO.camTransitionsArray[1];
+                        cameraOptions = cameraOptionsEnum.none;
+                        break;
+                    case cameraOptionsEnum.topToBack:
+                        cameraTransitionsPool_SO.camTransitionsArray[2].gameObject.SetActive(true);
+                        _cameraGroup = cameraTransitionsPool_SO.camTransitionsArray[2];
+                        cameraOptions = cameraOptionsEnum.none;
+                        break;
+                    case cameraOptionsEnum.backToTop:
+                        cameraTransitionsPool_SO.camTransitionsArray[3].gameObject.SetActive(true);
+                        _cameraGroup = cameraTransitionsPool_SO.camTransitionsArray[3];
+                        cameraOptions = cameraOptionsEnum.none;
+                        break;
+                    case cameraOptionsEnum.backToSide:
+                        cameraTransitionsPool_SO.camTransitionsArray[4].gameObject.SetActive(true);
+                        _cameraGroup = cameraTransitionsPool_SO.camTransitionsArray[4];
+                        cameraOptions = cameraOptionsEnum.none;
+                        break;
+                    case cameraOptionsEnum.sideToBack:
+                        cameraTransitionsPool_SO.camTransitionsArray[5].gameObject.SetActive(true);
+                        _cameraGroup = cameraTransitionsPool_SO.camTransitionsArray[5];
+                        cameraOptions = cameraOptionsEnum.none;
+                        break;
+                    default:
+                        break;
+                }
+
+                if (!_cameraGroup.activeSelf)
+                {
+                    switch (controlOptions)
+                    {
+                        case controlOptionsEnum.topControls:
+                            shipBase.controllerManager_SO.controlSwitcher = -1;
+                            break;
+                        case controlOptionsEnum.sideControls:
+                            shipBase.controllerManager_SO.controlSwitcher = 0;
+                            break;
+                        case controlOptionsEnum.backControls:
+                            shipBase.controllerManager_SO.controlSwitcher = 1;
+                            break;
+                        default:
+                            break;
+                    }
+
+                    isLockControls = false;                
+                }
+
+
+
             } 
         }
     }
@@ -70,7 +155,7 @@ public class CamTrigger : MonoBehaviour
         if (other.GetComponent<ShipBase>())
         {
             
-            unlock = true;
+            isLockControls = true;
             shipBase = other.GetComponent<ShipBase>();
 
             //other.GetComponent<ShipBase>().controllerManager_SO.controlSwitcher = 2;
