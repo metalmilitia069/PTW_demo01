@@ -95,8 +95,25 @@ public class ShipBase : MonoBehaviour
         //    //this.transform.rotation.z = 0;
         //}
 
-        //this.transform.rotation = Quaternion.AngleAxis(15.0f, Vector3.forward * _playerMovementX * -1);
         //this.transform.rotation = Quaternion.AngleAxis(1.0f, Vector3.forward * Mathf.Lerp(Random.Range(-2, 2), Random.Range(-2, 2), 1) * Time.deltaTime);
+
+        //if (_playerMovementX != 0)
+        //{
+        //    //this.gameObject.GetComponent<Animator>().SetBool("SteerBool", true);
+        //    this.gameObject.GetComponent<Animator>().SetFloat("SteerFloat", _playerMovementX);
+        //}
+        //else
+        //{
+        //    this.gameObject.GetComponent<Animator>().SetBool("SteerBool", false);
+        //}
+
+
+
+        //this.transform.rotation = Quaternion.AngleAxis(15.0f, Vector3.forward * _playerMovementX * -1);
+
+        Debug.Log(_playerMovementX);
+        this.gameObject.GetComponent<Animator>().SetFloat("SteerFloat", _playerMovementX);
+
 
         _playerMovement = new Vector3(_playerMovementX, 0, _playerMovementZ);
     }

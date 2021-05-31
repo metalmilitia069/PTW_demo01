@@ -1213,6 +1213,7 @@ GameObject:
   - component: {fileID: 1231997953}
   - component: {fileID: 1231997955}
   - component: {fileID: 1231997954}
+  - component: {fileID: 1231997956}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1279,6 +1280,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1231997956
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231997951}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ddfdf9102f06f3b47891a022f985aeb2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1286569257
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,6 +1391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _originCoordinates: {x: 0, y: 0, z: 0}
   _speed: 5
+  unlock: 0
 --- !u!1 &1330767991 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8131400630469590847, guid: 59515dc3f60da8847bb3ed4ea41a5d60, type: 3}
