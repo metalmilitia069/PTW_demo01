@@ -32,7 +32,8 @@ public class SpawnManager : MonoBehaviour
         {
             if (spawnManager_so.isPaused == false)
             {
-                SpawnEnemies3();
+                StartCoroutine(SpawnEnemies3());
+                StopCoroutine(SpawnEnemies3());
                 spawnManager_so.isPaused = true;
             }
         }
@@ -106,25 +107,33 @@ public class SpawnManager : MonoBehaviour
     //    //}
     //}
 
-    public void SpawnEnemies3()
+    public IEnumerator SpawnEnemies3()
     {
         if (_waveIndex > spawnManager_so.waveConfig.Length - 1)
         {
             //TODO END OF STAGE
-            return;
-        }        
+            Debug.Log("End of Waves!!");
+            yield break;
+        }
+
+        //StartCoroutine(TimeToTheNextWave());
 
         for (int i = 0; i < spawnManager_so.waveConfig[_waveIndex].waveEnemyTypes.Length; i++)
         {
             for (int j = 0; j < spawnManager_so.waveConfig[_waveIndex].numberOfEnemiesByType[_spawnIndex]; j++)
             {
                 spawnManager_so._currentEnemiesList.Add(Instantiate(spawnManager_so.waveConfig[_waveIndex].waveEnemyTypes[_spawnIndex], RandomSpawnLocation(), Quaternion.identity));
+                yield return new WaitForSeconds(spawnManager_so.waveConfig[_waveIndex].timeBetweenSpawns);
             }
             _spawnIndex++;
         }
 
+        //StopCoroutine(TimeToTheNextWave());
+
         _waveIndex++;
+
         _spawnIndex = 0;
+        //Debug.Log("teuCU");
     }
 
     public Vector3 RandomSpawnLocation()
@@ -167,10 +176,7 @@ public class SpawnManager : MonoBehaviour
     //    _spawnIndex++; 
     //}
 
-    public IEnumerator TimeToTheNextWave()
-    {
-        yield return new WaitForSeconds(spawnManager_so.waveConfig[_waveIndex].timeToTheNextWave);
-    }
+    
 
     
 

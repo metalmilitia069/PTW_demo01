@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66858b6302fde2c47b184d0f63a80de6, type: 3}
   m_Name: Controller
   m_EditorClassIdentifier: 
-  controlSwitcher: 0
+  controlSwitcher: 1

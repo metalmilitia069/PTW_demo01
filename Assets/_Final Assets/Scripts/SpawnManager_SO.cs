@@ -36,8 +36,8 @@ public struct WaveConfig
     [Range(-1, 1)] // -1 = TopView , 0 = SideView, 1 = BackView
     public int viewToSpawn;
 
-    public float timeToTheNextWave;
-    //public float timeBetweenSpawns;
+    //public float timeToTheNextWave;
+    public float timeBetweenSpawns;
     //public int numberOfSpawns;
     //public int[] numberOfSimultaneousSpawns;
     public int[] numberOfEnemiesByType;
