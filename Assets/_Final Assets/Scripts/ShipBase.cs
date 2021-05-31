@@ -80,6 +80,24 @@ public class ShipBase : MonoBehaviour
         _playerMovementX = _playerControls.LocomotionTopView.SideMove.ReadValue<float>() * _speed * Time.deltaTime;
         _playerMovementZ = _playerControls.LocomotionTopView.ForwardMove.ReadValue<float>() * _speed * Time.deltaTime;
 
+        Vector3 axis = new Vector3();
+
+        //if (_playerMovementX < 0 && this.transform.localEulerAngles.z < 15)// && this.transform.localEulerAngles.z < 16)
+        //{
+        //    this.transform.Rotate(new Vector3(0,0, Mathf.Lerp(0, 15, 1)));
+        //}
+        //else if (_playerMovementX > 0 && this.transform.localEulerAngles.z > -15 && this.transform.localEulerAngles.z <= 0)
+        //{
+        //    this.transform.Rotate(new Vector3(0, 0, Mathf.Lerp(0, -15, 1)));
+        //}
+        //else
+        //{
+        //    //this.transform.rotation.z = 0;
+        //}
+
+        //this.transform.rotation = Quaternion.AngleAxis(15.0f, Vector3.forward * _playerMovementX * -1);
+        //this.transform.rotation = Quaternion.AngleAxis(1.0f, Vector3.forward * Mathf.Lerp(Random.Range(-2, 2), Random.Range(-2, 2), 1) * Time.deltaTime);
+
         _playerMovement = new Vector3(_playerMovementX, 0, _playerMovementZ);
     }
 
