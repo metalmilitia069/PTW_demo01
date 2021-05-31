@@ -5,6 +5,7 @@ using UnityEngine;
 public class CamTrigger : MonoBehaviour
 {
     public CameraTransitionsPool_SO cameraTransitionsPool_SO;
+    public SpawnManager_SO spawnManager_SO;
 
     [SerializeField]
     private Vector3 _originCoordinates;
@@ -16,6 +17,9 @@ public class CamTrigger : MonoBehaviour
     private ShipBase shipBase;
 
     private GameObject _cameraGroup;
+
+    [SerializeField]
+    private float _triggerSpeed;
     
     public enum controlOptionsEnum
     {
@@ -47,6 +51,9 @@ public class CamTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        this.transform.position += new Vector3(0, 0, (_speed * Time.deltaTime * -1));
+
+
         if (isLockControls)
         {
             float componentX;
@@ -141,6 +148,7 @@ public class CamTrigger : MonoBehaviour
                             break;
                     }
 
+                    spawnManager_SO.isPaused = false;
                     isLockControls = false;                
                 }
 
