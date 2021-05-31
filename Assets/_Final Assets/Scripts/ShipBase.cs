@@ -16,9 +16,9 @@ public class ShipBase : MonoBehaviour
     private Vector3 _playerMovement = new Vector3();
     //[SerializeField]
     //private bool _movementSwitch = true;
-    [SerializeField]
-    [Range(-1, 1)]
-    private int _movementSwitch;
+    //[SerializeField]
+    //[Range(-1, 1)]
+    //private int _movementSwitch;
 
     public ControllerManager_SO controllerManager_SO;
 
@@ -63,11 +63,8 @@ public class ShipBase : MonoBehaviour
             default:
                 break;
         }
-
-        
-            this.transform.position += _playerMovement;
-
-
+                
+        this.transform.position += _playerMovement;
     }
 
     private void SideViewMovement()

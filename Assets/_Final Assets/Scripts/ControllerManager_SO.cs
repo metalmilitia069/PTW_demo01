@@ -7,4 +7,5 @@ public class ControllerManager_SO : ScriptableObject
 {
     [Range(-1, 2)]
     public int controlSwitcher = -1;
+    
 }
