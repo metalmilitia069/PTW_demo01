@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class EndWall : MonoBehaviour
 {
+    public DebrisSpawnManager_SO debrisSpawnManager_SO;
+
     [SerializeField]
     private GameObject beginWall;
-
+    [SerializeField]
     private bool _killMode;
 
     public bool KillMode { get => _killMode; set => _killMode = value; }
-
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -36,5 +35,11 @@ public class EndWall : MonoBehaviour
         {
             Destroy(other.gameObject, 5);
         }
-    }    
+    }
+    
+    public void UnpauseDebrisSpawn()
+    {
+        debrisSpawnManager_SO.isSpawning = true;
+        debrisSpawnManager_SO.isPaused = false;
+    }
 }

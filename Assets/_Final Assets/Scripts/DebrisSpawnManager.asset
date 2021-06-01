@@ -16,4 +16,5 @@ MonoBehaviour:
   - numberOfSections: 0
     isRandomSpawn: 0
     debrisTypes: []
-  isPaused: 0
+  isPaused: 1
+  isSpawning: 0

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BeginWall : MonoBehaviour
 {
+    public DebrisSpawnManager_SO debrisSpawnManager_SO;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,9 @@ public class BeginWall : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        
+        if (debrisSpawnManager_SO.isSpawning)
+        {
+            debrisSpawnManager_SO.isPaused = false;
+        }
     }
 }

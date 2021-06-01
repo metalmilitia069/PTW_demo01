@@ -7,7 +7,8 @@ public class DebrisSpawnManager_SO : ScriptableObject
 {
     public DebrisConfig[] debrisConfig;
     
-    public bool isPaused;
+    public bool isPaused = true;
+    public bool isSpawning = false;
 }
 
 [System.Serializable]
