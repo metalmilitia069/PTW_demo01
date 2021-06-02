@@ -29,7 +29,7 @@ public class EndWall : MonoBehaviour
     {
         if (!_killMode)
         {
-            other.transform.position = beginWall.transform.position;
+            other.transform.position = beginWall.transform.position - beginWall.GetComponent<BeginWall>()._spawnPointOffset;
         }
         else
         {

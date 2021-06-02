@@ -23,7 +23,7 @@ public class DebrisSpawnManager : MonoBehaviour
             debrisSpawnManager_SO.isPaused = true;
         }
     }
-
+    
     public void DebrisSpawn1()
     {
         if (_debrisIndex > debrisSpawnManager_SO.debrisConfig.Length - 1)
@@ -46,7 +46,7 @@ public class DebrisSpawnManager : MonoBehaviour
                
         _sectionsNumber++;
 
-        if (_sectionsNumber > debrisSpawnManager_SO.debrisConfig[_debrisIndex].numberOfSections)
+        if (_sectionsNumber >= debrisSpawnManager_SO.debrisConfig[_debrisIndex].numberOfSections)
         {
             _sectionsNumber = 0;
             _debrisIndex++;
