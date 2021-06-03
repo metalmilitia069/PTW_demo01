@@ -53,18 +53,21 @@ public class ShipBase : MonoBehaviour
         {
             case -1:
                 TopViewMovement();
+                this.transform.position += _playerMovement;
                 break;
             case 0:
                 SideViewMovement();
+                this.transform.position += _playerMovement;
                 break;
             case 1:
                 BackViewMovement();
+                this.transform.position += _playerMovement;
                 break;
             default:
                 break;
         }
                 
-        this.transform.position += _playerMovement;
+        //this.transform.position += _playerMovement;
     }
 
     private void SideViewMovement()
@@ -79,6 +82,12 @@ public class ShipBase : MonoBehaviour
     {
         _playerMovementX = _playerControls.LocomotionTopView.SideMove.ReadValue<float>() * _speed * Time.deltaTime;
         _playerMovementZ = _playerControls.LocomotionTopView.ForwardMove.ReadValue<float>() * _speed * Time.deltaTime;
+
+        Vector3 axis = new Vector3();        
+
+        Debug.Log(_playerMovementX);
+        this.gameObject.GetComponent<Animator>().SetFloat("SteerFloat", _playerMovementX);
+
 
         _playerMovement = new Vector3(_playerMovementX, 0, _playerMovementZ);
     }
