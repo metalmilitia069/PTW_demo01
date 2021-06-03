@@ -16,7 +16,7 @@ MonoBehaviour:
   isPaused: 1
   _currentEnemiesList: []
   waveConfig:
-  - viewToSpawn: -1
+  - viewToSpawn: 1
     timeBetweenSpawns: 0.5
     numberOfEnemiesByType: 040000000300000002000000
     waveEnemyTypes:

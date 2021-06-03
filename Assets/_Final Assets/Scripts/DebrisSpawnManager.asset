@@ -29,4 +29,4 @@ MonoBehaviour:
     - {fileID: 808669644454812864, guid: c3b3df9d3d1524e47a004ca3d4fedee8, type: 3}
     - {fileID: 6348908855017479538, guid: 5362a336274b9f14e88ac5e374e0ab79, type: 3}
   isPaused: 1
-  isSpawning: 1
+  isSpawning: 0
