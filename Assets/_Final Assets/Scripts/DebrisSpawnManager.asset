@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f5dbcf3a114eb249a46a269c691b1be, type: 3}
+  m_Name: DebrisSpawnManager
+  m_EditorClassIdentifier: 
+  debrisConfig:
+  - numberOfSections: 4
+    isRandomSpawn: 0
+    debrisTypes:
+    - {fileID: 613396606728477634, guid: 187393f526236134aaf34efc0209b5e1, type: 3}
+    - {fileID: 6891391161017583754, guid: 6d2982dcb60720344bb4109ad9061f35, type: 3}
+    - {fileID: 8761129518956735707, guid: 90918573d47da22498dae32a4a14e387, type: 3}
+    - {fileID: 116242183755032987, guid: 08efcd879bb3ce943b489309fa1ac953, type: 3}
+  - numberOfSections: 4
+    isRandomSpawn: 0
+    debrisTypes:
+    - {fileID: 808669644454812864, guid: c3b3df9d3d1524e47a004ca3d4fedee8, type: 3}
+    - {fileID: 1881576551733198778, guid: 01f13601f68c5a34abab7616068f4877, type: 3}
+    - {fileID: 8811680451056086858, guid: edabea509d8b2fc4ea9b29ba201b0a50, type: 3}
+    - {fileID: 808669644454812864, guid: c3b3df9d3d1524e47a004ca3d4fedee8, type: 3}
+    - {fileID: 6348908855017479538, guid: 5362a336274b9f14e88ac5e374e0ab79, type: 3}
+  isPaused: 1
+  isSpawning: 0

@@ -12,6 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613dc8f05e7f7e249b3616f494124150, type: 3}
   m_Name: CameraPool
   m_EditorClassIdentifier: 
+  Decription: 'Element 0 = Top to SIde Transition.
+
+    Element 1 = Side to Top Transition
+
+    Element
+    2 = Top to Back Transition
+
+    Element 3 = Back to Top Transition
+
+    Element
+    4 = Back to SIde Transition
+
+    Element 5 = Side to Back Transition'
   camTransitionsArray:
   - {fileID: 0}
   - {fileID: 0}
