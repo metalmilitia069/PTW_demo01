@@ -598,7 +598,7 @@ GameObject:
   m_Component:
   - component: {fileID: 189210935}
   m_Layer: 0
-  m_Name: TopViewSpawnPoint (5)
+  m_Name: TopViewSpawnPoint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -617,7 +617,7 @@ Transform:
   m_Children:
   - {fileID: 1749917441}
   m_Father: {fileID: 946361702}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &193871568
 GameObject:
@@ -1070,6 +1070,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debrisSpawnManager_SO: {fileID: 11400000, guid: 38c6cee4cdca0f049ac4681c2bdf2bdc, type: 2}
+  debrisTypeSpawnManager_SO: {fileID: 0}
   beginWall: {fileID: 760943610}
   _killMode: 0
   selectDebris:
@@ -1932,6 +1933,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 556396751}
+  - component: {fileID: 556396752}
   m_Layer: 0
   m_Name: DebrisTypeSpawnManager
   m_TagString: Untagged
@@ -1954,6 +1956,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &556396752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556396750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a44f67415b277504da5bbd09ef604e0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TopViewSpawnPoints:
+  - {fileID: 2011877001}
+  - {fileID: 27211284}
+  - {fileID: 843898110}
+  - {fileID: 189210934}
+  - {fileID: 1800000261}
+  - {fileID: 1814174738}
+  SideViewSpawnPoints: []
+  BackViewSpawnPoints: []
 --- !u!1 &562401280 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4230883607876830543, guid: 298e217dd28a7d049a29fa55be59451b, type: 3}
@@ -2769,7 +2792,7 @@ GameObject:
   m_Component:
   - component: {fileID: 843898111}
   m_Layer: 0
-  m_Name: TopViewSpawnPoint (3)
+  m_Name: TopViewSpawnPoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3077,8 +3100,8 @@ Transform:
   - {fileID: 2011877002}
   - {fileID: 27211285}
   - {fileID: 843898111}
-  - {fileID: 1800000262}
   - {fileID: 189210935}
+  - {fileID: 1800000262}
   - {fileID: 1814174739}
   m_Father: {fileID: 1119245445}
   m_RootOrder: 0
@@ -6647,7 +6670,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1759744917
 Transform:
   m_ObjectHideFlags: 0
@@ -6982,7 +7005,7 @@ Transform:
   m_Children:
   - {fileID: 1710928182}
   m_Father: {fileID: 946361702}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1814174738
 GameObject:
@@ -6994,7 +7017,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1814174739}
   m_Layer: 0
-  m_Name: TopViewSpawnPoint (7)
+  m_Name: TopViewSpawnPoint (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7939,7 +7962,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2133685640
 Transform:
   m_ObjectHideFlags: 0
