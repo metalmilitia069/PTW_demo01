@@ -29,7 +29,8 @@ public class EndWall : MonoBehaviour
     {
         if (!_killMode)
         {
-            other.transform.position = beginWall.transform.position - beginWall.GetComponent<BeginWall>()._spawnPointOffset;
+            //other.transform.position = beginWall.transform.position - beginWall.GetComponent<BeginWall>()._spawnPointOffset;
+            other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y, beginWall.transform.position.z - beginWall.GetComponent<BeginWall>()._spawnPointOffset.z);
         }
         else
         {
@@ -37,7 +38,10 @@ public class EndWall : MonoBehaviour
             {
                 Destroy(other.gameObject, 5);
             }
-            other.transform.position = beginWall.transform.position - beginWall.GetComponent<BeginWall>()._spawnPointOffset;
+            else
+            {
+                other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y, beginWall.transform.position.z - beginWall.GetComponent<BeginWall>()._spawnPointOffset.z);
+            }
         }
     }
     
