@@ -24,7 +24,7 @@ public class BeginWall : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<Debris>() && debrisSpawnManager_SO.isSpawning)
+        if (other.GetComponent<Debris>().selectDebris.debrisType == SelectDebris.DebrisType.standard && debrisSpawnManager_SO.isSpawning)
         {
             debrisSpawnManager_SO.isPaused = false;
         }

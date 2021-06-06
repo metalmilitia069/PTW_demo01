@@ -14,23 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   number: 0
   isPaused: 1
-  _currentEnemiesList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _currentEnemiesList: []
   waveConfig:
   - viewToSpawn: -1
     timeBetweenSpawns: 0.5

@@ -32,7 +32,7 @@ public class EndWall : MonoBehaviour
     {
         if (!_killMode)
         {
-            if (!debrisTypeSpawnManager_SO.doKillCorroutine)
+            if (!debrisTypeSpawnManager_SO.doKillCorroutine && other.GetComponent<Debris>())
             {
                 if (other.GetComponent<Debris>().selectDebris.debrisType != SelectDebris.DebrisType.standard)
                 {                    

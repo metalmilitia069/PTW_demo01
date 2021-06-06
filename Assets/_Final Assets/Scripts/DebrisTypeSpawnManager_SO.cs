@@ -22,7 +22,7 @@ public class DebrisTypeSpawnManager_SO : ScriptableObject
     public void PauseDebrisTypeSpawn()
     {
         isPaused = true;
-        waveIndex++;
+        //waveIndex++;
     }
 
     public void UnpauseDebrisTypeSpawn()

@@ -1071,7 +1071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debrisSpawnManager_SO: {fileID: 11400000, guid: 38c6cee4cdca0f049ac4681c2bdf2bdc, type: 2}
-  debrisTypeSpawnManager_SO: {fileID: 0}
+  debrisTypeSpawnManager_SO: {fileID: 11400000, guid: 5a2d9d32566b70d409cac4ac22b6c698, type: 2}
   beginWall: {fileID: 760943610}
   _killMode: 0
   selectDebris:

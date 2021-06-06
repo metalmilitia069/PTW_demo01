@@ -52,32 +52,45 @@ public class DebrisTypeSpawnManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (debrisTypeSpawnManager_SO.doKillCorroutine)
-        {
-            StopAllCoroutines();
-        }
+        //if (debrisTypeSpawnManager_SO.doKillCorroutine)
+        //{
+        //    StopAllCoroutines();
+        //    //debrisTypeSpawnManager_SO.waveIndex++;
+        //    //debrisTypeSpawnManager_SO.doKillCorroutine = false;
+        //    Debug.Log("Corroutine OFF!!!");
+        //}
     }
 
-    public IEnumerator SpawnTopViewDebrisType()
+    IEnumerator SpawnTopViewDebrisType()
     {
+        while (!debrisTypeSpawnManager_SO.doKillCorroutine)
+        {
+            float aboveXCoords = Random.Range(TopViewSpawnPoints[0].transform.position.x, TopViewSpawnPoints[1].transform.position.x);
+            float aboveYCoords = Random.Range(TopViewSpawnPoints[0].transform.position.y, TopViewSpawnPoints[2].transform.position.y);
 
-        float aboveXCoords = Random.Range(TopViewSpawnPoints[0].transform.position.x, TopViewSpawnPoints[1].transform.position.x);
-        float aboveYCoords = Random.Range(TopViewSpawnPoints[0].transform.position.y, TopViewSpawnPoints[2].transform.position.y);
+            float belowXCoords = Random.Range(TopViewSpawnPoints[3].transform.position.x, TopViewSpawnPoints[4].transform.position.x);
+            float belowYCoords = Random.Range(TopViewSpawnPoints[3].transform.position.x, TopViewSpawnPoints[5].transform.position.x);
 
-        float belowXCoords = Random.Range(TopViewSpawnPoints[3].transform.position.x, TopViewSpawnPoints[4].transform.position.x);
-        float belowYCoords = Random.Range(TopViewSpawnPoints[3].transform.position.x, TopViewSpawnPoints[5].transform.position.x);
-
-        int aboveRandomPrefabIndex = Random.Range(0, debrisTypeSpawnManager_SO.debrisTypePrefabs[debrisTypeSpawnManager_SO.waveIndex].debrisTypesPrefabs.Length);
+            int aboveRandomPrefabIndex = Random.Range(0, debrisTypeSpawnManager_SO.debrisTypePrefabs[debrisTypeSpawnManager_SO.waveIndex].debrisTypesPrefabs.Length);
         
-        int belowRandomPrefabIndex = Random.Range(0, debrisTypeSpawnManager_SO.debrisTypePrefabs[debrisTypeSpawnManager_SO.waveIndex].debrisTypesPrefabs.Length);
+            int belowRandomPrefabIndex = Random.Range(0, debrisTypeSpawnManager_SO.debrisTypePrefabs[debrisTypeSpawnManager_SO.waveIndex].debrisTypesPrefabs.Length);
 
-        Instantiate(debrisTypeSpawnManager_SO.debrisTypePrefabs[debrisTypeSpawnManager_SO.waveIndex].debrisTypesPrefabs[aboveRandomPrefabIndex], 
-            new Vector3(aboveXCoords, aboveYCoords, TopViewSpawnPoints[0].transform.position.z), Quaternion.identity);
+            Instantiate(debrisTypeSpawnManager_SO.debrisTypePrefabs[debrisTypeSpawnManager_SO.waveIndex].debrisTypesPrefabs[aboveRandomPrefabIndex], 
+                new Vector3(aboveXCoords, aboveYCoords, TopViewSpawnPoints[0].transform.position.z), Quaternion.identity);
 
-        Instantiate(debrisTypeSpawnManager_SO.debrisTypePrefabs[debrisTypeSpawnManager_SO.waveIndex].debrisTypesPrefabs[belowRandomPrefabIndex],
-            new Vector3(belowXCoords, belowYCoords, TopViewSpawnPoints[3].transform.position.z), Quaternion.identity);
+            Instantiate(debrisTypeSpawnManager_SO.debrisTypePrefabs[debrisTypeSpawnManager_SO.waveIndex].debrisTypesPrefabs[belowRandomPrefabIndex],
+                new Vector3(belowXCoords, belowYCoords, TopViewSpawnPoints[3].transform.position.z), Quaternion.identity);
 
-        yield return new WaitForSeconds(0.1f);
+            Debug.Log("Corroutine ON!!!");
+
+            yield return new WaitForSeconds(0.5f);
+
+        }
+
+        debrisTypeSpawnManager_SO.waveIndex++;
+        StopAllCoroutines();
+        Debug.Log("Corroutine OFF!!!");
+
     }
 
     public IEnumerator SpawnSideViewDebrisType()
