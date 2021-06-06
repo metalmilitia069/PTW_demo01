@@ -32,15 +32,15 @@ public class EndWall : MonoBehaviour
     {
         if (!_killMode)
         {
-            //other.transform.position = beginWall.transform.position - beginWall.GetComponent<BeginWall>()._spawnPointOffset;
-            other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y, beginWall.transform.position.z - beginWall.GetComponent<BeginWall>()._spawnPointOffset.z);
-            //if (other.GetComponent<Debris>())
-            //{
+            if (!debrisTypeSpawnManager_SO.doKillCorroutine)
+            {
                 if (other.GetComponent<Debris>().selectDebris.debrisType != SelectDebris.DebrisType.standard)
-                {
-                    debrisTypeSpawnManager_SO.isPaused = true;
+                {                    
+                    debrisTypeSpawnManager_SO.doKillCorroutine = true;
                 }
-            //}
+            }
+            
+            other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y, beginWall.transform.position.z - beginWall.GetComponent<BeginWall>()._spawnPointOffset.z);
         }
         else
         {

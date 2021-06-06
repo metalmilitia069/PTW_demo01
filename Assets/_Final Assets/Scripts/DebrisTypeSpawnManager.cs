@@ -25,6 +25,11 @@ public class DebrisTypeSpawnManager : MonoBehaviour
     {
         if (!debrisTypeSpawnManager_SO.isPaused)
         {
+            if (debrisTypeSpawnManager_SO.waveIndex > debrisTypeSpawnManager_SO.debrisTypePrefabs.Length -1)
+            {
+                debrisTypeSpawnManager_SO.PauseDebrisTypeSpawn();
+                return;
+            }
             switch (debrisTypeSpawnManager_SO.debrisTypePrefabs[debrisTypeSpawnManager_SO.waveIndex].viewToSpawn)
             {
                 case 0:
@@ -42,6 +47,14 @@ public class DebrisTypeSpawnManager : MonoBehaviour
             }
 
             debrisTypeSpawnManager_SO.PauseDebrisTypeSpawn();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (debrisTypeSpawnManager_SO.doKillCorroutine)
+        {
+            StopAllCoroutines();
         }
     }
 

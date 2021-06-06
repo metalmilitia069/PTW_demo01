@@ -7,6 +7,8 @@ public class DebrisTypeSpawnManager_SO : ScriptableObject
 {
     public bool isPaused = true;
     public int waveIndex = 0;
+    public bool doKillCorroutine = false;
+
 
     public DebrisTypesPrefabs[] debrisTypePrefabs;
 
@@ -14,6 +16,7 @@ public class DebrisTypeSpawnManager_SO : ScriptableObject
     {
         waveIndex = 0;
         isPaused = true;
+        doKillCorroutine = false;
     }
 
     public void PauseDebrisTypeSpawn()

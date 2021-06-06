@@ -9,6 +9,7 @@ public class DebrisControlTrigger : MonoBehaviour
 
     public SpawnManager_SO spawnManager_SO;
     public DebrisSpawnManager_SO debrisSpawnManager_SO;
+    public DebrisTypeSpawnManager_SO debrisTypeSpawnManager_SO;
 
     public SelectDebris selectDebris;
 
@@ -48,6 +49,7 @@ public class DebrisControlTrigger : MonoBehaviour
         {
             debrisSpawnManager_SO.isPaused = false;
             spawnManager_SO.isPaused = false;
+            debrisTypeSpawnManager_SO.UnpauseDebrisTypeSpawn();
         }
     }
 
