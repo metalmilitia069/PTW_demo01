@@ -13,7 +13,7 @@ public class DebrisTypeSpawnManager : MonoBehaviour
     [SerializeField]
     private GameObject[] BackViewSpawnPoints;
 
-    private int _index;
+    //private int _index = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +23,26 @@ public class DebrisTypeSpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!debrisTypeSpawnManager_SO.isPaused)
+        {
+            switch (debrisTypeSpawnManager_SO.debrisTypePrefabs[debrisTypeSpawnManager_SO.waveIndex].viewToSpawn)
+            {
+                case 0:
+                    StartCoroutine(SpawnTopViewDebrisType());
+                    //debrisTypeSpawnManager_SO.isPaused = true;
+                    break;
+                case 1:
+                    StartCoroutine(SpawnSideViewDebrisType());
+                    break;
+                case 2:
+                    StartCoroutine(SpawnBackViewDebrisType());
+                    break;
+                default:
+                    break;
+            }
+
+            debrisTypeSpawnManager_SO.PauseDebrisTypeSpawn();
+        }
     }
 
     public IEnumerator SpawnTopViewDebrisType()
@@ -35,17 +54,15 @@ public class DebrisTypeSpawnManager : MonoBehaviour
         float belowXCoords = Random.Range(TopViewSpawnPoints[3].transform.position.x, TopViewSpawnPoints[4].transform.position.x);
         float belowYCoords = Random.Range(TopViewSpawnPoints[3].transform.position.x, TopViewSpawnPoints[5].transform.position.x);
 
-        int aboveRandomPrefabIndex = Random.Range(0, debrisTypeSpawnManager_SO.debrisTypePrefabs[_index].debrisTypesPrefabs.Length);
+        int aboveRandomPrefabIndex = Random.Range(0, debrisTypeSpawnManager_SO.debrisTypePrefabs[debrisTypeSpawnManager_SO.waveIndex].debrisTypesPrefabs.Length);
         
-        int belowRandomPrefabIndex = Random.Range(0, debrisTypeSpawnManager_SO.debrisTypePrefabs[_index].debrisTypesPrefabs.Length);
+        int belowRandomPrefabIndex = Random.Range(0, debrisTypeSpawnManager_SO.debrisTypePrefabs[debrisTypeSpawnManager_SO.waveIndex].debrisTypesPrefabs.Length);
 
-        Instantiate(debrisTypeSpawnManager_SO.debrisTypePrefabs[_index].debrisTypesPrefabs[aboveRandomPrefabIndex], 
+        Instantiate(debrisTypeSpawnManager_SO.debrisTypePrefabs[debrisTypeSpawnManager_SO.waveIndex].debrisTypesPrefabs[aboveRandomPrefabIndex], 
             new Vector3(aboveXCoords, aboveYCoords, TopViewSpawnPoints[0].transform.position.z), Quaternion.identity);
 
-        Instantiate(debrisTypeSpawnManager_SO.debrisTypePrefabs[_index].debrisTypesPrefabs[belowRandomPrefabIndex],
+        Instantiate(debrisTypeSpawnManager_SO.debrisTypePrefabs[debrisTypeSpawnManager_SO.waveIndex].debrisTypesPrefabs[belowRandomPrefabIndex],
             new Vector3(belowXCoords, belowYCoords, TopViewSpawnPoints[3].transform.position.z), Quaternion.identity);
-
-
 
         yield return new WaitForSeconds(0.1f);
     }
@@ -59,16 +76,15 @@ public class DebrisTypeSpawnManager : MonoBehaviour
         float frontXCoords = Random.Range(SideViewSpawnPoints[3].transform.position.x, SideViewSpawnPoints[4].transform.position.x);
         float frontYCoords = Random.Range(SideViewSpawnPoints[3].transform.position.x, SideViewSpawnPoints[5].transform.position.x);
 
-        int backRandomPrefabIndex = Random.Range(0, debrisTypeSpawnManager_SO.debrisTypePrefabs[_index].debrisTypesPrefabs.Length);
+        int backRandomPrefabIndex = Random.Range(0, debrisTypeSpawnManager_SO.debrisTypePrefabs[debrisTypeSpawnManager_SO.waveIndex].debrisTypesPrefabs.Length);
 
-        int frontRandomPrefabIndex = Random.Range(0, debrisTypeSpawnManager_SO.debrisTypePrefabs[_index].debrisTypesPrefabs.Length);
+        int frontRandomPrefabIndex = Random.Range(0, debrisTypeSpawnManager_SO.debrisTypePrefabs[debrisTypeSpawnManager_SO.waveIndex].debrisTypesPrefabs.Length);
 
-        Instantiate(debrisTypeSpawnManager_SO.debrisTypePrefabs[_index].debrisTypesPrefabs[backRandomPrefabIndex],
+        Instantiate(debrisTypeSpawnManager_SO.debrisTypePrefabs[debrisTypeSpawnManager_SO.waveIndex].debrisTypesPrefabs[backRandomPrefabIndex],
             new Vector3(backXCoords, backYCoords, TopViewSpawnPoints[0].transform.position.z), Quaternion.identity);
 
-        Instantiate(debrisTypeSpawnManager_SO.debrisTypePrefabs[_index].debrisTypesPrefabs[frontRandomPrefabIndex],
+        Instantiate(debrisTypeSpawnManager_SO.debrisTypePrefabs[debrisTypeSpawnManager_SO.waveIndex].debrisTypesPrefabs[frontRandomPrefabIndex],
             new Vector3(frontXCoords, frontYCoords, TopViewSpawnPoints[3].transform.position.z), Quaternion.identity);
-
 
         yield return new WaitForSeconds(0.1f);
     }
@@ -82,17 +98,15 @@ public class DebrisTypeSpawnManager : MonoBehaviour
         float belowXCoords = Random.Range(BackViewSpawnPoints[3].transform.position.x, BackViewSpawnPoints[4].transform.position.x);
         float belowYCoords = Random.Range(BackViewSpawnPoints[3].transform.position.x, BackViewSpawnPoints[5].transform.position.x);
 
-        int aboveRandomPrefabIndex = Random.Range(0, debrisTypeSpawnManager_SO.debrisTypePrefabs[_index].debrisTypesPrefabs.Length);
+        int aboveRandomPrefabIndex = Random.Range(0, debrisTypeSpawnManager_SO.debrisTypePrefabs[debrisTypeSpawnManager_SO.waveIndex].debrisTypesPrefabs.Length);
 
-        int belowRandomPrefabIndex = Random.Range(0, debrisTypeSpawnManager_SO.debrisTypePrefabs[_index].debrisTypesPrefabs.Length);
+        int belowRandomPrefabIndex = Random.Range(0, debrisTypeSpawnManager_SO.debrisTypePrefabs[debrisTypeSpawnManager_SO.waveIndex].debrisTypesPrefabs.Length);
 
-        Instantiate(debrisTypeSpawnManager_SO.debrisTypePrefabs[_index].debrisTypesPrefabs[aboveRandomPrefabIndex],
+        Instantiate(debrisTypeSpawnManager_SO.debrisTypePrefabs[debrisTypeSpawnManager_SO.waveIndex].debrisTypesPrefabs[aboveRandomPrefabIndex],
             new Vector3(aboveXCoords, aboveYCoords, TopViewSpawnPoints[0].transform.position.z), Quaternion.identity);
 
-        Instantiate(debrisTypeSpawnManager_SO.debrisTypePrefabs[_index].debrisTypesPrefabs[belowRandomPrefabIndex],
+        Instantiate(debrisTypeSpawnManager_SO.debrisTypePrefabs[debrisTypeSpawnManager_SO.waveIndex].debrisTypesPrefabs[belowRandomPrefabIndex],
             new Vector3(belowXCoords, belowYCoords, TopViewSpawnPoints[3].transform.position.z), Quaternion.identity);
-
-
 
         yield return new WaitForSeconds(0.1f);
     }
