@@ -152,7 +152,7 @@ public class SpawnManager : MonoBehaviour
                 Random.Range(BackViewSpawnPoints[2].transform.position.y, BackViewSpawnPoints[3].transform.position.y), BackViewSpawnPoints[0].transform.position.z);
                 break;
             default:
-                _spawnPlace = new Vector3(0, 0, 50);
+                _spawnPlace = new Vector3(0, 0, TopViewSpawnPoints[0].transform.position.z);
                 //Debug.Log("place to spawn was not defined!!!!!!");
                 break;
         }

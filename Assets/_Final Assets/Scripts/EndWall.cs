@@ -33,7 +33,11 @@ public class EndWall : MonoBehaviour
         }
         else
         {
-            Destroy(other.gameObject, 5);
+            if (other.GetComponent<Debris>() || other.GetComponent<DebrisControlTrigger>())
+            {
+                Destroy(other.gameObject, 5);
+            }
+            other.transform.position = beginWall.transform.position - beginWall.GetComponent<BeginWall>()._spawnPointOffset;
         }
     }
     

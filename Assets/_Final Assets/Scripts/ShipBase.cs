@@ -85,7 +85,7 @@ public class ShipBase : MonoBehaviour
 
         Vector3 axis = new Vector3();        
 
-        Debug.Log(_playerMovementX);
+        //Debug.Log(_playerMovementX);
         this.gameObject.GetComponent<Animator>().SetFloat("SteerFloat", _playerMovementX);
 
 

@@ -7,6 +7,7 @@ public class BeginWall : MonoBehaviour
     public DebrisSpawnManager_SO debrisSpawnManager_SO;
 
     
+    public EndWall endWall;
     public Vector3 _spawnPointOffset = new Vector3(0, 0, 75);
 
     // Start is called before the first frame update
