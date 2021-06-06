@@ -13,6 +13,8 @@ public class EndWall : MonoBehaviour
 
     public bool KillMode { get => _killMode; set => _killMode = value; }
 
+    public SelectDebris selectDebris;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +36,14 @@ public class EndWall : MonoBehaviour
         }
         else
         {
-            if (other.GetComponent<Debris>() || other.GetComponent<DebrisControlTrigger>())
+            if (other.GetComponent<Debris>())
+            {
+                if (selectDebris.debrisType == other.GetComponent<Debris>().selectDebris.debrisType || other.GetComponent<Debris>().selectDebris.debrisType == SelectDebris.DebrisType.standard)
+                {
+                    Destroy(other.gameObject, 5);
+                }
+            }
+            else if (other.GetComponent<DebrisControlTrigger>())
             {
                 Destroy(other.gameObject, 5);
             }
@@ -42,6 +51,22 @@ public class EndWall : MonoBehaviour
             {
                 other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y, beginWall.transform.position.z - beginWall.GetComponent<BeginWall>()._spawnPointOffset.z);
             }
+
+            //switch (other.GetComponent<Debris>().debrisType)
+            //{
+            //    case Debris.DebrisType.scenary:
+            //        Destroy(other.gameObject, 5);
+            //        break;
+            //    case Debris.DebrisType.asteroid:
+            //        Destroy(other.gameObject, 5);
+            //        break;
+            //    case Debris.DebrisType.metalSmal:
+            //        Destroy(other.gameObject, 5);
+            //        break;
+            //    default:
+            //        break;
+            //}
+
         }
     }
     

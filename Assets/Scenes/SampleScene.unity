@@ -606,6 +606,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 15
+  spawnManager_SO: {fileID: 0}
+  debrisSpawnManager_SO: {fileID: 0}
+  selectDebris:
+    debrisType: 0
 --- !u!4 &297092920
 Transform:
   m_ObjectHideFlags: 0
@@ -756,6 +760,8 @@ MonoBehaviour:
   debrisSpawnManager_SO: {fileID: 11400000, guid: 38c6cee4cdca0f049ac4681c2bdf2bdc, type: 2}
   beginWall: {fileID: 760943610}
   _killMode: 0
+  selectDebris:
+    debrisType: 0
 --- !u!65 &412974043
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3013,6 +3019,8 @@ MonoBehaviour:
   _speed: 15
   _isRotating: 1
   _rotationSpeed: 5
+  selectDebris:
+    debrisType: 0
 --- !u!65 &1179090399
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3490,6 +3498,8 @@ MonoBehaviour:
   _speed: 15
   _isRotating: 1
   _rotationSpeed: 5
+  selectDebris:
+    debrisType: 0
 --- !u!1 &1286569257
 GameObject:
   m_ObjectHideFlags: 0
@@ -3585,6 +3595,8 @@ MonoBehaviour:
   _speed: 15
   _isRotating: 1
   _rotationSpeed: 5
+  selectDebris:
+    debrisType: 0
 --- !u!65 &1350933100
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4176,6 +4188,8 @@ MonoBehaviour:
   _speed: 15
   _isRotating: 1
   _rotationSpeed: 5
+  selectDebris:
+    debrisType: 0
 --- !u!4 &1426868493
 Transform:
   m_ObjectHideFlags: 0
@@ -4261,6 +4275,8 @@ MonoBehaviour:
   _speed: 15
   _isRotating: 1
   _rotationSpeed: 5
+  selectDebris:
+    debrisType: 0
 --- !u!4 &1441436067
 Transform:
   m_ObjectHideFlags: 0
@@ -4498,6 +4514,8 @@ MonoBehaviour:
   _speed: 15
   _isRotating: 1
   _rotationSpeed: 5
+  selectDebris:
+    debrisType: 0
 --- !u!4 &1647142913
 Transform:
   m_ObjectHideFlags: 0
@@ -5190,6 +5208,8 @@ MonoBehaviour:
   _speed: 15
   _isRotating: 1
   _rotationSpeed: 5
+  selectDebris:
+    debrisType: 0
 --- !u!1 &2012844447
 GameObject:
   m_ObjectHideFlags: 0
@@ -5463,6 +5483,8 @@ MonoBehaviour:
   _speed: 15
   _isRotating: 1
   _rotationSpeed: 5
+  selectDebris:
+    debrisType: 0
 --- !u!1 &2147243787
 GameObject:
   m_ObjectHideFlags: 0

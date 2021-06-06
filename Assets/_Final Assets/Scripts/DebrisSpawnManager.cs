@@ -49,7 +49,12 @@ public class DebrisSpawnManager : MonoBehaviour
         if (_sectionsNumber >= debrisSpawnManager_SO.debrisConfig[_debrisIndex].numberOfSections)
         {
             _sectionsNumber = 0;
+            debrisSpawnManager_SO.isSpawning = false;
             _debrisIndex++;
+        }
+        else
+        {
+            debrisSpawnManager_SO.isSpawning = true;
         }
     }
 

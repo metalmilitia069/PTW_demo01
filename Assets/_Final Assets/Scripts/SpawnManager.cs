@@ -122,7 +122,14 @@ public class SpawnManager : MonoBehaviour
         {
             for (int j = 0; j < spawnManager_so.waveConfig[_waveIndex].numberOfEnemiesByType[_spawnIndex]; j++)
             {
-                spawnManager_so._currentEnemiesList.Add(Instantiate(spawnManager_so.waveConfig[_waveIndex].waveEnemyTypes[_spawnIndex], RandomSpawnLocation(), Quaternion.identity));
+                if (spawnManager_so.waveConfig[_waveIndex].waveEnemyTypes[_spawnIndex].GetComponent<EnemyBase>())
+                {
+                    spawnManager_so._currentEnemiesList.Add(Instantiate(spawnManager_so.waveConfig[_waveIndex].waveEnemyTypes[_spawnIndex], RandomSpawnLocation(), Quaternion.identity));
+                }
+                else
+                {
+                    Instantiate(spawnManager_so.waveConfig[_waveIndex].waveEnemyTypes[_spawnIndex], RandomSpawnLocation(), Quaternion.identity);
+                }
                 yield return new WaitForSeconds(spawnManager_so.waveConfig[_waveIndex].timeBetweenSpawns);
             }
             _spawnIndex++;
