@@ -259,7 +259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 85945808}
   m_Layer: 0
-  m_Name: SideViewSpawnPoint (9)
+  m_Name: SideViewSpawnPoint (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -853,7 +853,7 @@ GameObject:
   m_Component:
   - component: {fileID: 268504209}
   m_Layer: 0
-  m_Name: SideViewSpawnPoint (3)
+  m_Name: 'SideViewSpawnPoint '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -872,7 +872,7 @@ Transform:
   m_Children:
   - {fileID: 1576669618}
   m_Father: {fileID: 2133685640}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &297092917
 GameObject:
@@ -1968,6 +1968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a44f67415b277504da5bbd09ef604e0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debrisTypeSpawnManager_SO: {fileID: 0}
   TopViewSpawnPoints:
   - {fileID: 2011877001}
   - {fileID: 27211284}
@@ -1975,8 +1976,20 @@ MonoBehaviour:
   - {fileID: 189210934}
   - {fileID: 1800000261}
   - {fileID: 1814174738}
-  SideViewSpawnPoints: []
-  BackViewSpawnPoints: []
+  SideViewSpawnPoints:
+  - {fileID: 268504208}
+  - {fileID: 2027950665}
+  - {fileID: 1099775364}
+  - {fileID: 806395754}
+  - {fileID: 840813493}
+  - {fileID: 85945807}
+  BackViewSpawnPoints:
+  - {fileID: 797074312}
+  - {fileID: 163123169}
+  - {fileID: 2130101301}
+  - {fileID: 258320036}
+  - {fileID: 228966590}
+  - {fileID: 1146797810}
 --- !u!1 &562401280 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4230883607876830543, guid: 298e217dd28a7d049a29fa55be59451b, type: 3}
@@ -2699,7 +2712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 806395755}
   m_Layer: 0
-  m_Name: SideViewSpawnPoint (7)
+  m_Name: SideViewSpawnPoint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2761,7 +2774,7 @@ GameObject:
   m_Component:
   - component: {fileID: 840813494}
   m_Layer: 0
-  m_Name: SideViewSpawnPoint (8)
+  m_Name: SideViewSpawnPoint (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3085,7 +3098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &946361702
 Transform:
   m_ObjectHideFlags: 0
@@ -3897,7 +3910,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1099775365}
   m_Layer: 0
-  m_Name: SideViewSpawnPoint (2)
+  m_Name: SideViewSpawnPoint  (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3916,7 +3929,7 @@ Transform:
   m_Children:
   - {fileID: 1753656334}
   m_Father: {fileID: 2133685640}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1114399738
 GameObject:
@@ -6670,7 +6683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1759744917
 Transform:
   m_ObjectHideFlags: 0
@@ -7576,7 +7589,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2027950666}
   m_Layer: 0
-  m_Name: SideViewSpawnPoint (4)
+  m_Name: SideViewSpawnPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7595,7 +7608,7 @@ Transform:
   m_Children:
   - {fileID: 1169386282}
   m_Father: {fileID: 2133685640}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2049866458
 GameObject:
@@ -7974,9 +7987,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1099775365}
   - {fileID: 268504209}
   - {fileID: 2027950666}
+  - {fileID: 1099775365}
   - {fileID: 806395755}
   - {fileID: 840813494}
   - {fileID: 85945808}
