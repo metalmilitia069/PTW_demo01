@@ -23,6 +23,8 @@ public class SpawnManager : MonoBehaviour
         {
             numberOfWaves = spawnManager_so.waveConfig.Length;
         }
+
+        spawnManager_so.CheckWave();
     }
 
     
