@@ -468,6 +468,44 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "Shooting",
+            "id": "4bb4c204-7f63-4304-ab7a-5283aa0faf17",
+            "actions": [
+                {
+                    "name": "FireButton",
+                    "type": "Button",
+                    "id": "1fbf1a7a-288d-4f9f-b2a2-00eac0cf55b0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f13df728-e3ad-4d7f-ad31-5ba5739521db",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FireButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0339286d-8ea3-4e51-8543-d9851b550787",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FireButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

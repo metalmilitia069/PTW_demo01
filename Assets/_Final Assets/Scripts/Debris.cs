@@ -13,6 +13,10 @@ public class Debris : MonoBehaviour
 
     private int _randomRotation;
 
+    public SelectDebris selectDebris;
+
+    //public DebrisType debrisType;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,5 +52,18 @@ public class Debris : MonoBehaviour
         //this.transform.rotation += Quaternion.AngleAxis(10, Vector3.forward * _speed * Time.deltaTime);
     }
 
-
 }
+
+[System.Serializable]
+public struct SelectDebris
+{    
+    public enum DebrisType
+    {
+        standard,        
+        asteroid,
+        metalSmall
+    }
+
+    public DebrisType debrisType;
+}
+  

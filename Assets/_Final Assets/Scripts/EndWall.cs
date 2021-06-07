@@ -5,6 +5,7 @@ using UnityEngine;
 public class EndWall : MonoBehaviour
 {
     public DebrisSpawnManager_SO debrisSpawnManager_SO;
+    public DebrisTypeSpawnManager_SO debrisTypeSpawnManager_SO;
 
     [SerializeField]
     private GameObject beginWall;
@@ -12,6 +13,8 @@ public class EndWall : MonoBehaviour
     private bool _killMode;
 
     public bool KillMode { get => _killMode; set => _killMode = value; }
+
+    public SelectDebris selectDebris;
 
     // Start is called before the first frame update
     void Start()
@@ -29,11 +32,49 @@ public class EndWall : MonoBehaviour
     {
         if (!_killMode)
         {
-            other.transform.position = beginWall.transform.position - beginWall.GetComponent<BeginWall>()._spawnPointOffset;
+            if (!debrisTypeSpawnManager_SO.doKillCorroutine && other.GetComponent<Debris>())
+            {
+                if (other.GetComponent<Debris>().selectDebris.debrisType != SelectDebris.DebrisType.standard)
+                {                    
+                    debrisTypeSpawnManager_SO.doKillCorroutine = true;
+                }
+            }
+            
+            other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y, beginWall.transform.position.z - beginWall.GetComponent<BeginWall>()._spawnPointOffset.z);
         }
         else
         {
-            Destroy(other.gameObject, 5);
+            if (other.GetComponent<Debris>())
+            {
+                if (selectDebris.debrisType == other.GetComponent<Debris>().selectDebris.debrisType || other.GetComponent<Debris>().selectDebris.debrisType == SelectDebris.DebrisType.standard)
+                {
+                    Destroy(other.gameObject, 5);
+                }
+            }
+            else if (other.GetComponent<DebrisControlTrigger>())
+            {
+                Destroy(other.gameObject, 5);
+            }
+            else
+            {
+                other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y, beginWall.transform.position.z - beginWall.GetComponent<BeginWall>()._spawnPointOffset.z);
+            }
+
+            //switch (other.GetComponent<Debris>().debrisType)
+            //{
+            //    case Debris.DebrisType.scenary:
+            //        Destroy(other.gameObject, 5);
+            //        break;
+            //    case Debris.DebrisType.asteroid:
+            //        Destroy(other.gameObject, 5);
+            //        break;
+            //    case Debris.DebrisType.metalSmal:
+            //        Destroy(other.gameObject, 5);
+            //        break;
+            //    default:
+            //        break;
+            //}
+
         }
     }
     
