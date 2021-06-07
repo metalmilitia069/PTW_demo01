@@ -12,3 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d900b90c56929468381a6cdb43206c, type: 3}
   m_Name: PlayerAmmunition
   m_EditorClassIdentifier: 
+  SingleShotTopBackLvl01:
+  - {fileID: 1055931481793754261, guid: 704e399e348140a4198d33ee5a3ca949, type: 3}
+  TripleShotTopBackLvl01: []
+  DiagonalShotTopBackLvl01: []
+  SingleShotSideLvl01: []
+  TripleShotLvl01: []
+  DiagonaShotlLvl01: []
+  SingleShotTopBackLvl02: []
+  TripleShotTopBackLvl02: []
+  DiagonalShotTopBackLvl02: []
+  SingleShotSideLvl02: []
+  TripleShotLvl02: []
+  DiagonaShotlLvl02: []
+  SingleShotTopBackLvl03: []
+  TripleShotTopBackLvl03: []
+  DiagonalShotTopBackLvl03: []
+  SingleShotSideLvl03: []
+  TripleShotLvl03: []
+  DiagonaShotlLvl03: []

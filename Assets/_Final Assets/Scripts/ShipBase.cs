@@ -25,21 +25,35 @@ public class ShipBase : MonoBehaviour
 
     public enum AmmunitionType
     {
-        straightTopBack,
-        leftTopBack,
-        rightTopBack,
-        straightSide,
-        upwardSide,
-        dowardSide,
+        //straightTopBack,
+        //leftTopBack,
+        //rightTopBack,
+        //straightSide,
+        //upwardSide,
+        //dowardSide,
+        singleShotLvl01,
+        tripleShotLvl01,
+        diagonalShotLvl01,
+        singleShotLvl02,
+        tripleShotLvl02,
+        diagonalShotLvl02,
+        singleShotLvl03,
+        tripleShotLvl03,
+        diagonalShotLvl03
 
     }
 
     public AmmunitionType ammunitionType;
 
+    [SerializeField]
+    private float _fireRate;
 
     private void Awake()
     {
         _playerControls = new PlayerControls();
+        //_playerControls.Shooting.FireButton.started += _ => TopBackShoot();
+        //_playerControls.Shooting.FireButton. += _ => TopBackShoot();
+        _playerControls.Shooting.FireButton.performed += _ => TopBackShoot();
     }
 
     // Start is called before the first frame update
@@ -56,6 +70,8 @@ public class ShipBase : MonoBehaviour
     private void OnDisable()
     {
         _playerControls.Disable();
+        //_playerControls.Shooting.FireButton.performed -= _ => TopBackShoot();
+        
     }
 
     // Update is called once per frame
@@ -66,7 +82,7 @@ public class ShipBase : MonoBehaviour
         {
             case -1:
                 TopViewMovement();
-                this.transform.position += _playerMovement;
+                this.transform.position += _playerMovement;                
                 break;
             case 0:
                 SideViewMovement();
@@ -79,6 +95,12 @@ public class ShipBase : MonoBehaviour
             default:
                 break;
         }
+
+        //if (_playerControls.Shooting.FireButton.triggered)
+        //{
+            
+        //    TopBackShoot();
+        //}
                 
         //this.transform.position += _playerMovement;
     }
@@ -113,9 +135,39 @@ public class ShipBase : MonoBehaviour
         _playerMovement = new Vector3(_playerMovementX, _playerMovementY, 0);
     }
 
-    public void Shoot()
+    public void TopBackShoot()
     {
+        switch (ammunitionType)
+        {
+            case AmmunitionType.singleShotLvl01:
+                Instantiate(playerAmmunition_SO.SingleShotTopBackLvl01[0], firePoints[0].transform.position, Quaternion.identity);
+                _fireRate = 0.1f;
+                //StartCoroutine(FireRate());
+                break;
+            case AmmunitionType.tripleShotLvl01:
+                break;
+            case AmmunitionType.diagonalShotLvl01:
+                break;
+            case AmmunitionType.singleShotLvl02:
+                break;
+            case AmmunitionType.tripleShotLvl02:
+                break;
+            case AmmunitionType.diagonalShotLvl02:
+                break;
+            case AmmunitionType.singleShotLvl03:
+                break;
+            case AmmunitionType.tripleShotLvl03:
+                break;
+            case AmmunitionType.diagonalShotLvl03:
+                break;
+            default:
+                break;
+        }
+    }
 
+    public IEnumerator FireRate()
+    {
+        yield return new WaitForSeconds(_fireRate);
     }
 
 
