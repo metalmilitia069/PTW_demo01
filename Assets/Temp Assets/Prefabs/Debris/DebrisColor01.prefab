@@ -159,6 +159,8 @@ MonoBehaviour:
   _speed: 30
   _isRotating: 1
   _rotationSpeed: 5
+  selectDebris:
+    debrisType: 0
 --- !u!1 &7909817164340034171
 GameObject:
   m_ObjectHideFlags: 0

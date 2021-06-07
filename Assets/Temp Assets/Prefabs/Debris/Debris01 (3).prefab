@@ -52,6 +52,8 @@ MonoBehaviour:
   _speed: 30
   _isRotating: 1
   _rotationSpeed: 5
+  selectDebris:
+    debrisType: 0
 --- !u!65 &8761129518956735704
 BoxCollider:
   m_ObjectHideFlags: 0
