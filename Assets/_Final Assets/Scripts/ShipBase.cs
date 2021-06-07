@@ -17,17 +17,24 @@ public class ShipBase : MonoBehaviour
 
     [SerializeField]
     protected GameObject[] firePoints;
-
-    //[SerializeField]
-    //private bool _movementSwitch = true;
-    //[SerializeField]
-    //[Range(-1, 1)]
-    //private int _movementSwitch;
-
+    
     public ControllerManager_SO controllerManager_SO;
+    public PlayerAmmunition_SO playerAmmunition_SO;
 
     private Vector3 playerPos;
 
+    public enum AmmunitionType
+    {
+        straightTopBack,
+        leftTopBack,
+        rightTopBack,
+        straightSide,
+        upwardSide,
+        dowardSide,
+
+    }
+
+    public AmmunitionType ammunitionType;
 
 
     private void Awake()
