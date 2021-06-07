@@ -6,9 +6,13 @@ public class ProjectileBase : MonoBehaviour
 {
     public enum ProjectileType
     {
-        type01,
-        type02,
-        type03
+        straightTopBack,
+        leftTopBack,
+        rightTopBack,
+        straightSide,
+        upwardSide,
+        dowardSide,
+
     }
 
     public ProjectileType projectileType;
@@ -28,22 +32,39 @@ public class ProjectileBase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Move();
     }
 
     public void Move()
     {
         switch (projectileType)
         {
-            case ProjectileType.type01:
-
+            case ProjectileType.straightTopBack:
+                this.transform.position += Vector3.forward * _bulletSpeed * Time.deltaTime;
                 break;
-            case ProjectileType.type02:
+            case ProjectileType.leftTopBack:
+                this.transform.position += Vector3.forward * _bulletSpeed * Time.deltaTime;
+                this.transform.position += Vector3.left * _bulletSpeed * Time.deltaTime;
                 break;
-            case ProjectileType.type03:
+            case ProjectileType.rightTopBack:
+                this.transform.position += Vector3.forward * _bulletSpeed * Time.deltaTime;
+                this.transform.position += Vector3.right * _bulletSpeed * Time.deltaTime;
+                break;
+            case ProjectileType.straightSide:
+                this.transform.position += Vector3.forward * _bulletSpeed * Time.deltaTime;
+                break;
+            case ProjectileType.upwardSide:
+                this.transform.position += Vector3.forward * _bulletSpeed * Time.deltaTime;
+                this.transform.position += Vector3.up * _bulletSpeed * Time.deltaTime;
+                break;
+            case ProjectileType.dowardSide:
+                this.transform.position += Vector3.forward * _bulletSpeed * Time.deltaTime;
+                this.transform.position += Vector3.down * _bulletSpeed * Time.deltaTime;
                 break;
             default:
                 break;
         }
+
+        
     }
 }
