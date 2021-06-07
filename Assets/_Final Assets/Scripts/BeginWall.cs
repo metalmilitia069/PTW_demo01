@@ -7,6 +7,7 @@ public class BeginWall : MonoBehaviour
     public DebrisSpawnManager_SO debrisSpawnManager_SO;
 
     
+    public EndWall endWall;
     public Vector3 _spawnPointOffset = new Vector3(0, 0, 75);
 
     // Start is called before the first frame update
@@ -23,9 +24,18 @@ public class BeginWall : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (debrisSpawnManager_SO.isSpawning)
+        if (!other.GetComponent<Debris>())
         {
-            debrisSpawnManager_SO.isPaused = false;
+            return;
         }
+        else
+        {
+            if (other.GetComponent<Debris>().selectDebris.debrisType == SelectDebris.DebrisType.standard && debrisSpawnManager_SO.isSpawning)
+            {
+                debrisSpawnManager_SO.isPaused = false;
+            }
+
+        }
+
     }
 }

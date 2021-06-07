@@ -481,6 +481,44 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""Shooting"",
+            ""id"": ""4bb4c204-7f63-4304-ab7a-5283aa0faf17"",
+            ""actions"": [
+                {
+                    ""name"": ""FireButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""1fbf1a7a-288d-4f9f-b2a2-00eac0cf55b0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""f13df728-e3ad-4d7f-ad31-5ba5739521db"",
+                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FireButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0339286d-8ea3-4e51-8543-d9851b550787"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FireButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -497,6 +535,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_LocomotionBackView = asset.FindActionMap("LocomotionBackView", throwIfNotFound: true);
         m_LocomotionBackView_VerticalMove = m_LocomotionBackView.FindAction("VerticalMove", throwIfNotFound: true);
         m_LocomotionBackView_SideMove = m_LocomotionBackView.FindAction("SideMove", throwIfNotFound: true);
+        // Shooting
+        m_Shooting = asset.FindActionMap("Shooting", throwIfNotFound: true);
+        m_Shooting_FireButton = m_Shooting.FindAction("FireButton", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -665,6 +706,39 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public LocomotionBackViewActions @LocomotionBackView => new LocomotionBackViewActions(this);
+
+    // Shooting
+    private readonly InputActionMap m_Shooting;
+    private IShootingActions m_ShootingActionsCallbackInterface;
+    private readonly InputAction m_Shooting_FireButton;
+    public struct ShootingActions
+    {
+        private @PlayerControls m_Wrapper;
+        public ShootingActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @FireButton => m_Wrapper.m_Shooting_FireButton;
+        public InputActionMap Get() { return m_Wrapper.m_Shooting; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ShootingActions set) { return set.Get(); }
+        public void SetCallbacks(IShootingActions instance)
+        {
+            if (m_Wrapper.m_ShootingActionsCallbackInterface != null)
+            {
+                @FireButton.started -= m_Wrapper.m_ShootingActionsCallbackInterface.OnFireButton;
+                @FireButton.performed -= m_Wrapper.m_ShootingActionsCallbackInterface.OnFireButton;
+                @FireButton.canceled -= m_Wrapper.m_ShootingActionsCallbackInterface.OnFireButton;
+            }
+            m_Wrapper.m_ShootingActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @FireButton.started += instance.OnFireButton;
+                @FireButton.performed += instance.OnFireButton;
+                @FireButton.canceled += instance.OnFireButton;
+            }
+        }
+    }
+    public ShootingActions @Shooting => new ShootingActions(this);
     public interface ILocomotionTopViewActions
     {
         void OnSideMove(InputAction.CallbackContext context);
@@ -679,5 +753,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     {
         void OnVerticalMove(InputAction.CallbackContext context);
         void OnSideMove(InputAction.CallbackContext context);
+    }
+    public interface IShootingActions
+    {
+        void OnFireButton(InputAction.CallbackContext context);
     }
 }

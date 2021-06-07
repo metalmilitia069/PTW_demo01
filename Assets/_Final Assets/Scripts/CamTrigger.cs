@@ -90,7 +90,7 @@ public class CamTrigger : MonoBehaviour
                 {
                     componentZ = _speed * Time.deltaTime;
                 }
-                Debug.Log("Z:" + componentZ);
+                //Debug.Log("Z:" + componentZ);
                 shipBase.transform.position += new Vector3(componentX, componentY, componentZ);
             }
             else

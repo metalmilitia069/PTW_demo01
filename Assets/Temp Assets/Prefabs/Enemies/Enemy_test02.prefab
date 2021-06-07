@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2406503397850166651}
   - component: {fileID: 3366558689610330883}
   - component: {fileID: 1486982845660542471}
-  - component: {fileID: 7151134154989874095}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -82,19 +81,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7151134154989874095
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3828359565254068390}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8110338851407641079
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,13 +91,14 @@ GameObject:
   m_Component:
   - component: {fileID: 7541108177693855202}
   - component: {fileID: 9015471827328860553}
+  - component: {fileID: 623225658591333704}
   m_Layer: 0
   m_Name: Enemy_test02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7541108177693855202
 Transform:
   m_ObjectHideFlags: 0
@@ -139,5 +126,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc4af79e1879264b8d927fa3a05b9b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnManager_so: {fileID: 0}
-  _speed: 10
+  spawnManager_so: {fileID: 11400000, guid: d1bee2db0eef6a249aec9c2534e9ad5c, type: 2}
+  _speed: 30
+--- !u!136 &623225658591333704
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8110338851407641079}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
