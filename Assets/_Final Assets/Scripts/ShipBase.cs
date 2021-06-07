@@ -14,6 +14,10 @@ public class ShipBase : MonoBehaviour
     private float _playerMovementY;
     private float _playerMovementZ;
     private Vector3 _playerMovement = new Vector3();
+
+    [SerializeField]
+    protected GameObject[] firePoints;
+
     //[SerializeField]
     //private bool _movementSwitch = true;
     //[SerializeField]
@@ -23,6 +27,8 @@ public class ShipBase : MonoBehaviour
     public ControllerManager_SO controllerManager_SO;
 
     private Vector3 playerPos;
+
+
 
     private void Awake()
     {
@@ -98,6 +104,11 @@ public class ShipBase : MonoBehaviour
         _playerMovementX = _playerControls.LocomotionTopView.SideMove.ReadValue<float>() * _speed * Time.deltaTime;
 
         _playerMovement = new Vector3(_playerMovementX, _playerMovementY, 0);
+    }
+
+    public void Shoot()
+    {
+
     }
 
 
