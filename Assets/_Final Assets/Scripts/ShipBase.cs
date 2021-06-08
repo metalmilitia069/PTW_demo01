@@ -23,6 +23,8 @@ public class ShipBase : MonoBehaviour
 
     private Vector3 playerPos;
 
+
+
     public enum AmmunitionType
     {
         //straightTopBack,
@@ -46,7 +48,8 @@ public class ShipBase : MonoBehaviour
     public AmmunitionType ammunitionType;
 
     [SerializeField]
-    private float _fireRate;
+    private float _fireRate = 1.5f;
+    private float _timeToShoot = 0;
 
     private void Awake()
     {
@@ -98,20 +101,13 @@ public class ShipBase : MonoBehaviour
                 break;
         }
 
-        if (_playerControls.Shooting.FireButton.ReadValue<float>() != 0)
+        if (_playerControls.Shooting.FireButton.ReadValue<float>() != 0 && Time.time > _timeToShoot)
         {
-            _fireRate = 1.0f;
-            StartCoroutine(FireRate());
-            //TopBackShoot();
+            _timeToShoot = Time.time + _fireRate;            
+            TopBackShoot();
         }
 
-        //if (_playerControls.Shooting.FireButton.triggered)
-        //{
-            
-        //    TopBackShoot();
-        //}
-                
-        //this.transform.position += _playerMovement;
+        
     }
 
     private void SideViewMovement()
@@ -154,6 +150,9 @@ public class ShipBase : MonoBehaviour
                 Instantiate(playerAmmunition_SO.SingleShotTopBackLvl01[0], firePoints[0].transform.position, Quaternion.identity);
                 break;
             case AmmunitionType.tripleShotLvl01:
+                Instantiate(playerAmmunition_SO.TripleShotSideLvl01[0], firePoints[0].transform.position, Quaternion.identity);
+                Instantiate(playerAmmunition_SO.TripleShotSideLvl01[0], firePoints[1].transform.position, Quaternion.identity);
+                Instantiate(playerAmmunition_SO.TripleShotSideLvl01[0], firePoints[2].transform.position, Quaternion.identity);
                 break;
             case AmmunitionType.diagonalShotLvl01:
                 break;
@@ -172,9 +171,13 @@ public class ShipBase : MonoBehaviour
             default:
                 break;
         }
+
+
     }
 
-    public IEnumerator FireRate()
+    
+
+public IEnumerator FireRate()
     {
         yield return new WaitForSeconds(_fireRate);
         TopBackShoot();
