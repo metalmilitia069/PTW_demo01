@@ -53,7 +53,9 @@ public class ShipBase : MonoBehaviour
         _playerControls = new PlayerControls();
         //_playerControls.Shooting.FireButton.started += _ => TopBackShoot();
         //_playerControls.Shooting.FireButton. += _ => TopBackShoot();
-        _playerControls.Shooting.FireButton.performed += _ => TopBackShoot();
+        //_playerControls.Shooting.FireButton.performed += _ => TopBackShoot();
+        //_playerControls.Shooting.FireButton.canceled += _ => TopBackShoot();
+        //_playerControls.Shooting.FireButton.ReadValue
     }
 
     // Start is called before the first frame update
@@ -94,6 +96,13 @@ public class ShipBase : MonoBehaviour
                 break;
             default:
                 break;
+        }
+
+        if (_playerControls.Shooting.FireButton.ReadValue<float>() != 0)
+        {
+            _fireRate = 1.0f;
+            StartCoroutine(FireRate());
+            //TopBackShoot();
         }
 
         //if (_playerControls.Shooting.FireButton.triggered)
@@ -140,9 +149,9 @@ public class ShipBase : MonoBehaviour
         switch (ammunitionType)
         {
             case AmmunitionType.singleShotLvl01:
-                Instantiate(playerAmmunition_SO.SingleShotTopBackLvl01[0], firePoints[0].transform.position, Quaternion.identity);
-                _fireRate = 0.1f;
+                //_fireRate = 0.1f;
                 //StartCoroutine(FireRate());
+                Instantiate(playerAmmunition_SO.SingleShotTopBackLvl01[0], firePoints[0].transform.position, Quaternion.identity);
                 break;
             case AmmunitionType.tripleShotLvl01:
                 break;
@@ -168,6 +177,7 @@ public class ShipBase : MonoBehaviour
     public IEnumerator FireRate()
     {
         yield return new WaitForSeconds(_fireRate);
+        TopBackShoot();
     }
 
 
