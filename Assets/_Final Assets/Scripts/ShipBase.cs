@@ -163,8 +163,8 @@ public class ShipBase : MonoBehaviour
                 break;
             case AmmunitionType.tripleShotLvl01:
                 Instantiate(playerAmmunition_SO.TripleShotTopBackLvl01[0], firePoints[0].transform.position, Quaternion.identity);
-                Instantiate(playerAmmunition_SO.TripleShotTopBackLvl01[0], firePoints[1].transform.position, Quaternion.identity);
-                Instantiate(playerAmmunition_SO.TripleShotTopBackLvl01[0], firePoints[2].transform.position, Quaternion.identity);
+                Instantiate(playerAmmunition_SO.TripleShotTopBackLvl01[1], firePoints[1].transform.position, Quaternion.identity);
+                Instantiate(playerAmmunition_SO.TripleShotTopBackLvl01[2], firePoints[2].transform.position, Quaternion.identity);
                 break;
             case AmmunitionType.diagonalShotLvl01:
                 Instantiate(playerAmmunition_SO.DiagonalShotTopBackLvl01[0], firePoints[0].transform.position, Quaternion.identity);
@@ -176,8 +176,8 @@ public class ShipBase : MonoBehaviour
                 break;
             case AmmunitionType.tripleShotLvl02:
                 Instantiate(playerAmmunition_SO.TripleShotTopBackLvl02[0], firePoints[0].transform.position, Quaternion.identity);
-                Instantiate(playerAmmunition_SO.TripleShotTopBackLvl02[0], firePoints[1].transform.position, Quaternion.identity);
-                Instantiate(playerAmmunition_SO.TripleShotTopBackLvl02[0], firePoints[2].transform.position, Quaternion.identity);
+                Instantiate(playerAmmunition_SO.TripleShotTopBackLvl02[1], firePoints[1].transform.position, Quaternion.identity);
+                Instantiate(playerAmmunition_SO.TripleShotTopBackLvl02[2], firePoints[2].transform.position, Quaternion.identity);
                 break;
             case AmmunitionType.diagonalShotLvl02:
                 Instantiate(playerAmmunition_SO.DiagonalShotTopBackLvl02[0], firePoints[0].transform.position, Quaternion.identity);
@@ -189,8 +189,8 @@ public class ShipBase : MonoBehaviour
                 break;
             case AmmunitionType.tripleShotLvl03:
                 Instantiate(playerAmmunition_SO.TripleShotTopBackLvl03[0], firePoints[0].transform.position, Quaternion.identity);
-                Instantiate(playerAmmunition_SO.TripleShotTopBackLvl03[0], firePoints[1].transform.position, Quaternion.identity);
-                Instantiate(playerAmmunition_SO.TripleShotTopBackLvl03[0], firePoints[2].transform.position, Quaternion.identity);
+                Instantiate(playerAmmunition_SO.TripleShotTopBackLvl03[1], firePoints[1].transform.position, Quaternion.identity);
+                Instantiate(playerAmmunition_SO.TripleShotTopBackLvl03[2], firePoints[2].transform.position, Quaternion.identity);
                 break;
             case AmmunitionType.diagonalShotLvl03:
                 Instantiate(playerAmmunition_SO.DiagonalShotTopBackLvl03[0], firePoints[0].transform.position, Quaternion.identity);
