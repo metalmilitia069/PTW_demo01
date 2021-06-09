@@ -150,9 +150,9 @@ public class ShipBase : MonoBehaviour
                 Instantiate(playerAmmunition_SO.SingleShotTopBackLvl01[0], firePoints[0].transform.position, Quaternion.identity);
                 break;
             case AmmunitionType.tripleShotLvl01:
-                Instantiate(playerAmmunition_SO.TripleShotSideLvl01[0], firePoints[0].transform.position, Quaternion.identity);
-                Instantiate(playerAmmunition_SO.TripleShotSideLvl01[0], firePoints[1].transform.position, Quaternion.identity);
-                Instantiate(playerAmmunition_SO.TripleShotSideLvl01[0], firePoints[2].transform.position, Quaternion.identity);
+                Instantiate(playerAmmunition_SO.TripleShotTopBackLvl01[0], firePoints[0].transform.position, Quaternion.identity);
+                Instantiate(playerAmmunition_SO.TripleShotTopBackLvl01[0], firePoints[1].transform.position, Quaternion.identity);
+                Instantiate(playerAmmunition_SO.TripleShotTopBackLvl01[0], firePoints[2].transform.position, Quaternion.identity);
                 break;
             case AmmunitionType.diagonalShotLvl01:
                 break;

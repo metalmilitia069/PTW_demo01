@@ -4615,7 +4615,7 @@ MonoBehaviour:
   - {fileID: 1325376451}
   controllerManager_SO: {fileID: 11400000, guid: 9d2f92ac2af652541a4aa30b77a49ee9, type: 2}
   playerAmmunition_SO: {fileID: 11400000, guid: 0c2859ad1f2a82f4b8582d936dbb1062, type: 2}
-  ammunitionType: 0
+  ammunitionType: 1
   _fireRate: 0.2
 --- !u!65 &1231997954
 BoxCollider:

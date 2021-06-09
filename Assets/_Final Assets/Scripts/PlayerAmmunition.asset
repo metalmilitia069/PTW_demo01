@@ -14,20 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SingleShotTopBackLvl01:
   - {fileID: 1055931481793754261, guid: 704e399e348140a4198d33ee5a3ca949, type: 3}
-  TripleShotTopBackLvl01: []
+  TripleShotTopBackLvl01:
+  - {fileID: 1055931481793754261, guid: 704e399e348140a4198d33ee5a3ca949, type: 3}
   DiagonalShotTopBackLvl01: []
   SingleShotSideLvl01: []
-  TripleShotLvl01: []
-  DiagonaShotlLvl01: []
+  TripleShotSideLvl01: []
+  DiagonaShotSidelLvl01: []
   SingleShotTopBackLvl02: []
   TripleShotTopBackLvl02: []
   DiagonalShotTopBackLvl02: []
   SingleShotSideLvl02: []
-  TripleShotLvl02: []
-  DiagonaShotlLvl02: []
+  TripleShotSideLvl02: []
+  DiagonaShotSidelLvl02: []
   SingleShotTopBackLvl03: []
   TripleShotTopBackLvl03: []
   DiagonalShotTopBackLvl03: []
   SingleShotSideLvl03: []
-  TripleShotLvl03: []
-  DiagonaShotlLvl03: []
+  TripleShotSideLvl03: []
+  DiagonaShotlSideLvl03: []
