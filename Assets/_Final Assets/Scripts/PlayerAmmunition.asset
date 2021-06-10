@@ -16,19 +16,38 @@ MonoBehaviour:
   - {fileID: 1055931481793754261, guid: 704e399e348140a4198d33ee5a3ca949, type: 3}
   TripleShotTopBackLvl01:
   - {fileID: 1055931481793754261, guid: 704e399e348140a4198d33ee5a3ca949, type: 3}
-  DiagonalShotTopBackLvl01: []
-  SingleShotSideLvl01: []
-  TripleShotSideLvl01: []
-  DiagonaShotSidelLvl01: []
-  SingleShotTopBackLvl02: []
-  TripleShotTopBackLvl02: []
-  DiagonalShotTopBackLvl02: []
+  - {fileID: 1055931481793754261, guid: 704e399e348140a4198d33ee5a3ca949, type: 3}
+  - {fileID: 1055931481793754261, guid: 704e399e348140a4198d33ee5a3ca949, type: 3}
+  DiagonalShotTopBackLvl01:
+  - {fileID: 5193420505809107645, guid: 40b845209a72e0b4ea4e28f16da932ed, type: 3}
+  - {fileID: 1117945571949216762, guid: 43c02a56c8b7a044dba3c4c0c3ba80d1, type: 3}
+  - {fileID: 3584474070449638811, guid: 349353a67d6c2554084fbc2536d2d856, type: 3}
+  SingleShotSideLvl01:
+  - {fileID: 5193420505809107645, guid: 40b845209a72e0b4ea4e28f16da932ed, type: 3}
+  TripleShotSideLvl01:
+  - {fileID: 5193420505809107645, guid: 40b845209a72e0b4ea4e28f16da932ed, type: 3}
+  - {fileID: 5193420505809107645, guid: 40b845209a72e0b4ea4e28f16da932ed, type: 3}
+  - {fileID: 5193420505809107645, guid: 40b845209a72e0b4ea4e28f16da932ed, type: 3}
+  DiagonalShotSideLvl01:
+  - {fileID: 5193420505809107645, guid: 40b845209a72e0b4ea4e28f16da932ed, type: 3}
+  - {fileID: 2775955209837124995, guid: 2643a435c2baf664b842a11a118ad433, type: 3}
+  - {fileID: 5476843791047211729, guid: bfe150174ae9af04fa99ee87cc78464f, type: 3}
+  SingleShotTopBackLvl02:
+  - {fileID: 6672701181157611816, guid: ea9fa31581d6bb343a80f79e981165bf, type: 3}
+  TripleShotTopBackLvl02:
+  - {fileID: 6672701181157611816, guid: ea9fa31581d6bb343a80f79e981165bf, type: 3}
+  - {fileID: 6672701181157611816, guid: ea9fa31581d6bb343a80f79e981165bf, type: 3}
+  - {fileID: 6672701181157611816, guid: ea9fa31581d6bb343a80f79e981165bf, type: 3}
+  DiagonalShotTopBackLvl02:
+  - {fileID: 6672701181157611816, guid: ea9fa31581d6bb343a80f79e981165bf, type: 3}
+  - {fileID: 8435128842677147159, guid: 074445f603a43854d9f1fe3729368bc0, type: 3}
+  - {fileID: 3390011758948941125, guid: 1d5cf3c67cfa6c742b985301e1423819, type: 3}
   SingleShotSideLvl02: []
   TripleShotSideLvl02: []
-  DiagonaShotSidelLvl02: []
+  DiagonalShotSideLvl02: []
   SingleShotTopBackLvl03: []
   TripleShotTopBackLvl03: []
   DiagonalShotTopBackLvl03: []
   SingleShotSideLvl03: []
   TripleShotSideLvl03: []
-  DiagonaShotlSideLvl03: []
+  DiagonalShotSideLvl03: []
