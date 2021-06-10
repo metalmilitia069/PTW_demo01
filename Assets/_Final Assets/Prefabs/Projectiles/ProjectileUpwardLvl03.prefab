@@ -158,4 +158,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileType: 4
-  _bulletSpeed: 30
+  _bulletSpeed: 50

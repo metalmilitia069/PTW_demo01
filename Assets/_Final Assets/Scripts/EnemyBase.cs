@@ -21,6 +21,14 @@ public class EnemyBase : MonoBehaviour
         Move();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<ProjectileBase>())
+        {
+            TakeDamage();
+        }
+    }
+
     public void Move()
     {
 
@@ -32,6 +40,8 @@ public class EnemyBase : MonoBehaviour
         //health--
         //check if the enemy died
         //if dead, then
+
+        EnemyDied();
 
     }
 
