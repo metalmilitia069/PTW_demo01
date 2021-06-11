@@ -21,13 +21,7 @@ public class EnemyBase : MonoBehaviour
         Move();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.GetComponent<ProjectileBase>())
-        {
-            TakeDamage();
-        }
-    }
+    
 
     public void Move()
     {
@@ -35,24 +29,5 @@ public class EnemyBase : MonoBehaviour
         this.transform.position -= new Vector3(0, 0, _speed * Time.deltaTime);
     }
 
-    public void TakeDamage()
-    {
-        //health--
-        //check if the enemy died
-        //if dead, then
-
-        EnemyDied();
-
-    }
-
-    public void EnemyDied()
-    {
-        if (spawnManager_so != null)
-        {
-            spawnManager_so._currentEnemiesList.Remove(this.gameObject);
-            spawnManager_so.CheckWave();            
-        }
-
-        Destroy(this.gameObject);
-    }
+    
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShipBase : MonoBehaviour
 {
 
+
     private float _movementInput;
     [SerializeField]
     private float _speed;
@@ -20,6 +21,7 @@ public class ShipBase : MonoBehaviour
     
     public ControllerManager_SO controllerManager_SO;
     public PlayerAmmunition_SO playerAmmunition_SO;
+    public GameManager_SO gameManager_SO;
 
     private Vector3 playerPos;
 
@@ -54,12 +56,15 @@ public class ShipBase : MonoBehaviour
     private void Awake()
     {
         _playerControls = new PlayerControls();
+        gameManager_SO.shipBase = this;
         //_playerControls.Shooting.FireButton.started += _ => TopBackShoot();
         //_playerControls.Shooting.FireButton. += _ => TopBackShoot();
         //_playerControls.Shooting.FireButton.performed += _ => TopBackShoot();
         //_playerControls.Shooting.FireButton.canceled += _ => TopBackShoot();
         //_playerControls.Shooting.FireButton.ReadValue
     }
+
+    
 
     // Start is called before the first frame update
     void Start()
