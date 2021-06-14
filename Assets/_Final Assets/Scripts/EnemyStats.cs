@@ -15,6 +15,8 @@ public class EnemyStats : EnemyBase
     protected float fireRate = 0.5f;
     [SerializeField]
     protected GameObject projectile;
+    [SerializeField]
+    protected float manouverSpeed = 10.0f;
 
 
     // Start is called before the first frame update

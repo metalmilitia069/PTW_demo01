@@ -6231,12 +6231,18 @@ MonoBehaviour:
   pointsWorth: 10
   fireRate: 0.5
   projectile: {fileID: 0}
+  manouverSpeed: 10
   gameManager_SO: {fileID: 11400000, guid: daa33181daa5f5b4084196b39f03f2d9, type: 2}
   player1: {fileID: 1231997953}
   _minDist: 0
   _maxDist: 0
   angleOfView: 0
-  _maxAngleOfView: 0
+  _maxAngleOfView: 6
+  _aiState: 1
+  Backbound: 0
+  Forwardbound: 0
+  Leftbound: 0
+  Rightbound: 0
 --- !u!4 &1529070131
 Transform:
   m_ObjectHideFlags: 0

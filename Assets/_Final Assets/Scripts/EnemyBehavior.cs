@@ -20,6 +20,31 @@ public class EnemyBehavior : EnemyCombat
     private float angleOfView;
     [SerializeField]
     private float _maxAngleOfView;
+
+    private string state = "Running";
+
+    private enum AIStateMachine
+    {
+        Idle,
+        Moving,
+        Attacking,
+        Steering
+    }
+
+    [SerializeField]
+    private AIStateMachine _aiState = AIStateMachine.Moving;
+
+    [SerializeField]
+    private float Backbound;
+    [SerializeField]
+    private float Forwardbound;
+    [SerializeField]
+    private float Leftbound;
+    [SerializeField]
+    private float Rightbound;
+
+    private int _steeringSide;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,14 +59,20 @@ public class EnemyBehavior : EnemyCombat
 
         _enemyZCoord = this.gameObject.transform.position.z;
 
-        _direction = player1.gameObject.transform.position - this.gameObject.transform.position;
+        _direction = player.gameObject.transform.position - this.gameObject.transform.position;
         
         angleOfView = Vector3.Angle(_direction, Vector3.back);
+
 
         
 
         if (angleOfView < _maxAngleOfView)
         {
+            //if (_aiState != AIStateMachine.Steering)
+            //{
+                
+            //}
+
             Debug.Log("I See You!!!");
         }
         else
@@ -50,5 +81,11 @@ public class EnemyBehavior : EnemyCombat
         }
 
     }
-    
+
+    public void Steering()
+    {
+        //this.transform.position -= new Vector3(0, 0, _speed * Time.deltaTime);
+        Random.Range(0, 2);
+    }
+
 }
