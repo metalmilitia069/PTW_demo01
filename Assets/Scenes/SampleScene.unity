@@ -6235,7 +6235,7 @@ MonoBehaviour:
   gameManager_SO: {fileID: 11400000, guid: daa33181daa5f5b4084196b39f03f2d9, type: 2}
   player1: {fileID: 1231997953}
   _minDist: 0
-  _maxDist: 0
+  _maxDist: 35
   angleOfView: 0
   _maxAngleOfView: 6
   _aiState: 1
@@ -6251,7 +6251,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529070129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.1, y: 0, z: 35.7}
+  m_LocalPosition: {x: -11.9, y: 0, z: 121.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 325616694}

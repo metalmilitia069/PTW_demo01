@@ -65,27 +65,32 @@ public class EnemyBehavior : EnemyCombat
         
         angleOfView = Vector3.Angle(_direction, Vector3.back);
 
+        if (_aiState == AIStateMachine.Moving)
+        {
+            Move();
+        }
 
+        if (this.transform.position.z < _randomDist)
+        {
+            _aiState = AIStateMachine.Attacking;
+            Debug.Log("AI IS ATTACKING");
+        }
         
 
-        if (angleOfView < _maxAngleOfView)
-        {
-            //if (_aiState != AIStateMachine.Steering)
-            //{
-
-            //}
+        if (angleOfView < _maxAngleOfView && _aiState != AIStateMachine.Moving)
+        {            
             if (_canSteer)
             {
                 _steeringSide = Random.Range(0, 2);
                 _canSteer = false;
             }
             Steering();
-            Debug.Log("I See You!!!");
+            //Debug.Log("I See You!!!");
         }
         else
         {
             _canSteer = true;
-            Debug.Log("Where are you??");
+            //Debug.Log("Where are you??");
         }
 
     }
