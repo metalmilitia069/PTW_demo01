@@ -89,7 +89,7 @@ public class DebrisTypeSpawnManager : MonoBehaviour
 
         debrisTypeSpawnManager_SO.waveIndex++;
         StopAllCoroutines();
-        Debug.Log("Corroutine OFF!!!");
+        //Debug.Log("Corroutine OFF!!!");
 
     }
 

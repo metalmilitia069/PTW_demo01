@@ -9,21 +9,21 @@ public class PlayerAmmunition_SO : ScriptableObject
     public GameObject[] TripleShotTopBackLvl01;
     public GameObject[] DiagonalShotTopBackLvl01;
     public GameObject[] SingleShotSideLvl01;
-    public GameObject[] TripleShotLvl01;
-    public GameObject[] DiagonaShotlLvl01;
+    public GameObject[] TripleShotSideLvl01;
+    public GameObject[] DiagonalShotSideLvl01;
 
     public GameObject[] SingleShotTopBackLvl02;
     public GameObject[] TripleShotTopBackLvl02;
     public GameObject[] DiagonalShotTopBackLvl02;
     public GameObject[] SingleShotSideLvl02;
-    public GameObject[] TripleShotLvl02;
-    public GameObject[] DiagonaShotlLvl02;
+    public GameObject[] TripleShotSideLvl02;
+    public GameObject[] DiagonalShotSideLvl02;
 
     public GameObject[] SingleShotTopBackLvl03;
     public GameObject[] TripleShotTopBackLvl03;
     public GameObject[] DiagonalShotTopBackLvl03;
     public GameObject[] SingleShotSideLvl03;
-    public GameObject[] TripleShotLvl03;
-    public GameObject[] DiagonaShotlLvl03;
+    public GameObject[] TripleShotSideLvl03;
+    public GameObject[] DiagonalShotSideLvl03;
 
 }
