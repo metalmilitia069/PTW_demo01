@@ -44,6 +44,8 @@ public class EnemyBehavior : EnemyCombat
     private float Rightbound;
 
     private int _steeringSide;
+    private bool _canSteer;
+
 
     // Start is called before the first frame update
     void Start()
@@ -70,13 +72,19 @@ public class EnemyBehavior : EnemyCombat
         {
             //if (_aiState != AIStateMachine.Steering)
             //{
-                
-            //}
 
+            //}
+            if (_canSteer)
+            {
+                _steeringSide = Random.Range(0, 2);
+                _canSteer = false;
+            }
+            Steering();
             Debug.Log("I See You!!!");
         }
         else
         {
+            _canSteer = true;
             Debug.Log("Where are you??");
         }
 
@@ -85,7 +93,23 @@ public class EnemyBehavior : EnemyCombat
     public void Steering()
     {
         //this.transform.position -= new Vector3(0, 0, _speed * Time.deltaTime);
-        Random.Range(0, 2);
+        if (_steeringSide == 0)
+        {
+            this.transform.position -= new Vector3(manouverSpeed * Time.deltaTime, 0, 0);
+        }
+        else
+        {
+            this.transform.position += new Vector3(manouverSpeed * Time.deltaTime, 0, 0);
+        }
+
+        if (this.transform.position.x < Leftbound)
+        {
+            _steeringSide = 1;
+        }
+        else if (this.transform.position.x > Rightbound)
+        {
+            _steeringSide = 0;
+        }
     }
 
 }

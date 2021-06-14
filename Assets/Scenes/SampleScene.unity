@@ -6239,10 +6239,10 @@ MonoBehaviour:
   angleOfView: 0
   _maxAngleOfView: 6
   _aiState: 1
-  Backbound: 0
+  Backbound: 35
   Forwardbound: 0
-  Leftbound: 0
-  Rightbound: 0
+  Leftbound: -65
+  Rightbound: 66
 --- !u!4 &1529070131
 Transform:
   m_ObjectHideFlags: 0
@@ -6251,7 +6251,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529070129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36.2, y: 0, z: 35.6}
+  m_LocalPosition: {x: -31.1, y: 0, z: 35.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 325616694}

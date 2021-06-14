@@ -7,7 +7,7 @@ public class EnemyBase : MonoBehaviour
     public SpawnManager_SO spawnManager_so;
     
     [SerializeField]
-    private float _speed;
+    protected float _speed;
 
     // Start is called before the first frame update
     void Start()
