@@ -488,11 +488,11 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             ""actions"": [
                 {
                     ""name"": ""FireButton"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""1fbf1a7a-288d-4f9f-b2a2-00eac0cf55b0"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Press""
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
