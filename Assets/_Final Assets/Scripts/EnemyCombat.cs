@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class EnemyCombat : EnemyStats
 {
+    [Header("Combat")]
+    [SerializeField]
+    protected GameObject[] firePoints;
 
+    protected float timeToShoot = 0;
 
 
     // Start is called before the first frame update
@@ -24,6 +28,23 @@ public class EnemyCombat : EnemyStats
         if (other.GetComponent<ProjectileBase>())
         {
             TakeDamage();
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (!other.GetComponent<ProjectileBase>())
+        {
+            float getAway = (this.transform.position.x - other.transform.position.x);
+
+            if (getAway > 0)
+            {
+                this.transform.position += new Vector3(manouverSpeed * Time.deltaTime, 0, 0);
+            }
+            else if (getAway < 0)
+            {
+                this.transform.position -= new Vector3(manouverSpeed * Time.deltaTime, 0, 0);
+            }
         }
     }
 
@@ -50,7 +71,11 @@ public class EnemyCombat : EnemyStats
 
     public void AttackPlayer()
     {
-
+        for (int i = 0; i < firePoints.Length; i++)
+        {
+            Quaternion rotation = firePoints[i].transform.localRotation;
+            Instantiate(projectile, firePoints[i].transform.position, rotation);
+        }
     }
 
     
