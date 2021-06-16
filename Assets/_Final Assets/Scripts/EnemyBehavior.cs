@@ -65,22 +65,21 @@ public class EnemyBehavior : EnemyCombat
         
         angleOfView = Vector3.Angle(_direction, Vector3.back);
 
-        //if (_aiState == AIStateMachine.Moving)
-        //{
-        //    Move();
-        //}
-
-        //if (this.transform.position.z < _randomDist)
-        //{
-        //    _aiState = AIStateMachine.Attacking;
-        //    //Debug.Log("AI IS ATTACKING");
-        //}
-
-        if (Time.time > timeToShoot)
+        if (this.transform.position.z < _randomDist)
         {
-            AttackPlayer();
-            timeToShoot = Time.time + fireRate;
+            _aiState = AIStateMachine.Attacking;
+            //Debug.Log("AI IS ATTACKING");
         }
+
+        if (_aiState == AIStateMachine.Moving)
+        {
+            Move();
+        }
+
+        if (_aiState == AIStateMachine.Attacking)
+        {
+            StartAttack();
+        }        
 
         if (angleOfView < _maxAngleOfView && _aiState != AIStateMachine.Moving)
         {            
@@ -119,6 +118,15 @@ public class EnemyBehavior : EnemyCombat
         else if (this.transform.position.x > Rightbound)
         {
             _steeringSide = 0;
+        }
+    }
+
+    public void StartAttack()
+    {
+        if (Time.time > timeToShoot)
+        {
+            AttackPlayer();
+            timeToShoot = Time.time + fireRate;
         }
     }
 
