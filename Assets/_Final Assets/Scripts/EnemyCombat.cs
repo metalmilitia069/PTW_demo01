@@ -73,7 +73,7 @@ public class EnemyCombat : EnemyStats
     {
         for (int i = 0; i < firePoints.Length; i++)
         {
-            Quaternion rotation = firePoints[i].transform.localRotation;
+            Quaternion rotation = firePoints[i].transform.rotation;
             Instantiate(projectile, firePoints[i].transform.position, rotation);
         }
     }
