@@ -61,9 +61,12 @@ public class EnemyBehavior : EnemyCombat
 
         _enemyZCoord = this.gameObject.transform.position.z;
 
-        _direction = player.gameObject.transform.position - this.gameObject.transform.position;
+        if (player)
+        {
+            _direction = player.gameObject.transform.position - this.gameObject.transform.position;
         
-        angleOfView = Vector3.Angle(_direction, Vector3.back);
+            angleOfView = Vector3.Angle(_direction, Vector3.back);
+        }
 
         if (this.transform.position.z < _randomDist)
         {

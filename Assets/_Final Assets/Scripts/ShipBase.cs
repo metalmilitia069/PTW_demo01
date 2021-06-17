@@ -9,6 +9,8 @@ public class ShipBase : MonoBehaviour
     private float _movementInput;
     [SerializeField]
     private float _speed;
+    [SerializeField]
+    private int _playerHealth = 10;
     private PlayerControls _playerControls;
 
     private float _playerMovementX;
@@ -18,6 +20,8 @@ public class ShipBase : MonoBehaviour
 
     [SerializeField]
     protected GameObject[] firePoints;
+
+
     
     public ControllerManager_SO controllerManager_SO;
     public PlayerAmmunition_SO playerAmmunition_SO;
@@ -259,11 +263,29 @@ public class ShipBase : MonoBehaviour
 
     }
 
-    
+    public void TakeDamage()
+    {
+        if (_playerHealth <= 0)
+        {
+            IsPlayerDead();
+        }
+        else
+        {
+            _playerHealth--;
+        }
+    }
 
+    public bool IsPlayerDead()
+    {
+        Destroy(this.gameObject, 0.5f);
 
-    
+        return true;
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        
+    }
 
 
     public IEnumerator FireRate()
@@ -271,6 +293,8 @@ public class ShipBase : MonoBehaviour
         yield return new WaitForSeconds(_fireRate);
         TopBackShoot();
     }
+
+
 
 
 }
