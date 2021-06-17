@@ -28,6 +28,7 @@ public class EnemyCombat : EnemyStats
         if (other.GetComponent<ProjectileBase>())
         {
             TakeDamage();
+            other.GetComponent<ProjectileBase>().KillProjectile();
         }
     }
 
@@ -50,12 +51,19 @@ public class EnemyCombat : EnemyStats
 
     public void TakeDamage()
     {
-        //health--
-        //check if the enemy died
-        //if dead, then
+        if (shields <= 0)
+        {
+            health--;
 
-        EnemyDied();
-
+            if (health <= 0)
+            {
+                EnemyDied();
+            }
+        }
+        else
+        {
+            shields--;
+        }
     }
 
     public void EnemyDied()

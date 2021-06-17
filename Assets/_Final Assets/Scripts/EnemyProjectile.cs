@@ -22,15 +22,16 @@ public class EnemyProjectile : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Hitting");
+    {        
         if (other.GetComponent<ProjectileBase>())
         {
             TakeDamage();
+            other.GetComponent<ProjectileBase>().KillProjectile();
         }
         else if (other.GetComponent<ShipBase>())
         {
             other.GetComponent<ShipBase>().TakeDamage();
+            KillProjectile();
         }
     }
 

@@ -67,4 +67,10 @@ public class ProjectileBase : MonoBehaviour
 
         
     }
+
+    public void KillProjectile()
+    {
+        Destroy(this.gameObject);
+    }
+
 }
