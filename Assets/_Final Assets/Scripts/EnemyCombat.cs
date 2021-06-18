@@ -11,6 +11,7 @@ public class EnemyCombat : EnemyStats
     protected float timeToShoot = 0;
 
 
+
     // Start is called before the first frame update
     void Start()
     {

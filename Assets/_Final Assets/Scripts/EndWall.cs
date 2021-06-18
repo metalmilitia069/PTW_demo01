@@ -39,8 +39,19 @@ public class EndWall : MonoBehaviour
                     debrisTypeSpawnManager_SO.doKillCorroutine = true;
                 }
             }
+
+            if (other.GetComponent<EnemyBehaviorGunShip>())
+            {
+                float respawnZ = other.GetComponent<EnemyBehaviorGunShip>().respawnZCoord;
+                Debug.Log("Enemy passando!");
+                other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y, respawnZ);
+                return;
+            }
+
             
             other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y, beginWall.transform.position.z - beginWall.GetComponent<BeginWall>()._spawnPointOffset.z);
+
+
         }
         else
         {
