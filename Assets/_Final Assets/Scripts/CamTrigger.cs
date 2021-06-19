@@ -62,6 +62,7 @@ public class CamTrigger : MonoBehaviour
 
             shipBase.controllerManager_SO.controlSwitcher = 2;
 
+            //Automatically Repositioning Player
             if (Vector3.Distance(shipBase.transform.position, _originCoordinates) > 1f)
             {
                 if (shipBase.transform.position.x - _originCoordinates.x > 0)
@@ -93,6 +94,7 @@ public class CamTrigger : MonoBehaviour
                 //Debug.Log("Z:" + componentZ);
                 shipBase.transform.position += new Vector3(componentX, componentY, componentZ);
             }
+            //Change Cameras, then Release Controls
             else
             {
                 switch (cameraOptions)

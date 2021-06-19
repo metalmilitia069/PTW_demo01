@@ -28,6 +28,7 @@ public class DebrisTypeSpawnManager : MonoBehaviour
             if (debrisTypeSpawnManager_SO.waveIndex > debrisTypeSpawnManager_SO.debrisTypePrefabs.Length -1)
             {
                 debrisTypeSpawnManager_SO.PauseDebrisTypeSpawn();
+                Debug.Log("Debris Type Pool Empty");
                 return;
             }
             switch (debrisTypeSpawnManager_SO.debrisTypePrefabs[debrisTypeSpawnManager_SO.waveIndex].viewToSpawn)

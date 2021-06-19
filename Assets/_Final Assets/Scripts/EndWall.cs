@@ -43,7 +43,7 @@ public class EndWall : MonoBehaviour
             if (other.GetComponent<EnemyBehaviorGunShip>())
             {
                 float respawnZ = other.GetComponent<EnemyBehaviorGunShip>().respawnZCoord;
-                Debug.Log("Enemy passando!");
+                //Debug.Log("Enemy passando!");
                 other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y, respawnZ);
                 return;
             }

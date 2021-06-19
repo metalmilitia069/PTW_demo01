@@ -13,6 +13,16 @@ public class DebrisControlTrigger : MonoBehaviour
 
     public SelectDebris selectDebris;
 
+    public enum DebrisController
+    {
+        allDebris,
+        typeDebris,
+        debris,
+        noDebris
+    }
+
+    public DebrisController chooseDebris;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,13 +33,10 @@ public class DebrisControlTrigger : MonoBehaviour
     void Update()
     {
         Move();
-
-
     }
 
     private void OnTriggerEnter(Collider other)
-    {
-        
+    {        
         if (other.GetComponent<BeginWall>())
         {
             other.GetComponent<BeginWall>().endWall.GetComponent<EndWall>().KillMode = true;
@@ -40,16 +47,26 @@ public class DebrisControlTrigger : MonoBehaviour
             other.GetComponent<EndWall>().KillMode = false;
             other.GetComponent<EndWall>().selectDebris.debrisType = SelectDebris.DebrisType.standard;
         }
-
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.GetComponent<BeginWall>())
         {
-            debrisSpawnManager_SO.isPaused = false;
+            if (chooseDebris == DebrisController.allDebris)
+            {
+                debrisSpawnManager_SO.isPaused = false;
+                debrisTypeSpawnManager_SO.UnpauseDebrisTypeSpawn();
+            }
+            else if (chooseDebris == DebrisController.typeDebris)
+            {
+                debrisTypeSpawnManager_SO.UnpauseDebrisTypeSpawn();
+            }
+            else if (chooseDebris == DebrisController.debris)
+            {
+                debrisSpawnManager_SO.isPaused = false;
+            }
             spawnManager_SO.isPaused = false;
-            debrisTypeSpawnManager_SO.UnpauseDebrisTypeSpawn();
         }
     }
 
