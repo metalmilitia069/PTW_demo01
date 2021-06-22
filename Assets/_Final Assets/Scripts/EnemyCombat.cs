@@ -70,7 +70,7 @@ public class EnemyCombat : EnemyStats
     public void EnemyDied()
     {
         if (spawnManager_so != null)
-        {
+        {            
             spawnManager_so._currentEnemiesList.Remove(this.gameObject);
             spawnManager_so.CheckWave();
         }
