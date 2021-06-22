@@ -42,9 +42,23 @@ public class EnemyBehaviorGunShip : EnemyCombat
     private float Leftbound;
     [SerializeField]
     private float Rightbound;
+    [SerializeField]
+    private float topbound;
+    [SerializeField]
+    private float bottombound;
 
     private int _steeringSide;
+    private int _steeringPitch;
     private bool _canSteer;
+
+    public enum SteerringView
+    {
+        onTopView,
+        onSideView,
+        onBackView
+    }
+
+    public SteerringView pickSteerringView;
 
 
     // Start is called before the first frame update
@@ -107,6 +121,32 @@ public class EnemyBehaviorGunShip : EnemyCombat
     public void Steering()
     {
         //this.transform.position -= new Vector3(0, 0, _speed * Time.deltaTime);
+        if (pickSteerringView == SteerringView.onTopView)
+        {
+            SteerTopView();
+        }
+        else if (pickSteerringView == SteerringView.onSideView)
+        {
+            SteerSideView();
+        }
+        else
+        {
+            SteerTopView();
+            SteerSideView();
+        }
+    }
+
+    public void SteerTopView()
+    {
+        if (this.transform.position.x < Leftbound)
+        {
+            _steeringSide = 1;
+        }
+        else if (this.transform.position.x > Rightbound)
+        {
+            _steeringSide = 0;
+        }
+
         if (_steeringSide == 0)
         {
             this.transform.position -= new Vector3(manouverSpeed * Time.deltaTime, 0, 0);
@@ -116,13 +156,26 @@ public class EnemyBehaviorGunShip : EnemyCombat
             this.transform.position += new Vector3(manouverSpeed * Time.deltaTime, 0, 0);
         }
 
-        if (this.transform.position.x < Leftbound)
+    }
+
+    public void SteerSideView()
+    {
+        if (this.transform.position.y < bottombound)
         {
-            _steeringSide = 1;
+            _steeringPitch = 1;
         }
-        else if (this.transform.position.x > Rightbound)
+        else if (this.transform.position.y > topbound)
         {
-            _steeringSide = 0;
+            _steeringPitch = 0;
+        }
+
+        if (_steeringPitch == 0)
+        {
+            this.transform.position -= new Vector3(0, manouverSpeed * Time.deltaTime, 0);
+        }
+        else
+        {
+            this.transform.position += new Vector3(0, manouverSpeed * Time.deltaTime, 0);
         }
     }
 

@@ -128,7 +128,7 @@ public class EnemyBehavior : EnemyCombat
             SteerSideView();
         }
         else
-        {
+        {            
             SteerTopView();
             SteerSideView();
         }
@@ -160,11 +160,11 @@ public class EnemyBehavior : EnemyCombat
     {
         if (this.transform.position.y < bottombound)
         {
-            _steeringSide = 1;
+            _steeringPitch = 1;
         }
         else if (this.transform.position.y > topbound)
         {
-            _steeringSide = 0;
+            _steeringPitch = 0;
         }
 
         if (_steeringPitch == 0)
