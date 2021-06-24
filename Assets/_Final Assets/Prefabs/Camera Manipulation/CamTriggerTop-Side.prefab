@@ -60,8 +60,8 @@ MonoBehaviour:
   cameraTransitionsPool_SO: {fileID: 11400000, guid: 4cbfda2b40723734eaacfdaf492b6720, type: 2}
   spawnManager_SO: {fileID: 11400000, guid: d1bee2db0eef6a249aec9c2534e9ad5c, type: 2}
   _originCoordinates: {x: 0, y: 0, z: 0}
-  _speed: 5
+  _speed: 20
   isLockControls: 0
-  _triggerSpeed: 5
+  _triggerSpeed: 30
   controlOptions: 1
   cameraOptions: 0

@@ -11,7 +11,7 @@ public class DebrisControlTrigger : MonoBehaviour
     public DebrisSpawnManager_SO debrisSpawnManager_SO;
     public DebrisTypeSpawnManager_SO debrisTypeSpawnManager_SO;
 
-    public SelectDebris selectDebris;
+    public SelectDebris debrisToKill;
 
     public enum DebrisController
     {
@@ -21,7 +21,7 @@ public class DebrisControlTrigger : MonoBehaviour
         noDebris
     }
 
-    public DebrisController chooseDebris;
+    public DebrisController debrisToSpawn;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +40,7 @@ public class DebrisControlTrigger : MonoBehaviour
         if (other.GetComponent<BeginWall>())
         {
             other.GetComponent<BeginWall>().endWall.GetComponent<EndWall>().KillMode = true;
-            other.GetComponent<BeginWall>().endWall.GetComponent<EndWall>().selectDebris.debrisType = this.selectDebris.debrisType;
+            other.GetComponent<BeginWall>().endWall.GetComponent<EndWall>().selectDebris.debrisType = this.debrisToKill.debrisType;
         }
         else if (other.GetComponent<EndWall>())
         {
@@ -53,16 +53,16 @@ public class DebrisControlTrigger : MonoBehaviour
     {
         if (other.GetComponent<BeginWall>())
         {
-            if (chooseDebris == DebrisController.allDebris)
+            if (debrisToSpawn == DebrisController.allDebris)
             {
                 debrisSpawnManager_SO.isPaused = false;
                 debrisTypeSpawnManager_SO.UnpauseDebrisTypeSpawn();
             }
-            else if (chooseDebris == DebrisController.typeDebris)
+            else if (debrisToSpawn == DebrisController.typeDebris)
             {
                 debrisTypeSpawnManager_SO.UnpauseDebrisTypeSpawn();
             }
-            else if (chooseDebris == DebrisController.debris)
+            else if (debrisToSpawn == DebrisController.debris)
             {
                 debrisSpawnManager_SO.isPaused = false;
             }
