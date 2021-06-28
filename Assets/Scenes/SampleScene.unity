@@ -5627,7 +5627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 20
-  _playerHealth: 10
+  _playerHealth: 100
   firePoints:
   - {fileID: 1578132515}
   - {fileID: 2142159100}

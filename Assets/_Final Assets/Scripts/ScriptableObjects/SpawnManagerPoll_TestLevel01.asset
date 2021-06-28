@@ -17,6 +17,12 @@ MonoBehaviour:
   _currentEnemiesList:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   waveConfig:
   - viewToSpawn: 2
     timeBetweenSpawns: 10
