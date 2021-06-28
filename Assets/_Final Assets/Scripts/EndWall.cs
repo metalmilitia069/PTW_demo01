@@ -30,6 +30,11 @@ public class EndWall : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.GetComponent<CamTrigger>())
+        {
+            Destroy(other.gameObject);
+        }
+
         if (!_killMode)
         {
             if (!debrisTypeSpawnManager_SO.doKillCorroutine && other.GetComponent<Debris>())
@@ -48,10 +53,7 @@ public class EndWall : MonoBehaviour
                 return;
             }
 
-            
             other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y, beginWall.transform.position.z - beginWall.GetComponent<BeginWall>()._spawnPointOffset.z);
-
-
         }
         else
         {
@@ -87,6 +89,8 @@ public class EndWall : MonoBehaviour
             //}
 
         }
+
+
     }
     
     public void UnpauseDebrisSpawn()

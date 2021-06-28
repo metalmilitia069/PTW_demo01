@@ -37,6 +37,7 @@ public class SpawnManager : MonoBehaviour
                 StartCoroutine(SpawnEnemies3());
                 StopCoroutine(SpawnEnemies3());
                 spawnManager_so.isPaused = true;
+                Debug.Log("Spawn MAnager MOZO");
             }
         }
     }

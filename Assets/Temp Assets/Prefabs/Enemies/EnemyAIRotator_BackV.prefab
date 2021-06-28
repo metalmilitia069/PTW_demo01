@@ -485,12 +485,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 137ead3147ebd504da9db5c346ebff48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnManager_so: {fileID: 11400000, guid: d1bee2db0eef6a249aec9c2534e9ad5c, type: 2}
-  _speed: 10
+  spawnManager_so: {fileID: 11400000, guid: bd8fdc68e95560247a0e6bda44ed6385, type: 2}
+  _speed: 20
   health: 5
   shields: 0
   pointsWorth: 10
-  fireRate: 1
+  fireRate: 2
   projectile: {fileID: 8751568771758007330, guid: f04cc0ceb555756428a0f73c9f9301a1, type: 3}
   manouverSpeed: 10
   respawnZCoord: 0

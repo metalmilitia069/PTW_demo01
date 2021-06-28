@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f453241c9327ac4891a1e04482d9ed7, type: 3}
+  m_Name: DebrisTypeSpawnManager_TestLevel01
+  m_EditorClassIdentifier: 
+  isPaused: 1
+  waveIndex: 0
+  doKillCorroutine: 0
+  debrisTypePrefabs:
+  - viewToSpawn: 2
+    debrisTypesPrefabs:
+    - {fileID: 4101361204971274771, guid: a4fabb64c77c8a24ea37be1821678c5c, type: 3}
+    - {fileID: 3784309066251270805, guid: c8d36c72c7298c54085d3a675dc837c3, type: 3}
+  - viewToSpawn: 0
+    debrisTypesPrefabs:
+    - {fileID: 5563885117629725151, guid: 83dffd7a9c84bda4885f53179dc659b3, type: 3}

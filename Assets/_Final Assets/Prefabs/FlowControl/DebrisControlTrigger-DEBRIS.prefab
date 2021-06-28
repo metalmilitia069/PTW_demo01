@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 30
-  spawnManager_SO: {fileID: 11400000, guid: d1bee2db0eef6a249aec9c2534e9ad5c, type: 2}
-  debrisSpawnManager_SO: {fileID: 11400000, guid: 38c6cee4cdca0f049ac4681c2bdf2bdc, type: 2}
-  debrisTypeSpawnManager_SO: {fileID: 11400000, guid: 5a2d9d32566b70d409cac4ac22b6c698, type: 2}
+  spawnManager_SO: {fileID: 11400000, guid: bd8fdc68e95560247a0e6bda44ed6385, type: 2}
+  debrisSpawnManager_SO: {fileID: 11400000, guid: 71f8d8fe04f5bec4d8062a8dfd788d57, type: 2}
+  debrisTypeSpawnManager_SO: {fileID: 11400000, guid: 943a009985e404b43895979ed9366892, type: 2}
   debrisToKill:
     debrisType: 0
   debrisToSpawn: 2

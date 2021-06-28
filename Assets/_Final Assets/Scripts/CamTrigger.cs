@@ -13,10 +13,14 @@ public class CamTrigger : MonoBehaviour
     private float _speed;
     [SerializeField]
     private bool isLockControls = false;
+    [SerializeField]
+    private bool _unpauseSpanwer = false;
 
     private ShipBase shipBase;
 
     private GameObject _cameraGroup;
+
+
 
     [SerializeField]
     private float _triggerSpeed;
@@ -150,7 +154,11 @@ public class CamTrigger : MonoBehaviour
                             break;
                     }
 
-                    spawnManager_SO.isPaused = false;
+                    if (_unpauseSpanwer)
+                    {
+                        spawnManager_SO.isPaused = false;                        
+                    }
+
                     isLockControls = false;                
                 }
 
