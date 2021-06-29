@@ -67,7 +67,7 @@ public class DebrisControlTrigger : MonoBehaviour
                 debrisSpawnManager_SO.isPaused = false;
             }
             //spawnManager_SO.isPaused = false;
-            Debug.Log("CU");
+            //Debug.Log("CU");
         }
     }
 

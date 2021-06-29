@@ -303,7 +303,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
+                    ""name"": ""positive"",
                     ""id"": ""3432fb5f-1b32-4958-85c8-f02d9fb89e97"",
                     ""path"": ""<XInputController>/leftStick/right"",
                     ""interactions"": """",
@@ -314,7 +314,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
+                    ""name"": ""negative"",
                     ""id"": ""0d04d3d5-dcd7-42b0-a551-330c50ec356b"",
                     ""path"": ""<XInputController>/leftStick/left"",
                     ""interactions"": """",
@@ -499,7 +499,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f13df728-e3ad-4d7f-ad31-5ba5739521db"",
-                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""path"": ""<XInputController>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

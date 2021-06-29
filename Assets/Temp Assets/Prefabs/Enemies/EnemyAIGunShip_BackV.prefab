@@ -83,7 +83,7 @@ MonoBehaviour:
   fireRate: 1
   projectile: {fileID: 4778467590558447290, guid: 4c15812db3d97c04dbb3c2589c6f0bf8, type: 3}
   manouverSpeed: 10
-  respawnZCoord: 48
+  respawnZCoord: 78
   firePoints:
   - {fileID: 8067243220904361723}
   gameManager_SO: {fileID: 11400000, guid: daa33181daa5f5b4084196b39f03f2d9, type: 2}

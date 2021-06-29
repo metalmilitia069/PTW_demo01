@@ -144,7 +144,7 @@ public class DebrisTypeSpawnManager : MonoBehaviour
             Instantiate(debrisTypeSpawnManager_SO.debrisTypePrefabs[debrisTypeSpawnManager_SO.waveIndex].debrisTypesPrefabs[belowRandomPrefabIndex],
                 new Vector3(belowXCoords, belowYCoords, TopViewSpawnPoints[3].transform.position.z), Quaternion.identity);
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.5f);
         }
 
         debrisTypeSpawnManager_SO.waveIndex++;
