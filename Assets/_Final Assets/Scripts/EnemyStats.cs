@@ -17,7 +17,8 @@ public class EnemyStats : EnemyBase
     protected GameObject projectile;
     [SerializeField]
     protected float manouverSpeed = 10.0f;
-
+    [SerializeField]
+    public float respawnZCoord;
 
     // Start is called before the first frame update
     void Start()

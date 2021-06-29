@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12518858a5aaf914a8fa51f5e1b29079, type: 3}
+  m_Name: SpawnManagerPoll_TestLevel01
+  m_EditorClassIdentifier: 
+  number: 0
+  isPaused: 1
+  _currentEnemiesList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  waveConfig:
+  - viewToSpawn: 2
+    timeBetweenSpawns: 10
+    numberOfEnemiesByType: 0100000001000000
+    waveEnemyTypes:
+    - {fileID: 2255771114544084069, guid: ac291b49efaa7cb459813fd29c7ba311, type: 3}
+    - {fileID: 6906430746450621856, guid: 5effb9ae0249f324c9d1a3e9ceb8a3e0, type: 3}
+  - viewToSpawn: 0
+    timeBetweenSpawns: 5
+    numberOfEnemiesByType: 0300000002000000
+    waveEnemyTypes:
+    - {fileID: 7413705736942525591, guid: b2c90f5854b08f54dbde4390b35f1ba9, type: 3}
+    - {fileID: 1548504744566955778, guid: d0013418d697b5640ac6343714176597, type: 3}
+  - viewToSpawn: 0
+    timeBetweenSpawns: 5
+    numberOfEnemiesByType: 030000000100000005000000
+    waveEnemyTypes:
+    - {fileID: 7413705736942525591, guid: b2c90f5854b08f54dbde4390b35f1ba9, type: 3}
+    - {fileID: 1548504744566955778, guid: d0013418d697b5640ac6343714176597, type: 3}
+    - {fileID: 6082064164850298848, guid: f59a3cf9bb6354e4496124d5d0ced06b, type: 3}
+  - viewToSpawn: 0
+    timeBetweenSpawns: 2
+    numberOfEnemiesByType: 010000000100000001000000
+    waveEnemyTypes:
+    - {fileID: 7413705736942525591, guid: b2c90f5854b08f54dbde4390b35f1ba9, type: 3}
+    - {fileID: 1548504744566955778, guid: d0013418d697b5640ac6343714176597, type: 3}
+    - {fileID: 6082064164850298848, guid: f59a3cf9bb6354e4496124d5d0ced06b, type: 3}
+  - viewToSpawn: 2
+    timeBetweenSpawns: 2
+    numberOfEnemiesByType: 0100000001000000
+    waveEnemyTypes:
+    - {fileID: 960427672200970049, guid: e6ebab1158c269f41a5bbe52e834bbd6, type: 3}
+    - {fileID: 6906430746450621856, guid: 80962fa215c269445875ffa5bdad92f1, type: 3}
+  - viewToSpawn: 1
+    timeBetweenSpawns: 5
+    numberOfEnemiesByType: 0500000006000000
+    waveEnemyTypes:
+    - {fileID: 8067243221266560235, guid: 17fd5260c30307b448f5128a5914d82e, type: 3}
+    - {fileID: 5985388335628007508, guid: 4b7bd05c4ff422042a0d0f3cc4b07153, type: 3}
+  - viewToSpawn: 2
+    timeBetweenSpawns: 2
+    numberOfEnemiesByType: 0100000001000000
+    waveEnemyTypes:
+    - {fileID: 2350321253690112698, guid: 0b6efaf47a71dac428986421e667436a, type: 3}
+    - {fileID: 6906430746450621856, guid: bbf0af59e97968e4d94854b37de27e71, type: 3}
+  - viewToSpawn: -1
+    timeBetweenSpawns: 5
+    numberOfEnemiesByType: 0400000006000000
+    waveEnemyTypes:
+    - {fileID: 7568572043394124841, guid: 0ee8fbe469536834ba8345f7562bb811, type: 3}
+    - {fileID: 5839257904833064344, guid: 1ff91924d6bf53f4baeeaccfe8b9c6ad, type: 3}
+  - viewToSpawn: 2
+    timeBetweenSpawns: 5
+    numberOfEnemiesByType: 0100000001000000
+    waveEnemyTypes:
+    - {fileID: 6906430746450621856, guid: 5effb9ae0249f324c9d1a3e9ceb8a3e0, type: 3}
+    - {fileID: 206199673320928691, guid: d56da24d2a2980e45aae6a4e1822088d, type: 3}
+  - viewToSpawn: -1
+    timeBetweenSpawns: 5
+    numberOfEnemiesByType: 050000000400000006000000
+    waveEnemyTypes:
+    - {fileID: 2593605131776023893, guid: 530513e4d52823e43928580ecbed23a2, type: 3}
+    - {fileID: 7568572043394124841, guid: 0ee8fbe469536834ba8345f7562bb811, type: 3}
+    - {fileID: 5839257904833064344, guid: 1ff91924d6bf53f4baeeaccfe8b9c6ad, type: 3}

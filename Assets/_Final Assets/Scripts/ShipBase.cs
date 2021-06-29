@@ -9,6 +9,8 @@ public class ShipBase : MonoBehaviour
     private float _movementInput;
     [SerializeField]
     private float _speed;
+    [SerializeField]
+    private int _playerHealth = 10;
     private PlayerControls _playerControls;
 
     private float _playerMovementX;
@@ -18,6 +20,8 @@ public class ShipBase : MonoBehaviour
 
     [SerializeField]
     protected GameObject[] firePoints;
+
+
     
     public ControllerManager_SO controllerManager_SO;
     public PlayerAmmunition_SO playerAmmunition_SO;
@@ -218,39 +222,39 @@ public class ShipBase : MonoBehaviour
                 break;
             case AmmunitionType.tripleShotLvl01:
                 Instantiate(playerAmmunition_SO.TripleShotSideLvl01[0], firePoints[0].transform.position, Quaternion.identity);
-                Instantiate(playerAmmunition_SO.TripleShotSideLvl01[0], firePoints[1].transform.position, Quaternion.identity);
-                Instantiate(playerAmmunition_SO.TripleShotSideLvl01[0], firePoints[2].transform.position, Quaternion.identity);
+                Instantiate(playerAmmunition_SO.TripleShotSideLvl01[0], firePoints[3].transform.position, Quaternion.identity);
+                Instantiate(playerAmmunition_SO.TripleShotSideLvl01[0], firePoints[4].transform.position, Quaternion.identity);
                 break;
             case AmmunitionType.diagonalShotLvl01:
                 Instantiate(playerAmmunition_SO.DiagonalShotSideLvl01[0], firePoints[0].transform.position, Quaternion.identity);
-                Instantiate(playerAmmunition_SO.DiagonalShotSideLvl01[1], firePoints[1].transform.position, Quaternion.identity);
-                Instantiate(playerAmmunition_SO.DiagonalShotSideLvl01[2], firePoints[2].transform.position, Quaternion.identity);
+                Instantiate(playerAmmunition_SO.DiagonalShotSideLvl01[1], firePoints[3].transform.position, Quaternion.identity);
+                Instantiate(playerAmmunition_SO.DiagonalShotSideLvl01[2], firePoints[4].transform.position, Quaternion.identity);
                 break;
             case AmmunitionType.singleShotLvl02:
                 Instantiate(playerAmmunition_SO.SingleShotSideLvl01[0], firePoints[0].transform.position, Quaternion.identity);
                 break;
             case AmmunitionType.tripleShotLvl02:
                 Instantiate(playerAmmunition_SO.TripleShotSideLvl02[0], firePoints[0].transform.position, Quaternion.identity);
-                Instantiate(playerAmmunition_SO.TripleShotSideLvl02[0], firePoints[1].transform.position, Quaternion.identity);
-                Instantiate(playerAmmunition_SO.TripleShotSideLvl02[0], firePoints[2].transform.position, Quaternion.identity);
+                Instantiate(playerAmmunition_SO.TripleShotSideLvl02[0], firePoints[3].transform.position, Quaternion.identity);
+                Instantiate(playerAmmunition_SO.TripleShotSideLvl02[0], firePoints[4].transform.position, Quaternion.identity);
                 break;
             case AmmunitionType.diagonalShotLvl02:
                 Instantiate(playerAmmunition_SO.DiagonalShotSideLvl02[0], firePoints[0].transform.position, Quaternion.identity);
-                Instantiate(playerAmmunition_SO.DiagonalShotSideLvl02[1], firePoints[1].transform.position, Quaternion.identity);
-                Instantiate(playerAmmunition_SO.DiagonalShotSideLvl02[2], firePoints[2].transform.position, Quaternion.identity);
+                Instantiate(playerAmmunition_SO.DiagonalShotSideLvl02[1], firePoints[3].transform.position, Quaternion.identity);
+                Instantiate(playerAmmunition_SO.DiagonalShotSideLvl02[2], firePoints[4].transform.position, Quaternion.identity);
                 break;
             case AmmunitionType.singleShotLvl03:
                 Instantiate(playerAmmunition_SO.SingleShotSideLvl03[0], firePoints[0].transform.position, Quaternion.identity);
                 break;
             case AmmunitionType.tripleShotLvl03:
                 Instantiate(playerAmmunition_SO.TripleShotSideLvl03[0], firePoints[0].transform.position, Quaternion.identity);
-                Instantiate(playerAmmunition_SO.TripleShotSideLvl03[0], firePoints[1].transform.position, Quaternion.identity);
-                Instantiate(playerAmmunition_SO.TripleShotSideLvl03[0], firePoints[2].transform.position, Quaternion.identity);
+                Instantiate(playerAmmunition_SO.TripleShotSideLvl03[0], firePoints[3].transform.position, Quaternion.identity);
+                Instantiate(playerAmmunition_SO.TripleShotSideLvl03[0], firePoints[4].transform.position, Quaternion.identity);
                 break;
             case AmmunitionType.diagonalShotLvl03:
                 Instantiate(playerAmmunition_SO.DiagonalShotSideLvl03[0], firePoints[0].transform.position, Quaternion.identity);
-                Instantiate(playerAmmunition_SO.DiagonalShotSideLvl03[1], firePoints[1].transform.position, Quaternion.identity);
-                Instantiate(playerAmmunition_SO.DiagonalShotSideLvl03[2], firePoints[2].transform.position, Quaternion.identity);
+                Instantiate(playerAmmunition_SO.DiagonalShotSideLvl03[1], firePoints[3].transform.position, Quaternion.identity);
+                Instantiate(playerAmmunition_SO.DiagonalShotSideLvl03[2], firePoints[4].transform.position, Quaternion.identity);
                 break;
             default:
                 break;
@@ -259,11 +263,29 @@ public class ShipBase : MonoBehaviour
 
     }
 
-    
+    public void TakeDamage()
+    {
+        if (_playerHealth <= 0)
+        {
+            IsPlayerDead();
+        }
+        else
+        {
+            _playerHealth--;
+        }
+    }
 
+    public bool IsPlayerDead()
+    {
+        Destroy(this.gameObject, 0.5f);
 
-    
+        return true;
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        
+    }
 
 
     public IEnumerator FireRate()
@@ -271,6 +293,8 @@ public class ShipBase : MonoBehaviour
         yield return new WaitForSeconds(_fireRate);
         TopBackShoot();
     }
+
+
 
 
 }
