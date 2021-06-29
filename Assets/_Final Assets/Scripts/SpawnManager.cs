@@ -37,9 +37,9 @@ public class SpawnManager : MonoBehaviour
         {
             if (spawnManager_so.isPaused == false)
             {
+                spawnManager_so.isPaused = true;
                 StartCoroutine(SpawnEnemies3());
                 StopCoroutine(SpawnEnemies3());
-                spawnManager_so.isPaused = true;
                 //Debug.Log("Spawn MAnager MOZO");
             }
         }
@@ -115,7 +115,7 @@ public class SpawnManager : MonoBehaviour
 
     public IEnumerator SpawnEnemies3()
     {
-        Debug.Log("Wave Number: " + _waveNum);
+        Debug.Log("Wave Number: " + _waveNum + "    Wave Index: " + _waveIndex);
         _waveNum++;
 
         if (_waveIndex > spawnManager_so.waveConfig.Length - 1)

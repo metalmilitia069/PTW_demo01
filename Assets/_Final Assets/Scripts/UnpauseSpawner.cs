@@ -23,7 +23,14 @@ public class UnpauseSpawner : MonoBehaviour
     {
         if (other.GetComponent<BeginWall>())
         {
-            spawnManager_so.CheckWave();
+            Debug.Log("UnpauseSpawner Saiu to Trigger");
+            spawnManager_so.isPaused = false;
         }
+        spawnManager_so.isPaused = true;
+        Destroy(this.gameObject);
     }
+
+    
+
+
 }

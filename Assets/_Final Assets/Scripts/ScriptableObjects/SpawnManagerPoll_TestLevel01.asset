@@ -14,28 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   number: 0
   isPaused: 1
-  _currentEnemiesList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _currentEnemiesList: []
   waveConfig:
   - viewToSpawn: 2
     timeBetweenSpawns: 10
@@ -73,7 +52,7 @@ MonoBehaviour:
     timeBetweenSpawns: 5
     numberOfEnemiesByType: 0500000006000000
     waveEnemyTypes:
-    - {fileID: 8067243221266560235, guid: 17fd5260c30307b448f5128a5914d82e, type: 3}
+    - {fileID: 7978661123989897726, guid: 3547f881780a4cc4a8b8c7db8954cb81, type: 3}
     - {fileID: 5985388335628007508, guid: 4b7bd05c4ff422042a0d0f3cc4b07153, type: 3}
   - viewToSpawn: 2
     timeBetweenSpawns: 2

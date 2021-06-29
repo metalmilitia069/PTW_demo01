@@ -5628,8 +5628,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 001ebaa80f707de4da7f9a4472d0b1e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 20
-  _playerHealth: 100
+  _speed: 60
+  _playerHealth: 10000
   firePoints:
   - {fileID: 1578132515}
   - {fileID: 2142159100}
@@ -6968,7 +6968,6 @@ GameObject:
   - component: {fileID: 1447804543}
   - component: {fileID: 1447804542}
   - component: {fileID: 1447804541}
-  - component: {fileID: 1447804540}
   m_Layer: 0
   m_Name: TriggerSpawnPoint
   m_TagString: Untagged
@@ -6976,19 +6975,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!135 &1447804540
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1447804539}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1447804541
 MeshRenderer:
   m_ObjectHideFlags: 0

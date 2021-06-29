@@ -46,6 +46,7 @@ public class DebrisControlTrigger : MonoBehaviour
         {
             other.GetComponent<EndWall>().KillMode = false;
             other.GetComponent<EndWall>().selectDebris.debrisType = SelectDebris.DebrisType.standard;
+
         }
     }
 
