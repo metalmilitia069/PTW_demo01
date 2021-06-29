@@ -13,10 +13,14 @@ public class CamTrigger : MonoBehaviour
     private float _speed;
     [SerializeField]
     private bool isLockControls = false;
+    [SerializeField]
+    private bool _unpauseSpanwer = false;
 
     private ShipBase shipBase;
 
     private GameObject _cameraGroup;
+
+
 
     [SerializeField]
     private float _triggerSpeed;
@@ -62,6 +66,7 @@ public class CamTrigger : MonoBehaviour
 
             shipBase.controllerManager_SO.controlSwitcher = 2;
 
+            //Automatically Repositioning Player
             if (Vector3.Distance(shipBase.transform.position, _originCoordinates) > 1f)
             {
                 if (shipBase.transform.position.x - _originCoordinates.x > 0)
@@ -93,6 +98,7 @@ public class CamTrigger : MonoBehaviour
                 //Debug.Log("Z:" + componentZ);
                 shipBase.transform.position += new Vector3(componentX, componentY, componentZ);
             }
+            //Change Cameras, then Release Controls
             else
             {
                 switch (cameraOptions)
@@ -148,7 +154,11 @@ public class CamTrigger : MonoBehaviour
                             break;
                     }
 
-                    spawnManager_SO.isPaused = false;
+                    if (_unpauseSpanwer)
+                    {
+                        spawnManager_SO.isPaused = false;                        
+                    }
+
                     isLockControls = false;                
                 }
 

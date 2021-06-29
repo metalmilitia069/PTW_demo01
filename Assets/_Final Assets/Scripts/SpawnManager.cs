@@ -15,7 +15,10 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] TopViewSpawnPoints;
     public GameObject[] SideViewSpawnPoints;
     public GameObject[] BackViewSpawnPoints;
-    
+    public GameObject TriggerSpawnPoint;
+
+
+    private int _waveNum = 0;
 
     void Start()
     {
@@ -37,6 +40,7 @@ public class SpawnManager : MonoBehaviour
                 StartCoroutine(SpawnEnemies3());
                 StopCoroutine(SpawnEnemies3());
                 spawnManager_so.isPaused = true;
+                //Debug.Log("Spawn MAnager MOZO");
             }
         }
     }
@@ -111,6 +115,9 @@ public class SpawnManager : MonoBehaviour
 
     public IEnumerator SpawnEnemies3()
     {
+        Debug.Log("Wave Number: " + _waveNum);
+        _waveNum++;
+
         if (_waveIndex > spawnManager_so.waveConfig.Length - 1)
         {
             //TODO END OF STAGE
@@ -162,7 +169,7 @@ public class SpawnManager : MonoBehaviour
                 Random.Range(BackViewSpawnPoints[2].transform.position.y, BackViewSpawnPoints[3].transform.position.y), BackViewSpawnPoints[0].transform.position.z);
                 break;
             default:
-                _spawnPlace = new Vector3(0, 0, TopViewSpawnPoints[0].transform.position.z);
+                _spawnPlace = new Vector3(0, 0, TriggerSpawnPoint.transform.position.z);//TopViewSpawnPoints[0].transform.position.z);
                 //Debug.Log("place to spawn was not defined!!!!!!");
                 break;
         }
