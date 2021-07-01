@@ -11,8 +11,11 @@ public class EndWall : MonoBehaviour
     private GameObject beginWall;
     [SerializeField]
     private bool _killMode;
+    [SerializeField]
+    private bool _killDebrisType;
 
     public bool KillMode { get => _killMode; set => _killMode = value; }
+    public bool KillDebrisType { get => _killDebrisType; set => _killDebrisType = value; }
 
     public SelectDebris selectDebris;
 
@@ -35,6 +38,16 @@ public class EndWall : MonoBehaviour
             Destroy(other.gameObject);
         }
 
+        if (KillDebrisType)
+        {
+            if (selectDebris.debrisType == other.GetComponent<Debris>().selectDebris.debrisType)
+            {
+                Destroy(other.gameObject, 1);
+                return;
+            }
+        }
+
+
         if (!_killMode)
         {
             if (!debrisTypeSpawnManager_SO.doKillCorroutine && other.GetComponent<Debris>())
@@ -42,6 +55,7 @@ public class EndWall : MonoBehaviour
                 if (other.GetComponent<Debris>().selectDebris.debrisType != SelectDebris.DebrisType.standard)
                 {                    
                     debrisTypeSpawnManager_SO.doKillCorroutine = true;
+                    KillDebrisType = false;
                 }
             }
 
@@ -59,8 +73,14 @@ public class EndWall : MonoBehaviour
         {
             if (other.GetComponent<Debris>())
             {
-                if (selectDebris.debrisType == other.GetComponent<Debris>().selectDebris.debrisType || other.GetComponent<Debris>().selectDebris.debrisType == SelectDebris.DebrisType.standard)
-                {
+                //if (selectDebris.debrisType == other.GetComponent<Debris>().selectDebris.debrisType || other.GetComponent<Debris>().selectDebris.debrisType == SelectDebris.DebrisType.standard)
+                //{
+                //    Debug.Log("Debris Type!!!!!!");
+                //    Destroy(other.gameObject, 5);
+                //}
+
+                if (other.GetComponent<Debris>().selectDebris.debrisType == SelectDebris.DebrisType.standard)
+                {                    
                     Destroy(other.gameObject, 5);
                 }
             }
