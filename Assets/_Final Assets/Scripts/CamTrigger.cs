@@ -170,11 +170,11 @@ public class CamTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<ShipBase>())
+        if (other.GetComponent<ShipStats>())
         {
             
             isLockControls = true;
-            shipBase = other.GetComponent<ShipBase>();
+            shipBase = other.GetComponent<ShipStats>();
 
             //other.GetComponent<ShipBase>().controllerManager_SO.controlSwitcher = 2;
 

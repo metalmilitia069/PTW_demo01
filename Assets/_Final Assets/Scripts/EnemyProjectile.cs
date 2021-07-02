@@ -28,9 +28,9 @@ public class EnemyProjectile : MonoBehaviour
             TakeDamage();
             other.GetComponent<ProjectileBase>().KillProjectile();
         }
-        else if (other.GetComponent<ShipBase>())
+        else if (other.GetComponent<ShipStats>())
         {
-            other.GetComponent<ShipBase>().TakeDamage();
+            other.GetComponent<ShipStats>().TakeDamage();
             KillProjectile();
         }
     }

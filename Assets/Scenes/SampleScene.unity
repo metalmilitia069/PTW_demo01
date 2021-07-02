@@ -4327,7 +4327,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 375.77, y: -311}
+  m_AnchoredPosition: {x: 375.76953, y: -311}
   m_SizeDelta: {x: 794.949, y: 11.0615}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &622711346
@@ -9818,6 +9818,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1231997952}
   - component: {fileID: 1231997953}
+  - component: {fileID: 1231997957}
   - component: {fileID: 1231997955}
   - component: {fileID: 1231997954}
   - component: {fileID: 1231997956}
@@ -9856,7 +9857,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1231997951}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 001ebaa80f707de4da7f9a4472d0b1e5, type: 3}
   m_Name: 
@@ -9922,6 +9923,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1231997957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231997951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd32ffbcb6fa6674f86faae5fc8c02aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 60
+  _playerHealth: 10000
+  firePoints:
+  - {fileID: 1578132515}
+  - {fileID: 2142159100}
+  - {fileID: 770393372}
+  - {fileID: 36980292}
+  - {fileID: 1325376451}
+  controllerManager_SO: {fileID: 11400000, guid: 9d2f92ac2af652541a4aa30b77a49ee9, type: 2}
+  playerAmmunition_SO: {fileID: 11400000, guid: 0c2859ad1f2a82f4b8582d936dbb1062, type: 2}
+  gameManager_SO: {fileID: 11400000, guid: daa33181daa5f5b4084196b39f03f2d9, type: 2}
+  ammunitionType: 4
+  _fireRate: 0.2
+  shipStats_SO: {fileID: 11400000, guid: c51f51bfc767a7044a962acb9a70c0ed, type: 2}
 --- !u!1 &1244391943
 GameObject:
   m_ObjectHideFlags: 0
@@ -14525,7 +14552,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 119.04993, y: -106.927246}
+  m_AnchoredPosition: {x: 119.049805, y: -106.927246}
   m_SizeDelta: {x: 1146.3, y: 60.145752}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1933771990
@@ -15765,7 +15792,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 310.09998, y: -200}
+  m_AnchoredPosition: {x: 310.0996, y: -200}
   m_SizeDelta: {x: 198.92004, y: 24.864502}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2084123119
