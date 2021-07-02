@@ -5,13 +5,13 @@ using UnityEngine;
 public class Debris : MonoBehaviour
 {
     [SerializeField]
-    private float _speed = 15;
+    protected float _speed = 15;
     [SerializeField]
-    private bool _isRotating;
+    protected bool _isRotating;
     [SerializeField]
-    private float _rotationSpeed = 5;
+    protected float _rotationSpeed = 5;
 
-    private int _randomRotation;
+    protected int _randomRotation;
 
     public SelectDebris selectDebris;
 

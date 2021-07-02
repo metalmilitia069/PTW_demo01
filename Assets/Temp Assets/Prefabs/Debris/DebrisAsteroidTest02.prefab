@@ -90,7 +90,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5739081702670511150}
-  - component: {fileID: 4612376509546057656}
+  - component: {fileID: -8865345205385283199}
   - component: {fileID: 816937651104174299}
   m_Layer: 0
   m_Name: DebrisAsteroidTest02
@@ -114,7 +114,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4612376509546057656
+--- !u!114 &-8865345205385283199
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3784309066251270805}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c03b5d8c42879a48ae7e00e24040251, type: 3}
+  m_Script: {fileID: 11500000, guid: 3324bfd8b02957240af69ce8fc28d7c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 40
