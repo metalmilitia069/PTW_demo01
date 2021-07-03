@@ -33,22 +33,22 @@ public class EnemyCombat : EnemyStats
         }
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (!other.GetComponent<ProjectileBase>())
-        {
-            float getAway = (this.transform.position.x - other.transform.position.x);
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    if (!other.GetComponent<ProjectileBase>())
+    //    {
+    //        float getAway = (this.transform.position.x - other.transform.position.x);
 
-            if (getAway > 0)
-            {
-                this.transform.position += new Vector3(manouverSpeed * Time.deltaTime, 0, 0);
-            }
-            else if (getAway < 0)
-            {
-                this.transform.position -= new Vector3(manouverSpeed * Time.deltaTime, 0, 0);
-            }
-        }
-    }
+    //        if (getAway > 0)
+    //        {
+    //            this.transform.position += new Vector3(manouverSpeed * Time.deltaTime, 0, 0);
+    //        }
+    //        else if (getAway < 0)
+    //        {
+    //            this.transform.position -= new Vector3(manouverSpeed * Time.deltaTime, 0, 0);
+    //        }
+    //    }
+    //}
 
     public void TakeDamage()
     {

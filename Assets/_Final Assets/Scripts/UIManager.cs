@@ -15,7 +15,9 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         uIManager_SO.HPSliders = HPSliders;
-        HPUIUpdater1();
+        uIManager_SO.ShieldSliders = ShieldSliders;
+        HPUIUpdater();
+        ShieldUiUpdater();
     }
 
     // Update is called once per frame
@@ -23,43 +25,17 @@ public class UIManager : MonoBehaviour
     {
         if (uIManager_SO.canUpdadeHp)
         {
-            HPUIUpdater1();
+            HPUIUpdater();
+            ShieldUiUpdater();
         }
-    }
+    }    
 
     public void HPUIUpdater()
     {
         uIManager_SO.canUpdadeHp = false;
 
-        int hpLost = 0;
-        for (int i = 0; i < shipStats_SO.playerHealth; i++)
-        {
-            uIManager_SO.HPSliders[i].value = 1;
-            hpLost = i;
-            Debug.Log("i = " + i);
-            Debug.Log("hpLost = " + hpLost);
-        }
-
-        hpLost++;
-
-        Debug.Log("hpLost = " + hpLost);
-
-        for (int j = hpLost; j < HPSliders.Length; j++)//uIManager_SO.HPSliders.Length; j++)
-        {
-            //if (uIManager_SO.HPSliders[hpLost].IsActive())
-            //{
-                uIManager_SO.HPSliders[hpLost].value = 0;
-            //}
-        }
-
-    }
-
-    public void HPUIUpdater1()
-    {
-        uIManager_SO.canUpdadeHp = false;
-
-        int hpLost = 0;
-        for (int i = 0; i < uIManager_SO.HPSliders.Length -1; i++)
+        
+        for (int i = 0; i < uIManager_SO.HPSliders.Length; i++)
         {
             if (uIManager_SO.HPSliders[i].IsActive())
             {
@@ -72,5 +48,21 @@ public class UIManager : MonoBehaviour
             uIManager_SO.HPSliders[j].value = 1;
         }
 
+    }
+
+    public void ShieldUiUpdater()
+    {
+        for (int i = 0; i < uIManager_SO.ShieldSliders.Length; i++)
+        {
+            if (uIManager_SO.ShieldSliders[i].IsActive())
+            {
+                uIManager_SO.ShieldSliders[i].value = 0;
+            }
+        }
+
+        for (int j = 0; j < shipStats_SO.playerShield; j++)
+        {
+            uIManager_SO.ShieldSliders[j].value = 1;
+        }
     }
 }

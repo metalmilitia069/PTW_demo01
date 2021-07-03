@@ -187,4 +187,57 @@ public class EnemyBehaviorGunShip : EnemyCombat
             timeToShoot = Time.time + fireRate;
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (!other.GetComponent<ProjectileBase>())
+        {
+            float getAwayX = (this.transform.position.x - other.transform.position.x);
+            float getAwayY = (this.transform.position.y - other.transform.position.y);
+
+            if (pickSteerringView == SteerringView.onTopView)
+            {
+                if (getAwayX > 0)
+                {
+                    this.transform.position += new Vector3(manouverSpeed * Time.deltaTime, 0, 0);
+                }
+                else if (getAwayX < 0)
+                {
+                    this.transform.position -= new Vector3(manouverSpeed * Time.deltaTime, 0, 0);
+                }
+            }
+            else if (pickSteerringView == SteerringView.onSideView)
+            {
+                if (getAwayY > 0)
+                {
+                    this.transform.position += new Vector3(0, manouverSpeed * Time.deltaTime, 0);
+                }
+                else if (getAwayY < 0)
+                {
+                    this.transform.position -= new Vector3(0, manouverSpeed * Time.deltaTime, 0);
+                }
+            }
+            else
+            {
+                if (getAwayX > 0)
+                {
+                    this.transform.position += new Vector3(manouverSpeed * Time.deltaTime, 0, 0);
+                }
+                else if (getAwayX < 0)
+                {
+                    this.transform.position -= new Vector3(manouverSpeed * Time.deltaTime, 0, 0);
+                }
+
+                if (getAwayY > 0)
+                {
+                    this.transform.position += new Vector3(0, manouverSpeed * Time.deltaTime, 0);
+                }
+                else if (getAwayY < 0)
+                {
+                    this.transform.position -= new Vector3(0, manouverSpeed * Time.deltaTime, 0);
+                }
+            }
+
+        }
+    }
 }

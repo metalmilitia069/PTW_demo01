@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ShipBase : MonoBehaviour
 {
-
-
     private float _movementInput;
     [SerializeField]
     protected float _speed;
@@ -119,15 +117,7 @@ public class ShipBase : MonoBehaviour
         }
 
         
-    }
-
-    //protected void Debugguinf()
-    //{
-    //    if (_playerControls.DebugHeal.Newaction.ReadValue<float>() < 0.0f)
-    //    {
-    //        Debug.Log("cu");
-    //    }
-    //}
+    }    
 
     protected void Movement()
     {
@@ -149,8 +139,6 @@ public class ShipBase : MonoBehaviour
                 break;
         }
     }
-
-
 
     private void SideViewMovement()
     {

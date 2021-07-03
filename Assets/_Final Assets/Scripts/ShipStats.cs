@@ -22,8 +22,7 @@ public class ShipStats : ShipBase
     void Update()
     {
         Movement();
-        Shooting();
-        //Debugguinf();
+        Shooting();        
     }
 
     private void OnEnable()
@@ -38,15 +37,36 @@ public class ShipStats : ShipBase
 
     public void TakeDamage()
     {
-        if (shipStats_SO.playerHealth <= 0)
+        
+        if (shipStats_SO.playerShield <= 0)
         {
-            uIManager_SO.canUpdadeHp = true;
-            IsPlayerDead();
+            if (shipStats_SO.playerHealth <= 1)
+            {
+                shipStats_SO.playerHealth--;
+                IsPlayerDead();
+            }
+            else
+            {
+                shipStats_SO.playerHealth--;
+            }
         }
         else
         {
-            shipStats_SO.playerHealth--;
-            uIManager_SO.canUpdadeHp = true;
+            shipStats_SO.playerShield--;
         }
+
+        uIManager_SO.canUpdadeHp = true;
+
+        //if (shipStats_SO.playerHealth <= 1)
+        //{
+        //    shipStats_SO.playerHealth--;
+        //    uIManager_SO.canUpdadeHp = true;
+        //    IsPlayerDead();
+        //}
+        //else
+        //{
+        //    shipStats_SO.playerHealth--;
+        //    uIManager_SO.canUpdadeHp = true;
+        //}
     }
 }
