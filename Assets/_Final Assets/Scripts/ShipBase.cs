@@ -117,7 +117,17 @@ public class ShipBase : MonoBehaviour
             _timeToShoot = Time.time + _fireRate;
 
         }
+
+        
     }
+
+    //protected void Debugguinf()
+    //{
+    //    if (_playerControls.DebugHeal.Newaction.ReadValue<float>() < 0.0f)
+    //    {
+    //        Debug.Log("cu");
+    //    }
+    //}
 
     protected void Movement()
     {

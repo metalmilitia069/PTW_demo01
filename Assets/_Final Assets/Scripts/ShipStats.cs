@@ -6,6 +6,8 @@ public class ShipStats : ShipBase
 {
     [Header("Player Stats:")]
     public ShipStats_SO shipStats_SO;
+    public UIManager_SO uIManager_SO;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -21,6 +23,7 @@ public class ShipStats : ShipBase
     {
         Movement();
         Shooting();
+        //Debugguinf();
     }
 
     private void OnEnable()
@@ -37,11 +40,13 @@ public class ShipStats : ShipBase
     {
         if (shipStats_SO.playerHealth <= 0)
         {
+            uIManager_SO.canUpdadeHp = true;
             IsPlayerDead();
         }
         else
         {
             shipStats_SO.playerHealth--;
+            uIManager_SO.canUpdadeHp = true;
         }
     }
 }
