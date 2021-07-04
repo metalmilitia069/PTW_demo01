@@ -55,7 +55,7 @@ public class ShipStats : ShipBase
             shipStats_SO.playerShield--;
         }
 
-        uIManager_SO.canUpdadeHp = true;
+        uIManager_SO.canUpdadeHUD = true;
 
         //if (shipStats_SO.playerHealth <= 1)
         //{
@@ -79,8 +79,14 @@ public class ShipStats : ShipBase
 
         shipStats_SO.playerLevel++;
         shipStats_SO.playerHealth = shipStats_SO.playerLevel + 2;
-        shipStats_SO.levelUpThreshold += (int)(shipStats_SO.levelUpThreshold * 1.5f);
+        shipStats_SO.playerShield = shipStats_SO.playerLevel + 2;
+        shipStats_SO.levelUpThreshold += (shipStats_SO.levelUpThreshold * 1.0f);
         shipStats_SO.levelingUpXp = 0;
+
+        shipStats_SO.levelProgressionRate = ((shipStats_SO.levelingUpXp * 1.0f) / shipStats_SO.levelUpThreshold);
+
+        uIManager_SO.canUpdadeLvl = true;
+        uIManager_SO.canUpdadeHUD = true;
     }
 
     public void AddXp(int XpToAdd)
@@ -89,9 +95,12 @@ public class ShipStats : ShipBase
         shipStats_SO.playerScore += XpToAdd;
         shipStats_SO.levelingUpXp += XpToAdd;
 
-        shipStats_SO.levelProgressionRate = shipStats_SO.levelingUpXp / shipStats_SO.levelUpThreshold;
 
-        if (shipStats_SO.levelProgressionRate >= 1)
+        shipStats_SO.levelProgressionRate = ((shipStats_SO.levelingUpXp * 1.0f) / shipStats_SO.levelUpThreshold);
+
+        uIManager_SO.canUpdadeHUD = true;
+
+        if (shipStats_SO.levelProgressionRate >= 1 && shipStats_SO.playerLevel <= shipStats_SO.maxLevel)
         {
             LevelUp();
         }

@@ -17,8 +17,8 @@ public class ShipStats_SO : ScriptableObject
     public int playerXPCumulated = 0;
     public int levelingUpXp = 0;
     public int playerScore = 0;
-    public int levelUpThreshold = 0;
-
+    
+    public float levelUpThreshold = 0;
     public float levelProgressionRate = 0;
 
     public void ResetPlayerData()

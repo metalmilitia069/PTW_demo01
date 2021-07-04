@@ -8,8 +8,11 @@ public class UIManager_SO : ScriptableObject
 {
     public Slider[] HPSliders;
     public Slider[] ShieldSliders;
+    public Slider xpBar;
 
-    public bool canUpdadeHp = false;
+
+    public bool canUpdadeHUD = false;
+    public bool canUpdadeLvl = false;
 
     private void OnDisable()
     {
