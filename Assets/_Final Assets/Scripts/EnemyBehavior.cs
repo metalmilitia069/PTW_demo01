@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyBehavior : EnemyCombat
 {
-    public GameManager_SO gameManager_SO;
+    //public GameManager_SO gameManager_SO;
 
     private ShipBase player;
     public ShipBase player1;
