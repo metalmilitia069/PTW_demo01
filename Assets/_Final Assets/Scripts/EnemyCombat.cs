@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyCombat : EnemyStats
 {
+    public GameManager_SO gameManager_SO;
+
     [Header("Combat")]
     [SerializeField]
     protected GameObject[] firePoints;
@@ -75,6 +77,7 @@ public class EnemyCombat : EnemyStats
             spawnManager_so.CheckWave();
         }
 
+        gameManager_SO.shipStats.AddXp(pointsWorth);
         Destroy(this.gameObject);
     }
 

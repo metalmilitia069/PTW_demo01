@@ -15,7 +15,7 @@ public class ShipStats : ShipBase
         _fireRate = shipStats_SO.fireRate;
 
         _playerControls = new PlayerControls();
-        gameManager_SO.shipBase = this;
+        gameManager_SO.shipStats = this;
     }
 
     // Update is called once per frame
@@ -68,5 +68,32 @@ public class ShipStats : ShipBase
         //    shipStats_SO.playerHealth--;
         //    uIManager_SO.canUpdadeHp = true;
         //}
+    }
+
+    public void LevelUp()
+    {
+        if (shipStats_SO.playerLevel >= shipStats_SO.maxLevel)
+        {
+            return;
+        }
+
+        shipStats_SO.playerLevel++;
+        shipStats_SO.playerHealth = shipStats_SO.playerLevel + 2;
+        shipStats_SO.levelUpThreshold += (int)(shipStats_SO.levelUpThreshold * 1.5f);
+        shipStats_SO.levelingUpXp = 0;
+    }
+
+    public void AddXp(int XpToAdd)
+    {
+        shipStats_SO.playerXPCumulated += XpToAdd;
+        shipStats_SO.playerScore += XpToAdd;
+        shipStats_SO.levelingUpXp += XpToAdd;
+
+        shipStats_SO.levelProgressionRate = shipStats_SO.levelingUpXp / shipStats_SO.levelUpThreshold;
+
+        if (shipStats_SO.levelProgressionRate >= 1)
+        {
+            LevelUp();
+        }
     }
 }

@@ -10,6 +10,16 @@ public class ShipStats_SO : ScriptableObject
     public float playerSpeed = 0;
     public float fireRate = 0;
 
+    [Range(1, 7)]
+    public int playerLevel = 1;
+
+    public int maxLevel = 7;
+    public int playerXPCumulated = 0;
+    public int levelingUpXp = 0;
+    public int playerScore = 0;
+    public int levelUpThreshold = 0;
+
+    public float levelProgressionRate = 0;
 
     public void ResetPlayerData()
     {

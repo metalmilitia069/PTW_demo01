@@ -63,7 +63,7 @@ public class EnemyBehavior : EnemyCombat
     // Start is called before the first frame update
     void Start()
     {
-        player = gameManager_SO.shipBase;
+        player = gameManager_SO.shipStats;
         _randomDist = Random.Range(_minDist, _maxDist);
     }
 

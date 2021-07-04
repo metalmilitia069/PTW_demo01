@@ -58,7 +58,7 @@ public class ShipBase : MonoBehaviour
     private void Awake()
     {
         _playerControls = new PlayerControls();
-        gameManager_SO.shipBase = this;
+        //gameManager_SO.shipBase = this;
         //_playerControls.Shooting.FireButton.started += _ => TopBackShoot();
         //_playerControls.Shooting.FireButton. += _ => TopBackShoot();
         //_playerControls.Shooting.FireButton.performed += _ => TopBackShoot();

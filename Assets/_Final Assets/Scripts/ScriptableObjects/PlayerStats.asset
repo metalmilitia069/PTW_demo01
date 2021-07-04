@@ -16,3 +16,10 @@ MonoBehaviour:
   playerShield: 9
   playerSpeed: 60
   fireRate: 0.2
+  playerLevel: 1
+  maxLevel: 7
+  playerXPCumulated: 0
+  levelingUpXp: 0
+  playerScore: 0
+  levelUpThreshold: 0
+  levelProgressionRate: 0
