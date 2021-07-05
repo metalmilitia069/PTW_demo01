@@ -86,6 +86,12 @@ public class UIManager : MonoBehaviour
 
     public void LevelUiUpdater()
     {
+        if (shipStats_SO.playerLevel == shipStats_SO.maxLevel)
+        {
+            LevelText.text = "MAX";
+            return;
+        }
+
         LevelText.text = "Lv. " + shipStats_SO.playerLevel.ToString("00");
 
         for (int i = 0; i < shipStats_SO.playerHealth; i++)

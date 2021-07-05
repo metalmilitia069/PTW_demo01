@@ -16,7 +16,7 @@ public class CamTrigger : MonoBehaviour
     [SerializeField]
     private bool _unpauseSpanwer = false;
 
-    private ShipBase shipBase;
+    private ShipBase shipStats;
 
     private GameObject _cameraGroup;
 
@@ -64,12 +64,12 @@ public class CamTrigger : MonoBehaviour
             float componentY;
             float componentZ;
 
-            shipBase.controllerManager_SO.controlSwitcher = 2;
+            shipStats.controllerManager_SO.controlSwitcher = 2;
 
             //Automatically Repositioning Player
-            if (Vector3.Distance(shipBase.transform.position, _originCoordinates) > 1f)
+            if (Vector3.Distance(shipStats.transform.position, _originCoordinates) > 1f)
             {
-                if (shipBase.transform.position.x - _originCoordinates.x > 0)
+                if (shipStats.transform.position.x - _originCoordinates.x > 0)
                 {
                     componentX = -1 * _speed * Time.deltaTime;
                 }
@@ -78,7 +78,7 @@ public class CamTrigger : MonoBehaviour
                     componentX = _speed * Time.deltaTime;
                 }
 
-                if (shipBase.transform.position.y - _originCoordinates.y > 0)
+                if (shipStats.transform.position.y - _originCoordinates.y > 0)
                 {
                     componentY = -1 * _speed * Time.deltaTime;
                 }
@@ -87,7 +87,7 @@ public class CamTrigger : MonoBehaviour
                     componentY = _speed * Time.deltaTime;
                 }
 
-                if (shipBase.transform.position.z - _originCoordinates.z > 0)
+                if (shipStats.transform.position.z - _originCoordinates.z > 0)
                 {
                     componentZ = -1 * _speed * Time.deltaTime;
                 }
@@ -96,7 +96,7 @@ public class CamTrigger : MonoBehaviour
                     componentZ = _speed * Time.deltaTime;
                 }
                 //Debug.Log("Z:" + componentZ);
-                shipBase.transform.position += new Vector3(componentX, componentY, componentZ);
+                shipStats.transform.position += new Vector3(componentX, componentY, componentZ);
             }
             //Change Cameras, then Release Controls
             else
@@ -142,13 +142,13 @@ public class CamTrigger : MonoBehaviour
                     switch (controlOptions)
                     {
                         case controlOptionsEnum.topControls:
-                            shipBase.controllerManager_SO.controlSwitcher = -1;
+                            shipStats.controllerManager_SO.controlSwitcher = -1;
                             break;
                         case controlOptionsEnum.sideControls:
-                            shipBase.controllerManager_SO.controlSwitcher = 0;
+                            shipStats.controllerManager_SO.controlSwitcher = 0;
                             break;
                         case controlOptionsEnum.backControls:
-                            shipBase.controllerManager_SO.controlSwitcher = 1;
+                            shipStats.controllerManager_SO.controlSwitcher = 1;
                             break;
                         default:
                             break;
@@ -174,7 +174,7 @@ public class CamTrigger : MonoBehaviour
         {
             
             isLockControls = true;
-            shipBase = other.GetComponent<ShipStats>();
+            shipStats = other.GetComponent<ShipStats>();
 
             //other.GetComponent<ShipBase>().controllerManager_SO.controlSwitcher = 2;
 

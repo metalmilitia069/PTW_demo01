@@ -85,6 +85,7 @@ MonoBehaviour:
   projectile: {fileID: 8751568771758007330, guid: f04cc0ceb555756428a0f73c9f9301a1, type: 3}
   manouverSpeed: 10
   respawnZCoord: 0
+  gameManager_SO: {fileID: 11400000, guid: daa33181daa5f5b4084196b39f03f2d9, type: 2}
   firePoints:
   - {fileID: 7413705737349867213}
   - {fileID: 7413705737650059146}
@@ -94,7 +95,6 @@ MonoBehaviour:
   - {fileID: 7413705737589862079}
   - {fileID: 7413705737117183407}
   - {fileID: 7413705738466480905}
-  gameManager_SO: {fileID: 11400000, guid: daa33181daa5f5b4084196b39f03f2d9, type: 2}
   player1: {fileID: 0}
   _minDist: 3
   _maxDist: 58
@@ -310,7 +310,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 50fb448ebc5d0a84a9422c10d8467991, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -436,7 +436,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c5795638ca9b6b54f9cf68ee6016d2cc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

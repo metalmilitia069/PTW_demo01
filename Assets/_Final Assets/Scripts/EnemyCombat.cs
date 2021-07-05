@@ -71,13 +71,13 @@ public class EnemyCombat : EnemyStats
 
     public void EnemyDied()
     {
+        gameManager_SO.shipStats.AddXp(pointsWorth);
         if (spawnManager_so != null)
         {            
             spawnManager_so._currentEnemiesList.Remove(this.gameObject);
             spawnManager_so.CheckWave();
         }
 
-        gameManager_SO.shipStats.AddXp(pointsWorth);
         Destroy(this.gameObject);
     }
 

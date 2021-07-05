@@ -95,6 +95,13 @@ public class ShipStats : ShipBase
         shipStats_SO.playerScore += XpToAdd;
         shipStats_SO.levelingUpXp += XpToAdd;
 
+        if (shipStats_SO.playerLevel == shipStats_SO.maxLevel)
+        {
+            shipStats_SO.levelProgressionRate = 1;
+            uIManager_SO.canUpdadeLvl = true;
+            uIManager_SO.canUpdadeHUD = true;
+            return;
+        }
 
         shipStats_SO.levelProgressionRate = ((shipStats_SO.levelingUpXp * 1.0f) / shipStats_SO.levelUpThreshold);
 
@@ -104,5 +111,6 @@ public class ShipStats : ShipBase
         {
             LevelUp();
         }
+
     }
 }
