@@ -8,6 +8,8 @@ public class ShipStats : ShipBase
     public ShipStats_SO shipStats_SO;
     public UIManager_SO uIManager_SO;
 
+    public GameObject visualEffectPrefab;
+
     // Start is called before the first frame update
     private void Awake()
     {

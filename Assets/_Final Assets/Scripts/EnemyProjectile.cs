@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class EnemyProjectile : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class EnemyProjectile : MonoBehaviour
         }
         else if (other.GetComponent<ShipStats>())
         {
+            other.GetComponent<ShipStats>().visualEffectPrefab.transform.position = this.transform.position;
+            other.GetComponent<ShipStats>().visualEffectPrefab.GetComponentInChildren<VisualEffect>().Reinit();
             other.GetComponent<ShipStats>().TakeDamage();
             KillProjectile();
         }
