@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class ShipBase : MonoBehaviour
 {
@@ -54,6 +55,9 @@ public class ShipBase : MonoBehaviour
     [SerializeField]
     protected float _fireRate = 1.5f;
     protected float _timeToShoot = 0;
+
+
+    public VisualEffect[] visualEffects;
 
     private void Awake()
     {
@@ -112,6 +116,7 @@ public class ShipBase : MonoBehaviour
                 default:
                     break;
             }
+            
             _timeToShoot = Time.time + _fireRate;
 
         }
@@ -217,6 +222,9 @@ public class ShipBase : MonoBehaviour
                 break;
         }
 
+        visualEffects[0].Reinit();
+        visualEffects[1].Reinit();
+        visualEffects[2].Reinit();
 
     }
 
@@ -267,6 +275,9 @@ public class ShipBase : MonoBehaviour
                 break;
         }
 
+        visualEffects[0].Reinit();
+        visualEffects[3].Reinit();
+        visualEffects[4].Reinit();
 
     }
 
