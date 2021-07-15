@@ -12,6 +12,7 @@ public class EnemyCombat : EnemyStats
 
     protected float timeToShoot = 0;
 
+    public GameObject visualEffectPrefab;
 
 
     // Start is called before the first frame update
