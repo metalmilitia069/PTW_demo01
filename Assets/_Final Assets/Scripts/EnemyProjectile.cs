@@ -32,6 +32,7 @@ public class EnemyProjectile : MonoBehaviour
         else if (other.GetComponent<ShipStats>())
         {
             other.GetComponent<ShipStats>().visualEffectPrefab.transform.position = this.transform.position;
+            other.GetComponent<ShipStats>().visualEffectPrefab.GetComponentInChildren<VisualEffect>().initialEventName = "Custom";
             other.GetComponent<ShipStats>().visualEffectPrefab.GetComponentInChildren<VisualEffect>().Reinit();
             other.GetComponent<ShipStats>().TakeDamage();
             KillProjectile();

@@ -93,8 +93,8 @@ public class ShipBase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement();
-        Shooting();
+        //Movement();
+        //Shooting();
 
     }
 
@@ -222,6 +222,7 @@ public class ShipBase : MonoBehaviour
                 break;
         }
 
+        
         visualEffects[0].Reinit();
         visualEffects[1].Reinit();
         visualEffects[2].Reinit();

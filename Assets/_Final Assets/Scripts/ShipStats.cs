@@ -18,6 +18,11 @@ public class ShipStats : ShipBase
 
         _playerControls = new PlayerControls();
         gameManager_SO.shipStats = this;
+
+        foreach (var item in visualEffects)
+        {
+            item.initialEventName = "Custom";
+        }
     }
 
     // Update is called once per frame
