@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 30
+  ExplosionVFXPrefab: {fileID: 962238369520748514, guid: 1a73ced7831884d45929117e39c9ad69, type: 3}
 --- !u!135 &1863114982572023052
 SphereCollider:
   m_ObjectHideFlags: 0

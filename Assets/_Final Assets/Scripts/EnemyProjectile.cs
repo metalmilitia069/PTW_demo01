@@ -10,6 +10,8 @@ public class EnemyProjectile : MonoBehaviour
 
     private int _projectileHealth = 2;
 
+    public GameObject ExplosionVFXPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,7 @@ public class EnemyProjectile : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {        
         Move();
     }
 
@@ -35,7 +37,10 @@ public class EnemyProjectile : MonoBehaviour
             other.GetComponent<ShipStats>().visualEffectPrefab.GetComponentInChildren<VisualEffect>().initialEventName = "Custom";
             other.GetComponent<ShipStats>().visualEffectPrefab.GetComponentInChildren<VisualEffect>().Reinit();
             other.GetComponent<ShipStats>().TakeDamage();
-            KillProjectile();
+            //ExplosionVFXPrefab.GetComponentInChildren<VisualEffect>().initialEventName = "Custom";
+            //ExplosionVFXPrefab.GetComponentInChildren<VisualEffect>().Reinit();
+            Instantiate(ExplosionVFXPrefab, this.transform.position, Quaternion.identity);
+            KillProjectile(0);
         }
     }
 
@@ -48,7 +53,7 @@ public class EnemyProjectile : MonoBehaviour
     {
         if (_projectileHealth <= 0)
         {
-            KillProjectile();
+            KillProjectile(0);
         }
         else
         {
@@ -56,9 +61,11 @@ public class EnemyProjectile : MonoBehaviour
         }
     }
 
-    private void KillProjectile()
+    private void KillProjectile(float time)
     {
-        Destroy(this.gameObject);
+        //ExplosionVFXPrefab.gameObject.pare
+
+        Destroy(this.gameObject, time);
     }
 
 }

@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 10
+  ExplosionVFXPrefab: {fileID: 962238369520748514, guid: 1a73ced7831884d45929117e39c9ad69, type: 3}
 --- !u!135 &2519846103807135636
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -218,6 +219,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7045637948072618918, guid: d951535281e86d74a8f78f3eddf8e15f, type: 3}
       propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7045637948072618918, guid: d951535281e86d74a8f78f3eddf8e15f, type: 3}
+      propertyPath: m_Materials.Array.data[3]
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
