@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shield02
+  m_Name: Shield02_PlayerBlue
   m_Shader: {fileID: -6465566751694194690, guid: 6641db79eb2a67e408639725fd5e433e, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
