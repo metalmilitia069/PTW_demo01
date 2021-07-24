@@ -2411,9 +2411,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1690875255}
     - target: {fileID: 8637392266123171081, guid: 421bef604a5f449488b969d64139413a, type: 3}
+      propertyPath: shieldPrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637392266123171081, guid: 421bef604a5f449488b969d64139413a, type: 3}
       propertyPath: visualEffects.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8637392266123171081, guid: 421bef604a5f449488b969d64139413a, type: 3}
+      propertyPath: shieldPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1972979906}
+    - target: {fileID: 8637392266123171081, guid: 421bef604a5f449488b969d64139413a, type: 3}
+      propertyPath: shieldPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 876217532}
+    - target: {fileID: 8637392266123171081, guid: 421bef604a5f449488b969d64139413a, type: 3}
+      propertyPath: shieldPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 1065818639}
     - target: {fileID: 8637392266123171081, guid: 421bef604a5f449488b969d64139413a, type: 3}
       propertyPath: visualEffects.Array.data[0]
       value: 
@@ -3266,7 +3282,7 @@ Transform:
   m_LocalScale: {x: 18.961, y: 18.961, z: 18.961}
   m_Children: []
   m_Father: {fileID: 1118299949}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2142578274
 PrefabInstance:

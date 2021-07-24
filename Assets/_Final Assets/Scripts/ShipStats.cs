@@ -10,6 +10,8 @@ public class ShipStats : ShipBase
 
     public GameObject visualEffectPrefab;
 
+    public GameObject[] shieldPrefabs;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -60,6 +62,7 @@ public class ShipStats : ShipBase
         else
         {
             shipStats_SO.playerShield--;
+            SwitchShield();
         }
 
         uIManager_SO.canUpdadeHUD = true;
@@ -85,8 +88,14 @@ public class ShipStats : ShipBase
         }
 
         shipStats_SO.playerLevel++;
-        shipStats_SO.playerHealth = shipStats_SO.playerLevel + 2;
-        shipStats_SO.playerShield = shipStats_SO.playerLevel + 2;
+        shipStats_SO.playerMaxHealth = shipStats_SO.playerLevel + 2;
+        shipStats_SO.playerHealth = shipStats_SO.playerMaxHealth;
+
+        shipStats_SO.playerMaxShield = shipStats_SO.playerLevel + 2;
+        shipStats_SO.playerShield = shipStats_SO.playerMaxShield;
+
+        SwitchShield();
+
         shipStats_SO.levelUpThreshold += (shipStats_SO.levelUpThreshold * 1.0f);
         shipStats_SO.levelingUpXp = 0;
 
@@ -119,5 +128,44 @@ public class ShipStats : ShipBase
             LevelUp();
         }
 
+    }
+
+    public void SwitchShield()
+    {
+        if (this.shipStats_SO.playerShield <= 0)
+        {
+            foreach (var shield in shieldPrefabs)
+            {
+                shield.gameObject.SetActive(false);
+            }
+            return;
+        }
+
+        float shieldRate = this.shipStats_SO.playerShield / this.shipStats_SO.playerMaxShield;
+
+        TurnOffShields();
+
+        if (shieldRate >= 0.75)
+        {            
+            shieldPrefabs[0].SetActive(true);
+            return;
+        }
+        else if (shieldRate >= 0.25f && shieldRate <= 0.75f)
+        {
+            shieldPrefabs[1].SetActive(true);
+            return;
+        }
+        else
+        {
+            shieldPrefabs[2].SetActive(true);
+        }
+    }
+
+    public void TurnOffShields()
+    {
+        for (int i = 0; i < shieldPrefabs.Length - 1; i++)
+        {
+            shieldPrefabs[i].SetActive(false);
+        }
     }
 }
