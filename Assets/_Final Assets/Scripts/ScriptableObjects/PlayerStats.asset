@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad71d31d3e3140e428353110b91fbfaa, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  playerMaxHealth: 6
-  playerHealth: 6
-  playerMaxShield: 6
-  playerShield: 6
+  playerMaxHealth: 3
+  playerHealth: 3
+  playerMaxShield: 3
+  playerShield: 3
   playerSpeed: 60
   fireRate: 0.2
-  playerLevel: 4
+  playerLevel: 1
   maxLevel: 7
-  playerXPCumulated: 60
-  levelingUpXp: 20
-  playerScore: 60
-  levelUpThreshold: 24
-  levelProgressionRate: 0.8333333
+  playerXPCumulated: 0
+  levelingUpXp: 0
+  playerScore: 0
+  levelUpThreshold: 3
+  levelProgressionRate: 0
