@@ -23,6 +23,8 @@ public class EnemyBehaviorShieldedTurret : EnemyCombat
     [SerializeField]
     private bool _isStationary = false;
 
+    
+
     private string state = "Running";
 
     private enum AIStateMachine
@@ -69,7 +71,7 @@ public class EnemyBehaviorShieldedTurret : EnemyCombat
         player = gameManager_SO.shipStats;
         _randomDist = Random.Range(_minDist, _maxDist);
 
-
+        shieldMax = shields;
     }
 
     // Update is called once per frame

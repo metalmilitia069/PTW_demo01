@@ -14,6 +14,9 @@ public class EnemyCombat : EnemyStats
 
     public GameObject visualEffectPrefab;
 
+    //For shielded ships only
+    public GameObject[] shieldPrefabs;
+
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +70,7 @@ public class EnemyCombat : EnemyStats
         else
         {
             shields--;
+            SwitchShield();            
         }
     }
 
@@ -91,5 +95,44 @@ public class EnemyCombat : EnemyStats
         }
     }
 
-    
+    public void SwitchShield()
+    {
+        if (shields <= 0)
+        {
+            foreach (var shield in shieldPrefabs)
+            {
+                shield.gameObject.SetActive(false);
+            }
+            return;
+        }
+
+        float shieldRate = (float)shields / shieldMax;
+
+        TurnOffShields();
+
+        if (shieldRate >= 0.75)
+        {
+            shieldPrefabs[0].SetActive(true);
+            return;
+        }
+        else if (shieldRate >= 0.25f && shieldRate <= 0.75f)
+        {
+            shieldPrefabs[1].SetActive(true);
+            return;
+        }
+        else
+        {
+            shieldPrefabs[2].SetActive(true);
+        }
+    }
+
+    public void TurnOffShields()
+    {
+        for (int i = 0; i < shieldPrefabs.Length - 1; i++)
+        {
+            shieldPrefabs[i].SetActive(false);
+        }
+    }
+
+
 }

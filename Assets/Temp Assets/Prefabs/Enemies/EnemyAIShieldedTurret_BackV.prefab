@@ -307,7 +307,7 @@ MonoBehaviour:
   spawnManager_so: {fileID: 11400000, guid: bd8fdc68e95560247a0e6bda44ed6385, type: 2}
   _speed: 20
   health: 5
-  shields: 5
+  shields: 20
   pointsWorth: 10
   fireRate: 3
   projectile: {fileID: 8751568771758007330, guid: f04cc0ceb555756428a0f73c9f9301a1, type: 3}
@@ -319,6 +319,10 @@ MonoBehaviour:
   - {fileID: 5985388336565186055}
   - {fileID: 5985388336139260810}
   visualEffectPrefab: {fileID: 2483494013310340132}
+  shieldPrefabs:
+  - {fileID: 7684838796718978500}
+  - {fileID: 6660812000046569303}
+  - {fileID: 4855665692656891104}
   player1: {fileID: 0}
   _minDist: 20
   _maxDist: 36
@@ -545,6 +549,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c25c35a335fc0ce4d8e685ed8a32b7f5, type: 3}
+--- !u!1 &4855665692656891104 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c25c35a335fc0ce4d8e685ed8a32b7f5, type: 3}
+  m_PrefabInstance: {fileID: 5738610573249104305}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5199716467941912154 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c25c35a335fc0ce4d8e685ed8a32b7f5, type: 3}
@@ -627,6 +636,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c25c35a335fc0ce4d8e685ed8a32b7f5, type: 3}
+--- !u!1 &6660812000046569303 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c25c35a335fc0ce4d8e685ed8a32b7f5, type: 3}
+  m_PrefabInstance: {fileID: 5813756692959226374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6279185105040641517 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c25c35a335fc0ce4d8e685ed8a32b7f5, type: 3}
@@ -705,6 +719,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c25c35a335fc0ce4d8e685ed8a32b7f5, type: 3}
+--- !u!1 &7684838796718978500 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c25c35a335fc0ce4d8e685ed8a32b7f5, type: 3}
+  m_PrefabInstance: {fileID: 7378974243232286869}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7056534269520473982 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c25c35a335fc0ce4d8e685ed8a32b7f5, type: 3}
