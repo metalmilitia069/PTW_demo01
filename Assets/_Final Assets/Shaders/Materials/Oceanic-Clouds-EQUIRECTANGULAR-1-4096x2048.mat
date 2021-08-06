@@ -32,6 +32,18 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Clouds01Tex:
+        m_Texture: {fileID: 2800000, guid: e638523acd290ba499fbf43630459a5a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Planet01Tex:
+        m_Texture: {fileID: 2800000, guid: 3c9617964b6a52f4499e7c7c9f4068fb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Planet02Tex:
+        m_Texture: {fileID: 2800000, guid: d52b270605037fa429191d1d4202f85b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_a355eefc2a3945348f0c44bed481b219:
         m_Texture: {fileID: 2800000, guid: 3c9617964b6a52f4499e7c7c9f4068fb, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -92,8 +104,9 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
-    - FresnelPower: 30
+    - FresnelPower: 22.42
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -122,7 +135,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - FresnelColor: {r: 17.148375, g: 17.148375, b: 17.148375, a: 1}
+    - FresnelColor: {r: 0, g: 101.15583, b: 483.0191, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
