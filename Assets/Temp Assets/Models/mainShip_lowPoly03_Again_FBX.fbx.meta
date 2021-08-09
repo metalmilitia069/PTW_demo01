@@ -1,9 +1,49 @@
 fileFormatVersion: 2
 guid: 7039b73026c54f24ea234f7f89998456
 ModelImporter:
-  serializedVersion: 20200
+  serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AmareloLataria
+    second: {fileID: 2100000, guid: 28d056160181c2b46837ff984d3ee0c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cockpit_mat
+    second: {fileID: 2100000, guid: 493ec4b5248035e41b4d4a74e3b8b07d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PinturaCinza01
+    second: {fileID: 2100000, guid: 9d24f2db7e7ba1540b16b86527c19c69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PinturaPreta01
+    second: {fileID: 2100000, guid: 2ad275843fed651469e07d0d71d9cfa7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PinturaQuater
+    second: {fileID: 2100000, guid: 4fec9651d00845a4293443dfb8587bbc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PinturaSecundaria
+    second: {fileID: 2100000, guid: 6aa354d82ef44e144bf436a4f3952c4c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PinturaTerciaria
+    second: {fileID: 2100000, guid: 5907b0049baec994793477622993d7e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 16500154837128e409fd0d62eb89bba2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -85,7 +125,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.17
+    globalScale: 17
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
