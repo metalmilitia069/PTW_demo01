@@ -3,7 +3,42 @@ guid: 975cf7570187f90438156c98a008b344
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DebrisRectPanel01_01
+    second: {fileID: 2100000, guid: 9d025a8e742e2844384fee6e8bce64d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DebrisRectPanel01_02
+    second: {fileID: 2100000, guid: cebb77b845b538740bfc93adc6ca3fe3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DebrisRectPanel01_03
+    second: {fileID: 2100000, guid: b26548514d18f8949aef6c705585cbfd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DebrisRectPanel01_04
+    second: {fileID: 2100000, guid: 052cc57a53bb8754eb7d582787833e05, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DebrisRectPanel01_05
+    second: {fileID: 2100000, guid: 7d1e982877d76614c93f507c50b0c0da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DebrisRectPanel01_06
+    second: {fileID: 2100000, guid: 1679ef629f265824b89e5890e121259b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DebrisRectPanel01_07
+    second: {fileID: 2100000, guid: 7cd96c13c7a19e5438d23bdfb95fecad, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -16,35 +16,35 @@ MonoBehaviour:
   - numberOfSections: 5
     isRandomSpawn: 0
     debrisTypes:
-    - {fileID: 613396606728477634, guid: 187393f526236134aaf34efc0209b5e1, type: 3}
-    - {fileID: 6891391161017583754, guid: 6d2982dcb60720344bb4109ad9061f35, type: 3}
-    - {fileID: 8761129518956735707, guid: 90918573d47da22498dae32a4a14e387, type: 3}
-    - {fileID: 613396606728477634, guid: 187393f526236134aaf34efc0209b5e1, type: 3}
-    - {fileID: 8761129518956735707, guid: 90918573d47da22498dae32a4a14e387, type: 3}
+    - {fileID: 108512158359374873, guid: 84be9134919217d4d80296e37c26315b, type: 3}
+    - {fileID: 8111916540959511985, guid: 169467cece38c3c4d98e0d09dd61e092, type: 3}
+    - {fileID: 8542145964376365199, guid: 688153afaa459174f84fc215adc60f25, type: 3}
+    - {fileID: 2509020576067841834, guid: f0c83eb7d4f9b3346a636da9538b93aa, type: 3}
+    - {fileID: 953846666901726582, guid: e94e900c1fe4ddf41b695d440648b782, type: 3}
   - numberOfSections: 5
     isRandomSpawn: 0
     debrisTypes:
-    - {fileID: 808669644454812864, guid: c3b3df9d3d1524e47a004ca3d4fedee8, type: 3}
-    - {fileID: 1881576551733198778, guid: 01f13601f68c5a34abab7616068f4877, type: 3}
-    - {fileID: 8811680451056086858, guid: edabea509d8b2fc4ea9b29ba201b0a50, type: 3}
-    - {fileID: 6348908855017479538, guid: 5362a336274b9f14e88ac5e374e0ab79, type: 3}
-    - {fileID: 1881576551733198778, guid: 01f13601f68c5a34abab7616068f4877, type: 3}
+    - {fileID: 7021117120888444504, guid: acc96217996e6984ab78e950eb2bde24, type: 3}
+    - {fileID: 7021117120888444504, guid: acc96217996e6984ab78e950eb2bde24, type: 3}
+    - {fileID: 7021117120888444504, guid: acc96217996e6984ab78e950eb2bde24, type: 3}
+    - {fileID: 7021117120888444504, guid: acc96217996e6984ab78e950eb2bde24, type: 3}
+    - {fileID: 7021117120888444504, guid: acc96217996e6984ab78e950eb2bde24, type: 3}
   - numberOfSections: 6
     isRandomSpawn: 0
     debrisTypes:
-    - {fileID: 613396606728477634, guid: 187393f526236134aaf34efc0209b5e1, type: 3}
-    - {fileID: 6891391161017583754, guid: 6d2982dcb60720344bb4109ad9061f35, type: 3}
-    - {fileID: 8761129518956735707, guid: 90918573d47da22498dae32a4a14e387, type: 3}
-    - {fileID: 6891391161017583754, guid: 6d2982dcb60720344bb4109ad9061f35, type: 3}
-    - {fileID: 613396606728477634, guid: 187393f526236134aaf34efc0209b5e1, type: 3}
-    - {fileID: 8761129518956735707, guid: 90918573d47da22498dae32a4a14e387, type: 3}
+    - {fileID: 108512158359374873, guid: 84be9134919217d4d80296e37c26315b, type: 3}
+    - {fileID: 953846666901726582, guid: e94e900c1fe4ddf41b695d440648b782, type: 3}
+    - {fileID: 953846666901726582, guid: e94e900c1fe4ddf41b695d440648b782, type: 3}
+    - {fileID: 953846666901726582, guid: e94e900c1fe4ddf41b695d440648b782, type: 3}
+    - {fileID: 953846666901726582, guid: e94e900c1fe4ddf41b695d440648b782, type: 3}
+    - {fileID: 953846666901726582, guid: e94e900c1fe4ddf41b695d440648b782, type: 3}
   - numberOfSections: 5
     isRandomSpawn: 0
     debrisTypes:
-    - {fileID: 808669644454812864, guid: c3b3df9d3d1524e47a004ca3d4fedee8, type: 3}
-    - {fileID: 6348908855017479538, guid: 5362a336274b9f14e88ac5e374e0ab79, type: 3}
-    - {fileID: 8811680451056086858, guid: edabea509d8b2fc4ea9b29ba201b0a50, type: 3}
-    - {fileID: 1881576551733198778, guid: 01f13601f68c5a34abab7616068f4877, type: 3}
-    - {fileID: 6348908855017479538, guid: 5362a336274b9f14e88ac5e374e0ab79, type: 3}
+    - {fileID: 2509020576067841834, guid: f0c83eb7d4f9b3346a636da9538b93aa, type: 3}
+    - {fileID: 2509020576067841834, guid: f0c83eb7d4f9b3346a636da9538b93aa, type: 3}
+    - {fileID: 2509020576067841834, guid: f0c83eb7d4f9b3346a636da9538b93aa, type: 3}
+    - {fileID: 2509020576067841834, guid: f0c83eb7d4f9b3346a636da9538b93aa, type: 3}
+    - {fileID: 2509020576067841834, guid: f0c83eb7d4f9b3346a636da9538b93aa, type: 3}
   isPaused: 1
   isSpawning: 0
