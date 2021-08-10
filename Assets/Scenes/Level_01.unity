@@ -7014,6 +7014,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1248912976035081532, guid: 48e0493273804ea4aa4796c1e4ecd308, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1248912976341370142, guid: 48e0493273804ea4aa4796c1e4ecd308, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -375
+      objectReference: {fileID: 0}
     - target: {fileID: 1248912977655141568, guid: 48e0493273804ea4aa4796c1e4ecd308, type: 3}
       propertyPath: m_Name
       value: DebrisSpawnManager

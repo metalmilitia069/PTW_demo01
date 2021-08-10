@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DebrisSpawnManager_TestLevel01
   m_EditorClassIdentifier: 
   debrisConfig:
-  - numberOfSections: 5
+  - numberOfSections: 9
     isRandomSpawn: 0
     debrisTypes:
     - {fileID: 108512158359374873, guid: 84be9134919217d4d80296e37c26315b, type: 3}
@@ -21,6 +21,10 @@ MonoBehaviour:
     - {fileID: 8542145964376365199, guid: 688153afaa459174f84fc215adc60f25, type: 3}
     - {fileID: 2509020576067841834, guid: f0c83eb7d4f9b3346a636da9538b93aa, type: 3}
     - {fileID: 953846666901726582, guid: e94e900c1fe4ddf41b695d440648b782, type: 3}
+    - {fileID: 2509020576067841834, guid: f0c83eb7d4f9b3346a636da9538b93aa, type: 3}
+    - {fileID: 8542145964376365199, guid: 688153afaa459174f84fc215adc60f25, type: 3}
+    - {fileID: 8111916540959511985, guid: 169467cece38c3c4d98e0d09dd61e092, type: 3}
+    - {fileID: 2509020576067841834, guid: f0c83eb7d4f9b3346a636da9538b93aa, type: 3}
   - numberOfSections: 5
     isRandomSpawn: 0
     debrisTypes:
