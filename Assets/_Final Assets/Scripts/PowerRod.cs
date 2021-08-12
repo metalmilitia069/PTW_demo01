@@ -6,6 +6,7 @@ public class PowerRod : MonoBehaviour
 {
     public GameObject powerRod;
     public GameObject brokenRod;
+    public GameObject wires;
 
     [SerializeField]
     private int rodHP = 10;
@@ -43,6 +44,7 @@ public class PowerRod : MonoBehaviour
     {
         powerRod.gameObject.SetActive(false);
         brokenRod.gameObject.SetActive(true);
+        wires.gameObject.SetActive(true);
         Destroy(this.gameObject, 10.0f);
     }
 
