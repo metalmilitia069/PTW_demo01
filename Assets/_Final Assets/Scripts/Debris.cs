@@ -12,6 +12,7 @@ public class Debris : MonoBehaviour
     protected float _rotationSpeed = 5;
 
     protected int _randomRotation;
+    protected int _randomRotation2;
 
     public SelectDebris selectDebris;
 
@@ -21,6 +22,7 @@ public class Debris : MonoBehaviour
     void Start()
     {
         _randomRotation = Random.Range(0, 2);
+        _randomRotation2 = Random.Range(0, 3);
     }
 
     // Update is called once per frame

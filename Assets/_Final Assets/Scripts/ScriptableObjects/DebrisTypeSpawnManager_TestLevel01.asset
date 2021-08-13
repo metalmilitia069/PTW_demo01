@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: DebrisTypeSpawnManager_TestLevel01
   m_EditorClassIdentifier: 
   isPaused: 1
-  waveIndex: 0
-  doKillCorroutine: 0
+  waveIndex: 1
+  doKillCorroutine: 1
   debrisTypePrefabs:
   - viewToSpawn: 2
     debrisTypesPrefabs:
-    - {fileID: 4101361204971274771, guid: a4fabb64c77c8a24ea37be1821678c5c, type: 3}
-    - {fileID: 3784309066251270805, guid: c8d36c72c7298c54085d3a675dc837c3, type: 3}
+    - {fileID: 8888733234703441034, guid: 597b18f68aa2ae94a812784fa46fbfea, type: 3}
+    - {fileID: 3110580114334249469, guid: 8ca0ef343f928354c9c583ec91d67cb2, type: 3}
+    - {fileID: 4503524494656819838, guid: e6b03bf5b6fcc24468d34273be3021fa, type: 3}
+    - {fileID: 7970717498247182013, guid: ef686b5582909ac45b267fdd2da22d64, type: 3}
   - viewToSpawn: 0
     debrisTypesPrefabs:
     - {fileID: 5563885117629725151, guid: 83dffd7a9c84bda4885f53179dc659b3, type: 3}
