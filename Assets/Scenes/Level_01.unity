@@ -5398,6 +5398,75 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3165437576419424847, guid: f0f478824ae6eb74f8c290b3b8959906, type: 3}
   m_PrefabInstance: {fileID: 687342656}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &206725110
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 78706ac87ab8f9848910cfd18ec2e539, type: 3}
+      propertyPath: m_RootOrder
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78706ac87ab8f9848910cfd18ec2e539, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78706ac87ab8f9848910cfd18ec2e539, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78706ac87ab8f9848910cfd18ec2e539, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78706ac87ab8f9848910cfd18ec2e539, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.3925734
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78706ac87ab8f9848910cfd18ec2e539, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.905427
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78706ac87ab8f9848910cfd18ec2e539, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.268767
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78706ac87ab8f9848910cfd18ec2e539, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78706ac87ab8f9848910cfd18ec2e539, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78706ac87ab8f9848910cfd18ec2e539, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78706ac87ab8f9848910cfd18ec2e539, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78706ac87ab8f9848910cfd18ec2e539, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78706ac87ab8f9848910cfd18ec2e539, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 78706ac87ab8f9848910cfd18ec2e539, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 78706ac87ab8f9848910cfd18ec2e539, type: 3}
+      propertyPath: m_Name
+      value: DebrisSmallMetalBroken02
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 78706ac87ab8f9848910cfd18ec2e539, type: 3}
 --- !u!1001 &226171781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5512,6 +5581,75 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3165437575476713409, guid: f0f478824ae6eb74f8c290b3b8959906, type: 3}
   m_PrefabInstance: {fileID: 687342656}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &294200397
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 7bc7d214c96f9064f8d6bf74f1739fc4, type: 3}
+      propertyPath: m_RootOrder
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bc7d214c96f9064f8d6bf74f1739fc4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bc7d214c96f9064f8d6bf74f1739fc4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bc7d214c96f9064f8d6bf74f1739fc4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bc7d214c96f9064f8d6bf74f1739fc4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.3925734
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bc7d214c96f9064f8d6bf74f1739fc4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.905427
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bc7d214c96f9064f8d6bf74f1739fc4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.268767
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bc7d214c96f9064f8d6bf74f1739fc4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bc7d214c96f9064f8d6bf74f1739fc4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bc7d214c96f9064f8d6bf74f1739fc4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bc7d214c96f9064f8d6bf74f1739fc4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bc7d214c96f9064f8d6bf74f1739fc4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bc7d214c96f9064f8d6bf74f1739fc4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bc7d214c96f9064f8d6bf74f1739fc4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7bc7d214c96f9064f8d6bf74f1739fc4, type: 3}
+      propertyPath: m_Name
+      value: DebrisSmallMetalBroken07
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7bc7d214c96f9064f8d6bf74f1739fc4, type: 3}
 --- !u!1 &312524407
 GameObject:
   m_ObjectHideFlags: 0
@@ -5636,6 +5774,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &366490250
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 27680e23f324eab428b0be42a3e6bf54, type: 3}
+      propertyPath: m_RootOrder
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 27680e23f324eab428b0be42a3e6bf54, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 27680e23f324eab428b0be42a3e6bf54, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 27680e23f324eab428b0be42a3e6bf54, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 27680e23f324eab428b0be42a3e6bf54, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.3925734
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 27680e23f324eab428b0be42a3e6bf54, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.905427
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 27680e23f324eab428b0be42a3e6bf54, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.268767
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 27680e23f324eab428b0be42a3e6bf54, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 27680e23f324eab428b0be42a3e6bf54, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 27680e23f324eab428b0be42a3e6bf54, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 27680e23f324eab428b0be42a3e6bf54, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 27680e23f324eab428b0be42a3e6bf54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 27680e23f324eab428b0be42a3e6bf54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 27680e23f324eab428b0be42a3e6bf54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 27680e23f324eab428b0be42a3e6bf54, type: 3}
+      propertyPath: m_Name
+      value: DebrisSmallMetalBroken08
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 27680e23f324eab428b0be42a3e6bf54, type: 3}
 --- !u!1 &372977466
 GameObject:
   m_ObjectHideFlags: 0
@@ -6138,6 +6345,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &498587824
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: afe31ded8ec5a8840981fac1e4022a52, type: 3}
+      propertyPath: m_RootOrder
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: afe31ded8ec5a8840981fac1e4022a52, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: afe31ded8ec5a8840981fac1e4022a52, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: afe31ded8ec5a8840981fac1e4022a52, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: afe31ded8ec5a8840981fac1e4022a52, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.3925734
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: afe31ded8ec5a8840981fac1e4022a52, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.905427
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: afe31ded8ec5a8840981fac1e4022a52, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.268767
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: afe31ded8ec5a8840981fac1e4022a52, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: afe31ded8ec5a8840981fac1e4022a52, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: afe31ded8ec5a8840981fac1e4022a52, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: afe31ded8ec5a8840981fac1e4022a52, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: afe31ded8ec5a8840981fac1e4022a52, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: afe31ded8ec5a8840981fac1e4022a52, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: afe31ded8ec5a8840981fac1e4022a52, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: afe31ded8ec5a8840981fac1e4022a52, type: 3}
+      propertyPath: m_Name
+      value: DebrisSmallMetalBroken09
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: afe31ded8ec5a8840981fac1e4022a52, type: 3}
 --- !u!1 &515275567 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3165437575881831333, guid: f0f478824ae6eb74f8c290b3b8959906, type: 3}
@@ -11755,6 +12031,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8637392264859017033, guid: 421bef604a5f449488b969d64139413a, type: 3}
   m_PrefabInstance: {fileID: 1584299283}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &865435577
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 3f490cb02175741479beb7ffa4c0cde6, type: 3}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3f490cb02175741479beb7ffa4c0cde6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3f490cb02175741479beb7ffa4c0cde6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3f490cb02175741479beb7ffa4c0cde6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3f490cb02175741479beb7ffa4c0cde6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3f490cb02175741479beb7ffa4c0cde6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3f490cb02175741479beb7ffa4c0cde6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3f490cb02175741479beb7ffa4c0cde6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3f490cb02175741479beb7ffa4c0cde6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3f490cb02175741479beb7ffa4c0cde6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3f490cb02175741479beb7ffa4c0cde6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3f490cb02175741479beb7ffa4c0cde6, type: 3}
+      propertyPath: m_Name
+      value: DebrisSmallMetalBroken03
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3f490cb02175741479beb7ffa4c0cde6, type: 3}
 --- !u!1 &876217532
 GameObject:
   m_ObjectHideFlags: 0
@@ -12080,6 +12413,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1038371951
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: dcfa3d909bdc1534eab47970a93c5b5f, type: 3}
+      propertyPath: m_RootOrder
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dcfa3d909bdc1534eab47970a93c5b5f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dcfa3d909bdc1534eab47970a93c5b5f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dcfa3d909bdc1534eab47970a93c5b5f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dcfa3d909bdc1534eab47970a93c5b5f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.3925734
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dcfa3d909bdc1534eab47970a93c5b5f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.905427
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dcfa3d909bdc1534eab47970a93c5b5f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.268767
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dcfa3d909bdc1534eab47970a93c5b5f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dcfa3d909bdc1534eab47970a93c5b5f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dcfa3d909bdc1534eab47970a93c5b5f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dcfa3d909bdc1534eab47970a93c5b5f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dcfa3d909bdc1534eab47970a93c5b5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dcfa3d909bdc1534eab47970a93c5b5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dcfa3d909bdc1534eab47970a93c5b5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dcfa3d909bdc1534eab47970a93c5b5f, type: 3}
+      propertyPath: m_Name
+      value: DebrisSmallMetalBroken10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dcfa3d909bdc1534eab47970a93c5b5f, type: 3}
 --- !u!1 &1065818639
 GameObject:
   m_ObjectHideFlags: 0
@@ -12720,6 +13122,75 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4b42c17a9ca111547a4cf947b35e785f, type: 3}
   m_PrefabInstance: {fileID: 1268035922}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1272678189
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: cc335139623e63c40a5ee1b3fec35d80, type: 3}
+      propertyPath: m_RootOrder
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cc335139623e63c40a5ee1b3fec35d80, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cc335139623e63c40a5ee1b3fec35d80, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cc335139623e63c40a5ee1b3fec35d80, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cc335139623e63c40a5ee1b3fec35d80, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.3925734
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cc335139623e63c40a5ee1b3fec35d80, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.905427
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cc335139623e63c40a5ee1b3fec35d80, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.268767
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cc335139623e63c40a5ee1b3fec35d80, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cc335139623e63c40a5ee1b3fec35d80, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cc335139623e63c40a5ee1b3fec35d80, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cc335139623e63c40a5ee1b3fec35d80, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cc335139623e63c40a5ee1b3fec35d80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cc335139623e63c40a5ee1b3fec35d80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cc335139623e63c40a5ee1b3fec35d80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cc335139623e63c40a5ee1b3fec35d80, type: 3}
+      propertyPath: m_Name
+      value: DebrisSmallMetalBroken06
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cc335139623e63c40a5ee1b3fec35d80, type: 3}
 --- !u!1 &1284116721
 GameObject:
   m_ObjectHideFlags: 0
@@ -13409,6 +13880,75 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
+--- !u!1001 &1491166646
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 525b2ea0f8ab2834ab25e71b10df2a85, type: 3}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 525b2ea0f8ab2834ab25e71b10df2a85, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 525b2ea0f8ab2834ab25e71b10df2a85, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 525b2ea0f8ab2834ab25e71b10df2a85, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 525b2ea0f8ab2834ab25e71b10df2a85, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.3925734
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 525b2ea0f8ab2834ab25e71b10df2a85, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.905427
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 525b2ea0f8ab2834ab25e71b10df2a85, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.268767
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 525b2ea0f8ab2834ab25e71b10df2a85, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 525b2ea0f8ab2834ab25e71b10df2a85, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 525b2ea0f8ab2834ab25e71b10df2a85, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 525b2ea0f8ab2834ab25e71b10df2a85, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 525b2ea0f8ab2834ab25e71b10df2a85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 525b2ea0f8ab2834ab25e71b10df2a85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 525b2ea0f8ab2834ab25e71b10df2a85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 525b2ea0f8ab2834ab25e71b10df2a85, type: 3}
+      propertyPath: m_Name
+      value: DebrisSmallMetalBroken01
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 525b2ea0f8ab2834ab25e71b10df2a85, type: 3}
 --- !u!1 &1497444476
 GameObject:
   m_ObjectHideFlags: 0
@@ -13696,6 +14236,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8637392266266475816, guid: 421bef604a5f449488b969d64139413a, type: 3}
   m_PrefabInstance: {fileID: 1584299283}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1631918567
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: eb73148160b02ec4eb951fe347e10004, type: 3}
+      propertyPath: m_RootOrder
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb73148160b02ec4eb951fe347e10004, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb73148160b02ec4eb951fe347e10004, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb73148160b02ec4eb951fe347e10004, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb73148160b02ec4eb951fe347e10004, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb73148160b02ec4eb951fe347e10004, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb73148160b02ec4eb951fe347e10004, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb73148160b02ec4eb951fe347e10004, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb73148160b02ec4eb951fe347e10004, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb73148160b02ec4eb951fe347e10004, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb73148160b02ec4eb951fe347e10004, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eb73148160b02ec4eb951fe347e10004, type: 3}
+      propertyPath: m_Name
+      value: DebrisSmallMetalBroken05
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb73148160b02ec4eb951fe347e10004, type: 3}
 --- !u!1 &1646556889
 GameObject:
   m_ObjectHideFlags: 0
@@ -14709,6 +15306,63 @@ Transform:
   m_Father: {fileID: 312524408}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1001 &1956693128
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: bee1fbdf33d41c84dbafd7a54bb294b8, type: 3}
+      propertyPath: m_RootOrder
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bee1fbdf33d41c84dbafd7a54bb294b8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bee1fbdf33d41c84dbafd7a54bb294b8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bee1fbdf33d41c84dbafd7a54bb294b8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bee1fbdf33d41c84dbafd7a54bb294b8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bee1fbdf33d41c84dbafd7a54bb294b8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bee1fbdf33d41c84dbafd7a54bb294b8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bee1fbdf33d41c84dbafd7a54bb294b8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bee1fbdf33d41c84dbafd7a54bb294b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bee1fbdf33d41c84dbafd7a54bb294b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bee1fbdf33d41c84dbafd7a54bb294b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bee1fbdf33d41c84dbafd7a54bb294b8, type: 3}
+      propertyPath: m_Name
+      value: DebrisSmallMetalBroken04
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bee1fbdf33d41c84dbafd7a54bb294b8, type: 3}
 --- !u!1 &1972979906
 GameObject:
   m_ObjectHideFlags: 0
