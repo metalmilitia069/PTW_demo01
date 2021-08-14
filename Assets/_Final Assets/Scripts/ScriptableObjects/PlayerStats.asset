@@ -23,5 +23,5 @@ MonoBehaviour:
   playerXPCumulated: 0
   levelingUpXp: 0
   playerScore: 0
-  levelUpThreshold: 7
+  levelUpThreshold: 8
   levelProgressionRate: 0
