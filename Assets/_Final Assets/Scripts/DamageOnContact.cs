@@ -7,6 +7,7 @@ public class DamageOnContact : MonoBehaviour
     [SerializeField]
     private bool deathOnContact;
 
+    private bool canDamage = true;
 
     // Start is called before the first frame update
     void Start()
@@ -22,15 +23,20 @@ public class DamageOnContact : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<ShipStats>())
+        if (canDamage)
         {
-            if (deathOnContact)
+            canDamage = false;
+
+            if (other.GetComponent<ShipStats>())
             {
-                other.GetComponent<ShipStats>().KillShip();
-            }
-            else
-            {
-                other.GetComponent<ShipStats>().TakeDamage();
+                if (deathOnContact)
+                {
+                    other.GetComponent<ShipStats>().KillShip();
+                }
+                else
+                {
+                    other.GetComponent<ShipStats>().TakeDamage();
+                }
             }
         }
     }
