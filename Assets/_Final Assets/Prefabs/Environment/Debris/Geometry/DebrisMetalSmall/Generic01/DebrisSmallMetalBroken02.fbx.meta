@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 78706ac87ab8f9848910cfd18ec2e539
+guid: df7b3dd601a5dc540b47ff19922edb28
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Debris_weck01_01
+    second: {fileID: 2100000, guid: cdca39492473578468635e9217995c9a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

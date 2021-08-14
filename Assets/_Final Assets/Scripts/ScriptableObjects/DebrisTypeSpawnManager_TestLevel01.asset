@@ -22,6 +22,16 @@ MonoBehaviour:
     - {fileID: 3110580114334249469, guid: 8ca0ef343f928354c9c583ec91d67cb2, type: 3}
     - {fileID: 4503524494656819838, guid: e6b03bf5b6fcc24468d34273be3021fa, type: 3}
     - {fileID: 7970717498247182013, guid: ef686b5582909ac45b267fdd2da22d64, type: 3}
+    - {fileID: 5512114836311948481, guid: 811e3ca9916ec8046a22bd385832b742, type: 3}
+    - {fileID: 1706208524660656510, guid: a37f2ea4d8bc67b42824e7d08b05998c, type: 3}
+    - {fileID: 5775097270616438405, guid: 9141e0b237c57a24b858f494018ebd52, type: 3}
+    - {fileID: 7279449432393897519, guid: bcd1db4cb701d93489e41b69b1ae297d, type: 3}
+    - {fileID: 4698374700942776588, guid: 2c0b40e273486ea4792167d37b414152, type: 3}
+    - {fileID: 8733428345984473379, guid: 4221d5a9f78c1c246a8afc4f5732a15a, type: 3}
+    - {fileID: 7474039231596179746, guid: cacbde4dbefb31146baf9edf62fa5873, type: 3}
+    - {fileID: 8609352255469073989, guid: 106c046748664ad40a8b9c19c96290c4, type: 3}
+    - {fileID: 5738548797846601313, guid: 75c922054dc763844a5ed5cdc551e990, type: 3}
+    - {fileID: 6939380627635549375, guid: fb24f598e63708149ab940449aebcf8a, type: 3}
   - viewToSpawn: 0
     debrisTypesPrefabs:
     - {fileID: 5563885117629725151, guid: 83dffd7a9c84bda4885f53179dc659b3, type: 3}

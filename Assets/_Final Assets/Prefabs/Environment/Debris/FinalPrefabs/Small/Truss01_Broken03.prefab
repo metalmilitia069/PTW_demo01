@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3324bfd8b02957240af69ce8fc28d7c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 15
+  _speed: 40
   _isRotating: 1
   _rotationSpeed: 20
   selectDebris:

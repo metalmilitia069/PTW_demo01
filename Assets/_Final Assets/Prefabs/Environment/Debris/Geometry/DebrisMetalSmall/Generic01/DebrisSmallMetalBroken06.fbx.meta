@@ -14,6 +14,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Debris_wreck01_04
     second: {fileID: 2100000, guid: 5ea50d80e7387e6439f6a544e48e7c58, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Debris_wreck01_05
+    second: {fileID: 2100000, guid: 8c0ad7ca6585abc47bb956d99ecb9d78, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
