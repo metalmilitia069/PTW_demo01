@@ -19,10 +19,10 @@ MonoBehaviour:
     - {fileID: 108512158359374873, guid: 84be9134919217d4d80296e37c26315b, type: 3}
     - {fileID: 8111916540959511985, guid: 169467cece38c3c4d98e0d09dd61e092, type: 3}
     - {fileID: 8542145964376365199, guid: 688153afaa459174f84fc215adc60f25, type: 3}
-    - {fileID: 2509020576067841834, guid: f0c83eb7d4f9b3346a636da9538b93aa, type: 3}
+    - {fileID: 6247984712799164612, guid: 461270eccb3849145b079608b8a0075b, type: 3}
     - {fileID: 953846666901726582, guid: e94e900c1fe4ddf41b695d440648b782, type: 3}
     - {fileID: 2509020576067841834, guid: f0c83eb7d4f9b3346a636da9538b93aa, type: 3}
-    - {fileID: 8542145964376365199, guid: 688153afaa459174f84fc215adc60f25, type: 3}
+    - {fileID: 6247984712799164612, guid: 461270eccb3849145b079608b8a0075b, type: 3}
     - {fileID: 8111916540959511985, guid: 169467cece38c3c4d98e0d09dd61e092, type: 3}
     - {fileID: 2509020576067841834, guid: f0c83eb7d4f9b3346a636da9538b93aa, type: 3}
   - numberOfSections: 5
@@ -51,4 +51,4 @@ MonoBehaviour:
     - {fileID: 2509020576067841834, guid: f0c83eb7d4f9b3346a636da9538b93aa, type: 3}
     - {fileID: 2509020576067841834, guid: f0c83eb7d4f9b3346a636da9538b93aa, type: 3}
   isPaused: 1
-  isSpawning: 1
+  isSpawning: 0

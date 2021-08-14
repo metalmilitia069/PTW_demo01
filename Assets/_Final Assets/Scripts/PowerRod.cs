@@ -28,6 +28,7 @@ public class PowerRod : MonoBehaviour
         if (other.GetComponent<ProjectileBase>())
         {
             TakeDamage();
+            Destroy(other.gameObject);
         }
     }
 

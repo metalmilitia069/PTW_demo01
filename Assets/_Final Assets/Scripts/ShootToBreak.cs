@@ -27,6 +27,7 @@ public class ShootToBreak : MonoBehaviour
         if (other.GetComponent<ProjectileBase>())
         {
             TakeDamage();
+            Destroy(other.gameObject);
         }
     }
 

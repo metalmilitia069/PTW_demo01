@@ -16,8 +16,10 @@ public class SimpleFragment : MonoBehaviour
         var rb = GetComponent<Rigidbody>();
         rb.AddExplosionForce(Random.Range(125f, 750f), this.transform.position, radius);
 
-
-        particleSystem.Play();
+        if (particleSystem)
+        {
+            particleSystem.Play();
+        }
     }
 
     // Update is called once per frame

@@ -80,6 +80,14 @@ public class ShipStats : ShipBase
         //}
     }
 
+    public void KillShip()
+    {
+        shipStats_SO.playerHealth = 0;
+        shipStats_SO.playerShield = 0;
+        uIManager_SO.canUpdadeHUD = true;
+        IsPlayerDead();
+    }
+
     public void LevelUp()
     {
         if (shipStats_SO.playerLevel >= shipStats_SO.maxLevel)
