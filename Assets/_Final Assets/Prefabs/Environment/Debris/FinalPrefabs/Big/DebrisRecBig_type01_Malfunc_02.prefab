@@ -986,6 +986,7 @@ GameObject:
   - component: {fileID: 6113773124963791551}
   - component: {fileID: 6113773124963791520}
   - component: {fileID: 6113773124963791521}
+  - component: {fileID: 2475147226078006765}
   m_Layer: 0
   m_Name: DebrisRecBig_type01_Malfunc_02
   m_TagString: Untagged
@@ -1020,7 +1021,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6113773124963791522}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3, y: 150, z: 150}
@@ -1081,6 +1082,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 150, z: 150}
   m_Center: {x: 75, y: 0, z: 0}
+--- !u!65 &2475147226078006765
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6113773124963791522}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 150, z: 150}
+  m_Center: {x: -75, y: 0, z: 0}
 --- !u!1 &6113773125128646379
 GameObject:
   m_ObjectHideFlags: 0

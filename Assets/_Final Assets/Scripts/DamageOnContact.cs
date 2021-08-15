@@ -12,7 +12,7 @@ public class DamageOnContact : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        canDamage = true;
     }
 
     // Update is called once per frame
@@ -22,22 +22,19 @@ public class DamageOnContact : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-    {
-        if (canDamage)
+    {        
+        if (other.GetComponent<ShipStats>() && canDamage)
         {
-            canDamage = false;
-
-            if (other.GetComponent<ShipStats>())
+            canDamage = false;            
+                                        
+            if (deathOnContact)
             {
-                if (deathOnContact)
-                {
-                    other.GetComponent<ShipStats>().KillShip();
-                }
-                else
-                {
-                    other.GetComponent<ShipStats>().TakeDamage();
-                }
+                other.GetComponent<ShipStats>().KillShip();
             }
+            else
+            {
+                other.GetComponent<ShipStats>().TakeDamage();
+            }            
         }
     }
 }

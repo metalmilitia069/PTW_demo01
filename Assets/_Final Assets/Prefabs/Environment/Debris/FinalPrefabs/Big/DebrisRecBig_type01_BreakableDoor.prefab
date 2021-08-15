@@ -18389,6 +18389,7 @@ GameObject:
   - component: {fileID: 7949810956279764598}
   - component: {fileID: 5269528563621627069}
   - component: {fileID: 5575607711302763920}
+  - component: {fileID: 5088868762978183369}
   m_Layer: 0
   m_Name: DebrisRecBig_type01_BreakableDoor
   m_TagString: Untagged
@@ -18425,7 +18426,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4472957073790582081}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3, y: 150, z: 150}
@@ -18486,6 +18487,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 150, z: 150}
   m_Center: {x: 75, y: 0, z: 0}
+--- !u!65 &5088868762978183369
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4472957073790582081}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 150, z: 150}
+  m_Center: {x: -75, y: 0, z: 0}
 --- !u!1 &4481889366942504670
 GameObject:
   m_ObjectHideFlags: 0
@@ -26396,6 +26410,10 @@ PrefabInstance:
     - target: {fileID: 4677270845710488142, guid: 4bece88d75774ee4b8ff454c0faf3067, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579324196997824505, guid: 4bece88d75774ee4b8ff454c0faf3067, type: 3}
+      propertyPath: m_Intensity
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 8971819736988438380, guid: 4bece88d75774ee4b8ff454c0faf3067, type: 3}
       propertyPath: m_RootOrder
