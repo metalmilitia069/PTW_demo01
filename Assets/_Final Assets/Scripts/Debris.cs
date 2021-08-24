@@ -63,7 +63,8 @@ public struct SelectDebris
     {
         standard,        
         asteroid,
-        metalSmall
+        metalSmall,
+        seaDebris
     }
 
     public DebrisType debrisType;

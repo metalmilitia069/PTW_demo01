@@ -39,6 +39,11 @@ public class EndWall : MonoBehaviour
             return;
         }
 
+        if (other.GetComponent<SeaDebris>())
+        {
+            return;
+        }
+
         if (other.GetComponent<DebrisType>())
         {
             if (KillDebrisType)

@@ -41,11 +41,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Depth: 0.89
+    - Depth: 0.02
     - Displacement: 500
     - NormalStrength: 1
     - Smootheness: 1
-    - Strength: 0.01
+    - Strength: 0.688
     m_Colors:
     - DeepWater: {r: 0, g: 0.18914631, b: 0.23584902, a: 0.972549}
     - ShallowWater: {r: 0.15895337, g: 0.6836661, b: 0.7169812, a: 0.85882354}
