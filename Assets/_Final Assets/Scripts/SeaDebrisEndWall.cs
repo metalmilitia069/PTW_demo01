@@ -35,10 +35,6 @@ public class SeaDebrisEndWall : MonoBehaviour
             {
                 other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y, startLocation.transform.position.z);
             }
-        }
-        else if (other.GetComponent<ShipStats>())
-        {
-            other.GetComponent<ShipStats>().TakeDamage();
-        }
+        }        
     }
 }

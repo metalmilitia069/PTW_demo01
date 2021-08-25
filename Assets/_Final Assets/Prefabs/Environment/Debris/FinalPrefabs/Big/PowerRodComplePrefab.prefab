@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2716162955179391661}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 2986963544792130405}
   - {fileID: 3384854214951619173}
@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerRod: {fileID: 2465724267104319967}
   brokenRod: {fileID: 3384854214951619172}
+  wires: {fileID: 0}
   rodHP: 10
 --- !u!65 &1778653354
 BoxCollider:
