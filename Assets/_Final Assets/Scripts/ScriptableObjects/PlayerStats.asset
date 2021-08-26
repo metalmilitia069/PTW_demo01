@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
   playerMaxHealth: 9
-  playerHealth: 3
+  playerHealth: 0
   playerMaxShield: 9
-  playerShield: 2
+  playerShield: 0
   playerSpeed: 60
   fireRate: 0.2
   playerLevel: 1
