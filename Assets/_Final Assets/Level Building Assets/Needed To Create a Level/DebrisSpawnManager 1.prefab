@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1248912976035081533}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1125}
-  m_LocalScale: {x: 300, y: 300, z: 150}
+  m_LocalScale: {x: 300, y: 300, z: 180}
   m_Children: []
   m_Father: {fileID: 1248912977655141582}
   m_RootOrder: 1
@@ -54,6 +54,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -111,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debrisSpawnManager_SO: {fileID: 11400000, guid: 71f8d8fe04f5bec4d8062a8dfd788d57, type: 2}
   endWall: {fileID: 1248912976341370141}
-  _spawnPointOffset: {x: 0, y: 0, z: 150}
+  _spawnPointOffset: {x: 0, y: 0, z: 0}
 --- !u!54 &1248912976035080903
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -157,7 +158,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248912976341370143}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -250}
+  m_LocalPosition: {x: 0, y: 0, z: -585.5}
   m_LocalScale: {x: 300, y: 300, z: 1}
   m_Children: []
   m_Father: {fileID: 1248912977655141582}
@@ -182,6 +183,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -271,7 +273,7 @@ GameObject:
   - component: {fileID: 1248912977655141582}
   - component: {fileID: 1248912977655141583}
   m_Layer: 0
-  m_Name: DebrisSpawnManager
+  m_Name: DebrisSpawnManager 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -307,4 +309,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debrisSpawnManager_SO: {fileID: 11400000, guid: 71f8d8fe04f5bec4d8062a8dfd788d57, type: 2}
   _beginWall: {fileID: 1248912976035081533}
-  _spawnPointOffset: {x: 0, y: 0, z: 75}
+  _spawnPointOffset: {x: 0, y: 0, z: 0}

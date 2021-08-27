@@ -8,22 +8,22 @@ public class CamTrigger : MonoBehaviour
     public SpawnManager_SO spawnManager_SO;
 
     [SerializeField]
-    private Vector3 _originCoordinates;
+    protected Vector3 _originCoordinates;
     [SerializeField]
-    private float _speed;
+    protected float _speed;
     [SerializeField]
-    private bool isLockControls = false;
+    protected bool isLockControls = false;
     [SerializeField]
-    private bool _unpauseSpanwer = false;
+    protected bool _unpauseSpanwer = false;
 
-    private ShipBase shipStats;
+    protected ShipBase shipStats;
 
-    private GameObject _cameraGroup;
+    protected GameObject _cameraGroup;
 
 
 
     [SerializeField]
-    private float _triggerSpeed;
+    protected float _triggerSpeed;
     
     public enum controlOptionsEnum
     {
@@ -55,117 +55,139 @@ public class CamTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position += new Vector3(0, 0, (_speed * Time.deltaTime * -1));
-
+        Move();
 
         if (isLockControls)
         {
-            float componentX;
-            float componentY;
-            float componentZ;
-
-            shipStats.controllerManager_SO.controlSwitcher = 2;
+            FreezeShipControls();
 
             //Automatically Repositioning Player
             if (Vector3.Distance(shipStats.transform.position, _originCoordinates) > 1f)
             {
-                if (shipStats.transform.position.x - _originCoordinates.x > 0)
-                {
-                    componentX = -1 * _speed * Time.deltaTime;
-                }
-                else
-                {
-                    componentX = _speed * Time.deltaTime;
-                }
-
-                if (shipStats.transform.position.y - _originCoordinates.y > 0)
-                {
-                    componentY = -1 * _speed * Time.deltaTime;
-                }
-                else
-                {
-                    componentY = _speed * Time.deltaTime;
-                }
-
-                if (shipStats.transform.position.z - _originCoordinates.z > 0)
-                {
-                    componentZ = -1 * _speed * Time.deltaTime;
-                }
-                else
-                {
-                    componentZ = _speed * Time.deltaTime;
-                }
-                //Debug.Log("Z:" + componentZ);
-                shipStats.transform.position += new Vector3(componentX, componentY, componentZ);
+                SendPlayerToOriginCoordinates();
             }
             //Change Cameras, then Release Controls
             else
             {
-                switch (cameraOptions)
-                {
-                    case cameraOptionsEnum.topToSide:
-                        cameraTransitionsPool_SO.camTransitionsArray[0].gameObject.SetActive(true);
-                        _cameraGroup = cameraTransitionsPool_SO.camTransitionsArray[0];
-                        cameraOptions = cameraOptionsEnum.none;
-                        break;
-                    case cameraOptionsEnum.sideToTop:
-                        cameraTransitionsPool_SO.camTransitionsArray[1].gameObject.SetActive(true);
-                        _cameraGroup = cameraTransitionsPool_SO.camTransitionsArray[1];
-                        cameraOptions = cameraOptionsEnum.none;
-                        break;
-                    case cameraOptionsEnum.topToBack:
-                        cameraTransitionsPool_SO.camTransitionsArray[2].gameObject.SetActive(true);
-                        _cameraGroup = cameraTransitionsPool_SO.camTransitionsArray[2];
-                        cameraOptions = cameraOptionsEnum.none;
-                        break;
-                    case cameraOptionsEnum.backToTop:
-                        cameraTransitionsPool_SO.camTransitionsArray[3].gameObject.SetActive(true);
-                        _cameraGroup = cameraTransitionsPool_SO.camTransitionsArray[3];
-                        cameraOptions = cameraOptionsEnum.none;
-                        break;
-                    case cameraOptionsEnum.backToSide:
-                        cameraTransitionsPool_SO.camTransitionsArray[4].gameObject.SetActive(true);
-                        _cameraGroup = cameraTransitionsPool_SO.camTransitionsArray[4];
-                        cameraOptions = cameraOptionsEnum.none;
-                        break;
-                    case cameraOptionsEnum.sideToBack:
-                        cameraTransitionsPool_SO.camTransitionsArray[5].gameObject.SetActive(true);
-                        _cameraGroup = cameraTransitionsPool_SO.camTransitionsArray[5];
-                        cameraOptions = cameraOptionsEnum.none;
-                        break;
-                    default:
-                        break;
-                }
-
-                if (!_cameraGroup.activeSelf)
-                {
-                    switch (controlOptions)
-                    {
-                        case controlOptionsEnum.topControls:
-                            shipStats.controllerManager_SO.controlSwitcher = -1;
-                            break;
-                        case controlOptionsEnum.sideControls:
-                            shipStats.controllerManager_SO.controlSwitcher = 0;
-                            break;
-                        case controlOptionsEnum.backControls:
-                            shipStats.controllerManager_SO.controlSwitcher = 1;
-                            break;
-                        default:
-                            break;
-                    }
-
-                    if (_unpauseSpanwer)
-                    {
-                        spawnManager_SO.isPaused = false;                        
-                    }
-
-                    isLockControls = false;                
-                }
-
-
-
-            } 
+                SwitchCamera();
+                UnlockControls();
+            }
         }
+    }
+
+    protected void Move()
+    {
+        this.transform.position += new Vector3(0, 0, (_speed * Time.deltaTime * -1));
+    }
+
+    protected void SwitchCamera()
+    {
+        switch (cameraOptions)
+        {
+            case cameraOptionsEnum.topToSide:
+                cameraTransitionsPool_SO.camTransitionsArray[0].gameObject.SetActive(true);
+                _cameraGroup = cameraTransitionsPool_SO.camTransitionsArray[0];
+                cameraOptions = cameraOptionsEnum.none;
+                break;
+            case cameraOptionsEnum.sideToTop:
+                cameraTransitionsPool_SO.camTransitionsArray[1].gameObject.SetActive(true);
+                _cameraGroup = cameraTransitionsPool_SO.camTransitionsArray[1];
+                cameraOptions = cameraOptionsEnum.none;
+                break;
+            case cameraOptionsEnum.topToBack:
+                cameraTransitionsPool_SO.camTransitionsArray[2].gameObject.SetActive(true);
+                _cameraGroup = cameraTransitionsPool_SO.camTransitionsArray[2];
+                cameraOptions = cameraOptionsEnum.none;
+                break;
+            case cameraOptionsEnum.backToTop:
+                cameraTransitionsPool_SO.camTransitionsArray[3].gameObject.SetActive(true);
+                _cameraGroup = cameraTransitionsPool_SO.camTransitionsArray[3];
+                cameraOptions = cameraOptionsEnum.none;
+                break;
+            case cameraOptionsEnum.backToSide:
+                cameraTransitionsPool_SO.camTransitionsArray[4].gameObject.SetActive(true);
+                _cameraGroup = cameraTransitionsPool_SO.camTransitionsArray[4];
+                cameraOptions = cameraOptionsEnum.none;
+                break;
+            case cameraOptionsEnum.sideToBack:
+                cameraTransitionsPool_SO.camTransitionsArray[5].gameObject.SetActive(true);
+                _cameraGroup = cameraTransitionsPool_SO.camTransitionsArray[5];
+                cameraOptions = cameraOptionsEnum.none;
+                break;
+            default:
+                break;
+        }
+
+        //UnlockControls();
+    }
+
+    protected void UnlockControls()
+    {
+        //if (!_cameraGroup.activeSelf)
+        //{
+            switch (controlOptions)
+            {
+                case controlOptionsEnum.topControls:
+                    shipStats.controllerManager_SO.controlSwitcher = -1;
+                    break;
+                case controlOptionsEnum.sideControls:
+                    shipStats.controllerManager_SO.controlSwitcher = 0;
+                    break;
+                case controlOptionsEnum.backControls:
+                    shipStats.controllerManager_SO.controlSwitcher = 1;
+                    break;
+                default:
+                    break;
+            }
+
+            if (_unpauseSpanwer)
+            {
+                spawnManager_SO.isPaused = false;
+            }
+
+            isLockControls = false;
+        //}
+    }
+
+    protected void SendPlayerToOriginCoordinates()
+    {
+        float componentX;
+        float componentY;
+        float componentZ;
+
+        if (shipStats.transform.position.x - _originCoordinates.x > 0)
+        {
+            componentX = -1 * _speed * Time.deltaTime;
+        }
+        else
+        {
+            componentX = _speed * Time.deltaTime;
+        }
+
+        if (shipStats.transform.position.y - _originCoordinates.y > 0)
+        {
+            componentY = -1 * _speed * Time.deltaTime;
+        }
+        else
+        {
+            componentY = _speed * Time.deltaTime;
+        }
+
+        if (shipStats.transform.position.z - _originCoordinates.z > 0)
+        {
+            componentZ = -1 * _speed * Time.deltaTime;
+        }
+        else
+        {
+            componentZ = _speed * Time.deltaTime;
+        }
+        //Debug.Log("Z:" + componentZ);
+        shipStats.transform.position += new Vector3(componentX, componentY, componentZ);
+    }
+
+    protected void FreezeShipControls()
+    {
+        shipStats.controllerManager_SO.controlSwitcher = 2;
     }
 
     private void OnTriggerEnter(Collider other)

@@ -7,10 +7,13 @@ public class ShipStats : ShipBase
     [Header("Player Stats:")]
     public ShipStats_SO shipStats_SO;
     public UIManager_SO uIManager_SO;
+    public CutSceneManager_SO cutSceneManager_SO;
 
     public GameObject visualEffectPrefab;
 
     public GameObject[] shieldPrefabs;
+
+    public bool isShipFrozen = false;
 
     // Start is called before the first frame update
     private void Awake()
@@ -20,6 +23,7 @@ public class ShipStats : ShipBase
 
         _playerControls = new PlayerControls();
         gameManager_SO.shipStats = this;
+        cutSceneManager_SO.shipStatsRef = this;
 
         foreach (var item in visualEffects)
         {
@@ -30,8 +34,11 @@ public class ShipStats : ShipBase
     // Update is called once per frame
     void Update()
     {
-        Movement();
-        Shooting();        
+        if (!isShipFrozen)
+        {
+            Movement();
+            Shooting();
+        }
     }
 
     private void OnEnable()
