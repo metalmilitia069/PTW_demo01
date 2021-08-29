@@ -33953,19 +33953,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2add97852566794394a70beffac4c88, type: 3}
---- !u!65 &2339453689868654336
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6152703906915606478}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 203.71033, y: 119.11835, z: 3.2854567}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &3730925196882212285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34032,61 +34019,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4859791441966668021, guid: 210ced7daa4e5644882a7a33fa824dce, type: 3}
   m_PrefabInstance: {fileID: 8957154714943176543}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &6152703906915606478
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6642687077336185485}
-  - component: {fileID: 2339453689868654336}
-  - component: {fileID: 6152703906915606479}
-  m_Layer: 0
-  m_Name: CamTriggerTop-Back SeaLvl01
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &6152703906915606479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6152703906915606478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ce8561eb48b9464594da9aa87d60009, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraTransitionsPool_SO: {fileID: 11400000, guid: 4cbfda2b40723734eaacfdaf492b6720, type: 2}
-  spawnManager_SO: {fileID: 11400000, guid: 94ea8afbb1720584e85a24e1f1654ab4, type: 2}
-  _originCoordinates: {x: 0, y: 0, z: 0}
-  _speed: 20
-  isLockControls: 0
-  _unpauseSpanwer: 0
-  _triggerSpeed: 30
-  controlOptions: 2
-  cameraOptions: 6
-  cutSceneManager_SO: {fileID: 11400000, guid: 945ed78330e7e03479ffba9511196368, type: 2}
-  cutScene: 0
---- !u!4 &6642687077336185485
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6152703906915606478}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 279.8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8957154714943176543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34300,3 +34232,64 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 210ced7daa4e5644882a7a33fa824dce, type: 3}
+--- !u!1001 &9060473406690757796
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2419229307640378921, guid: f66664adf646d534cae7a20a119ce98e, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419229307640378921, guid: f66664adf646d534cae7a20a119ce98e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419229307640378921, guid: f66664adf646d534cae7a20a119ce98e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419229307640378921, guid: f66664adf646d534cae7a20a119ce98e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 279.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419229307640378921, guid: f66664adf646d534cae7a20a119ce98e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419229307640378921, guid: f66664adf646d534cae7a20a119ce98e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419229307640378921, guid: f66664adf646d534cae7a20a119ce98e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419229307640378921, guid: f66664adf646d534cae7a20a119ce98e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419229307640378921, guid: f66664adf646d534cae7a20a119ce98e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419229307640378921, guid: f66664adf646d534cae7a20a119ce98e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419229307640378921, guid: f66664adf646d534cae7a20a119ce98e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945230005127467882, guid: f66664adf646d534cae7a20a119ce98e, type: 3}
+      propertyPath: m_Name
+      value: CamTriggerTop-Back SeaLvl01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945230005127467883, guid: f66664adf646d534cae7a20a119ce98e, type: 3}
+      propertyPath: cameraOptions
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f66664adf646d534cae7a20a119ce98e, type: 3}
