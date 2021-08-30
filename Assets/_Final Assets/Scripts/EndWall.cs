@@ -39,7 +39,7 @@ public class EndWall : MonoBehaviour
             return;
         }
 
-        if (other.GetComponent<SeaDebris>())
+        if (other.GetComponent<SeaDebris>() || other.GetComponent<FortressDebris>() || other.gameObject.tag == "Ignore")
         {
             return;
         }

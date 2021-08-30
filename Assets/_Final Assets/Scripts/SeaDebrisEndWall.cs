@@ -24,6 +24,11 @@ public class SeaDebrisEndWall : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.GetComponent<FortressDebris>() || other.gameObject.tag == "Ignore")
+        {
+            Destroy(other.gameObject, 1.0f);
+        }
+
         if (other.GetComponent<SeaDebris>())
         {
             if (seaDebrisEndWall_SO.isKillingSeaDebris && other.GetComponent<SeaDebris>().selectDebris.debrisType == SelectDebris.DebrisType.seaDebris)

@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTransitionsPool_SO: {fileID: 11400000, guid: 4cbfda2b40723734eaacfdaf492b6720, type: 2}
-  spawnManager_SO: {fileID: 11400000, guid: bd8fdc68e95560247a0e6bda44ed6385, type: 2}
+  spawnManager_SO: {fileID: 11400000, guid: 94ea8afbb1720584e85a24e1f1654ab4, type: 2}
   _originCoordinates: {x: 0, y: 0, z: 0}
   _speed: 20
   isLockControls: 0

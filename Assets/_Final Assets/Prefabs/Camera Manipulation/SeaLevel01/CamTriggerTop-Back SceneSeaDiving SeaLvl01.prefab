@@ -65,6 +65,6 @@ MonoBehaviour:
   _unpauseSpanwer: 0
   _triggerSpeed: 30
   controlOptions: 2
-  cameraOptions: 6
+  cameraOptions: 2
   cutSceneManager_SO: {fileID: 11400000, guid: 945ed78330e7e03479ffba9511196368, type: 2}
   cutScene: 0

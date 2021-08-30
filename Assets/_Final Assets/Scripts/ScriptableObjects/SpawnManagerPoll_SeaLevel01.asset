@@ -18,6 +18,6 @@ MonoBehaviour:
   waveConfig:
   - viewToSpawn: -1
     timeBetweenSpawns: 0
-    numberOfEnemiesByType: 01000000
+    numberOfEnemiesByType: 0100000001000000
     waveEnemyTypes:
-    - {fileID: 0}
+    - {fileID: 156385061434305036, guid: 2b349962ccf8f9a46976d552c6748f7e, type: 3}

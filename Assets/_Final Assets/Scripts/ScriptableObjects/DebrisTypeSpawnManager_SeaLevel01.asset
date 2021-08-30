@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66858b6302fde2c47b184d0f63a80de6, type: 3}
-  m_Name: Controller
+  m_Script: {fileID: 11500000, guid: 8f453241c9327ac4891a1e04482d9ed7, type: 3}
+  m_Name: DebrisTypeSpawnManager_SeaLevel01
   m_EditorClassIdentifier: 
-  controlSwitcher: -1
+  isPaused: 1
+  waveIndex: 0
+  doKillCorroutine: 0
+  debrisTypePrefabs: []
