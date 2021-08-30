@@ -20,4 +20,5 @@ MonoBehaviour:
     timeBetweenSpawns: 0
     numberOfEnemiesByType: 0100000001000000
     waveEnemyTypes:
+    - {fileID: 2945230005127467882, guid: f66664adf646d534cae7a20a119ce98e, type: 3}
     - {fileID: 156385061434305036, guid: 2b349962ccf8f9a46976d552c6748f7e, type: 3}

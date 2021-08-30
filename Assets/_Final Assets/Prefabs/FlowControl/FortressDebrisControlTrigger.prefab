@@ -44,3 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fortressDebris_SO: {fileID: 11400000, guid: d56b3a7ecd491244a88f05008c42bb2b, type: 2}
+  seaDebrisEndWall_SO: {fileID: 11400000, guid: ada8888a326811941b6834a4e333c142, type: 2}

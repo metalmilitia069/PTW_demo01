@@ -15,13 +15,13 @@ MonoBehaviour:
   playerMaxHealth: 9
   playerHealth: 3
   playerMaxShield: 9
-  playerShield: 2
+  playerShield: 3
   playerSpeed: 60
   fireRate: 0.2
-  playerLevel: 1
+  playerLevel: 2
   maxLevel: 7
-  playerXPCumulated: 0
+  playerXPCumulated: 10
   levelingUpXp: 0
-  playerScore: 0
-  levelUpThreshold: 7
+  playerScore: 10
+  levelUpThreshold: 14
   levelProgressionRate: 0
