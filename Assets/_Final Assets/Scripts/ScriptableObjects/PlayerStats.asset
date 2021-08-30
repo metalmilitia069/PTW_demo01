@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
   playerMaxHealth: 9
-  playerHealth: 3
+  playerHealth: 8
   playerMaxShield: 9
-  playerShield: 3
+  playerShield: 8
   playerSpeed: 60
   fireRate: 0.2
-  playerLevel: 2
+  playerLevel: 6
   maxLevel: 7
-  playerXPCumulated: 10
-  levelingUpXp: 0
-  playerScore: 10
-  levelUpThreshold: 14
-  levelProgressionRate: 0
+  playerXPCumulated: 370
+  levelingUpXp: 60
+  playerScore: 370
+  levelUpThreshold: 320
+  levelProgressionRate: 0.1875

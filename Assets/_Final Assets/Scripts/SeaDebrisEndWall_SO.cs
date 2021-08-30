@@ -6,4 +6,9 @@ using UnityEngine;
 public class SeaDebrisEndWall_SO : ScriptableObject
 {
     public bool isKillingSeaDebris = false;
+
+    private void OnDisable()
+    {
+        isKillingSeaDebris = false;
+    }
 }

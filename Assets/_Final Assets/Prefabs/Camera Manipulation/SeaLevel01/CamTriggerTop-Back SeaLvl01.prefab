@@ -62,7 +62,7 @@ MonoBehaviour:
   _originCoordinates: {x: 0, y: 0, z: 0}
   _speed: 20
   isLockControls: 0
-  _unpauseSpanwer: 0
+  _unpauseSpanwer: 1
   _triggerSpeed: 30
   controlOptions: 2
   cameraOptions: 2
