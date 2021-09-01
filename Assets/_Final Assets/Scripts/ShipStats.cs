@@ -15,6 +15,9 @@ public class ShipStats : ShipBase
 
     public bool isShipFrozen = false;
 
+    [Header("Debugger - Unplug Later")]
+    public bool isGodModeOn = false;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -53,6 +56,10 @@ public class ShipStats : ShipBase
 
     public void TakeDamage()
     {
+        if (isGodModeOn)
+        {
+            return;
+        }
         
         if (shipStats_SO.playerShield <= 0)
         {

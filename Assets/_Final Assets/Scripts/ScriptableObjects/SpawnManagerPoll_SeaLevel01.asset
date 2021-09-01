@@ -22,7 +22,7 @@ MonoBehaviour:
     waveEnemyTypes:
     - {fileID: 5839257904833064344, guid: 4188f46136f6e944e9a38608c34822b4, type: 3}
     - {fileID: 7568572043394124841, guid: 1211c8e343cc286409a7c2c5c0327b7b, type: 3}
-  - viewToSpawn: -1
+  - viewToSpawn: 2
     timeBetweenSpawns: 0
     numberOfEnemiesByType: 01000000
     waveEnemyTypes:
@@ -32,7 +32,7 @@ MonoBehaviour:
     numberOfEnemiesByType: 03000000
     waveEnemyTypes:
     - {fileID: 1548504744566955778, guid: 13e8719fd34c4ab4a8d36114e40b5222, type: 3}
-  - viewToSpawn: 0
+  - viewToSpawn: 2
     timeBetweenSpawns: 0
     numberOfEnemiesByType: 01000000
     waveEnemyTypes:
@@ -43,7 +43,7 @@ MonoBehaviour:
     waveEnemyTypes:
     - {fileID: 8067243221266560235, guid: 502c1336bb3de27468cf0278f29b30dc, type: 3}
     - {fileID: 5985388335628007508, guid: 9009f9f37b353c14e9f2e2f2a08c0974, type: 3}
-  - viewToSpawn: 1
+  - viewToSpawn: 2
     timeBetweenSpawns: 0
     numberOfEnemiesByType: 01000000
     waveEnemyTypes:
@@ -53,7 +53,7 @@ MonoBehaviour:
     numberOfEnemiesByType: 05000000
     waveEnemyTypes:
     - {fileID: 7568572043394124841, guid: 1211c8e343cc286409a7c2c5c0327b7b, type: 3}
-  - viewToSpawn: -1
+  - viewToSpawn: 2
     timeBetweenSpawns: 0
     numberOfEnemiesByType: 01000000
     waveEnemyTypes:
@@ -63,23 +63,34 @@ MonoBehaviour:
     numberOfEnemiesByType: 05000000
     waveEnemyTypes:
     - {fileID: 5985388335628007508, guid: 9009f9f37b353c14e9f2e2f2a08c0974, type: 3}
-  - viewToSpawn: 1
+  - viewToSpawn: 2
     timeBetweenSpawns: 0
+    numberOfEnemiesByType: 01000000
+    waveEnemyTypes:
+    - {fileID: 2350321253690112698, guid: 481070f962be25c478f36c4db0ee38a6, type: 3}
+  - viewToSpawn: -1
+    timeBetweenSpawns: 5
+    numberOfEnemiesByType: 030000000300000003000000
+    waveEnemyTypes:
+    - {fileID: 5839257904833064344, guid: 4188f46136f6e944e9a38608c34822b4, type: 3}
+    - {fileID: 7568572043394124841, guid: 1211c8e343cc286409a7c2c5c0327b7b, type: 3}
+    - {fileID: 2593605131776023893, guid: eb98bbb00da378044b5254d296f73568, type: 3}
+  - viewToSpawn: 2
+    timeBetweenSpawns: 5
     numberOfEnemiesByType: 01000000
     waveEnemyTypes:
     - {fileID: 2945230005127467882, guid: f66664adf646d534cae7a20a119ce98e, type: 3}
   - viewToSpawn: 1
     timeBetweenSpawns: 5
-    numberOfEnemiesByType: 030000000300000003000000
+    numberOfEnemiesByType: 05000000
     waveEnemyTypes:
-    - {fileID: 8067243221266560235, guid: 502c1336bb3de27468cf0278f29b30dc, type: 3}
     - {fileID: 7978661123989897726, guid: 9721da71dfa879641b46e91ac03c6927, type: 3}
-    - {fileID: 5985388335628007508, guid: 9009f9f37b353c14e9f2e2f2a08c0974, type: 3}
   - viewToSpawn: 1
     timeBetweenSpawns: 5
-    numberOfEnemiesByType: 01000000
+    numberOfEnemiesByType: 0100000001000000
     waveEnemyTypes:
     - {fileID: 156385061434305036, guid: 2b349962ccf8f9a46976d552c6748f7e, type: 3}
+    - {fileID: 5260713485658530734, guid: 6f92ab78e672f2d47a642f1953f90f24, type: 3}
   - viewToSpawn: 1
     timeBetweenSpawns: 5
     numberOfEnemiesByType: 05000000

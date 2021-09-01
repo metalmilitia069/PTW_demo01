@@ -41,8 +41,7 @@ public class BeginWall : MonoBehaviour
 
 
         if (other.GetComponent<FortressDebris>())
-        {
-            Debug.Log("cuuuuuuuuuuuuuuuuuuu");
+        {            
             if (other.GetComponent<FortressDebris>().selectDebris.debrisType == SelectDebris.DebrisType.standard)// && debrisSpawnManager_SO.isSpawning)
             {
                 debrisSpawnManager_SO.isPaused = false;
