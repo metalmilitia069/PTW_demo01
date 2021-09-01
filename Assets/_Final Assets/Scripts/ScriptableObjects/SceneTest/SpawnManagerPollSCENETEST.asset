@@ -23,7 +23,7 @@ MonoBehaviour:
     - {fileID: 6906430746450621856, guid: 8f13c5d68364bb24ba009230cc6e7f4c, type: 3}
   - viewToSpawn: 2
     timeBetweenSpawns: 0
-    numberOfEnemiesByType: 01000000
+    numberOfEnemiesByType: 0100000001000000
     waveEnemyTypes:
     - {fileID: 6906430746450621856, guid: 9e2810e6ef820f64a9abdcb89448f900, type: 3}
-    - {fileID: 6906430746450621856, guid: 9e2810e6ef820f64a9abdcb89448f900, type: 3}
+    - {fileID: 156385061434305036, guid: 0b268afb8f248754ba4ed2e6893967f8, type: 3}
