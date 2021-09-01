@@ -46,6 +46,9 @@ public class CutSceneManager : MonoBehaviour
                 PlayDivingSeaLvl01();
                 cutSceneManager_SO.cutScene = CutSceneManager_SO.CutScene.none;
                 break;
+            case CutSceneManager_SO.CutScene.JumpingSeaLvl01:
+                PlayJumpingSeaLvl01();
+                break;
             case CutSceneManager_SO.CutScene.none:
                 break;
             default:
@@ -59,5 +62,10 @@ public class CutSceneManager : MonoBehaviour
     {
         cutSceneManager_SO.shipStatsRef.GetComponent<Animator>().SetTrigger("DivingTrigger");
         cutSceneManager_SO.seaLevelRef.GetComponent<Animator>().SetTrigger("DivingTrigger");
+    }
+
+    public void PlayJumpingSeaLvl01()
+    {
+
     }
 }

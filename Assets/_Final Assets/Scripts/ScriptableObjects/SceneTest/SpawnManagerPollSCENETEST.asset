@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12518858a5aaf914a8fa51f5e1b29079, type: 3}
+  m_Name: SpawnManagerPollSCENETEST
+  m_EditorClassIdentifier: 
+  number: 0
+  isPaused: 1
+  _currentEnemiesList: []
+  waveConfig:
+  - viewToSpawn: 2
+    timeBetweenSpawns: 0
+    numberOfEnemiesByType: 01000000
+    waveEnemyTypes:
+    - {fileID: 6906430746450621856, guid: 8f13c5d68364bb24ba009230cc6e7f4c, type: 3}
+  - viewToSpawn: 2
+    timeBetweenSpawns: 0
+    numberOfEnemiesByType: 01000000
+    waveEnemyTypes:
+    - {fileID: 6906430746450621856, guid: 9e2810e6ef820f64a9abdcb89448f900, type: 3}
+    - {fileID: 6906430746450621856, guid: 9e2810e6ef820f64a9abdcb89448f900, type: 3}

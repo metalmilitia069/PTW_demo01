@@ -6,14 +6,15 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "FortressDebris", menuName = "SpecializedDebris/Fortress")]
 public class FortressDebris_SO : ScriptableObject
 {
-    public FortressDebris fortressDebris = default;
+    public FortressDebris fortressDebris = default;  //Delete maybe
 
-    public bool canMove = false;
-
+    public bool PartOneCanMove = false;
+    public bool PartTwoCanMove = false;
 
     private void OnDisable()
     {
         fortressDebris = default;
-        canMove = false;
+        PartOneCanMove = false;
+        PartTwoCanMove = false;
     }
 }

@@ -10,7 +10,8 @@ public class FortressDebris_ControlTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fortressDebris_SO.canMove = true;
+        fortressDebris_SO.PartOneCanMove = true;
+        seaDebrisEndWall_SO.isKillingSeaDebris = true;
         seaDebrisEndWall_SO.isKillingSeaDebris = true;
         Destroy(this.gameObject, 5.0f);
     }    

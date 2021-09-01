@@ -7,9 +7,12 @@ public class AnimTrigger : CamTrigger
     public CutSceneManager_SO cutSceneManager_SO;
     private bool canPlayAnim = true;
 
+    public float animationPlayTime;
+
     public enum CutScene
     {
         DivingSeaLvl01,
+        JumpingSeaLvl01,
         none
     }
 
@@ -62,13 +65,16 @@ public class AnimTrigger : CamTrigger
                 //cutSceneManager_SO.cutScene = CutSceneManager_SO.CutScene.none;
                 //Destroy(this.gameObject);
                 break;
+            case CutScene.JumpingSeaLvl01:
+                cutSceneManager_SO.cutScene = CutSceneManager_SO.CutScene.JumpingSeaLvl01;
+                break;
             case CutScene.none:
                 break;
             default:
                 break;
         }
 
-        yield return new WaitForSeconds(3.1f);
+        yield return new WaitForSeconds(animationPlayTime);
         UnlockControls();
         shipStats.GetComponent<ShipStats>().isShipFrozen = false;
         Destroy(this.gameObject);

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6758262790520314788}
   - component: {fileID: 2945230005127467883}
   m_Layer: 0
-  m_Name: CamTriggerTop-Back SceneSeaDiving SeaLvl01
+  m_Name: CamTriggerTop-Back SceneSeaJumping SeaLvl01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
   _unpauseSpanwer: 1
   _triggerSpeed: 30
   controlOptions: 2
-  cameraOptions: 2
+  cameraOptions: 6
   cutSceneManager_SO: {fileID: 11400000, guid: 945ed78330e7e03479ffba9511196368, type: 2}
-  animationPlayTime: 3.1
-  cutScene: 0
+  animationPlayTime: 0
+  cutScene: 1

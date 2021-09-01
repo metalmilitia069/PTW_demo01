@@ -9,6 +9,7 @@ public class CutSceneManager_SO : ScriptableObject
     public enum CutScene
     {
         DivingSeaLvl01,
+        JumpingSeaLvl01,
         none
     }
 
