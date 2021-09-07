@@ -28,6 +28,7 @@ public class AnimTrigger : CamTrigger
     void Update()
     {
         Move();
+        
 
         if (isLockControls)
         {

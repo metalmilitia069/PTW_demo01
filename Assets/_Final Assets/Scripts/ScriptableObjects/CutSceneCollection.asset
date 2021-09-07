@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 587740b5521aaa04392004b64505a215, type: 3}
   m_Name: CutSceneCollection
   m_EditorClassIdentifier: 
-  cutScene: 1
+  cutScene: 2
   shipStatsRef: {fileID: 0}
   seaLevelRef: {fileID: 0}
+  FortressDebrisPartTwoRef: {fileID: 0}
+  Animation_Prop_CutSceneSeaLevel01: {fileID: 0}

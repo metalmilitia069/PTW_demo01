@@ -26,7 +26,11 @@ public class ShipStats : ShipBase
 
         _playerControls = new PlayerControls();
         gameManager_SO.shipStats = this;
-        cutSceneManager_SO.shipStatsRef = this;
+
+        if (cutSceneManager_SO != null)
+        {
+            cutSceneManager_SO.shipStatsRef = this;
+        }
 
         foreach (var item in visualEffects)
         {

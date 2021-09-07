@@ -171,7 +171,7 @@ public class ShipBase : MonoBehaviour
     {
         _playerMovementY = _playerControls.LocomotionSideView.VerticalMove.ReadValue<float>() * _speed * Time.deltaTime;
         _playerMovementX = _playerControls.LocomotionTopView.SideMove.ReadValue<float>() * _speed * Time.deltaTime;
-
+        
         _playerMovement = new Vector3(_playerMovementX, _playerMovementY, 0);
     }
 

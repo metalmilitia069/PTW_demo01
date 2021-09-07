@@ -8,6 +8,7 @@ public class FortressDebris_SO : ScriptableObject
 {
     public FortressDebris fortressDebris = default;  //Delete maybe
 
+
     public bool PartOneCanMove = false;
     public bool PartTwoCanMove = false;
 
