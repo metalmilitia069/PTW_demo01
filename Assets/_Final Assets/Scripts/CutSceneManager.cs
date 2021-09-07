@@ -48,6 +48,7 @@ public class CutSceneManager : MonoBehaviour
                 break;
             case CutSceneManager_SO.CutScene.JumpingSeaLvl01:
                 PlayJumpingSeaLvl01();
+                cutSceneManager_SO.cutScene = CutSceneManager_SO.CutScene.none;
                 break;
             case CutSceneManager_SO.CutScene.none:
                 break;
@@ -66,6 +67,9 @@ public class CutSceneManager : MonoBehaviour
 
     public void PlayJumpingSeaLvl01()
     {
-
+        cutSceneManager_SO.FortressDebrisPartTwoRef.fortressDebris_SO.PartTwoCanMove = false;
+        cutSceneManager_SO.shipStatsRef.GetComponent<Animator>().SetTrigger("JumpSeaTrigger");
+        cutSceneManager_SO.FortressDebrisPartTwoRef.GetComponent<Animator>().SetTrigger("JumpSeaTrigger");
+        cutSceneManager_SO.Animation_Prop_CutSceneSeaLevel01.GetComponent<Animator>().SetTrigger("JumpSeaTrigger");
     }
 }

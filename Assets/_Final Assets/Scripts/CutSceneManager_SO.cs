@@ -18,11 +18,16 @@ public class CutSceneManager_SO : ScriptableObject
     public ShipStats shipStatsRef = default;
     public GameObject seaLevelRef = default;
 
+    public FortressDebrisPartTwo FortressDebrisPartTwoRef = default;
+    public AnimatinProp_SeaLvl01 Animation_Prop_CutSceneSeaLevel01 = default;
+
     private void OnDisable()
     {
         cutScene = CutScene.none;
 
         shipStatsRef = default;
         seaLevelRef = default;
+        FortressDebrisPartTwoRef = default;
+        Animation_Prop_CutSceneSeaLevel01 = default;
     }
 }

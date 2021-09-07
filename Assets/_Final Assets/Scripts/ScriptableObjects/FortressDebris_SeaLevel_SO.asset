@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: FortressDebris_SeaLevel_SO
   m_EditorClassIdentifier: 
   fortressDebris: {fileID: 0}
-  canMove: 0
+  PartOneCanMove: 0
+  PartTwoCanMove: 1
