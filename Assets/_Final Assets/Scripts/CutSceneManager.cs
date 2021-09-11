@@ -69,8 +69,9 @@ public class CutSceneManager : MonoBehaviour
     {
         cutSceneManager_SO.FortressDebrisPartTwoRef.fortressDebris_SO.PartTwoCanMove = false;
         cutSceneManager_SO.FortressDebrisPartTwoRef.gameObject.transform.position = Vector3.zero;
-        cutSceneManager_SO.shipStatsRef.GetComponent<Animator>().SetTrigger("JumpSeaTrigger");
+        cutSceneManager_SO.shipStatsRef.playerSceneActor.GetComponent<Animator>().SetTrigger("JumpSeaTrigger");
         cutSceneManager_SO.FortressDebrisPartTwoRef.GetComponent<Animator>().SetTrigger("JumpSeaTrigger");
         cutSceneManager_SO.Animation_Prop_CutSceneSeaLevel01.GetComponent<Animator>().SetTrigger("JumpSeaTrigger");
+        Debug.Log("triggou");
     }
 }

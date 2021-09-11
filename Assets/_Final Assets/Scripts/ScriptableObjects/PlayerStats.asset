@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad71d31d3e3140e428353110b91fbfaa, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  playerMaxHealth: 8
+  playerMaxHealth: 9
   playerHealth: 3
-  playerMaxShield: 8
+  playerMaxShield: 9
   playerShield: 3
   playerSpeed: 60
   fireRate: 0.2

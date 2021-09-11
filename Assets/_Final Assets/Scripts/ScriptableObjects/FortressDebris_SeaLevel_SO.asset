@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fortressDebris: {fileID: 0}
   PartOneCanMove: 0
-  PartTwoCanMove: 1
+  PartTwoCanMove: 0

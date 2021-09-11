@@ -37,11 +37,12 @@ public class AnimTrigger : CamTrigger
             //Automatically Repositioning Player
             if (Vector3.Distance(shipStats.transform.position, _originCoordinates) > 1f)
             {
+                //Debug.Log("Ein?!?!");
                 SendPlayerToOriginCoordinates();
             }
             //Change Cameras, then Release Controls
             else
-            {
+            {                
                 SwitchCamera();
                 if (cutScene != CutScene.none && canPlayAnim)
                 {

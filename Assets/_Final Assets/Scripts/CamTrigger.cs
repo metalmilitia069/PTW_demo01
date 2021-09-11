@@ -16,6 +16,7 @@ public class CamTrigger : MonoBehaviour
     [SerializeField]
     protected bool _unpauseSpanwer = false;
 
+    [SerializeField]
     protected ShipBase shipStats;
 
     protected GameObject _cameraGroup;
@@ -23,8 +24,9 @@ public class CamTrigger : MonoBehaviour
 
 
     [SerializeField]
-    protected float _triggerSpeed;
-    
+    //protected float _triggerSpeed;
+    protected float _shipSpeed = 60.0f;
+
     public enum controlOptionsEnum
     {
         topControls,
@@ -154,32 +156,32 @@ public class CamTrigger : MonoBehaviour
         float componentX;
         float componentY;
         float componentZ;
-
+        
         if (shipStats.transform.position.x - _originCoordinates.x > 0)
         {
-            componentX = -1 * _speed * Time.deltaTime;
+            componentX = -1 * _shipSpeed * Time.deltaTime;
         }
         else
         {
-            componentX = _speed * Time.deltaTime;
+            componentX = _shipSpeed * Time.deltaTime;
         }
 
         if (shipStats.transform.position.y - _originCoordinates.y > 0)
         {
-            componentY = -1 * _speed * Time.deltaTime;
+            componentY = -1 * _shipSpeed * Time.deltaTime;
         }
         else
         {
-            componentY = _speed * Time.deltaTime;
+            componentY = _shipSpeed * Time.deltaTime;
         }
 
         if (shipStats.transform.position.z - _originCoordinates.z > 0)
         {
-            componentZ = -1 * _speed * Time.deltaTime;
+            componentZ = -1 * _shipSpeed * Time.deltaTime;
         }
         else
         {
-            componentZ = _speed * Time.deltaTime;
+            componentZ = _shipSpeed * Time.deltaTime;
         }
         //Debug.Log("Z:" + componentZ);
         shipStats.transform.position += new Vector3(componentX, componentY, componentZ);
@@ -194,7 +196,7 @@ public class CamTrigger : MonoBehaviour
     {
         if (other.GetComponent<ShipStats>())
         {
-            
+            Debug.Log("triggou a Nave");
             isLockControls = true;
             shipStats = other.GetComponent<ShipStats>();
 

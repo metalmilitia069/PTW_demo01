@@ -22,6 +22,7 @@ public class FortressDebrisPartTwo : Debris
         if (fortressDebris_SO.PartTwoCanMove)
         {
             Move();
+            Debug.Log("Position Z: " + this.transform.position.z);
             //Debug.Log("mozoooo");
             if (_isRotating)
             {
