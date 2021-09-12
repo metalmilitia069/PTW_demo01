@@ -11,6 +11,7 @@ public class FortressDebris_SO : ScriptableObject
 
     public bool PartOneCanMove = false;
     public bool PartTwoCanMove = false;
+    public bool PartTwoEnabled = false;
 
     private void OnDisable()
     {

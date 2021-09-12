@@ -7,6 +7,9 @@ public class FortressDebrisPartTwo : Debris
     public FortressDebris_SO fortressDebris_SO;
     public CutSceneManager_SO cutSceneManager_SO;
 
+    [SerializeField]
+    private GameObject _animationProp;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -28,6 +31,14 @@ public class FortressDebrisPartTwo : Debris
             {
                 RotateThis();
             }
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (fortressDebris_SO.PartTwoEnabled)
+        {
+            _animationProp.gameObject.SetActive(true);
         }
     }
 }
