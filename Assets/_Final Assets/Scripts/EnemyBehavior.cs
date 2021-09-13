@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyBehavior : EnemyCombat
 {
-    public GameManager_SO gameManager_SO;
+    //public GameManager_SO gameManager_SO;
 
     private ShipBase player;
     public ShipBase player1;
@@ -63,7 +63,7 @@ public class EnemyBehavior : EnemyCombat
     // Start is called before the first frame update
     void Start()
     {
-        player = gameManager_SO.shipBase;
+        player = gameManager_SO.shipStats;
         _randomDist = Random.Range(_minDist, _maxDist);
     }
 
@@ -183,6 +183,59 @@ public class EnemyBehavior : EnemyCombat
         {
             AttackPlayer();
             timeToShoot = Time.time + fireRate;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (!other.GetComponent<ProjectileBase>())
+        {
+            float getAwayX = (this.transform.position.x - other.transform.position.x);
+            float getAwayY = (this.transform.position.y - other.transform.position.y);
+            
+            if (pickSteerringView == SteerringView.onTopView)
+            {
+                if (getAwayX > 0)
+                {
+                    this.transform.position += new Vector3(manouverSpeed * Time.deltaTime, 0, 0);
+                }
+                else if (getAwayX < 0)
+                {
+                    this.transform.position -= new Vector3(manouverSpeed * Time.deltaTime, 0, 0);
+                }
+            }
+            else if (pickSteerringView == SteerringView.onSideView)
+            {
+                if (getAwayY > 0)
+                {
+                    this.transform.position += new Vector3(0, manouverSpeed * Time.deltaTime, 0);
+                }
+                else if (getAwayY < 0)
+                {
+                    this.transform.position -= new Vector3(0, manouverSpeed * Time.deltaTime, 0);
+                }
+            }
+            else
+            {
+                if (getAwayX > 0)
+                {
+                    this.transform.position += new Vector3(manouverSpeed * Time.deltaTime, 0, 0);
+                }
+                else if (getAwayX < 0)
+                {
+                    this.transform.position -= new Vector3(manouverSpeed * Time.deltaTime, 0, 0);
+                }
+
+                if (getAwayY > 0)
+                {
+                    this.transform.position += new Vector3(0, manouverSpeed * Time.deltaTime, 0);
+                }
+                else if (getAwayY < 0)
+                {
+                    this.transform.position -= new Vector3(0, manouverSpeed * Time.deltaTime, 0);
+                }
+            }
+
         }
     }
 

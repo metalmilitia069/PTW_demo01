@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class EnemyProjectile : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class EnemyProjectile : MonoBehaviour
     private float _speed = 15.0f;
 
     private int _projectileHealth = 2;
+
+    public GameObject ExplosionVFXPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +20,7 @@ public class EnemyProjectile : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {        
         Move();
     }
 
@@ -28,10 +31,16 @@ public class EnemyProjectile : MonoBehaviour
             TakeDamage();
             other.GetComponent<ProjectileBase>().KillProjectile();
         }
-        else if (other.GetComponent<ShipBase>())
+        else if (other.GetComponent<ShipStats>())
         {
-            other.GetComponent<ShipBase>().TakeDamage();
-            KillProjectile();
+            other.GetComponent<ShipStats>().visualEffectPrefab.transform.position = this.transform.position;
+            other.GetComponent<ShipStats>().visualEffectPrefab.GetComponentInChildren<VisualEffect>().initialEventName = "Custom";
+            other.GetComponent<ShipStats>().visualEffectPrefab.GetComponentInChildren<VisualEffect>().Reinit();
+            other.GetComponent<ShipStats>().TakeDamage();
+            //ExplosionVFXPrefab.GetComponentInChildren<VisualEffect>().initialEventName = "Custom";
+            //ExplosionVFXPrefab.GetComponentInChildren<VisualEffect>().Reinit();
+            Instantiate(ExplosionVFXPrefab, this.transform.position, Quaternion.identity);
+            KillProjectile(0);
         }
     }
 
@@ -44,7 +53,7 @@ public class EnemyProjectile : MonoBehaviour
     {
         if (_projectileHealth <= 0)
         {
-            KillProjectile();
+            KillProjectile(0);
         }
         else
         {
@@ -52,9 +61,11 @@ public class EnemyProjectile : MonoBehaviour
         }
     }
 
-    private void KillProjectile()
+    private void KillProjectile(float time)
     {
-        Destroy(this.gameObject);
+        //ExplosionVFXPrefab.gameObject.pare
+
+        Destroy(this.gameObject, time);
     }
 
 }

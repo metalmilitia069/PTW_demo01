@@ -1,22 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class ShipBase : MonoBehaviour
 {
-
-
     private float _movementInput;
     [SerializeField]
-    private float _speed;
+    protected float _speed;
     [SerializeField]
-    private int _playerHealth = 10;
-    private PlayerControls _playerControls;
+    protected int _playerHealth = 10;
+    protected PlayerControls _playerControls;
 
-    private float _playerMovementX;
-    private float _playerMovementY;
-    private float _playerMovementZ;
-    private Vector3 _playerMovement = new Vector3();
+    protected float _playerMovementX;
+    protected float _playerMovementY;
+    protected float _playerMovementZ;
+    protected Vector3 _playerMovement = new Vector3();
 
     [SerializeField]
     protected GameObject[] firePoints;
@@ -27,7 +26,7 @@ public class ShipBase : MonoBehaviour
     public PlayerAmmunition_SO playerAmmunition_SO;
     public GameManager_SO gameManager_SO;
 
-    private Vector3 playerPos;
+    protected Vector3 playerPos;
 
 
 
@@ -54,13 +53,16 @@ public class ShipBase : MonoBehaviour
     public AmmunitionType ammunitionType;
 
     [SerializeField]
-    private float _fireRate = 1.5f;
-    private float _timeToShoot = 0;
+    protected float _fireRate = 1.5f;
+    protected float _timeToShoot = 0;
+
+
+    public VisualEffect[] visualEffects;
 
     private void Awake()
     {
         _playerControls = new PlayerControls();
-        gameManager_SO.shipBase = this;
+        //gameManager_SO.shipBase = this;
         //_playerControls.Shooting.FireButton.started += _ => TopBackShoot();
         //_playerControls.Shooting.FireButton. += _ => TopBackShoot();
         //_playerControls.Shooting.FireButton.performed += _ => TopBackShoot();
@@ -91,25 +93,13 @@ public class ShipBase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Movement();
+        //Shooting();
 
-        switch (controllerManager_SO.controlSwitcher)//(_movementSwitch)
-        {
-            case -1:
-                TopViewMovement();
-                this.transform.position += _playerMovement;                
-                break;
-            case 0:
-                SideViewMovement();
-                this.transform.position += _playerMovement;
-                break;
-            case 1:
-                BackViewMovement();
-                this.transform.position += _playerMovement;
-                break;
-            default:
-                break;
-        }
+    }
 
+    protected void Shooting()
+    {
         if (_playerControls.Shooting.FireButton.ReadValue<float>() != 0 && Time.time > _timeToShoot)
         {
             switch (controllerManager_SO.controlSwitcher)
@@ -126,11 +116,33 @@ public class ShipBase : MonoBehaviour
                 default:
                     break;
             }
-            _timeToShoot = Time.time + _fireRate;            
             
+            _timeToShoot = Time.time + _fireRate;
+
         }
 
         
+    }    
+
+    protected void Movement()
+    {
+        switch (controllerManager_SO.controlSwitcher)//(_movementSwitch)
+        {
+            case -1:
+                TopViewMovement();
+                this.transform.position += _playerMovement;
+                break;
+            case 0:
+                SideViewMovement();
+                this.transform.position += _playerMovement;
+                break;
+            case 1:
+                BackViewMovement();
+                this.transform.position += _playerMovement;
+                break;
+            default:
+                break;
+        }
     }
 
     private void SideViewMovement()
@@ -159,8 +171,8 @@ public class ShipBase : MonoBehaviour
     {
         _playerMovementY = _playerControls.LocomotionSideView.VerticalMove.ReadValue<float>() * _speed * Time.deltaTime;
         _playerMovementX = _playerControls.LocomotionTopView.SideMove.ReadValue<float>() * _speed * Time.deltaTime;
-
-        _playerMovement = new Vector3(_playerMovementX, _playerMovementY, 0);
+        
+        _playerMovement = new Vector3(_playerMovementX, _playerMovementY, 0);        
     }
 
     public void TopBackShoot()
@@ -210,6 +222,10 @@ public class ShipBase : MonoBehaviour
                 break;
         }
 
+        
+        visualEffects[0].Reinit();
+        visualEffects[1].Reinit();
+        visualEffects[2].Reinit();
 
     }
 
@@ -260,20 +276,23 @@ public class ShipBase : MonoBehaviour
                 break;
         }
 
+        visualEffects[0].Reinit();
+        visualEffects[3].Reinit();
+        visualEffects[4].Reinit();
 
     }
 
-    public void TakeDamage()
-    {
-        if (_playerHealth <= 0)
-        {
-            IsPlayerDead();
-        }
-        else
-        {
-            _playerHealth--;
-        }
-    }
+    //public void TakeDamage()
+    //{
+    //    if (_playerHealth <= 0)
+    //    {
+    //        IsPlayerDead();
+    //    }
+    //    else
+    //    {
+    //        _playerHealth--;
+    //    }
+    //}
 
     public bool IsPlayerDead()
     {
@@ -282,17 +301,17 @@ public class ShipBase : MonoBehaviour
         return true;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
+    //private void OnTriggerEnter(Collider other)
+    //{
         
-    }
+    //}
 
 
-    public IEnumerator FireRate()
-    {
-        yield return new WaitForSeconds(_fireRate);
-        TopBackShoot();
-    }
+    //public IEnumerator FireRate()
+    //{
+    //    yield return new WaitForSeconds(_fireRate);
+    //    TopBackShoot();
+    //}
 
 
 

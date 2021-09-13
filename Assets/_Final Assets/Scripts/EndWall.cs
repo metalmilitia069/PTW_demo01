@@ -11,15 +11,18 @@ public class EndWall : MonoBehaviour
     private GameObject beginWall;
     [SerializeField]
     private bool _killMode;
+    [SerializeField]
+    private bool _killDebrisType = false;
 
     public bool KillMode { get => _killMode; set => _killMode = value; }
+    public bool KillDebrisType { get => _killDebrisType; set => _killDebrisType = value; }
 
     public SelectDebris selectDebris;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        KillDebrisType = false;
     }
 
     // Update is called once per frame
@@ -32,18 +35,43 @@ public class EndWall : MonoBehaviour
     {
         if (other.GetComponent<CamTrigger>())
         {
+            if (other.GetComponent<AnimTrigger>())
+            {
+                return;
+            }
             Destroy(other.gameObject);
+            return;
         }
+
+        if (other.GetComponent<SeaDebris>() || other.GetComponent<FortressDebris>() || other.gameObject.tag == "Ignore")
+        {
+            return;
+        }
+
+        if (other.GetComponent<DebrisType>())
+        {
+            if (KillDebrisType)
+            {
+                if (selectDebris.debrisType == other.GetComponent<DebrisType>().selectDebris.debrisType)
+                {
+                    Destroy(other.gameObject, 1);
+                    return;
+                }                
+            }
+            other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y, beginWall.transform.position.z - beginWall.GetComponent<BeginWall>()._spawnPointOffset.z);
+        }
+
+            if (!debrisTypeSpawnManager_SO.doKillCorroutine && other.GetComponent<DebrisType>())
+            {
+                if (other.GetComponent<DebrisType>().selectDebris.debrisType != SelectDebris.DebrisType.standard)
+                {                    
+                    debrisTypeSpawnManager_SO.doKillCorroutine = true;
+                    //KillDebrisType = false;
+                }
+            }
 
         if (!_killMode)
         {
-            if (!debrisTypeSpawnManager_SO.doKillCorroutine && other.GetComponent<Debris>())
-            {
-                if (other.GetComponent<Debris>().selectDebris.debrisType != SelectDebris.DebrisType.standard)
-                {                    
-                    debrisTypeSpawnManager_SO.doKillCorroutine = true;
-                }
-            }
 
             if (other.GetComponent<EnemyBehaviorGunShip>())
             {
@@ -59,8 +87,14 @@ public class EndWall : MonoBehaviour
         {
             if (other.GetComponent<Debris>())
             {
-                if (selectDebris.debrisType == other.GetComponent<Debris>().selectDebris.debrisType || other.GetComponent<Debris>().selectDebris.debrisType == SelectDebris.DebrisType.standard)
-                {
+                //if (selectDebris.debrisType == other.GetComponent<Debris>().selectDebris.debrisType || other.GetComponent<Debris>().selectDebris.debrisType == SelectDebris.DebrisType.standard)
+                //{
+                //    Debug.Log("Debris Type!!!!!!");
+                //    Destroy(other.gameObject, 5);
+                //}
+
+                if (other.GetComponent<Debris>().selectDebris.debrisType == SelectDebris.DebrisType.standard)
+                {                    
                     Destroy(other.gameObject, 5);
                 }
             }
