@@ -127,6 +127,7 @@ public class CamTrigger : MonoBehaviour
     {
         //if (!_cameraGroup.activeSelf)
         //{
+        Debug.Log("UnlockControls?????");
             switch (controlOptions)
             {
                 case controlOptionsEnum.topControls:
@@ -184,7 +185,8 @@ public class CamTrigger : MonoBehaviour
             componentZ = _shipSpeed * Time.deltaTime;
         }
         //Debug.Log("Z:" + componentZ);
-        shipStats.transform.position += new Vector3(componentX, componentY, componentZ);
+        //shipStats.transform.position += new Vector3(componentX, componentY, componentZ);
+        shipStats.gameObject.transform.Translate(Vector3.Lerp(shipStats.transform.position, new Vector3(componentX, componentY, componentZ), _shipSpeed));
     }
 
     protected void FreezeShipControls()

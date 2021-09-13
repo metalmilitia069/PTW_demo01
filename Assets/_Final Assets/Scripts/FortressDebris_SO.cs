@@ -18,5 +18,6 @@ public class FortressDebris_SO : ScriptableObject
         fortressDebris = default;
         PartOneCanMove = false;
         PartTwoCanMove = false;
+        PartTwoEnabled = false;
     }
 }

@@ -35,6 +35,10 @@ public class EndWall : MonoBehaviour
     {
         if (other.GetComponent<CamTrigger>())
         {
+            if (other.GetComponent<AnimTrigger>())
+            {
+                return;
+            }
             Destroy(other.gameObject);
             return;
         }

@@ -78,6 +78,7 @@ public class AnimTrigger : CamTrigger
 
         yield return new WaitForSeconds(animationPlayTime);
         UnlockControls();
+        Debug.Log("depois da espera");
         shipStats.GetComponent<ShipStats>().isShipFrozen = false;
         Destroy(this.gameObject);
         //StopAllCoroutines();
