@@ -9,6 +9,7 @@ public class EnemyStats : EnemyBase
     protected int health = 100;
     [SerializeField]
     protected int shields = 0;
+    protected int shieldMax = 0;
     [SerializeField]
     protected int pointsWorth = 10;
     [SerializeField]

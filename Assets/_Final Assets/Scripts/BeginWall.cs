@@ -24,18 +24,30 @@ public class BeginWall : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (!other.GetComponent<Debris>())
-        {
-            return;
-        }
-        else
+        //if (!other.GetComponent<Debris>() || !other.GetComponent<FortressDebris>())
+        //{
+        //    return;
+        //}
+        
+        
+        
+        if(other.GetComponent<Debris>())
         {
             if (other.GetComponent<Debris>().selectDebris.debrisType == SelectDebris.DebrisType.standard && debrisSpawnManager_SO.isSpawning)
             {
                 debrisSpawnManager_SO.isPaused = false;
             }
-
         }
+
+
+        if (other.GetComponent<FortressDebris>())
+        {            
+            if (other.GetComponent<FortressDebris>().selectDebris.debrisType == SelectDebris.DebrisType.standard)// && debrisSpawnManager_SO.isSpawning)
+            {
+                debrisSpawnManager_SO.isPaused = false;
+            }
+        }
+        
 
     }
 }

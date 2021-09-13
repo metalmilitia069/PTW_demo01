@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class ProjectileBase : MonoBehaviour
 {
@@ -71,6 +72,28 @@ public class ProjectileBase : MonoBehaviour
     public void KillProjectile()
     {
         Destroy(this.gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<EnemyBehavior>())
+        {
+            other.GetComponent<EnemyBehavior>().visualEffectPrefab.transform.position = this.transform.position;
+            other.GetComponent<EnemyBehavior>().visualEffectPrefab.GetComponentInChildren<VisualEffect>().initialEventName = "Custom";
+            other.GetComponent<EnemyBehavior>().visualEffectPrefab.GetComponentInChildren<VisualEffect>().Reinit();
+        }
+        else if (other.GetComponent<EnemyBehaviorGunShip>())
+        {
+            other.GetComponent<EnemyBehaviorGunShip>().visualEffectPrefab.transform.position = this.transform.position;
+            other.GetComponent<EnemyBehaviorGunShip>().visualEffectPrefab.GetComponentInChildren<VisualEffect>().initialEventName = "Custom";
+            other.GetComponent<EnemyBehaviorGunShip>().visualEffectPrefab.GetComponentInChildren<VisualEffect>().Reinit();
+        }
+        else if (other.GetComponent<EnemyBehaviorShieldedTurret>())
+        {
+            other.GetComponent<EnemyBehaviorShieldedTurret>().visualEffectPrefab.transform.position = this.transform.position;
+            other.GetComponent<EnemyBehaviorShieldedTurret>().visualEffectPrefab.GetComponentInChildren<VisualEffect>().initialEventName = "Custom";
+            other.GetComponent<EnemyBehaviorShieldedTurret>().visualEffectPrefab.GetComponentInChildren<VisualEffect>().Reinit();
+        }
     }
 
 }
