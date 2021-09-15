@@ -10,9 +10,9 @@ Material:
   m_Name: Shader Graphs_Clouds_mat
   m_Shader: {fileID: -6465566751694194690, guid: 1b3d65368a5868d42b677401f58781db, type: 3}
   m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
@@ -37,10 +37,11 @@ Material:
     - Base_Speed: 30
     - Base_Strength: 3
     - CloudSpeed: 10
-    - Curvature_Radius: 25
+    - Curvature_Radius: -30
     - Emission_Strength: 0.3
-    - Fresnel_Opacity: 1
-    - Fresnel_Power: 63.39
+    - Fade_Depth: 200
+    - Fresnel_Opacity: 0.1
+    - Fresnel_Power: 8
     - Noise_Edge_1: -0.47
     - Noise_Edge_2: 1
     - Noise_Height: 2000
