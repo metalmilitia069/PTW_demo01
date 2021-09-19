@@ -72,7 +72,15 @@ public class CutSceneManager : MonoBehaviour
         cutSceneManager_SO.shipStatsRef.playerSceneActor.GetComponent<Animator>().SetTrigger("JumpSeaTrigger");
         cutSceneManager_SO.FortressDebrisPartTwoRef.GetComponent<Animator>().SetTrigger("JumpSeaTrigger");
         cutSceneManager_SO.Animation_Prop_CutSceneSeaLevel01.GetComponent<Animator>().SetTrigger("JumpSeaTrigger");
+        //cutSceneManager_SO.seaLevelRef.GetComponent<Animator>().SetTrigger("JumpSeaTrigger");
+        StartCoroutine(CloudVFX());
+        //Debug.Log("triggou");
+    }
+
+    public IEnumerator CloudVFX()
+    {
+        yield return new WaitForSeconds(62.0f);
         cutSceneManager_SO.seaLevelRef.GetComponent<Animator>().SetTrigger("JumpSeaTrigger");
-        Debug.Log("triggou");
+        StopCoroutine(CloudVFX());
     }
 }

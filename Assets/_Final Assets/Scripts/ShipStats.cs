@@ -17,6 +17,7 @@ public class ShipStats : ShipBase
 
     [Header("For CutScenes")]
     public GameObject playerSceneActor;
+    public GameObject playerSmokeVFX;
 
     [Header("Debugger - Unplug Later")]
     public bool isGodModeOn = false;
@@ -61,6 +62,18 @@ public class ShipStats : ShipBase
         _playerControls.Disable();
     }
 
+    public void CheckShipDamage()
+    {
+        if (shipStats_SO.playerHealth <= 2)
+        {
+            playerSmokeVFX.gameObject.SetActive(true);
+        }
+        else
+        {
+            playerSmokeVFX.gameObject.SetActive(false);
+        }
+    }
+
     public void TakeDamage()
     {
         if (isGodModeOn)
@@ -78,6 +91,7 @@ public class ShipStats : ShipBase
             else
             {
                 shipStats_SO.playerHealth--;
+                CheckShipDamage();
             }
         }
         else
