@@ -6,6 +6,11 @@ public class TurretOhOne : MonoBehaviour
 {
     [SerializeField]
     private Animator TurretAnimController;
+    [SerializeField]
+    private GameObject _turretProjectile;
+
+    public GameObject firePoint01;
+    public GameObject firePoint02;
 
     [Header("Turret State Changes")]
 
@@ -15,6 +20,8 @@ public class TurretOhOne : MonoBehaviour
     private bool _patrolRightOrShoot = false;
     private bool _shootRightAgain = false;
     private bool _shootCenterAgain = false;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -46,15 +53,26 @@ public class TurretOhOne : MonoBehaviour
         TurretAnimController.SetBool("ShootRightAgain", forth == 0 ? true : false);        
         TurretAnimController.SetBool("ShootCenterAgain", fifth == 0 ? true : false);
 
-        Debug.Log("coisou!!!");
+        //Debug.Log("coisou!!!");
 
-        Debug.Log("first = " + first);
-        Debug.Log("second = " + second);
-        Debug.Log("third = " + third);
-        Debug.Log("forth = " + forth);
-        Debug.Log("fifth = " + fifth);
+        //Debug.Log("first = " + first);
+        //Debug.Log("second = " + second);
+        //Debug.Log("third = " + third);
+        //Debug.Log("forth = " + forth);
+        //Debug.Log("fifth = " + fifth);
 
     }
+
+    public void TurretShot()
+    {
+        Quaternion rotation = firePoint01.transform.rotation;
+        Instantiate(_turretProjectile, firePoint01.transform.position, rotation);
+        rotation = firePoint02.transform.rotation;
+        Instantiate(_turretProjectile, firePoint02.transform.position, rotation);
+    }
+
+    //Quaternion rotation = firePoints[i].transform.rotation;
+    //Instantiate(projectile, firePoints[i].transform.position, rotation);
 
 
 

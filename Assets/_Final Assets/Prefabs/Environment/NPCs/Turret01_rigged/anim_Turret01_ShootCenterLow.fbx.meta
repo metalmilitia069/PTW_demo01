@@ -67,7 +67,7 @@ ModelImporter:
         intParameter: 0
         messageOptions: 0
       - time: 0.33819243
-        functionName: NewEvent
+        functionName: TurretShot
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: cbdeff3a527b28f41bf0f7a8eaaa481d, type: 3}
         floatParameter: 0
