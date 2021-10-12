@@ -58,11 +58,25 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.09030837
+        functionName: UpdateTurretBehavior
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: cbdeff3a527b28f41bf0f7a8eaaa481d, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.33819243
+        functionName: NewEvent
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: cbdeff3a527b28f41bf0f7a8eaaa481d, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 1
     isReadable: 0
   meshes:
     lODScreenPercentages: []
