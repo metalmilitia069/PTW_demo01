@@ -173,6 +173,37 @@ public class ShipStats : ShipBase
 
     }
 
+    public void AddXpToAmmunition(int AmmunitionXP)
+    {
+        //AmmunitionType ammunitionType = AmmunitionType.singleShotLvl01;
+        switch (ammunitionType)
+        {
+            case AmmunitionType.singleShotLvl01:
+
+                break;
+            case AmmunitionType.tripleShotLvl01:
+                break;
+            case AmmunitionType.diagonalShotLvl01:
+                break;
+            case AmmunitionType.singleShotLvl02:
+                break;
+            case AmmunitionType.tripleShotLvl02:
+                break;
+            case AmmunitionType.diagonalShotLvl02:
+                break;
+            case AmmunitionType.singleShotLvl03:
+                return;                
+            case AmmunitionType.tripleShotLvl03:
+                return;                
+            case AmmunitionType.diagonalShotLvl03:
+                return;
+                
+            default:
+                break;
+        }
+
+    }
+
     public void SwitchShield()
     {
         if (this.shipStats_SO.playerShield <= 0)

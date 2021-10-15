@@ -34,7 +34,7 @@ public class EnemyCombat : EnemyStats
     {
         if (other.GetComponent<ProjectileBase>())
         {
-            TakeDamage();
+            TakeDamage(other.GetComponent<ProjectileBase>().GetBulletDamage());
             other.GetComponent<ProjectileBase>().KillProjectile();
         }
     }
@@ -56,11 +56,11 @@ public class EnemyCombat : EnemyStats
     //    }
     //}
 
-    public void TakeDamage()
+    public void TakeDamage(int damage)
     {
         if (shields <= 0)
         {
-            health--;
+            health -= damage;
 
             if (health <= 0)
             {
@@ -69,7 +69,7 @@ public class EnemyCombat : EnemyStats
         }
         else
         {
-            shields--;
+            shields-= damage;
             SwitchShield();            
         }
     }

@@ -13,6 +13,8 @@ public class EnemyStats : EnemyBase
     [SerializeField]
     protected int pointsWorth = 10;
     [SerializeField]
+    protected int ammunitionPointsWorth = 10;
+    [SerializeField]
     protected float fireRate = 0.5f;
     [SerializeField]
     protected GameObject projectile;
