@@ -33,6 +33,10 @@ public class ShipStats_SO : ScriptableObject
     public float tripleShotLevelUpThreshold = 0;
     public float diagonalShotLevelUpThreshold = 0;
 
+    public int singleShotCurrentXP = 0;
+    public int tripleShotCurrentXP = 0;
+    public int diagonalShotCurrentXP = 0;
+
     public float singleShotProgressionRate = 0;
     public float tripleShotProgressionRate = 0;
     public float diagonalShotProgressionRate = 0;
