@@ -179,13 +179,25 @@ public class ShipStats : ShipBase
         switch (ammunitionType)
         {
             case AmmunitionType.singleShotLvl01:
-
+                shipStats_SO.singleShotCurrentXP += AmmunitionXP;
+                shipStats_SO.singleShotProgressionRate = (shipStats_SO.singleShotCurrentXP * 1.0f) / shipStats_SO.singleShotLevelUpThreshold;
+                if (shipStats_SO.singleShotProgressionRate >= 1.0f)
+                {
+                    LevelUpSingleShot();
+                }
                 break;
             case AmmunitionType.tripleShotLvl01:
+                shipStats_SO.tripleShotCurrentXP += AmmunitionXP;
+                shipStats_SO.tripleShotProgressionRate = (shipStats_SO.tripleShotCurrentXP * 1.0f) / shipStats_SO.tripleShotLevelUpThreshold;
+                if (shipStats_SO.tripleShotProgressionRate >= 1.0f)
+                {
+                    LevelUpTripleShot();
+                }
                 break;
             case AmmunitionType.diagonalShotLvl01:
                 break;
             case AmmunitionType.singleShotLvl02:
+
                 break;
             case AmmunitionType.tripleShotLvl02:
                 break;
@@ -201,8 +213,39 @@ public class ShipStats : ShipBase
             default:
                 break;
         }
+    }
+
+    public void LevelUpSingleShot()
+    {
+        if (shipStats_SO.singleShotLevel == 1)
+        {
+            shipStats_SO.singleShotLevel = 2;
+            shipStats_SO.singleShotLevelUpThreshold += (shipStats_SO.singleShotLevelUpThreshold * 2.0f);
+            shipStats_SO.singleShotProgressionRate = 0.0f;
+            ammunitionType = AmmunitionType.singleShotLvl02;
+            return;
+        }
+
+        if (shipStats_SO.singleShotLevel == 2)
+        {
+            shipStats_SO.singleShotLevel = 3;
+            shipStats_SO.singleShotLevelUpThreshold += (shipStats_SO.singleShotLevelUpThreshold * 2.0f);
+            shipStats_SO.singleShotProgressionRate = 0.0f;
+            ammunitionType = AmmunitionType.singleShotLvl03;            
+        }
+    }
+
+    public void LevelUpTripleShot()
+    {
 
     }
+
+    public void LevelUpDiagonalShot()
+    {
+
+    }
+
+
 
     public void SwitchShield()
     {
