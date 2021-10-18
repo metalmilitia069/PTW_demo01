@@ -179,39 +179,61 @@ public class ShipStats : ShipBase
         switch (ammunitionType)
         {
             case AmmunitionType.singleShotLvl01:
-                shipStats_SO.singleShotCurrentXP += AmmunitionXP;
-                shipStats_SO.singleShotProgressionRate = (shipStats_SO.singleShotCurrentXP * 1.0f) / shipStats_SO.singleShotLevelUpThreshold;
-                if (shipStats_SO.singleShotProgressionRate >= 1.0f)
-                {
-                    LevelUpSingleShot();
-                }
-                break;
+                AddXPToSingleShot(AmmunitionXP);
+                return;
             case AmmunitionType.tripleShotLvl01:
-                shipStats_SO.tripleShotCurrentXP += AmmunitionXP;
-                shipStats_SO.tripleShotProgressionRate = (shipStats_SO.tripleShotCurrentXP * 1.0f) / shipStats_SO.tripleShotLevelUpThreshold;
-                if (shipStats_SO.tripleShotProgressionRate >= 1.0f)
-                {
-                    LevelUpTripleShot();
-                }
-                break;
+                AddXPToTripleShot(AmmunitionXP);
+                return;
             case AmmunitionType.diagonalShotLvl01:
-                break;
+                AddXPToDiagonalShot(AmmunitionXP);
+                return;
             case AmmunitionType.singleShotLvl02:
-
-                break;
+                AddXPToSingleShot(AmmunitionXP);
+                return;
             case AmmunitionType.tripleShotLvl02:
-                break;
+                AddXPToTripleShot(AmmunitionXP);
+                return;
             case AmmunitionType.diagonalShotLvl02:
-                break;
+                AddXPToDiagonalShot(AmmunitionXP);
+                return;
             case AmmunitionType.singleShotLvl03:
                 return;                
             case AmmunitionType.tripleShotLvl03:
                 return;                
             case AmmunitionType.diagonalShotLvl03:
-                return;
-                
+                return;                
             default:
                 break;
+        }
+    }
+
+    public void AddXPToSingleShot(int AmmunitionXP)
+    {
+        shipStats_SO.singleShotCurrentXP += AmmunitionXP;
+        shipStats_SO.singleShotProgressionRate = (shipStats_SO.singleShotCurrentXP * 1.0f) / shipStats_SO.singleShotLevelUpThreshold;
+        if (shipStats_SO.singleShotProgressionRate >= 1.0f)
+        {
+            LevelUpSingleShot();
+        }
+    }
+
+    public void AddXPToTripleShot(int AmmunitionXP)
+    {
+        shipStats_SO.tripleShotCurrentXP += AmmunitionXP;
+        shipStats_SO.tripleShotProgressionRate = (shipStats_SO.tripleShotCurrentXP * 1.0f) / shipStats_SO.tripleShotLevelUpThreshold;
+        if (shipStats_SO.tripleShotProgressionRate >= 1.0f)
+        {
+            LevelUpTripleShot();
+        }
+    }
+
+    public void AddXPToDiagonalShot(int AmmunitionXP)
+    {
+        shipStats_SO.diagonalShotCurrentXP += AmmunitionXP;
+        shipStats_SO.diagonalShotProgressionRate = (shipStats_SO.diagonalShotCurrentXP * 1.0f) / shipStats_SO.diagonalShotLevelUpThreshold;
+        if (shipStats_SO.diagonalShotProgressionRate >= 1.0f)
+        {
+            LevelUpDiagonalShot();
         }
     }
 
@@ -228,24 +250,49 @@ public class ShipStats : ShipBase
 
         if (shipStats_SO.singleShotLevel == 2)
         {
-            shipStats_SO.singleShotLevel = 3;
-            shipStats_SO.singleShotLevelUpThreshold += (shipStats_SO.singleShotLevelUpThreshold * 2.0f);
-            shipStats_SO.singleShotProgressionRate = 0.0f;
+            shipStats_SO.singleShotLevel = 3;            
+            shipStats_SO.singleShotProgressionRate = 1.0f;
             ammunitionType = AmmunitionType.singleShotLvl03;            
         }
     }
 
     public void LevelUpTripleShot()
     {
+        if (shipStats_SO.tripleShotLevel == 1)
+        {
+            shipStats_SO.tripleShotLevel = 2;
+            shipStats_SO.tripleShotLevelUpThreshold += (shipStats_SO.tripleShotLevelUpThreshold * 2.0f);
+            shipStats_SO.tripleShotProgressionRate = 0.0f;
+            ammunitionType = AmmunitionType.tripleShotLvl02;
+            return;
+        }
 
+        if (shipStats_SO.tripleShotLevel == 2)
+        {
+            shipStats_SO.tripleShotLevel = 3;            
+            shipStats_SO.tripleShotProgressionRate = 1.0f;
+            ammunitionType = AmmunitionType.tripleShotLvl03;
+        }
     }
 
     public void LevelUpDiagonalShot()
     {
+        if (shipStats_SO.diagonalShotLevel == 1)
+        {
+            shipStats_SO.diagonalShotLevel = 2;
+            shipStats_SO.diagonalShotLevelUpThreshold += (shipStats_SO.diagonalShotLevelUpThreshold * 2.0f);
+            shipStats_SO.diagonalShotProgressionRate = 0.0f;
+            ammunitionType = AmmunitionType.diagonalShotLvl02;
+            return;
+        }
 
+        if (shipStats_SO.diagonalShotLevel == 2)
+        {
+            shipStats_SO.diagonalShotLevel = 3;            
+            shipStats_SO.diagonalShotProgressionRate = 1.0f;
+            ammunitionType = AmmunitionType.diagonalShotLvl03;
+        }
     }
-
-
 
     public void SwitchShield()
     {
