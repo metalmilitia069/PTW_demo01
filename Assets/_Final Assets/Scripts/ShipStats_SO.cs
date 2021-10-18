@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 [CreateAssetMenu(fileName = "PlayerStats", menuName = "Player/Stats")]
 public class ShipStats_SO : ScriptableObject
@@ -44,15 +45,52 @@ public class ShipStats_SO : ScriptableObject
     public void ResetPlayerData()
     {
         playerMaxHealth = 3; //TODO 
-        playerHealth = 0;
+        playerHealth = 3;
         playerMaxShield = 3;  //TODO
-        playerShield = 0;
-        playerSpeed = 0;
-        fireRate = 0;
-        
+        playerShield = 3;
+        playerSpeed = 60;
+        fireRate = 0.2f;
+
         singleShotLevel = 1;
         tripleShotLevel = 1;
         diagonalShotLevel = 1;
+
+
+        singleShotLevelUpThreshold = 200;
+        tripleShotLevelUpThreshold = 200;
+        diagonalShotLevelUpThreshold = 200;
+
+        singleShotCurrentXP = 0;
+        tripleShotCurrentXP = 0;
+        diagonalShotCurrentXP = 0;
+
+        singleShotProgressionRate = 0;
+        tripleShotProgressionRate = 0;
+        diagonalShotProgressionRate = 0;
     }
 
+
+
 }
+
+#if UNITY_EDITOR
+[CustomEditor(typeof(ShipStats_SO))]
+class ShipStatsFunctions : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        base.OnInspectorGUI();
+
+        var shipStatsVariables = (ShipStats_SO)target;
+        if (shipStatsVariables == null)
+        {
+            return;
+        }
+
+        if (GUILayout.Button("Reset Player Status"))
+        {
+            shipStatsVariables.ResetPlayerData();
+        }
+    }
+}
+#endif
