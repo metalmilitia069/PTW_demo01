@@ -42,6 +42,10 @@ public class ShipStats_SO : ScriptableObject
     public float tripleShotProgressionRate = 0;
     public float diagonalShotProgressionRate = 0;
 
+    public string shotName = "Single Shot";
+
+    
+
     public void ResetPlayerData()
     {
         playerMaxHealth = 3; //TODO 

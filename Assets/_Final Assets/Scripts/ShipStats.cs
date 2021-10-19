@@ -22,6 +22,8 @@ public class ShipStats : ShipBase
     [Header("Debugger - Unplug Later")]
     public bool isGodModeOn = false;
 
+    public List<AmmunitionType> ammunitionsList;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -332,4 +334,38 @@ public class ShipStats : ShipBase
             shieldPrefabs[i].SetActive(false);
         }
     }
+
+    public void CheckAmmoTypePerLevel(int playerLevel)
+    {
+        bool canUseSingleShot = false;
+        bool canUseTripleShot = false;
+        bool canUseDiagonalShot = false;
+
+        switch (playerLevel)
+        {
+            case 1:
+                canUseSingleShot = true;
+                break;
+            case 2:
+                canUseSingleShot = true;
+                canUseTripleShot = true;
+                break;
+            case 3:
+                canUseSingleShot = true;
+                canUseTripleShot = true;
+                canUseDiagonalShot = true;
+                break;
+            default:
+                canUseSingleShot = true;
+                canUseTripleShot = true;
+                canUseDiagonalShot = true;
+                break;
+        }
+
+        if (canUseSingleShot)
+        {
+            
+        }
+    }
+
 }

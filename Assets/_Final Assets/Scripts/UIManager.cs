@@ -109,11 +109,11 @@ public class UIManager : MonoBehaviour
             uIManager_SO.HPSliders[i].gameObject.SetActive(true);
             uIManager_SO.ShieldSliders[i].gameObject.SetActive(true);
         }
-    }
+    }   
 
     public void ShotUIUpdater()
     {
-        
+           
     }
 
 }

@@ -52,6 +52,8 @@ public class ShipBase : MonoBehaviour
 
     public AmmunitionType ammunitionType;
 
+    //public List<AmmunitionType> ammunitionsList;
+
     [SerializeField]
     protected float _fireRate = 1.5f;
     protected float _timeToShoot = 0;
@@ -313,7 +315,7 @@ public class ShipBase : MonoBehaviour
     //    TopBackShoot();
     //}
 
-
+    
 
 
 }
