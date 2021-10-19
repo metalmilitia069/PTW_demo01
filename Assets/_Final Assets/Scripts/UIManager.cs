@@ -14,6 +14,13 @@ public class UIManager : MonoBehaviour
     public Text LevelText;
     public Text ScoreText;
 
+    //public Slider singleShotSlider;
+    //public Slider tripleShotSlider;
+    //public Slider diagonalShotSlider;
+    public Slider shotSlider;
+    public Text ammunitionText;
+    public Text shotLevelText;
+
     // Start is called before the first frame update
     void Start()
     {
