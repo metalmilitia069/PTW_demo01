@@ -519,6 +519,44 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""ChangeAmmo"",
+            ""id"": ""6ba959bb-7342-4e04-97d0-bece816e59c0"",
+            ""actions"": [
+                {
+                    ""name"": ""AmmoChanger"",
+                    ""type"": ""Button"",
+                    ""id"": ""7ed12174-578b-4a57-8340-92b722de4acd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""653ae477-fc4b-40b2-8af9-3530ac56dace"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AmmoChanger"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""899a2890-355f-4003-8a50-566e743ebea8"",
+                    ""path"": ""<XInputController>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AmmoChanger"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -538,6 +576,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         // Shooting
         m_Shooting = asset.FindActionMap("Shooting", throwIfNotFound: true);
         m_Shooting_FireButton = m_Shooting.FindAction("FireButton", throwIfNotFound: true);
+        // ChangeAmmo
+        m_ChangeAmmo = asset.FindActionMap("ChangeAmmo", throwIfNotFound: true);
+        m_ChangeAmmo_AmmoChanger = m_ChangeAmmo.FindAction("AmmoChanger", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -739,6 +780,39 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public ShootingActions @Shooting => new ShootingActions(this);
+
+    // ChangeAmmo
+    private readonly InputActionMap m_ChangeAmmo;
+    private IChangeAmmoActions m_ChangeAmmoActionsCallbackInterface;
+    private readonly InputAction m_ChangeAmmo_AmmoChanger;
+    public struct ChangeAmmoActions
+    {
+        private @PlayerControls m_Wrapper;
+        public ChangeAmmoActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @AmmoChanger => m_Wrapper.m_ChangeAmmo_AmmoChanger;
+        public InputActionMap Get() { return m_Wrapper.m_ChangeAmmo; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ChangeAmmoActions set) { return set.Get(); }
+        public void SetCallbacks(IChangeAmmoActions instance)
+        {
+            if (m_Wrapper.m_ChangeAmmoActionsCallbackInterface != null)
+            {
+                @AmmoChanger.started -= m_Wrapper.m_ChangeAmmoActionsCallbackInterface.OnAmmoChanger;
+                @AmmoChanger.performed -= m_Wrapper.m_ChangeAmmoActionsCallbackInterface.OnAmmoChanger;
+                @AmmoChanger.canceled -= m_Wrapper.m_ChangeAmmoActionsCallbackInterface.OnAmmoChanger;
+            }
+            m_Wrapper.m_ChangeAmmoActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @AmmoChanger.started += instance.OnAmmoChanger;
+                @AmmoChanger.performed += instance.OnAmmoChanger;
+                @AmmoChanger.canceled += instance.OnAmmoChanger;
+            }
+        }
+    }
+    public ChangeAmmoActions @ChangeAmmo => new ChangeAmmoActions(this);
     public interface ILocomotionTopViewActions
     {
         void OnSideMove(InputAction.CallbackContext context);
@@ -757,5 +831,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     public interface IShootingActions
     {
         void OnFireButton(InputAction.CallbackContext context);
+    }
+    public interface IChangeAmmoActions
+    {
+        void OnAmmoChanger(InputAction.CallbackContext context);
     }
 }

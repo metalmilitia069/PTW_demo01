@@ -21,11 +21,13 @@ public class UIManager : MonoBehaviour
     public Text ammunitionText;
     public Text shotLevelText;
 
+    
     // Start is called before the first frame update
     void Start()
     {
         uIManager_SO.HPSliders = HPSliders;
         uIManager_SO.ShieldSliders = ShieldSliders;
+
         XPUiUpdater();
         HPUIUpdater();
         ShieldUiUpdater();
@@ -46,6 +48,7 @@ public class UIManager : MonoBehaviour
             XPUiUpdater();
             HPUIUpdater();
             ShieldUiUpdater();
+
 
             uIManager_SO.canUpdadeHUD = false;
         }
@@ -106,6 +109,11 @@ public class UIManager : MonoBehaviour
             uIManager_SO.HPSliders[i].gameObject.SetActive(true);
             uIManager_SO.ShieldSliders[i].gameObject.SetActive(true);
         }
+    }
+
+    public void ShotUIUpdater()
+    {
+        
     }
 
 }

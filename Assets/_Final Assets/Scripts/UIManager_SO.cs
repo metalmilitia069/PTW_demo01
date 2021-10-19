@@ -11,6 +11,8 @@ public class UIManager_SO : ScriptableObject
     public Slider xpBar;
 
 
+
+
     public bool canUpdadeHUD = false;
     public bool canUpdadeLvl = false;
 
@@ -18,5 +20,6 @@ public class UIManager_SO : ScriptableObject
     {
         HPSliders = default;
         ShieldSliders = default;
+        
     }
 }

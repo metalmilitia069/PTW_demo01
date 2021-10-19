@@ -506,6 +506,44 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "ChangeAmmo",
+            "id": "6ba959bb-7342-4e04-97d0-bece816e59c0",
+            "actions": [
+                {
+                    "name": "AmmoChanger",
+                    "type": "Button",
+                    "id": "7ed12174-578b-4a57-8340-92b722de4acd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "653ae477-fc4b-40b2-8af9-3530ac56dace",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AmmoChanger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "899a2890-355f-4003-8a50-566e743ebea8",
+                    "path": "<XInputController>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AmmoChanger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
