@@ -42,6 +42,10 @@ public class ShipStats : ShipBase
         {
             item.initialEventName = "Custom";
         }
+
+        ammunitionsList.Add(AmmunitionType.singleShotLvl01);
+        ammunitionsList.Add(AmmunitionType.tripleShotLvl01);
+        ammunitionType = ammunitionsList[0];        
     }
 
     // Update is called once per frame
@@ -51,6 +55,7 @@ public class ShipStats : ShipBase
         {
             Movement();
             Shooting();
+            SwitchAmmo();
         }
     }
 
@@ -425,6 +430,22 @@ public class ShipStats : ShipBase
 
     public void SwitchAmmo()
     {
+        //_playerMovementY = _playerControls.LocomotionSideView.VerticalMove.ReadValue<float>() * _speed * Time.deltaTime;
+
+        
+
+        if (_playerControls.ChangeAmmo.AmmoChanger.triggered)
+        {
+            int index = ammunitionsList.IndexOf(ammunitionType);
+            index++;
+
+            if (index >= ammunitionsList.Count)
+            {
+                index = 0;
+            }
+
+            ammunitionType = ammunitionsList[index];
+        }
 
     }
 
