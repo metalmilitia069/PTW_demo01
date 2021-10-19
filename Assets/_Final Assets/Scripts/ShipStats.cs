@@ -364,8 +364,70 @@ public class ShipStats : ShipBase
 
         if (canUseSingleShot)
         {
-            
+            switch (shipStats_SO.singleShotLevel)
+            {
+                case 1:
+                    ammunitionsList.Add(AmmunitionType.singleShotLvl01);
+                    break;
+                case 2:
+                    ammunitionsList.Remove(AmmunitionType.singleShotLvl01);
+                    ammunitionsList.Add(AmmunitionType.singleShotLvl02);
+                    break;
+                case 3:
+                    ammunitionsList.Remove(AmmunitionType.singleShotLvl02);
+                    ammunitionsList.Add(AmmunitionType.singleShotLvl03);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        if (canUseTripleShot)
+        {
+            switch (shipStats_SO.tripleShotLevel)
+            {
+                case 1:
+                    ammunitionsList.Add(AmmunitionType.tripleShotLvl01);
+                    break;
+                case 2:
+                    ammunitionsList.Remove(AmmunitionType.tripleShotLvl01);
+                    ammunitionsList.Add(AmmunitionType.tripleShotLvl02);
+                    break;
+                case 3:
+                    ammunitionsList.Remove(AmmunitionType.tripleShotLvl02);
+                    ammunitionsList.Add(AmmunitionType.tripleShotLvl03);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        if (canUseDiagonalShot)
+        {
+            switch (shipStats_SO.diagonalShotLevel)
+            {
+                case 1:
+                    ammunitionsList.Add(AmmunitionType.diagonalShotLvl01);
+                    break;
+                case 2:
+                    ammunitionsList.Remove(AmmunitionType.diagonalShotLvl01);
+                    ammunitionsList.Add(AmmunitionType.diagonalShotLvl02);
+                    break;
+                case 3:
+                    ammunitionsList.Remove(AmmunitionType.diagonalShotLvl02);
+                    ammunitionsList.Add(AmmunitionType.diagonalShotLvl03);
+                    break;
+                default:
+                    break;
+            }
         }
     }
+
+    public void SwitchAmmo()
+    {
+
+    }
+
+    
 
 }

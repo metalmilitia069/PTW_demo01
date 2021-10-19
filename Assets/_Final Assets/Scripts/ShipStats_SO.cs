@@ -26,6 +26,7 @@ public class ShipStats_SO : ScriptableObject
 
     [Header("Ammunition Stats")]
     public int shotsMaxLevel = 3;
+    [Range(1,3)]
     public int singleShotLevel = 1;
     public int tripleShotLevel = 1;
     public int diagonalShotLevel = 1;
