@@ -43,9 +43,10 @@ public class ShipStats : ShipBase
             item.initialEventName = "Custom";
         }
 
-        ammunitionsList.Add(AmmunitionType.singleShotLvl01);
-        ammunitionsList.Add(AmmunitionType.tripleShotLvl01);
-        ammunitionType = ammunitionsList[0];        
+        //ammunitionsList.Add(AmmunitionType.singleShotLvl01);
+        //ammunitionsList.Add(AmmunitionType.tripleShotLvl01);
+        //ammunitionType = ammunitionsList[0];
+        CheckAmmoTypePerLevel(shipStats_SO.playerLevel);
     }
 
     // Update is called once per frame
