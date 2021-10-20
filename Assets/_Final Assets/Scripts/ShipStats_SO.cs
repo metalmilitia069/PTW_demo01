@@ -28,12 +28,14 @@ public class ShipStats_SO : ScriptableObject
     public int shotsMaxLevel = 3;
     [Range(1,3)]
     public int singleShotLevel = 1;
+    [Range(1,3)]
     public int tripleShotLevel = 1;
+    [Range(1,3)]
     public int diagonalShotLevel = 1;
 
-    public float singleShotLevelUpThreshold = 0;
-    public float tripleShotLevelUpThreshold = 0;
-    public float diagonalShotLevelUpThreshold = 0;
+    public float singleShotLevelUpThreshold = 200;
+    public float tripleShotLevelUpThreshold = 200;
+    public float diagonalShotLevelUpThreshold = 200;
 
     public int singleShotCurrentXP = 0;
     public int tripleShotCurrentXP = 0;
@@ -43,8 +45,9 @@ public class ShipStats_SO : ScriptableObject
     public float tripleShotProgressionRate = 0;
     public float diagonalShotProgressionRate = 0;
 
-    public string shotName = "Single Shot";
-
+    public string ammunitionName = "Single Shot";
+    public int ammunitionLevel = 0;
+    public float ammunitionProgressionRate = 0;
     
 
     public void ResetPlayerData()
@@ -55,6 +58,8 @@ public class ShipStats_SO : ScriptableObject
         playerShield = 3;
         playerSpeed = 60;
         fireRate = 0.2f;
+
+        playerLevel = 1;
 
         singleShotLevel = 1;
         tripleShotLevel = 1;

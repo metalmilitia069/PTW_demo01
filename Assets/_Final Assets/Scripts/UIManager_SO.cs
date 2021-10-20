@@ -10,7 +10,9 @@ public class UIManager_SO : ScriptableObject
     public Slider[] ShieldSliders;
     public Slider xpBar;
 
-
+    public Slider shotSlider;
+    public Text ammunitionText;
+    public Text shotLevelText;
 
 
     public bool canUpdadeHUD = false;

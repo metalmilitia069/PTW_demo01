@@ -21,12 +21,17 @@ public class UIManager : MonoBehaviour
     public Text ammunitionText;
     public Text shotLevelText;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
         uIManager_SO.HPSliders = HPSliders;
         uIManager_SO.ShieldSliders = ShieldSliders;
+        uIManager_SO.xpBar = xpBar;
+
+        uIManager_SO.shotSlider = shotSlider;
+        uIManager_SO.ammunitionText = ammunitionText;
+        uIManager_SO.shotLevelText = shotLevelText;
 
         XPUiUpdater();
         HPUIUpdater();
@@ -48,7 +53,7 @@ public class UIManager : MonoBehaviour
             XPUiUpdater();
             HPUIUpdater();
             ShieldUiUpdater();
-
+            ShotTypeUIUpdater();
 
             uIManager_SO.canUpdadeHUD = false;
         }
@@ -90,7 +95,8 @@ public class UIManager : MonoBehaviour
 
     public void XPUiUpdater()
     {
-        xpBar.value = shipStats_SO.levelProgressionRate;
+        //xpBar.value = shipStats_SO.levelProgressionRate;  << OLD SOLUTION!!! STILL WORKS!!!!
+        uIManager_SO.xpBar.value = shipStats_SO.levelProgressionRate;
         ScoreText.text = shipStats_SO.playerScore.ToString("0000000");
     }
 
@@ -111,9 +117,16 @@ public class UIManager : MonoBehaviour
         }
     }   
 
-    public void ShotUIUpdater()
+    public void ShotTypeUIUpdater()
     {
-           
+        //public Slider shotSlider;
+        //public Text ammunitionText;
+        //public Text shotLevelText;
+
+        shotSlider.value = shipStats_SO.ammunitionProgressionRate;
+        ammunitionText.text = shipStats_SO.ammunitionName;
+        shotLevelText.text = shipStats_SO.ammunitionLevel.ToString();
+        
     }
 
 }

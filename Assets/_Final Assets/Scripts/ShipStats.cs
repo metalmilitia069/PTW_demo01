@@ -46,7 +46,8 @@ public class ShipStats : ShipBase
         //ammunitionsList.Add(AmmunitionType.singleShotLvl01);
         //ammunitionsList.Add(AmmunitionType.tripleShotLvl01);
         //ammunitionType = ammunitionsList[0];
-        CheckAmmoTypePerLevel(shipStats_SO.playerLevel);
+        UpdateAmmunitionList(shipStats_SO.playerLevel);
+        ammunitionType = ammunitionsList[0];
     }
 
     // Update is called once per frame
@@ -341,7 +342,7 @@ public class ShipStats : ShipBase
         }
     }
 
-    public void CheckAmmoTypePerLevel(int playerLevel)
+    public void UpdateAmmunitionList(int playerLevel)
     {
         bool canUseSingleShot = false;
         bool canUseTripleShot = false;
@@ -427,6 +428,8 @@ public class ShipStats : ShipBase
                     break;
             }
         }
+
+        GetAmmunitionNameAndLevel();
     }
 
     public void SwitchAmmo()
@@ -446,8 +449,65 @@ public class ShipStats : ShipBase
             }
 
             ammunitionType = ammunitionsList[index];
+
+            GetAmmunitionNameAndLevel();
         }
 
+    }
+
+    public void GetAmmunitionNameAndLevel()
+    {
+        switch (ammunitionType)
+        {
+            case AmmunitionType.singleShotLvl01:
+                shipStats_SO.ammunitionName = "Single Shot";
+                shipStats_SO.ammunitionLevel = shipStats_SO.singleShotLevel;
+                shipStats_SO.ammunitionProgressionRate = shipStats_SO.singleShotProgressionRate;
+                break;
+            case AmmunitionType.tripleShotLvl01:
+                shipStats_SO.ammunitionName = "Triple Shot";
+                shipStats_SO.ammunitionLevel = shipStats_SO.tripleShotLevel;
+                shipStats_SO.ammunitionProgressionRate = shipStats_SO.tripleShotProgressionRate;
+                break;
+            case AmmunitionType.diagonalShotLvl01:
+                shipStats_SO.ammunitionName = "Diagonal Shot";
+                shipStats_SO.ammunitionLevel = shipStats_SO.diagonalShotLevel;
+                shipStats_SO.ammunitionProgressionRate = shipStats_SO.diagonalShotProgressionRate;
+                break;
+            case AmmunitionType.singleShotLvl02:
+                shipStats_SO.ammunitionName = "Single Shot";
+                shipStats_SO.ammunitionLevel = shipStats_SO.singleShotLevel;
+                shipStats_SO.ammunitionProgressionRate = shipStats_SO.singleShotProgressionRate;
+                break;
+            case AmmunitionType.tripleShotLvl02:
+                shipStats_SO.ammunitionName = "Triple Shot";
+                shipStats_SO.ammunitionLevel = shipStats_SO.tripleShotLevel;
+                shipStats_SO.ammunitionProgressionRate = shipStats_SO.tripleShotProgressionRate;
+                break;
+            case AmmunitionType.diagonalShotLvl02:
+                shipStats_SO.ammunitionName = "Diagonal Shot";
+                shipStats_SO.ammunitionLevel = shipStats_SO.diagonalShotLevel;
+                shipStats_SO.ammunitionProgressionRate = shipStats_SO.diagonalShotProgressionRate;
+                break;
+            case AmmunitionType.singleShotLvl03:
+                shipStats_SO.ammunitionName = "Single Shot";
+                shipStats_SO.ammunitionLevel = shipStats_SO.singleShotLevel;
+                shipStats_SO.ammunitionProgressionRate = shipStats_SO.singleShotProgressionRate;
+                break;
+            case AmmunitionType.tripleShotLvl03:
+                shipStats_SO.ammunitionName = "Triple Shot";
+                shipStats_SO.ammunitionLevel = shipStats_SO.tripleShotLevel;
+                shipStats_SO.ammunitionProgressionRate = shipStats_SO.tripleShotProgressionRate;
+                break;
+            case AmmunitionType.diagonalShotLvl03:
+                shipStats_SO.ammunitionName = "Diagonal Shot";
+                shipStats_SO.ammunitionLevel = shipStats_SO.diagonalShotLevel;
+                shipStats_SO.ammunitionProgressionRate = shipStats_SO.diagonalShotProgressionRate;
+                break;
+            default:
+                break;
+        }
+        uIManager_SO.canUpdadeHUD = true;
     }
 
     
