@@ -226,11 +226,15 @@ public class ShipStats : ShipBase
         {
             LevelUpSingleShot();
             uIManager_SO.canUpdadeHUD = true;
+            //GetAmmunitionNameAndLevel();
         }
         else
         {
-            uIManager_SO.canUpdadeHUD = true;
+            GetAmmunitionNameAndLevel();
+            //Debug.Log("CU");
+            //uIManager_SO.canUpdadeHUD = true;
         }
+
     }
 
     public void AddXPToTripleShot(int AmmunitionXP)
@@ -271,6 +275,7 @@ public class ShipStats : ShipBase
             shipStats_SO.singleShotLevelUpThreshold += (shipStats_SO.singleShotLevelUpThreshold * 2.0f);
             shipStats_SO.singleShotProgressionRate = 0.0f;
             ammunitionType = AmmunitionType.singleShotLvl02;
+            UpdateAmmunitionList(shipStats_SO.playerLevel);
             //uIManager_SO.canUpdadeHUD = true;
             return;
         }
@@ -279,7 +284,8 @@ public class ShipStats : ShipBase
         {
             shipStats_SO.singleShotLevel = 3;            
             shipStats_SO.singleShotProgressionRate = 1.0f;
-            ammunitionType = AmmunitionType.singleShotLvl03;            
+            ammunitionType = AmmunitionType.singleShotLvl03;
+            UpdateAmmunitionList(shipStats_SO.playerLevel);
         }
     }
 
@@ -525,8 +531,9 @@ public class ShipStats : ShipBase
                 break;
             default:
                 break;
-        }
-        uIManager_SO.canUpdadeHUD = true;
+        }       
+
+        uIManager_SO.canUpdadeHUD = true;        
     }
 
     

@@ -36,12 +36,12 @@ public class UIManager : MonoBehaviour
         XPUiUpdater();
         HPUIUpdater();
         ShieldUiUpdater();
-        //ShotTypeUIUpdater();
+        ShotTypeUIUpdater();
     }
 
     // Update is called once per frame
     void FixedUpdate()
-    {
+    {        
         if (uIManager_SO.canUpdadeHUD)
         {
             if (uIManager_SO.canUpdadeLvl)
@@ -55,7 +55,7 @@ public class UIManager : MonoBehaviour
             HPUIUpdater();
             ShieldUiUpdater();
             ShotTypeUIUpdater();
-
+                        
             uIManager_SO.canUpdadeHUD = false;
         }
     }    
@@ -126,7 +126,14 @@ public class UIManager : MonoBehaviour
 
         shotSlider.value = shipStats_SO.ammunitionProgressionRate;
         ammunitionText.text = shipStats_SO.ammunitionName;
-        shotLevelText.text = shipStats_SO.ammunitionLevel.ToString();
+        if (shipStats_SO.ammunitionLevel == 3)
+        {
+            shotLevelText.text = "Max";
+        }
+        else
+        {
+            shotLevelText.text = "Lv. 0" + shipStats_SO.ammunitionLevel.ToString();
+        }
         
     }
 
