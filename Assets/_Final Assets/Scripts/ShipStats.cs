@@ -47,7 +47,7 @@ public class ShipStats : ShipBase
         //ammunitionsList.Add(AmmunitionType.tripleShotLvl01);
         //ammunitionType = ammunitionsList[0];
         UpdateAmmunitionList(shipStats_SO.playerLevel);
-        //ammunitionType = ammunitionsList[0];
+        ammunitionType = ammunitionsList[0];
         Debug.Log("ammunition type = " + ammunitionType.ToString());
 
     }
@@ -225,7 +225,7 @@ public class ShipStats : ShipBase
         if (shipStats_SO.singleShotProgressionRate >= 1.0f)
         {
             LevelUpSingleShot();
-            uIManager_SO.canUpdadeHUD = true;
+            //uIManager_SO.canUpdadeHUD = true;
             //GetAmmunitionNameAndLevel();
         }
         else
@@ -244,11 +244,12 @@ public class ShipStats : ShipBase
         if (shipStats_SO.tripleShotProgressionRate >= 1.0f)
         {
             LevelUpTripleShot();
-            uIManager_SO.canUpdadeHUD = true;
+            //uIManager_SO.canUpdadeHUD = true;
         }
         else
         {
-            uIManager_SO.canUpdadeHUD = true;
+            GetAmmunitionNameAndLevel();
+            //uIManager_SO.canUpdadeHUD = true;
         }
     }
 
@@ -259,11 +260,12 @@ public class ShipStats : ShipBase
         if (shipStats_SO.diagonalShotProgressionRate >= 1.0f)
         {
             LevelUpDiagonalShot();
-            uIManager_SO.canUpdadeHUD = true;
+            //uIManager_SO.canUpdadeHUD = true;
         }
         else
         {
-            uIManager_SO.canUpdadeHUD = true;
+            GetAmmunitionNameAndLevel();
+            //uIManager_SO.canUpdadeHUD = true;
         }
     }
 
@@ -297,6 +299,7 @@ public class ShipStats : ShipBase
             shipStats_SO.tripleShotLevelUpThreshold += (shipStats_SO.tripleShotLevelUpThreshold * 2.0f);
             shipStats_SO.tripleShotProgressionRate = 0.0f;
             ammunitionType = AmmunitionType.tripleShotLvl02;
+            UpdateAmmunitionList(shipStats_SO.playerLevel);
             return;
         }
 
@@ -305,6 +308,7 @@ public class ShipStats : ShipBase
             shipStats_SO.tripleShotLevel = 3;            
             shipStats_SO.tripleShotProgressionRate = 1.0f;
             ammunitionType = AmmunitionType.tripleShotLvl03;
+            UpdateAmmunitionList(shipStats_SO.playerLevel);
         }
     }
 
@@ -316,6 +320,7 @@ public class ShipStats : ShipBase
             shipStats_SO.diagonalShotLevelUpThreshold += (shipStats_SO.diagonalShotLevelUpThreshold * 2.0f);
             shipStats_SO.diagonalShotProgressionRate = 0.0f;
             ammunitionType = AmmunitionType.diagonalShotLvl02;
+            UpdateAmmunitionList(shipStats_SO.playerLevel);
             return;
         }
 
@@ -324,6 +329,7 @@ public class ShipStats : ShipBase
             shipStats_SO.diagonalShotLevel = 3;            
             shipStats_SO.diagonalShotProgressionRate = 1.0f;
             ammunitionType = AmmunitionType.diagonalShotLvl03;
+            UpdateAmmunitionList(shipStats_SO.playerLevel);
         }
     }
 
@@ -398,6 +404,10 @@ public class ShipStats : ShipBase
             switch (shipStats_SO.singleShotLevel)
             {
                 case 1:
+                    if(ammunitionsList.Contains(AmmunitionType.singleShotLvl01))
+                    {
+                        break;
+                    }
                     ammunitionsList.Add(AmmunitionType.singleShotLvl01);
                     break;
                 case 2:
@@ -418,6 +428,10 @@ public class ShipStats : ShipBase
             switch (shipStats_SO.tripleShotLevel)
             {
                 case 1:
+                    if (ammunitionsList.Contains(AmmunitionType.tripleShotLvl01))
+                    {
+                        break;
+                    }
                     ammunitionsList.Add(AmmunitionType.tripleShotLvl01);
                     break;
                 case 2:
@@ -438,6 +452,10 @@ public class ShipStats : ShipBase
             switch (shipStats_SO.diagonalShotLevel)
             {
                 case 1:
+                    if (ammunitionsList.Contains(AmmunitionType.diagonalShotLvl01))
+                    {
+                        break;
+                    }
                     ammunitionsList.Add(AmmunitionType.diagonalShotLvl01);
                     break;
                 case 2:
@@ -453,7 +471,7 @@ public class ShipStats : ShipBase
             }
         }
 
-        ammunitionType = ammunitionsList[0];
+        //ammunitionType = ammunitionsList[0];
         GetAmmunitionNameAndLevel();
     }
 
