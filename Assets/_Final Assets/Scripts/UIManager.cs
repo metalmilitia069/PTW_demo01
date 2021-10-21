@@ -36,6 +36,7 @@ public class UIManager : MonoBehaviour
         XPUiUpdater();
         HPUIUpdater();
         ShieldUiUpdater();
+        //ShotTypeUIUpdater();
     }
 
     // Update is called once per frame

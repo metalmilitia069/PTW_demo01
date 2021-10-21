@@ -26,18 +26,18 @@ MonoBehaviour:
   levelUpThreshold: 10
   levelProgressionRate: 0
   shotsMaxLevel: 3
-  singleShotLevel: 1
+  singleShotLevel: 3
   tripleShotLevel: 1
   diagonalShotLevel: 1
-  singleShotLevelUpThreshold: 200
+  singleShotLevelUpThreshold: 600
   tripleShotLevelUpThreshold: 200
   diagonalShotLevelUpThreshold: 200
-  singleShotCurrentXP: 0
+  singleShotCurrentXP: 600
   tripleShotCurrentXP: 0
   diagonalShotCurrentXP: 0
-  singleShotProgressionRate: 0
+  singleShotProgressionRate: 1
   tripleShotProgressionRate: 0
   diagonalShotProgressionRate: 0
   ammunitionName: Single Shot
-  ammunitionLevel: 0
-  ammunitionProgressionRate: 0
+  ammunitionLevel: 3
+  ammunitionProgressionRate: 1

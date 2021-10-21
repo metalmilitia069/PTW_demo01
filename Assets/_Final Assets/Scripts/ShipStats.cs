@@ -47,7 +47,9 @@ public class ShipStats : ShipBase
         //ammunitionsList.Add(AmmunitionType.tripleShotLvl01);
         //ammunitionType = ammunitionsList[0];
         UpdateAmmunitionList(shipStats_SO.playerLevel);
-        ammunitionType = ammunitionsList[0];
+        //ammunitionType = ammunitionsList[0];
+        Debug.Log("ammunition type = " + ammunitionType.ToString());
+
     }
 
     // Update is called once per frame
@@ -223,6 +225,11 @@ public class ShipStats : ShipBase
         if (shipStats_SO.singleShotProgressionRate >= 1.0f)
         {
             LevelUpSingleShot();
+            uIManager_SO.canUpdadeHUD = true;
+        }
+        else
+        {
+            uIManager_SO.canUpdadeHUD = true;
         }
     }
 
@@ -233,6 +240,11 @@ public class ShipStats : ShipBase
         if (shipStats_SO.tripleShotProgressionRate >= 1.0f)
         {
             LevelUpTripleShot();
+            uIManager_SO.canUpdadeHUD = true;
+        }
+        else
+        {
+            uIManager_SO.canUpdadeHUD = true;
         }
     }
 
@@ -243,6 +255,11 @@ public class ShipStats : ShipBase
         if (shipStats_SO.diagonalShotProgressionRate >= 1.0f)
         {
             LevelUpDiagonalShot();
+            uIManager_SO.canUpdadeHUD = true;
+        }
+        else
+        {
+            uIManager_SO.canUpdadeHUD = true;
         }
     }
 
@@ -254,6 +271,7 @@ public class ShipStats : ShipBase
             shipStats_SO.singleShotLevelUpThreshold += (shipStats_SO.singleShotLevelUpThreshold * 2.0f);
             shipStats_SO.singleShotProgressionRate = 0.0f;
             ammunitionType = AmmunitionType.singleShotLvl02;
+            //uIManager_SO.canUpdadeHUD = true;
             return;
         }
 
@@ -429,6 +447,7 @@ public class ShipStats : ShipBase
             }
         }
 
+        ammunitionType = ammunitionsList[0];
         GetAmmunitionNameAndLevel();
     }
 
