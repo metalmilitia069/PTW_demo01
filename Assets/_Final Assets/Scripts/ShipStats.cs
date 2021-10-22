@@ -411,10 +411,18 @@ public class ShipStats : ShipBase
                     ammunitionsList.Add(AmmunitionType.singleShotLvl01);
                     break;
                 case 2:
+                    if (ammunitionsList.Contains(AmmunitionType.singleShotLvl02))
+                    {
+                        break;
+                    }
                     ammunitionsList.Remove(AmmunitionType.singleShotLvl01);
                     ammunitionsList.Add(AmmunitionType.singleShotLvl02);
                     break;
                 case 3:
+                    if (ammunitionsList.Contains(AmmunitionType.singleShotLvl03))
+                    {
+                        break;
+                    }
                     ammunitionsList.Remove(AmmunitionType.singleShotLvl02);
                     ammunitionsList.Add(AmmunitionType.singleShotLvl03);
                     break;
@@ -435,10 +443,18 @@ public class ShipStats : ShipBase
                     ammunitionsList.Add(AmmunitionType.tripleShotLvl01);
                     break;
                 case 2:
+                    if (ammunitionsList.Contains(AmmunitionType.tripleShotLvl02))
+                    {
+                        break;
+                    }
                     ammunitionsList.Remove(AmmunitionType.tripleShotLvl01);
                     ammunitionsList.Add(AmmunitionType.tripleShotLvl02);
                     break;
                 case 3:
+                    if (ammunitionsList.Contains(AmmunitionType.tripleShotLvl03))
+                    {
+                        break;
+                    }
                     ammunitionsList.Remove(AmmunitionType.tripleShotLvl02);
                     ammunitionsList.Add(AmmunitionType.tripleShotLvl03);
                     break;
@@ -459,10 +475,18 @@ public class ShipStats : ShipBase
                     ammunitionsList.Add(AmmunitionType.diagonalShotLvl01);
                     break;
                 case 2:
+                    if (ammunitionsList.Contains(AmmunitionType.diagonalShotLvl02))
+                    {
+                        break;
+                    }
                     ammunitionsList.Remove(AmmunitionType.diagonalShotLvl01);
                     ammunitionsList.Add(AmmunitionType.diagonalShotLvl02);
                     break;
                 case 3:
+                    if (ammunitionsList.Contains(AmmunitionType.diagonalShotLvl03))
+                    {
+                        break;
+                    }
                     ammunitionsList.Remove(AmmunitionType.diagonalShotLvl02);
                     ammunitionsList.Add(AmmunitionType.diagonalShotLvl03);
                     break;
