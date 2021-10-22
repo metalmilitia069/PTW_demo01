@@ -40,4 +40,4 @@ MonoBehaviour:
   diagonalShotProgressionRate: 0
   ammunitionName: Triple Shot
   ammunitionLevel: 3
-  ammunitionProgressionRate: 1
+  ammunitionProgressionRate: 0

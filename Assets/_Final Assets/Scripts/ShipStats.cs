@@ -48,6 +48,7 @@ public class ShipStats : ShipBase
         //ammunitionType = ammunitionsList[0];
         UpdateAmmunitionList(shipStats_SO.playerLevel);
         ammunitionType = ammunitionsList[0];
+        UpdateAmmunitionList(shipStats_SO.playerLevel);
         Debug.Log("ammunition type = " + ammunitionType.ToString());
 
     }
