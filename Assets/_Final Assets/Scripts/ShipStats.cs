@@ -560,17 +560,20 @@ public class ShipStats : ShipBase
             case AmmunitionType.singleShotLvl03:
                 shipStats_SO.ammunitionName = "Single Shot";
                 shipStats_SO.ammunitionLevel = shipStats_SO.singleShotLevel;
-                shipStats_SO.ammunitionProgressionRate = shipStats_SO.singleShotProgressionRate;
+                //shipStats_SO.ammunitionProgressionRate = shipStats_SO.singleShotProgressionRate;
+                shipStats_SO.ammunitionProgressionRate = 1.0f;
                 break;
             case AmmunitionType.tripleShotLvl03:
                 shipStats_SO.ammunitionName = "Triple Shot";
                 shipStats_SO.ammunitionLevel = shipStats_SO.tripleShotLevel;
-                shipStats_SO.ammunitionProgressionRate = shipStats_SO.tripleShotProgressionRate;
+                //shipStats_SO.ammunitionProgressionRate = shipStats_SO.tripleShotProgressionRate;
+                shipStats_SO.ammunitionProgressionRate = 1.0f;
                 break;
             case AmmunitionType.diagonalShotLvl03:
                 shipStats_SO.ammunitionName = "Diagonal Shot";
                 shipStats_SO.ammunitionLevel = shipStats_SO.diagonalShotLevel;
-                shipStats_SO.ammunitionProgressionRate = shipStats_SO.diagonalShotProgressionRate;
+                //shipStats_SO.ammunitionProgressionRate = shipStats_SO.diagonalShotProgressionRate;
+                shipStats_SO.ammunitionProgressionRate = 1.0f;
                 break;
             default:
                 break;
