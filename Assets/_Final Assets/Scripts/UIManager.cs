@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     public ShipStats_SO shipStats_SO;
     public UIManager_SO uIManager_SO;
 
+
     public Slider[] HPSliders;
     public Slider[] ShieldSliders;
     public Slider xpBar;
@@ -136,5 +137,7 @@ public class UIManager : MonoBehaviour
         }
         
     }
+
+
 
 }

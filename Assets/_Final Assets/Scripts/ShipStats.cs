@@ -279,6 +279,7 @@ public class ShipStats : ShipBase
             shipStats_SO.singleShotProgressionRate = 0.0f;
             ammunitionType = AmmunitionType.singleShotLvl02;
             UpdateAmmunitionList(shipStats_SO.playerLevel);
+
             //uIManager_SO.canUpdadeHUD = true;
             return;
         }
