@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class UICanvasMsg_SO : MonoBehaviour
+[CreateAssetMenu(fileName = "UICanvasMsg_SO", menuName = "UI/CanvasMsg")]
+public class UICanvasMsg_SO : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string communicationText = default;
+    public bool canDisplayCommunication = false;
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        communicationText = default;
     }
 }

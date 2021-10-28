@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
     public ShipStats_SO shipStats_SO;
     public UIManager_SO uIManager_SO;
+    public UICanvasMsg_SO uICanvasMsg_SO;
 
 
     public Slider[] HPSliders;
@@ -58,6 +59,13 @@ public class UIManager : MonoBehaviour
             ShotTypeUIUpdater();
                         
             uIManager_SO.canUpdadeHUD = false;
+        }
+
+        if (uIManager_SO.canDisplayCommunication)
+        {
+            uICanvasMsg_SO.communicationText = uIManager_SO.comunicationText;
+            uICanvasMsg_SO.canDisplayCommunication = true;
+            uIManager_SO.canDisplayCommunication = false;
         }
     }    
 
