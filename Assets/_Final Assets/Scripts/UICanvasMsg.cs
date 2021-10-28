@@ -34,7 +34,7 @@ public class UICanvasMsg : MonoBehaviour
         msgText.gameObject.SetActive(true);
         msgText.text = msg;
         //LeanTween.alpha(msgText.gameObject, 1f, 1f);
-        LeanTween.scale(msgText.gameObject, Vector3.one * 2, tweenTime).setEasePunch().setOnComplete(HideUI);
+        LeanTween.scale(msgText.gameObject, Vector3.one, tweenTime).setEasePunch().setOnComplete(HideUI);
         //msgText.gameObject.SetActive(false);
     }
 

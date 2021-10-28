@@ -158,6 +158,9 @@ public class ShipStats : ShipBase
 
         uIManager_SO.canUpdadeLvl = true;
         uIManager_SO.canUpdadeHUD = true;
+
+        uIManager_SO.comunicationText = "Player Level 0" + shipStats_SO.playerLevel + " Reached!";
+        uIManager_SO.canDisplayCommunication = true;
     }
 
     public void AddXp(int XpToAdd)

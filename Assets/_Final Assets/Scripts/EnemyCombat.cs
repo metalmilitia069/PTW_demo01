@@ -36,6 +36,9 @@ public class EnemyCombat : EnemyStats
         {
             TakeDamage(other.GetComponent<ProjectileBase>().GetBulletDamage());
             gameManager_SO.shipStats.AddXpToAmmunition(ammunitionPointsWorth);
+            //DEBUG ONLY DELETE LATER!!!!
+            gameManager_SO.shipStats.AddXp(pointsWorth); //DEBUG ONLY DELETE LATER!!!!
+            //DEBUG ONLY DELETE LATER!!!!
             other.GetComponent<ProjectileBase>().KillProjectile();
         }
     }

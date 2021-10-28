@@ -35,6 +35,7 @@ public class UIManager : MonoBehaviour
         uIManager_SO.ammunitionText = ammunitionText;
         uIManager_SO.shotLevelText = shotLevelText;
 
+        LevelUiUpdater();
         XPUiUpdater();
         HPUIUpdater();
         ShieldUiUpdater();
