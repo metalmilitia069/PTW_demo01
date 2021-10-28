@@ -12,32 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad71d31d3e3140e428353110b91fbfaa, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  playerMaxHealth: 9
-  playerHealth: 9
-  playerMaxShield: 9
-  playerShield: 9
+  playerMaxHealth: 3
+  playerHealth: 3
+  playerMaxShield: 3
+  playerShield: 3
   playerSpeed: 60
   fireRate: 0.2
-  playerLevel: 7
+  playerLevel: 1
   maxLevel: 7
-  playerXPCumulated: 13940
-  levelingUpXp: 1340
-  playerScore: 13940
-  levelUpThreshold: 12800
+  playerXPCumulated: 0
+  levelingUpXp: 0
+  playerScore: 0
+  levelUpThreshold: 200
   levelProgressionRate: 1
   shotsMaxLevel: 3
-  singleShotLevel: 3
-  tripleShotLevel: 3
-  diagonalShotLevel: 3
-  singleShotLevelUpThreshold: 600
-  tripleShotLevelUpThreshold: 600
-  diagonalShotLevelUpThreshold: 600
-  singleShotCurrentXP: 600
-  tripleShotCurrentXP: 600
-  diagonalShotCurrentXP: 600
-  singleShotProgressionRate: 1
-  tripleShotProgressionRate: 1
-  diagonalShotProgressionRate: 1
+  singleShotLevel: 1
+  tripleShotLevel: 1
+  diagonalShotLevel: 1
+  singleShotLevelUpThreshold: 200
+  tripleShotLevelUpThreshold: 200
+  diagonalShotLevelUpThreshold: 200
+  singleShotCurrentXP: 0
+  tripleShotCurrentXP: 0
+  diagonalShotCurrentXP: 0
+  singleShotProgressionRate: 0
+  tripleShotProgressionRate: 0
+  diagonalShotProgressionRate: 0
   ammunitionName: Single Shot
   ammunitionLevel: 3
   ammunitionProgressionRate: 1

@@ -35,11 +35,11 @@ public class UIManager : MonoBehaviour
         uIManager_SO.ammunitionText = ammunitionText;
         uIManager_SO.shotLevelText = shotLevelText;
 
-        LevelUiUpdater();
         XPUiUpdater();
         HPUIUpdater();
         ShieldUiUpdater();
         ShotTypeUIUpdater();
+        LevelUiUpdater();
     }
 
     // Update is called once per frame
@@ -116,10 +116,13 @@ public class UIManager : MonoBehaviour
         if (shipStats_SO.playerLevel == shipStats_SO.maxLevel)
         {
             LevelText.text = "MAX";
-            return;
+            //return;
+        }
+        else
+        {
+            LevelText.text = "Lv. " + shipStats_SO.playerLevel.ToString("00");
         }
 
-        LevelText.text = "Lv. " + shipStats_SO.playerLevel.ToString("00");
 
         for (int i = 0; i < shipStats_SO.playerHealth; i++)
         {
