@@ -24,14 +24,14 @@ MonoBehaviour:
   levelingUpXp: 0
   playerScore: 0
   levelUpThreshold: 200
-  levelProgressionRate: 1
+  levelProgressionRate: 0
   shotsMaxLevel: 3
   singleShotLevel: 1
   tripleShotLevel: 1
   diagonalShotLevel: 1
-  singleShotLevelUpThreshold: 200
-  tripleShotLevelUpThreshold: 200
-  diagonalShotLevelUpThreshold: 200
+  singleShotLevelUpThreshold: 100
+  tripleShotLevelUpThreshold: 100
+  diagonalShotLevelUpThreshold: 100
   singleShotCurrentXP: 0
   tripleShotCurrentXP: 0
   diagonalShotCurrentXP: 0
@@ -39,5 +39,5 @@ MonoBehaviour:
   tripleShotProgressionRate: 0
   diagonalShotProgressionRate: 0
   ammunitionName: Single Shot
-  ammunitionLevel: 3
-  ammunitionProgressionRate: 1
+  ammunitionLevel: 1
+  ammunitionProgressionRate: 0.8

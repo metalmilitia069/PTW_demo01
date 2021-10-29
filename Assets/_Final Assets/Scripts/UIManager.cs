@@ -23,6 +23,7 @@ public class UIManager : MonoBehaviour
     public Text ammunitionText;
     public Text shotLevelText;
 
+    public float tweenTime = 3.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +56,7 @@ public class UIManager : MonoBehaviour
             }
 
             XPUiUpdater();
-            HPUIUpdater();
+            //HPUIUpdater();
             ShieldUiUpdater();
             ShotTypeUIUpdater();
                         
@@ -123,6 +124,7 @@ public class UIManager : MonoBehaviour
             LevelText.text = "Lv. " + shipStats_SO.playerLevel.ToString("00");
         }
 
+        TweenMsg(0);
 
         for (int i = 0; i < shipStats_SO.playerHealth; i++)
         {
@@ -147,7 +149,40 @@ public class UIManager : MonoBehaviour
         {
             shotLevelText.text = "Lv. 0" + shipStats_SO.ammunitionLevel.ToString();
         }
+
+        TweenMsg(1);
         
+    }
+
+    public void TweenMsg(int option)
+    {
+        //LeanTween.cancel(LevelText.gameObject);
+       // LeanTween.cancel(shotLevelText.gameObject);
+
+        GameObject message = default;
+
+        if (option == 0)
+        {
+            message = LevelText.gameObject;
+        }
+        else if (option == 1)
+        {
+            message = shotLevelText.gameObject;
+        }
+        else
+        {
+            return;
+        }
+
+
+        LeanTween.scale(message, Vector3.one / 2, tweenTime).setEasePunch();
+        
+        //msgText.gameObject.SetActive(true);
+        //msgText.text = msg;
+
+        //LeanTween.alpha(msgText.gameObject, 1f, 1f);
+        //LeanTween.scale(msgText.gameObject, Vector3.one / 2, tweenTime).setEasePunch().setOnComplete(HideUI);
+        //msgText.gameObject.SetActive(false);
     }
 
 

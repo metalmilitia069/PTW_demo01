@@ -65,10 +65,16 @@ public class ShipStats_SO : ScriptableObject
         tripleShotLevel = 1;
         diagonalShotLevel = 1;
 
+        playerXPCumulated = 0;
+        levelingUpXp = 0;
+        playerScore = 0;
 
-        singleShotLevelUpThreshold = 200;
-        tripleShotLevelUpThreshold = 200;
-        diagonalShotLevelUpThreshold = 200;
+        levelUpThreshold = 200;
+        levelProgressionRate = 0;
+
+        singleShotLevelUpThreshold = 100;
+        tripleShotLevelUpThreshold = 100;
+        diagonalShotLevelUpThreshold = 100;
 
         singleShotCurrentXP = 0;
         tripleShotCurrentXP = 0;
