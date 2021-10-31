@@ -31,6 +31,6 @@ MonoBehaviour:
     can block the Triple Shot's energy wave, therefore, if the enemy's shield's color
     is not BLUE, or if it does not match Triple Shot's color, you should probably
     switch to another fire mode. Have a Nice Hunt!
-  videoClip:
+  videoClips:
   - {fileID: 32900000, guid: c7ef085f9ca3bcc41a7299e25b9054e3, type: 3}
   - {fileID: 32900000, guid: 208e8bedc2391134fb467fe48bc3b06c, type: 3}

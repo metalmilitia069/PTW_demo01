@@ -12,7 +12,7 @@ public class UICanvasPanels_SO : ScriptableObject
     public string[] uIUnlockPanelTitle;
     [TextArea(15, 20)]
     public string[] uiUnlockPanelContent;
-    public VideoClip[] videoClip;
+    public VideoClip[] videoClips;
 
     //[Header("UI Panels")]
     //public Gam
