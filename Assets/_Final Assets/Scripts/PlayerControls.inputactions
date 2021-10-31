@@ -544,6 +544,44 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "CancelClosePanel",
+            "id": "157e3d6c-ac62-4b8e-bb7b-1ee0d04c6276",
+            "actions": [
+                {
+                    "name": "CancelClose",
+                    "type": "Button",
+                    "id": "7989e417-fe5f-405f-bc1a-56846df41a3d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d119ce2d-04c3-4220-a6d0-74720a9d5e0f",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CancelClose",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cf426f61-78ac-454b-b13d-dc3d5f464579",
+                    "path": "<XInputController>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CancelClose",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

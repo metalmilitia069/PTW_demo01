@@ -62,6 +62,7 @@ public class ShipStats : ShipBase
             Shooting();
             SwitchAmmo();
         }
+
     }
 
     private void OnEnable()
@@ -162,6 +163,24 @@ public class ShipStats : ShipBase
         uIManager_SO.comunicationText = "Player Level 0" + shipStats_SO.playerLevel + " Reached!";
         uIManager_SO.tweenNumber = 0;
         uIManager_SO.canDisplayCommunication = true;
+
+        UpdateAmmunitionList(shipStats_SO.playerLevel);
+    }
+
+    public void VerifyUnlockedShots(int playerLvl)
+    {
+        switch (playerLvl)
+        {
+            case 2:
+                //unlock triple shot
+                break;
+            case 3:
+                //unlock diagonal shot
+                break;
+            default:
+                break;
+        }
+        
     }
 
     public void AddXp(int XpToAdd)
@@ -542,6 +561,11 @@ public class ShipStats : ShipBase
 
             GetAmmunitionNameAndLevel();
         }
+
+    }
+
+    public void ClosePanel()
+    {
 
     }
 

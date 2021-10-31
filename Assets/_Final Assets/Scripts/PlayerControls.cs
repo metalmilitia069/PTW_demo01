@@ -557,6 +557,44 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""CancelClosePanel"",
+            ""id"": ""157e3d6c-ac62-4b8e-bb7b-1ee0d04c6276"",
+            ""actions"": [
+                {
+                    ""name"": ""CancelClose"",
+                    ""type"": ""Button"",
+                    ""id"": ""7989e417-fe5f-405f-bc1a-56846df41a3d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""d119ce2d-04c3-4220-a6d0-74720a9d5e0f"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CancelClose"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cf426f61-78ac-454b-b13d-dc3d5f464579"",
+                    ""path"": ""<XInputController>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CancelClose"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -579,6 +617,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         // ChangeAmmo
         m_ChangeAmmo = asset.FindActionMap("ChangeAmmo", throwIfNotFound: true);
         m_ChangeAmmo_AmmoChanger = m_ChangeAmmo.FindAction("AmmoChanger", throwIfNotFound: true);
+        // CancelClosePanel
+        m_CancelClosePanel = asset.FindActionMap("CancelClosePanel", throwIfNotFound: true);
+        m_CancelClosePanel_CancelClose = m_CancelClosePanel.FindAction("CancelClose", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -813,6 +854,39 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public ChangeAmmoActions @ChangeAmmo => new ChangeAmmoActions(this);
+
+    // CancelClosePanel
+    private readonly InputActionMap m_CancelClosePanel;
+    private ICancelClosePanelActions m_CancelClosePanelActionsCallbackInterface;
+    private readonly InputAction m_CancelClosePanel_CancelClose;
+    public struct CancelClosePanelActions
+    {
+        private @PlayerControls m_Wrapper;
+        public CancelClosePanelActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @CancelClose => m_Wrapper.m_CancelClosePanel_CancelClose;
+        public InputActionMap Get() { return m_Wrapper.m_CancelClosePanel; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CancelClosePanelActions set) { return set.Get(); }
+        public void SetCallbacks(ICancelClosePanelActions instance)
+        {
+            if (m_Wrapper.m_CancelClosePanelActionsCallbackInterface != null)
+            {
+                @CancelClose.started -= m_Wrapper.m_CancelClosePanelActionsCallbackInterface.OnCancelClose;
+                @CancelClose.performed -= m_Wrapper.m_CancelClosePanelActionsCallbackInterface.OnCancelClose;
+                @CancelClose.canceled -= m_Wrapper.m_CancelClosePanelActionsCallbackInterface.OnCancelClose;
+            }
+            m_Wrapper.m_CancelClosePanelActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @CancelClose.started += instance.OnCancelClose;
+                @CancelClose.performed += instance.OnCancelClose;
+                @CancelClose.canceled += instance.OnCancelClose;
+            }
+        }
+    }
+    public CancelClosePanelActions @CancelClosePanel => new CancelClosePanelActions(this);
     public interface ILocomotionTopViewActions
     {
         void OnSideMove(InputAction.CallbackContext context);
@@ -835,5 +909,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     public interface IChangeAmmoActions
     {
         void OnAmmoChanger(InputAction.CallbackContext context);
+    }
+    public interface ICancelClosePanelActions
+    {
+        void OnCancelClose(InputAction.CallbackContext context);
     }
 }
