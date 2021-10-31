@@ -66,8 +66,7 @@ public class UIManager : MonoBehaviour
         if (uIManager_SO.canDisplayCommunication)
         {
             uICanvasMsg_SO.communicationText = uIManager_SO.comunicationText;
-            uICanvasMsg_SO.canDisplayCommunication = true;
-            //TweenMsg1();
+            uICanvasMsg_SO.canDisplayCommunication = true;            
             TweenMsg(uIManager_SO.tweenNumber);
             uIManager_SO.canDisplayCommunication = false;
         }
@@ -145,17 +144,12 @@ public class UIManager : MonoBehaviour
         ammunitionText.text = shipStats_SO.ammunitionName;
         if (shipStats_SO.ammunitionLevel == 3)
         {
-            shotLevelText.text = "MAX";
-            //TweenMsg1();
+            shotLevelText.text = "MAX";            
         }
         else
         {
-            shotLevelText.text = "Lv. 0" + shipStats_SO.ammunitionLevel.ToString();
-            //TweenMsg1();
+            shotLevelText.text = "Lv. 0" + shipStats_SO.ammunitionLevel.ToString();            
         }
-
-        //TweenMsg(1);
-        //TweenMsg1();
     }
 
     public void TweenMsg(int option)
@@ -178,28 +172,10 @@ public class UIManager : MonoBehaviour
             return;
         }
 
-
-        LeanTween.scale(message, Vector3.one / 2, tweenTime).setEasePunch();//.setOnComplete(ScaleTweenBack);
-
-        //LeanTween.scale(LevelText.gameObject, Vector3.one / 2, tweenTime).setEasePunch();
-
-        //msgText.gameObject.SetActive(true);
-        //msgText.text = msg;
-
-        //LeanTween.alpha(msgText.gameObject, 1f, 1f);
-        //LeanTween.scale(msgText.gameObject, Vector3.one / 2, tweenTime).setEasePunch().setOnComplete(HideUI);
-        //msgText.gameObject.SetActive(false);
+        LeanTween.scale(message, Vector3.one / 2, tweenTime).setEasePunch();//.setOnComplete(ScaleTweenBack);        
     }
 
-    public void TweenMsg1()
-    {
-        LeanTween.scale(shotLevelText.gameObject, Vector3.one / 2, tweenTime).setEasePunch();
-    }
-
-    public void ScaleTweenBack(GameObject gameObject)
-    {
-
-    }
+    
 
 
 
