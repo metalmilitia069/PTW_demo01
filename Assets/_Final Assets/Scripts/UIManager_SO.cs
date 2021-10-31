@@ -22,6 +22,7 @@ public class UIManager_SO : ScriptableObject
     [Header("UI Messages")]
     public string comunicationText = default;
     public bool canDisplayCommunication = false;
+    public int tweenNumber = 0;
 
     private void OnDisable()
     {

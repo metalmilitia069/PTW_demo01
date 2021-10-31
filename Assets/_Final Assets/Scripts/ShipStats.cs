@@ -160,6 +160,7 @@ public class ShipStats : ShipBase
         uIManager_SO.canUpdadeHUD = true;
 
         uIManager_SO.comunicationText = "Player Level 0" + shipStats_SO.playerLevel + " Reached!";
+        uIManager_SO.tweenNumber = 0;
         uIManager_SO.canDisplayCommunication = true;
     }
 
@@ -283,6 +284,7 @@ public class ShipStats : ShipBase
             ammunitionType = AmmunitionType.singleShotLvl02;
             UpdateAmmunitionList(shipStats_SO.playerLevel);
             uIManager_SO.comunicationText = "Single Shot Level Up!";
+            uIManager_SO.tweenNumber = 1;
             uIManager_SO.canDisplayCommunication = true;
             //uIManager_SO.canUpdadeHUD = true;
             return;
@@ -295,6 +297,7 @@ public class ShipStats : ShipBase
             ammunitionType = AmmunitionType.singleShotLvl03;
             UpdateAmmunitionList(shipStats_SO.playerLevel);
             uIManager_SO.comunicationText = "Single Shot Max Level!";
+            uIManager_SO.tweenNumber = 1;
             uIManager_SO.canDisplayCommunication = true;
         }
     }
@@ -309,6 +312,7 @@ public class ShipStats : ShipBase
             ammunitionType = AmmunitionType.tripleShotLvl02;
             UpdateAmmunitionList(shipStats_SO.playerLevel);
             uIManager_SO.comunicationText = "Triple Shot Level Up!";
+            uIManager_SO.tweenNumber = 1;
             uIManager_SO.canDisplayCommunication = true;
             return;
         }
@@ -320,6 +324,7 @@ public class ShipStats : ShipBase
             ammunitionType = AmmunitionType.tripleShotLvl03;
             UpdateAmmunitionList(shipStats_SO.playerLevel);
             uIManager_SO.comunicationText = "Triple Shot Max Level!";
+            uIManager_SO.tweenNumber = 1;
             uIManager_SO.canDisplayCommunication = true;
         }
     }
@@ -334,6 +339,7 @@ public class ShipStats : ShipBase
             ammunitionType = AmmunitionType.diagonalShotLvl02;
             UpdateAmmunitionList(shipStats_SO.playerLevel);
             uIManager_SO.comunicationText = "Diagonal Shot Level Up!";
+            uIManager_SO.tweenNumber = 1;
             uIManager_SO.canDisplayCommunication = true;
             return;
         }
@@ -345,6 +351,7 @@ public class ShipStats : ShipBase
             ammunitionType = AmmunitionType.diagonalShotLvl03;
             UpdateAmmunitionList(shipStats_SO.playerLevel);
             uIManager_SO.comunicationText = "Diagonal Shot Max Level!";
+            uIManager_SO.tweenNumber = 1;
             uIManager_SO.canDisplayCommunication = true;
         }
     }

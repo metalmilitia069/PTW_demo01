@@ -67,6 +67,8 @@ public class UIManager : MonoBehaviour
         {
             uICanvasMsg_SO.communicationText = uIManager_SO.comunicationText;
             uICanvasMsg_SO.canDisplayCommunication = true;
+            //TweenMsg1();
+            TweenMsg(uIManager_SO.tweenNumber);
             uIManager_SO.canDisplayCommunication = false;
         }
     }    
@@ -124,7 +126,7 @@ public class UIManager : MonoBehaviour
             LevelText.text = "Lv. " + shipStats_SO.playerLevel.ToString("00");
         }
 
-        TweenMsg(0);
+        //TweenMsg(0);
 
         for (int i = 0; i < shipStats_SO.playerHealth; i++)
         {
@@ -143,21 +145,23 @@ public class UIManager : MonoBehaviour
         ammunitionText.text = shipStats_SO.ammunitionName;
         if (shipStats_SO.ammunitionLevel == 3)
         {
-            shotLevelText.text = "Max";
+            shotLevelText.text = "MAX";
+            //TweenMsg1();
         }
         else
         {
             shotLevelText.text = "Lv. 0" + shipStats_SO.ammunitionLevel.ToString();
+            //TweenMsg1();
         }
 
-        TweenMsg(1);
-        
+        //TweenMsg(1);
+        //TweenMsg1();
     }
 
     public void TweenMsg(int option)
     {
         //LeanTween.cancel(LevelText.gameObject);
-       // LeanTween.cancel(shotLevelText.gameObject);
+        // LeanTween.cancel(shotLevelText.gameObject);
 
         GameObject message = default;
 
@@ -175,14 +179,26 @@ public class UIManager : MonoBehaviour
         }
 
 
-        LeanTween.scale(message, Vector3.one / 2, tweenTime).setEasePunch();
-        
+        LeanTween.scale(message, Vector3.one / 2, tweenTime).setEasePunch();//.setOnComplete(ScaleTweenBack);
+
+        //LeanTween.scale(LevelText.gameObject, Vector3.one / 2, tweenTime).setEasePunch();
+
         //msgText.gameObject.SetActive(true);
         //msgText.text = msg;
 
         //LeanTween.alpha(msgText.gameObject, 1f, 1f);
         //LeanTween.scale(msgText.gameObject, Vector3.one / 2, tweenTime).setEasePunch().setOnComplete(HideUI);
         //msgText.gameObject.SetActive(false);
+    }
+
+    public void TweenMsg1()
+    {
+        LeanTween.scale(shotLevelText.gameObject, Vector3.one / 2, tweenTime).setEasePunch();
+    }
+
+    public void ScaleTweenBack(GameObject gameObject)
+    {
+
     }
 
 
