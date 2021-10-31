@@ -6,6 +6,8 @@ using UnityEditor;
 [CreateAssetMenu(fileName = "PlayerStats", menuName = "Player/Stats")]
 public class ShipStats_SO : ScriptableObject
 {
+    public PlayerControls playerControls = default;
+
     public float playerMaxHealth = 3;
     public float playerHealth = 0;
     public float playerMaxShield = 3;

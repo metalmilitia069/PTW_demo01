@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     public ShipStats_SO shipStats_SO;
     public UIManager_SO uIManager_SO;
     public UICanvasMsg_SO uICanvasMsg_SO;
+    public UICanvasPanels_SO uICanvasPanels_SO;
 
 
     public Slider[] HPSliders;
@@ -69,6 +70,12 @@ public class UIManager : MonoBehaviour
             uICanvasMsg_SO.canDisplayCommunication = true;            
             TweenMsg(uIManager_SO.tweenNumber);
             uIManager_SO.canDisplayCommunication = false;
+        }
+
+        if (uIManager_SO.IsUIPanelOn)
+        {
+
+            ClosePanel();
         }
     }    
 
@@ -175,7 +182,16 @@ public class UIManager : MonoBehaviour
         LeanTween.scale(message, Vector3.one / 2, tweenTime).setEasePunch();//.setOnComplete(ScaleTweenBack);        
     }
 
-    
+    public void ClosePanel()
+    {
+        if (shipStats_SO.playerControls.CancelClosePanel.CancelClose.triggered)
+        {
+            Debug.Log("mozooooooooooooooooooo");
+        }
+    }
+
+
+
 
 
 

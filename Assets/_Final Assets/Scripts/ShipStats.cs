@@ -31,6 +31,7 @@ public class ShipStats : ShipBase
         _fireRate = shipStats_SO.fireRate;
 
         _playerControls = new PlayerControls();
+        shipStats_SO.playerControls = _playerControls;
         gameManager_SO.shipStats = this;
 
         //if (cutSceneManager_SO != null)
@@ -49,7 +50,7 @@ public class ShipStats : ShipBase
         UpdateAmmunitionList(shipStats_SO.playerLevel);
         ammunitionType = ammunitionsList[0];
         UpdateAmmunitionList(shipStats_SO.playerLevel);
-        Debug.Log("ammunition type = " + ammunitionType.ToString());
+        //Debug.Log("ammunition type = " + ammunitionType.ToString());
 
     }
 
@@ -161,6 +162,7 @@ public class ShipStats : ShipBase
         uIManager_SO.canUpdadeHUD = true;
 
         uIManager_SO.comunicationText = "Player Level 0" + shipStats_SO.playerLevel + " Reached!";
+
         uIManager_SO.tweenNumber = 0;
         uIManager_SO.canDisplayCommunication = true;
 

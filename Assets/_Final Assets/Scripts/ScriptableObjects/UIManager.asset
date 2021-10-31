@@ -14,4 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HPSliders: []
   ShieldSliders: []
-  canUpdadeHp: 0
+  xpBar: {fileID: 0}
+  shotSlider: {fileID: 0}
+  ammunitionText: {fileID: 0}
+  shotLevelText: {fileID: 0}
+  canUpdadeHUD: 0
+  canUpdadeLvl: 0
+  comunicationText: 
+  canDisplayCommunication: 0
+  tweenNumber: 1
+  IsUIPanelOn: 0
+  uIUnlockPanelTitle: []
+  uiUnlockPanelContent: []
+  videoClip:
+  - {fileID: 32900000, guid: c7ef085f9ca3bcc41a7299e25b9054e3, type: 3}
