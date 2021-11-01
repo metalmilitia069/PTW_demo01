@@ -163,6 +163,15 @@ public class ShipStats : ShipBase
 
         uIManager_SO.comunicationText = "Player Level 0" + shipStats_SO.playerLevel + " Reached!";
 
+        if (shipStats_SO.playerLevel == 2)
+        {
+            uIManager_SO.SetupUnlockedShotPanel(0, 0, 0, 0);
+        }
+        else if (shipStats_SO.playerLevel == 3)
+        {
+            uIManager_SO.SetupUnlockedShotPanel(1, 1, 1, 0);
+        }
+
         uIManager_SO.tweenNumber = 0;
         uIManager_SO.canDisplayCommunication = true;
 

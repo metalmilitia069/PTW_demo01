@@ -27,9 +27,24 @@ public class UIManager_SO : ScriptableObject
 
     [Header("UI Unlock Panels")]
     public bool IsUIPanelOn = false;
-    public string[] uIUnlockPanelTitle;
-    public string[] uiUnlockPanelContent;
-    public VideoClip[] videoClip;
+    public bool canShowPanel = false;
+    public int uIUnlockPanelTitleNumber = 0;
+    public int uiUnlockPanelContentNumber = 0;
+    public int videoClipNumber = 0;
+    public int panelNumber = 0;
+
+
+
+    public void SetupUnlockedShotPanel(int title, int content, int videoDemo, int panelNumberRef)
+    {
+        uIUnlockPanelTitleNumber = title;
+        uiUnlockPanelContentNumber = content;
+        videoClipNumber = videoDemo;
+        panelNumber = panelNumberRef;
+
+        canShowPanel = true;
+    }
+
 
     private void OnDisable()
     {
@@ -38,5 +53,12 @@ public class UIManager_SO : ScriptableObject
 
         comunicationText = default;
         canDisplayCommunication = false;
+
+        IsUIPanelOn = false;
+        canShowPanel = false;
+        uIUnlockPanelTitleNumber = 0;
+        uiUnlockPanelContentNumber = 0;
+        videoClipNumber = 0;
+        panelNumber = 0;
     }
 }

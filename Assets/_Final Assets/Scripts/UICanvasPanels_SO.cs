@@ -6,6 +6,12 @@ using UnityEngine.Video;
 [CreateAssetMenu(fileName = "UICanvasPanels_SO", menuName = "UI/CanvasPanels")]
 public class UICanvasPanels_SO : ScriptableObject
 {
+    public bool canShowPanel = false;
+    public string panelTitle = default;
+    public string panelContent = default;
+    public VideoClip videoDemo = default;
+    public int panelNumber = default;
+
     [Header("UI Unlock Panels")]
     public bool IsUIPanelOn = false;
     [TextArea(2,20)]

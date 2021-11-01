@@ -25,13 +25,25 @@ public class UICanvasPanels : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        
+        if (uICanvasPanels_SO.canShowPanel)
+        {
+            //if (uICanvasPanels_SO.panelNumber == 0)
+            //{
+            //    SetupUnlockedShotPanel(uICanvasPanels_SO.title, uICanvasPanels_SO.content, uICanvasPanels_SO.videoDemo);
+            //}
+            TweenPanelOn(uICanvasPanels_SO.panelNumber);
+
+            uICanvasPanels_SO.canShowPanel = false;
+        }
     }
 
     public void TweenPanelOn(int panelNumber)
     {
-        LeanTween.scale(uIPanels[panelNumber], Vector3.one / 2, tweenTime);
+        uIPanels[panelNumber].gameObject.SetActive(true);
+        LeanTween.scale(uIPanels[panelNumber], Vector3.one / 2, tweenTime).setEasePunch();
     }
+
+
 
     public void SetupUnlockedShotPanel(int title, int content, int videoDemo)
     {

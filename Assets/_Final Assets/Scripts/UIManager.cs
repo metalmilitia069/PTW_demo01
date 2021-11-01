@@ -72,12 +72,34 @@ public class UIManager : MonoBehaviour
             uIManager_SO.canDisplayCommunication = false;
         }
 
+        if (uIManager_SO.canShowPanel)
+        {
+            if (uIManager_SO.panelNumber == 0)
+            {
+                uICanvasPanels_SO.panelTitle = uICanvasPanels_SO.uIUnlockPanelTitle[uIManager_SO.uIUnlockPanelTitleNumber];
+                uICanvasPanels_SO.panelContent = uICanvasPanels_SO.uiUnlockPanelContent[uIManager_SO.uiUnlockPanelContentNumber];
+                uICanvasPanels_SO.videoDemo = uICanvasPanels_SO.videoClips[uIManager_SO.videoClipNumber];
+            }
+            uICanvasPanels_SO.canShowPanel = true;
+            uIManager_SO.canShowPanel = false;
+        }
+
         if (uIManager_SO.IsUIPanelOn)
         {
 
             ClosePanel();
         }
-    }    
+
+    }
+
+    //public void SetupUnlockedShotPanel(int title, int content, int videoDemo)
+    //{
+    //    uIManager_SO.uIUnlockPanelTitleNumber = title;
+    //    uIManager_SO.uiUnlockPanelContentNumber = content;
+    //    uIManager_SO.videoClipNumber = videoDemo;
+
+        
+    //}
 
     public void HPUIUpdater()
     {
