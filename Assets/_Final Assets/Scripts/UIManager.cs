@@ -89,7 +89,7 @@ public class UIManager : MonoBehaviour
 
         if (uIManager_SO.IsUIPanelOn)
         {
-
+            uIManager_SO.canOpenUIPanel = false;
             ClosePanel();
         }
 

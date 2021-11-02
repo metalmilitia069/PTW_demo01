@@ -12,8 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6864f48a7cb7bc1499252fea7ff2cec5, type: 3}
   m_Name: UIManager
   m_EditorClassIdentifier: 
-  HPSliders: []
-  ShieldSliders: []
+  HPSliders:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  ShieldSliders:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   xpBar: {fileID: 0}
   shotSlider: {fileID: 0}
   ammunitionText: {fileID: 0}
@@ -22,9 +40,12 @@ MonoBehaviour:
   canUpdadeLvl: 0
   comunicationText: 
   canDisplayCommunication: 0
-  tweenNumber: 1
+  tweenNumber: 0
+  canShowPanel: 0
+  uIUnlockPanelTitleNumber: 0
+  uiUnlockPanelContentNumber: 0
+  videoClipNumber: 0
+  panelNumber: 1
   IsUIPanelOn: 0
-  uIUnlockPanelTitle: []
-  uiUnlockPanelContent: []
-  videoClip:
-  - {fileID: 32900000, guid: c7ef085f9ca3bcc41a7299e25b9054e3, type: 3}
+  canOpenUIPanel: 1
+  canCloseUIPanel: 0

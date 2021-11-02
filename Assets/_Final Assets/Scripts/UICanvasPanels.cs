@@ -66,6 +66,7 @@ public class UICanvasPanels : MonoBehaviour
                 panel.gameObject.SetActive(false);
             }
         }
+        uIManager_SO.canOpenUIPanel = true;
     }
 
     public void SetupUnlockedShotPanel() //(int title, int content, int videoDemo)
