@@ -46,15 +46,33 @@ public class UICanvasPanels : MonoBehaviour
             uIManager_SO.canCloseUIPanel = false;
             TurnPanelOff();
         }
+
+        if (uIManager_SO.canTogglePauseMenu)
+        {
+            TogglePauseMenu();
+        }
     }
+
+    public LeanTweenType leanTween;
 
     public void TweenPanelOn(int panelNumber)
     {
-        TurnPanelOff();
+        //TurnPanelOff();
 
         uIPanels[panelNumber].gameObject.SetActive(true);
-        LeanTween.scale(uIPanels[panelNumber], Vector3.one / 1.5f, tweenTime).setEasePunch();
-        
+        uIPanels[panelNumber].gameObject.transform.localScale = Vector3.one;
+        LeanTween.scale(uIPanels[panelNumber], Vector3.one * 1.5f , tweenTime).setOnComplete(PauseGame);//.setEase(leanTween);//.setOnComplete(PauseGame);// (LeanTweenType.animationCurve);//  .setEasePunch().setOnComplete(PauseGame);
+        //PauseGame();
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void UnpauseGame()
+    {
+        Time.timeScale = 1;
     }
 
     public void TurnPanelOff()
@@ -67,6 +85,7 @@ public class UICanvasPanels : MonoBehaviour
             }
         }
         uIManager_SO.canOpenUIPanel = true;
+        UnpauseGame();
     }
 
     public void SetupUnlockedShotPanel() //(int title, int content, int videoDemo)
@@ -78,6 +97,19 @@ public class UICanvasPanels : MonoBehaviour
         unlockPanelTitle.text = uICanvasPanels_SO.panelTitle;
         unlockPanelContent.text = uICanvasPanels_SO.panelContent;
         videoDemoUI.clip = uICanvasPanels_SO.videoDemo;
+    }
+
+    public void TogglePauseMenu()
+    {
+        if (uIPanels[1].gameObject.activeSelf)
+        {
+            TurnPanelOff();
+        }
+        else
+        {
+            TweenPanelOn(1);
+        }
+        uIManager_SO.canTogglePauseMenu = false;
     }
 
     

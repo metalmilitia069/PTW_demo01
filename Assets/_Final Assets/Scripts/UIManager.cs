@@ -47,7 +47,7 @@ public class UIManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {        
         if (uIManager_SO.canUpdadeHUD)
         {
@@ -87,17 +87,18 @@ public class UIManager : MonoBehaviour
             uIManager_SO.IsUIPanelOn = true;            
         }
 
-        if (uIManager_SO.IsUIPanelOn)
-        {
-            uIManager_SO.canOpenUIPanel = false;
-            ClosePanel();
-        }
+        //if (uIManager_SO.IsUIPanelOn)
+        //{
+        //    uIManager_SO.canOpenUIPanel = false;
+        //    ClosePanel();
+        //}
 
-        if (uIManager_SO.canOpenUIPanel)
-        {
-            OpenUIPanel();            
-        }
+        //if (uIManager_SO.canOpenUIPanel)
+        //{
+        //    OpenUIPanel();            
+        //}
 
+        TogglePauseMenu();
 
     }
 
@@ -237,7 +238,21 @@ public class UIManager : MonoBehaviour
             return;
         }
 
+        if (shipStats_SO.playerControls.OpenMenuEscape.Escape.triggered)
+        {
+            uIManager_SO.IsUIPanelOn = false;
+            uIManager_SO.canCloseUIPanel = true;
+        }
 
+
+    }
+
+    public void TogglePauseMenu()
+    {
+        if (shipStats_SO.playerControls.OpenMenuEscape.Escape.triggered)
+        {
+            uIManager_SO.canTogglePauseMenu = true;            
+        }
     }
 
 

@@ -36,6 +36,7 @@ public class UIManager_SO : ScriptableObject
     public bool IsUIPanelOn = false;
     public bool canOpenUIPanel = true;
     public bool canCloseUIPanel = false;
+    public bool canTogglePauseMenu = false;
 
 
 
@@ -71,5 +72,9 @@ public class UIManager_SO : ScriptableObject
         uiUnlockPanelContentNumber = 0;
         videoClipNumber = 0;
         panelNumber = 0;
+
+        IsUIPanelOn = false;
+        canOpenUIPanel = true;
+        canCloseUIPanel = false;
     }
 }

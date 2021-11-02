@@ -40,12 +40,13 @@ MonoBehaviour:
   canUpdadeLvl: 0
   comunicationText: 
   canDisplayCommunication: 0
-  tweenNumber: 0
+  tweenNumber: 1
   canShowPanel: 0
   uIUnlockPanelTitleNumber: 0
   uiUnlockPanelContentNumber: 0
   videoClipNumber: 0
-  panelNumber: 1
+  panelNumber: 0
   IsUIPanelOn: 0
   canOpenUIPanel: 1
   canCloseUIPanel: 0
+  canTogglePauseMenu: 0
