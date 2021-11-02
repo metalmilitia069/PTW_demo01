@@ -26,6 +26,8 @@ public class UIManager : MonoBehaviour
 
     public float tweenTime = 3.0f;
 
+    //public bool canOpenUIPanel = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -82,6 +84,7 @@ public class UIManager : MonoBehaviour
             }
             uICanvasPanels_SO.canShowPanel = true;
             uIManager_SO.canShowPanel = false;
+            uIManager_SO.IsUIPanelOn = true;            
         }
 
         if (uIManager_SO.IsUIPanelOn)
@@ -89,6 +92,12 @@ public class UIManager : MonoBehaviour
 
             ClosePanel();
         }
+
+        if (uIManager_SO.canOpenUIPanel)
+        {
+            OpenUIPanel();            
+        }
+
 
     }
 
@@ -204,12 +213,31 @@ public class UIManager : MonoBehaviour
         LeanTween.scale(message, Vector3.one / 2, tweenTime).setEasePunch();//.setOnComplete(ScaleTweenBack);        
     }
 
+    public void OpenUIPanel()
+    {
+        if (shipStats_SO.playerControls.OpenMenuEscape.Escape.triggered)
+        {
+            uIManager_SO.canOpenUIPanel = false;
+            //uIManager_SO.IsUIPanelOn = true;
+            uIManager_SO.panelNumber = 1;
+            uIManager_SO.canShowPanel = true;
+        }
+    }
+
     public void ClosePanel()
     {
         if (shipStats_SO.playerControls.CancelClosePanel.CancelClose.triggered)
         {
+            if (uIManager_SO.panelNumber == 0)
+            {
+                uIManager_SO.IsUIPanelOn = false;
+                uIManager_SO.canCloseUIPanel = true;
+            }
             Debug.Log("mozooooooooooooooooooo");
+            return;
         }
+
+
     }
 
 

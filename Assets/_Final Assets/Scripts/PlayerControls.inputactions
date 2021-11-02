@@ -582,6 +582,44 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "OpenMenuEscape",
+            "id": "2a9973ff-d4f2-4fb0-94e1-eef51c77ab69",
+            "actions": [
+                {
+                    "name": "Escape",
+                    "type": "Button",
+                    "id": "57c47b21-d0e5-4656-ac89-7066939ce895",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a97c0767-deeb-4ad0-b0ca-0952668e1ab0",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f12b9eed-f4ce-48da-9aae-0b60ecaa7a68",
+                    "path": "<XInputController>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

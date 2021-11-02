@@ -595,6 +595,44 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""OpenMenuEscape"",
+            ""id"": ""2a9973ff-d4f2-4fb0-94e1-eef51c77ab69"",
+            ""actions"": [
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""57c47b21-d0e5-4656-ac89-7066939ce895"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""a97c0767-deeb-4ad0-b0ca-0952668e1ab0"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f12b9eed-f4ce-48da-9aae-0b60ecaa7a68"",
+                    ""path"": ""<XInputController>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -620,6 +658,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         // CancelClosePanel
         m_CancelClosePanel = asset.FindActionMap("CancelClosePanel", throwIfNotFound: true);
         m_CancelClosePanel_CancelClose = m_CancelClosePanel.FindAction("CancelClose", throwIfNotFound: true);
+        // OpenMenuEscape
+        m_OpenMenuEscape = asset.FindActionMap("OpenMenuEscape", throwIfNotFound: true);
+        m_OpenMenuEscape_Escape = m_OpenMenuEscape.FindAction("Escape", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -887,6 +928,39 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public CancelClosePanelActions @CancelClosePanel => new CancelClosePanelActions(this);
+
+    // OpenMenuEscape
+    private readonly InputActionMap m_OpenMenuEscape;
+    private IOpenMenuEscapeActions m_OpenMenuEscapeActionsCallbackInterface;
+    private readonly InputAction m_OpenMenuEscape_Escape;
+    public struct OpenMenuEscapeActions
+    {
+        private @PlayerControls m_Wrapper;
+        public OpenMenuEscapeActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Escape => m_Wrapper.m_OpenMenuEscape_Escape;
+        public InputActionMap Get() { return m_Wrapper.m_OpenMenuEscape; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(OpenMenuEscapeActions set) { return set.Get(); }
+        public void SetCallbacks(IOpenMenuEscapeActions instance)
+        {
+            if (m_Wrapper.m_OpenMenuEscapeActionsCallbackInterface != null)
+            {
+                @Escape.started -= m_Wrapper.m_OpenMenuEscapeActionsCallbackInterface.OnEscape;
+                @Escape.performed -= m_Wrapper.m_OpenMenuEscapeActionsCallbackInterface.OnEscape;
+                @Escape.canceled -= m_Wrapper.m_OpenMenuEscapeActionsCallbackInterface.OnEscape;
+            }
+            m_Wrapper.m_OpenMenuEscapeActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Escape.started += instance.OnEscape;
+                @Escape.performed += instance.OnEscape;
+                @Escape.canceled += instance.OnEscape;
+            }
+        }
+    }
+    public OpenMenuEscapeActions @OpenMenuEscape => new OpenMenuEscapeActions(this);
     public interface ILocomotionTopViewActions
     {
         void OnSideMove(InputAction.CallbackContext context);
@@ -913,5 +987,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     public interface ICancelClosePanelActions
     {
         void OnCancelClose(InputAction.CallbackContext context);
+    }
+    public interface IOpenMenuEscapeActions
+    {
+        void OnEscape(InputAction.CallbackContext context);
     }
 }

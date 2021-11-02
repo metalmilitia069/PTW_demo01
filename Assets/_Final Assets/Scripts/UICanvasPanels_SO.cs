@@ -10,10 +10,10 @@ public class UICanvasPanels_SO : ScriptableObject
     public string panelTitle = default;
     public string panelContent = default;
     public VideoClip videoDemo = default;
-    public int panelNumber = default;
+    public int panelNumber = default; //delete maybe?
 
     [Header("UI Unlock Panels")]
-    public bool IsUIPanelOn = false;
+    //public bool IsUIPanelOn = false;
     [TextArea(2,20)]
     public string[] uIUnlockPanelTitle;
     [TextArea(15, 20)]

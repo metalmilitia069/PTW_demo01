@@ -25,13 +25,17 @@ public class UIManager_SO : ScriptableObject
     public bool canDisplayCommunication = false;
     public int tweenNumber = 0;
 
-    [Header("UI Unlock Panels")]
-    public bool IsUIPanelOn = false;
+    [Header("UI Unlock Panels")]    
     public bool canShowPanel = false;
     public int uIUnlockPanelTitleNumber = 0;
     public int uiUnlockPanelContentNumber = 0;
     public int videoClipNumber = 0;
     public int panelNumber = 0;
+
+    [Header("UI General Panels")]
+    public bool IsUIPanelOn = false;
+    public bool canOpenUIPanel = false;
+    public bool canCloseUIPanel = false;
 
 
 
@@ -40,6 +44,13 @@ public class UIManager_SO : ScriptableObject
         uIUnlockPanelTitleNumber = title;
         uiUnlockPanelContentNumber = content;
         videoClipNumber = videoDemo;
+        panelNumber = panelNumberRef;
+
+        canShowPanel = true;
+    }
+
+    public void PanelToOpen(int panelNumberRef)
+    {
         panelNumber = panelNumberRef;
 
         canShowPanel = true;
