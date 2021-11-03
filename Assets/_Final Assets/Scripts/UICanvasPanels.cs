@@ -18,6 +18,8 @@ public class UICanvasPanels : MonoBehaviour
     public VideoPlayer videoDemoUI;
 
 
+    private bool _preventPauseMenu = false;
+
     //public bool canClosePanel = false;
 
     // Start is called before the first frame update
@@ -57,25 +59,30 @@ public class UICanvasPanels : MonoBehaviour
 
     public void TweenPanelOn(int panelNumber)
     {
-        //TurnPanelOff();
+        TurnPanelOff();
+        //LeanTween.cancelAll();
 
         uIPanels[panelNumber].gameObject.SetActive(true);
         uIPanels[panelNumber].gameObject.transform.localScale = Vector3.one * 0.1f;
         LeanTween.scale(uIPanels[panelNumber], Vector3.one  , tweenTime).setOnComplete(PauseGame);//.setEase(leanTween);//.setOnComplete(PauseGame);// (LeanTweenType.animationCurve);//  .setEasePunch().setOnComplete(PauseGame);
         //PauseGame();
+        _preventPauseMenu = false;
     }
 
     public void PauseGame()
     {
-        Time.timeScale = 0;
+        //if (Time.timeScale == 1)
+        //{
+            Time.timeScale = 0;
+        //}
     }
 
     public void UnpauseGame()
     {
-        if (Time.timeScale == 0)
-        {
+        //if (Time.timeScale == 0)
+        //{
             Time.timeScale = 1;
-        }
+        //}
     }
 
     public void TurnPanelOff()
@@ -89,6 +96,7 @@ public class UICanvasPanels : MonoBehaviour
         }
         uIManager_SO.canOpenUIPanel = true;
         UnpauseGame();
+        _preventPauseMenu = false;
     }
 
     public void SetupUnlockedShotPanel() //(int title, int content, int videoDemo)
@@ -104,15 +112,24 @@ public class UICanvasPanels : MonoBehaviour
 
     public void TogglePauseMenu()
     {
+        uIManager_SO.canTogglePauseMenu = false;
+        if (_preventPauseMenu)
+        {
+            return;
+        }
+        _preventPauseMenu = true;
         if (uIPanels[1].gameObject.activeSelf)
         {
             TurnPanelOff();
         }
         else
         {
+            //_preventPauseMenu = true;
+            //TurnPanelOff();
             TweenPanelOn(1);
+            //_preventPauseMenu = false;
         }
-        uIManager_SO.canTogglePauseMenu = false;
+        //_preventPauseMenu = false;
     }
 
     

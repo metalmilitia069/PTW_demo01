@@ -238,11 +238,11 @@ public class UIManager : MonoBehaviour
             return;
         }
 
-        if (shipStats_SO.playerControls.OpenMenuEscape.Escape.triggered)
-        {
-            //uIManager_SO.IsUIPanelOn = false;
-            uIManager_SO.canCloseUIPanel = true;
-        }
+        //if (shipStats_SO.playerControls.OpenMenuEscape.Escape.triggered)
+        //{
+        //    //uIManager_SO.IsUIPanelOn = false;
+        //    uIManager_SO.canCloseUIPanel = true;
+        //}
 
 
     }
