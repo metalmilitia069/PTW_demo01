@@ -60,8 +60,8 @@ public class UICanvasPanels : MonoBehaviour
         //TurnPanelOff();
 
         uIPanels[panelNumber].gameObject.SetActive(true);
-        uIPanels[panelNumber].gameObject.transform.localScale = Vector3.one;
-        LeanTween.scale(uIPanels[panelNumber], Vector3.one * 1.5f , tweenTime).setOnComplete(PauseGame);//.setEase(leanTween);//.setOnComplete(PauseGame);// (LeanTweenType.animationCurve);//  .setEasePunch().setOnComplete(PauseGame);
+        uIPanels[panelNumber].gameObject.transform.localScale = Vector3.one * 0.1f;
+        LeanTween.scale(uIPanels[panelNumber], Vector3.one  , tweenTime).setOnComplete(PauseGame);//.setEase(leanTween);//.setOnComplete(PauseGame);// (LeanTweenType.animationCurve);//  .setEasePunch().setOnComplete(PauseGame);
         //PauseGame();
     }
 
@@ -72,7 +72,10 @@ public class UICanvasPanels : MonoBehaviour
 
     public void UnpauseGame()
     {
-        Time.timeScale = 1;
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
     }
 
     public void TurnPanelOff()

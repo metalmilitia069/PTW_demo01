@@ -97,7 +97,7 @@ public class UIManager : MonoBehaviour
         //{
         //    OpenUIPanel();            
         //}
-
+        CloseUIPanel();
         TogglePauseMenu();
 
     }
@@ -225,13 +225,13 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void ClosePanel()
+    public void CloseUIPanel()
     {
         if (shipStats_SO.playerControls.CancelClosePanel.CancelClose.triggered)
         {
             if (uIManager_SO.panelNumber == 0)
             {
-                uIManager_SO.IsUIPanelOn = false;
+                //uIManager_SO.IsUIPanelOn = false;
                 uIManager_SO.canCloseUIPanel = true;
             }
             Debug.Log("mozooooooooooooooooooo");
@@ -240,7 +240,7 @@ public class UIManager : MonoBehaviour
 
         if (shipStats_SO.playerControls.OpenMenuEscape.Escape.triggered)
         {
-            uIManager_SO.IsUIPanelOn = false;
+            //uIManager_SO.IsUIPanelOn = false;
             uIManager_SO.canCloseUIPanel = true;
         }
 
