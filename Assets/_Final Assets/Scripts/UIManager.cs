@@ -218,7 +218,7 @@ public class UIManager : MonoBehaviour
     {
         if (shipStats_SO.playerControls.OpenMenuEscape.Escape.triggered)
         {
-            uIManager_SO.canOpenUIPanel = false;
+            //uIManager_SO.canOpenUIPanel = false;
             //uIManager_SO.IsUIPanelOn = true;
             uIManager_SO.panelNumber = 1;
             uIManager_SO.canShowPanel = true;

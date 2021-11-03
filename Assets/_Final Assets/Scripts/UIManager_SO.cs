@@ -34,7 +34,7 @@ public class UIManager_SO : ScriptableObject
 
     [Header("UI General Panels")]
     public bool IsUIPanelOn = false;
-    public bool canOpenUIPanel = true;
+    //public bool canOpenUIPanel = true;
     public bool canCloseUIPanel = false;
     public bool canTogglePauseMenu = false;
 
@@ -74,7 +74,7 @@ public class UIManager_SO : ScriptableObject
         panelNumber = 0;
 
         IsUIPanelOn = false;
-        canOpenUIPanel = true;
+        //canOpenUIPanel = true;
         canCloseUIPanel = false;
     }
 }

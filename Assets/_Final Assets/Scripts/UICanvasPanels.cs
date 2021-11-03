@@ -34,8 +34,7 @@ public class UICanvasPanels : MonoBehaviour
         if (uICanvasPanels_SO.canShowPanel)
         {
             if (uICanvasPanels_SO.panelNumber == 0)
-            {
-                //SetupUnlockedShotPanel(uICanvasPanels_SO.title, uICanvasPanels_SO.content, uICanvasPanels_SO.videoDemo);
+            {                
                 SetupUnlockedShotPanel();
             }
             TweenPanelOn(uIManager_SO.panelNumber);
@@ -59,30 +58,23 @@ public class UICanvasPanels : MonoBehaviour
 
     public void TweenPanelOn(int panelNumber)
     {
-        TurnPanelOff();
-        //LeanTween.cancelAll();
+        TurnPanelOff();        
 
         uIPanels[panelNumber].gameObject.SetActive(true);
         uIPanels[panelNumber].gameObject.transform.localScale = Vector3.one * 0.1f;
         LeanTween.scale(uIPanels[panelNumber], Vector3.one  , tweenTime).setOnComplete(PauseGame);//.setEase(leanTween);//.setOnComplete(PauseGame);// (LeanTweenType.animationCurve);//  .setEasePunch().setOnComplete(PauseGame);
-        //PauseGame();
+                                                                                                  //
         _preventPauseMenu = false;
     }
 
     public void PauseGame()
-    {
-        //if (Time.timeScale == 1)
-        //{
-            Time.timeScale = 0;
-        //}
+    {        
+        Time.timeScale = 0;     
     }
 
     public void UnpauseGame()
-    {
-        //if (Time.timeScale == 0)
-        //{
-            Time.timeScale = 1;
-        //}
+    {        
+        Time.timeScale = 1;     
     }
 
     public void TurnPanelOff()
@@ -94,17 +86,13 @@ public class UICanvasPanels : MonoBehaviour
                 panel.gameObject.SetActive(false);
             }
         }
-        uIManager_SO.canOpenUIPanel = true;
+        //uIManager_SO.canOpenUIPanel = true;
         UnpauseGame();
         _preventPauseMenu = false;
     }
 
     public void SetupUnlockedShotPanel() //(int title, int content, int videoDemo)
     {
-        //unlockPanelTitle.text = uICanvasPanels_SO.uIUnlockPanelTitle[title];
-        //unlockPanelContent.text = uICanvasPanels_SO.uiUnlockPanelContent[content];
-        //videoDemoUI.clip = uICanvasPanels_SO.videoClips[videoDemo];
-
         unlockPanelTitle.text = uICanvasPanels_SO.panelTitle;
         unlockPanelContent.text = uICanvasPanels_SO.panelContent;
         videoDemoUI.clip = uICanvasPanels_SO.videoDemo;
@@ -123,13 +111,9 @@ public class UICanvasPanels : MonoBehaviour
             TurnPanelOff();
         }
         else
-        {
-            //_preventPauseMenu = true;
-            //TurnPanelOff();
-            TweenPanelOn(1);
-            //_preventPauseMenu = false;
-        }
-        //_preventPauseMenu = false;
+        {            
+            TweenPanelOn(1);            
+        }        
     }
 
     
