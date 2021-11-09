@@ -17,9 +17,12 @@ public class ShipStats : ShipBase
 
     [Header("For CutScenes")]
     public GameObject playerSceneActor;
+    public GameObject playerSmokeVFX;
 
     [Header("Debugger - Unplug Later")]
     public bool isGodModeOn = false;
+
+    public List<AmmunitionType> ammunitionsList;
 
     // Start is called before the first frame update
     private void Awake()
@@ -28,6 +31,7 @@ public class ShipStats : ShipBase
         _fireRate = shipStats_SO.fireRate;
 
         _playerControls = new PlayerControls();
+        shipStats_SO.playerControls = _playerControls;
         gameManager_SO.shipStats = this;
 
         //if (cutSceneManager_SO != null)
@@ -39,6 +43,15 @@ public class ShipStats : ShipBase
         {
             item.initialEventName = "Custom";
         }
+
+        //ammunitionsList.Add(AmmunitionType.singleShotLvl01);
+        //ammunitionsList.Add(AmmunitionType.tripleShotLvl01);
+        //ammunitionType = ammunitionsList[0];
+        UpdateAmmunitionList(shipStats_SO.playerLevel);
+        ammunitionType = ammunitionsList[0];
+        UpdateAmmunitionList(shipStats_SO.playerLevel);
+        //Debug.Log("ammunition type = " + ammunitionType.ToString());
+
     }
 
     // Update is called once per frame
@@ -48,7 +61,9 @@ public class ShipStats : ShipBase
         {
             Movement();
             Shooting();
+            SwitchAmmo();
         }
+
     }
 
     private void OnEnable()
@@ -59,6 +74,18 @@ public class ShipStats : ShipBase
     private void OnDisable()
     {
         _playerControls.Disable();
+    }
+
+    public void CheckShipDamage()
+    {
+        if (shipStats_SO.playerHealth <= 2)
+        {
+            playerSmokeVFX.gameObject.SetActive(true);
+        }
+        else
+        {
+            playerSmokeVFX.gameObject.SetActive(false);
+        }
     }
 
     public void TakeDamage()
@@ -78,6 +105,7 @@ public class ShipStats : ShipBase
             else
             {
                 shipStats_SO.playerHealth--;
+                CheckShipDamage();
             }
         }
         else
@@ -132,6 +160,38 @@ public class ShipStats : ShipBase
 
         uIManager_SO.canUpdadeLvl = true;
         uIManager_SO.canUpdadeHUD = true;
+
+        uIManager_SO.comunicationText = "Player Level 0" + shipStats_SO.playerLevel + " Reached!";
+
+        if (shipStats_SO.playerLevel == 2)
+        {
+            uIManager_SO.SetupUnlockedShotPanel(0, 0, 0, 0);
+        }
+        else if (shipStats_SO.playerLevel == 3)
+        {
+            uIManager_SO.SetupUnlockedShotPanel(1, 1, 1, 0);
+        }
+
+        uIManager_SO.tweenNumber = 0;
+        uIManager_SO.canDisplayCommunication = true;
+
+        UpdateAmmunitionList(shipStats_SO.playerLevel);
+    }
+
+    public void VerifyUnlockedShots(int playerLvl)
+    {
+        switch (playerLvl)
+        {
+            case 2:
+                //unlock triple shot
+                break;
+            case 3:
+                //unlock diagonal shot
+                break;
+            default:
+                break;
+        }
+        
     }
 
     public void AddXp(int XpToAdd)
@@ -157,6 +217,173 @@ public class ShipStats : ShipBase
             LevelUp();
         }
 
+    }
+
+    public void AddXpToAmmunition(int AmmunitionXP)
+    {
+        //AmmunitionType ammunitionType = AmmunitionType.singleShotLvl01;
+        switch (ammunitionType)
+        {
+            case AmmunitionType.singleShotLvl01:
+                AddXPToSingleShot(AmmunitionXP);
+                return;
+            case AmmunitionType.tripleShotLvl01:
+                AddXPToTripleShot(AmmunitionXP);
+                return;
+            case AmmunitionType.diagonalShotLvl01:
+                AddXPToDiagonalShot(AmmunitionXP);
+                return;
+            case AmmunitionType.singleShotLvl02:
+                AddXPToSingleShot(AmmunitionXP);
+                return;
+            case AmmunitionType.tripleShotLvl02:
+                AddXPToTripleShot(AmmunitionXP);
+                return;
+            case AmmunitionType.diagonalShotLvl02:
+                AddXPToDiagonalShot(AmmunitionXP);
+                return;
+            case AmmunitionType.singleShotLvl03:
+                return;                
+            case AmmunitionType.tripleShotLvl03:
+                return;                
+            case AmmunitionType.diagonalShotLvl03:
+                return;                
+            default:
+                break;
+        }
+    }
+
+    public void AddXPToSingleShot(int AmmunitionXP)
+    {
+        shipStats_SO.singleShotCurrentXP += AmmunitionXP;
+        shipStats_SO.singleShotProgressionRate = (shipStats_SO.singleShotCurrentXP * 1.0f) / shipStats_SO.singleShotLevelUpThreshold;
+        if (shipStats_SO.singleShotProgressionRate >= 1.0f)
+        {
+            LevelUpSingleShot();
+            //uIManager_SO.canUpdadeHUD = true;
+            //GetAmmunitionNameAndLevel();
+        }
+        else
+        {
+            GetAmmunitionNameAndLevel();
+            //Debug.Log("CU");
+            //uIManager_SO.canUpdadeHUD = true;
+        }
+
+    }
+
+    public void AddXPToTripleShot(int AmmunitionXP)
+    {
+        shipStats_SO.tripleShotCurrentXP += AmmunitionXP;
+        shipStats_SO.tripleShotProgressionRate = (shipStats_SO.tripleShotCurrentXP * 1.0f) / shipStats_SO.tripleShotLevelUpThreshold;
+        if (shipStats_SO.tripleShotProgressionRate >= 1.0f)
+        {
+            LevelUpTripleShot();
+            //uIManager_SO.canUpdadeHUD = true;
+        }
+        else
+        {
+            GetAmmunitionNameAndLevel();
+            //uIManager_SO.canUpdadeHUD = true;
+        }
+    }
+
+    public void AddXPToDiagonalShot(int AmmunitionXP)
+    {
+        shipStats_SO.diagonalShotCurrentXP += AmmunitionXP;
+        shipStats_SO.diagonalShotProgressionRate = (shipStats_SO.diagonalShotCurrentXP * 1.0f) / shipStats_SO.diagonalShotLevelUpThreshold;
+        if (shipStats_SO.diagonalShotProgressionRate >= 1.0f)
+        {
+            LevelUpDiagonalShot();
+            //uIManager_SO.canUpdadeHUD = true;
+        }
+        else
+        {
+            GetAmmunitionNameAndLevel();
+            //uIManager_SO.canUpdadeHUD = true;
+        }
+    }
+
+    public void LevelUpSingleShot()
+    {
+        if (shipStats_SO.singleShotLevel == 1)
+        {
+            shipStats_SO.singleShotLevel = 2;
+            shipStats_SO.singleShotLevelUpThreshold += (shipStats_SO.singleShotLevelUpThreshold * 2.0f);
+            shipStats_SO.singleShotProgressionRate = 0.0f;
+            ammunitionType = AmmunitionType.singleShotLvl02;
+            UpdateAmmunitionList(shipStats_SO.playerLevel);
+            uIManager_SO.comunicationText = "Single Shot Level Up!";
+            uIManager_SO.tweenNumber = 1;
+            uIManager_SO.canDisplayCommunication = true;
+            //uIManager_SO.canUpdadeHUD = true;
+            return;
+        }
+
+        if (shipStats_SO.singleShotLevel == 2)
+        {
+            shipStats_SO.singleShotLevel = 3;            
+            shipStats_SO.singleShotProgressionRate = 1.0f;
+            ammunitionType = AmmunitionType.singleShotLvl03;
+            UpdateAmmunitionList(shipStats_SO.playerLevel);
+            uIManager_SO.comunicationText = "Single Shot Max Level!";
+            uIManager_SO.tweenNumber = 1;
+            uIManager_SO.canDisplayCommunication = true;
+        }
+    }
+
+    public void LevelUpTripleShot()
+    {
+        if (shipStats_SO.tripleShotLevel == 1)
+        {
+            shipStats_SO.tripleShotLevel = 2;
+            shipStats_SO.tripleShotLevelUpThreshold += (shipStats_SO.tripleShotLevelUpThreshold * 2.0f);
+            shipStats_SO.tripleShotProgressionRate = 0.0f;
+            ammunitionType = AmmunitionType.tripleShotLvl02;
+            UpdateAmmunitionList(shipStats_SO.playerLevel);
+            uIManager_SO.comunicationText = "Triple Shot Level Up!";
+            uIManager_SO.tweenNumber = 1;
+            uIManager_SO.canDisplayCommunication = true;
+            return;
+        }
+
+        if (shipStats_SO.tripleShotLevel == 2)
+        {
+            shipStats_SO.tripleShotLevel = 3;            
+            shipStats_SO.tripleShotProgressionRate = 1.0f;
+            ammunitionType = AmmunitionType.tripleShotLvl03;
+            UpdateAmmunitionList(shipStats_SO.playerLevel);
+            uIManager_SO.comunicationText = "Triple Shot Max Level!";
+            uIManager_SO.tweenNumber = 1;
+            uIManager_SO.canDisplayCommunication = true;
+        }
+    }
+
+    public void LevelUpDiagonalShot()
+    {
+        if (shipStats_SO.diagonalShotLevel == 1)
+        {
+            shipStats_SO.diagonalShotLevel = 2;
+            shipStats_SO.diagonalShotLevelUpThreshold += (shipStats_SO.diagonalShotLevelUpThreshold * 2.0f);
+            shipStats_SO.diagonalShotProgressionRate = 0.0f;
+            ammunitionType = AmmunitionType.diagonalShotLvl02;
+            UpdateAmmunitionList(shipStats_SO.playerLevel);
+            uIManager_SO.comunicationText = "Diagonal Shot Level Up!";
+            uIManager_SO.tweenNumber = 1;
+            uIManager_SO.canDisplayCommunication = true;
+            return;
+        }
+
+        if (shipStats_SO.diagonalShotLevel == 2)
+        {
+            shipStats_SO.diagonalShotLevel = 3;            
+            shipStats_SO.diagonalShotProgressionRate = 1.0f;
+            ammunitionType = AmmunitionType.diagonalShotLvl03;
+            UpdateAmmunitionList(shipStats_SO.playerLevel);
+            uIManager_SO.comunicationText = "Diagonal Shot Max Level!";
+            uIManager_SO.tweenNumber = 1;
+            uIManager_SO.canDisplayCommunication = true;
+        }
     }
 
     public void SwitchShield()
@@ -197,4 +424,221 @@ public class ShipStats : ShipBase
             shieldPrefabs[i].SetActive(false);
         }
     }
+
+    public void UpdateAmmunitionList(int playerLevel)
+    {
+        bool canUseSingleShot = false;
+        bool canUseTripleShot = false;
+        bool canUseDiagonalShot = false;
+
+        switch (playerLevel)
+        {
+            case 1:
+                canUseSingleShot = true;
+                break;
+            case 2:
+                canUseSingleShot = true;
+                canUseTripleShot = true;
+                break;
+            case 3:
+                canUseSingleShot = true;
+                canUseTripleShot = true;
+                canUseDiagonalShot = true;
+                break;
+            default:
+                canUseSingleShot = true;
+                canUseTripleShot = true;
+                canUseDiagonalShot = true;
+                break;
+        }
+
+        if (canUseSingleShot)
+        {
+            switch (shipStats_SO.singleShotLevel)
+            {
+                case 1:
+                    if(ammunitionsList.Contains(AmmunitionType.singleShotLvl01))
+                    {
+                        break;
+                    }
+                    ammunitionsList.Add(AmmunitionType.singleShotLvl01);
+                    break;
+                case 2:
+                    if (ammunitionsList.Contains(AmmunitionType.singleShotLvl02))
+                    {
+                        break;
+                    }
+                    ammunitionsList.Remove(AmmunitionType.singleShotLvl01);
+                    ammunitionsList.Add(AmmunitionType.singleShotLvl02);
+                    break;
+                case 3:
+                    if (ammunitionsList.Contains(AmmunitionType.singleShotLvl03))
+                    {
+                        break;
+                    }
+                    ammunitionsList.Remove(AmmunitionType.singleShotLvl02);
+                    ammunitionsList.Add(AmmunitionType.singleShotLvl03);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        if (canUseTripleShot)
+        {
+            switch (shipStats_SO.tripleShotLevel)
+            {
+                case 1:
+                    if (ammunitionsList.Contains(AmmunitionType.tripleShotLvl01))
+                    {
+                        break;
+                    }
+                    ammunitionsList.Add(AmmunitionType.tripleShotLvl01);
+                    break;
+                case 2:
+                    if (ammunitionsList.Contains(AmmunitionType.tripleShotLvl02))
+                    {
+                        break;
+                    }
+                    ammunitionsList.Remove(AmmunitionType.tripleShotLvl01);
+                    ammunitionsList.Add(AmmunitionType.tripleShotLvl02);
+                    break;
+                case 3:
+                    if (ammunitionsList.Contains(AmmunitionType.tripleShotLvl03))
+                    {
+                        break;
+                    }
+                    ammunitionsList.Remove(AmmunitionType.tripleShotLvl02);
+                    ammunitionsList.Add(AmmunitionType.tripleShotLvl03);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        if (canUseDiagonalShot)
+        {
+            switch (shipStats_SO.diagonalShotLevel)
+            {
+                case 1:
+                    if (ammunitionsList.Contains(AmmunitionType.diagonalShotLvl01))
+                    {
+                        break;
+                    }
+                    ammunitionsList.Add(AmmunitionType.diagonalShotLvl01);
+                    break;
+                case 2:
+                    if (ammunitionsList.Contains(AmmunitionType.diagonalShotLvl02))
+                    {
+                        break;
+                    }
+                    ammunitionsList.Remove(AmmunitionType.diagonalShotLvl01);
+                    ammunitionsList.Add(AmmunitionType.diagonalShotLvl02);
+                    break;
+                case 3:
+                    if (ammunitionsList.Contains(AmmunitionType.diagonalShotLvl03))
+                    {
+                        break;
+                    }
+                    ammunitionsList.Remove(AmmunitionType.diagonalShotLvl02);
+                    ammunitionsList.Add(AmmunitionType.diagonalShotLvl03);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        //ammunitionType = ammunitionsList[0];
+        GetAmmunitionNameAndLevel();
+    }
+
+    public void SwitchAmmo()
+    {
+        //_playerMovementY = _playerControls.LocomotionSideView.VerticalMove.ReadValue<float>() * _speed * Time.deltaTime;
+
+        
+
+        if (_playerControls.ChangeAmmo.AmmoChanger.triggered)
+        {
+            int index = ammunitionsList.IndexOf(ammunitionType);
+            index++;
+
+            if (index >= ammunitionsList.Count)
+            {
+                index = 0;
+            }
+
+            ammunitionType = ammunitionsList[index];
+
+            GetAmmunitionNameAndLevel();
+        }
+
+    }
+
+    public void ClosePanel()
+    {
+
+    }
+
+    public void GetAmmunitionNameAndLevel()
+    {
+        switch (ammunitionType)
+        {
+            case AmmunitionType.singleShotLvl01:
+                shipStats_SO.ammunitionName = "Single Shot";
+                shipStats_SO.ammunitionLevel = shipStats_SO.singleShotLevel;
+                shipStats_SO.ammunitionProgressionRate = shipStats_SO.singleShotProgressionRate;
+                break;
+            case AmmunitionType.tripleShotLvl01:
+                shipStats_SO.ammunitionName = "Triple Shot";
+                shipStats_SO.ammunitionLevel = shipStats_SO.tripleShotLevel;
+                shipStats_SO.ammunitionProgressionRate = shipStats_SO.tripleShotProgressionRate;
+                break;
+            case AmmunitionType.diagonalShotLvl01:
+                shipStats_SO.ammunitionName = "Diagonal Shot";
+                shipStats_SO.ammunitionLevel = shipStats_SO.diagonalShotLevel;
+                shipStats_SO.ammunitionProgressionRate = shipStats_SO.diagonalShotProgressionRate;
+                break;
+            case AmmunitionType.singleShotLvl02:
+                shipStats_SO.ammunitionName = "Single Shot";
+                shipStats_SO.ammunitionLevel = shipStats_SO.singleShotLevel;
+                shipStats_SO.ammunitionProgressionRate = shipStats_SO.singleShotProgressionRate;
+                break;
+            case AmmunitionType.tripleShotLvl02:
+                shipStats_SO.ammunitionName = "Triple Shot";
+                shipStats_SO.ammunitionLevel = shipStats_SO.tripleShotLevel;
+                shipStats_SO.ammunitionProgressionRate = shipStats_SO.tripleShotProgressionRate;
+                break;
+            case AmmunitionType.diagonalShotLvl02:
+                shipStats_SO.ammunitionName = "Diagonal Shot";
+                shipStats_SO.ammunitionLevel = shipStats_SO.diagonalShotLevel;
+                shipStats_SO.ammunitionProgressionRate = shipStats_SO.diagonalShotProgressionRate;
+                break;
+            case AmmunitionType.singleShotLvl03:
+                shipStats_SO.ammunitionName = "Single Shot";
+                shipStats_SO.ammunitionLevel = shipStats_SO.singleShotLevel;
+                //shipStats_SO.ammunitionProgressionRate = shipStats_SO.singleShotProgressionRate;
+                shipStats_SO.ammunitionProgressionRate = 1.0f;
+                break;
+            case AmmunitionType.tripleShotLvl03:
+                shipStats_SO.ammunitionName = "Triple Shot";
+                shipStats_SO.ammunitionLevel = shipStats_SO.tripleShotLevel;
+                //shipStats_SO.ammunitionProgressionRate = shipStats_SO.tripleShotProgressionRate;
+                shipStats_SO.ammunitionProgressionRate = 1.0f;
+                break;
+            case AmmunitionType.diagonalShotLvl03:
+                shipStats_SO.ammunitionName = "Diagonal Shot";
+                shipStats_SO.ammunitionLevel = shipStats_SO.diagonalShotLevel;
+                //shipStats_SO.ammunitionProgressionRate = shipStats_SO.diagonalShotProgressionRate;
+                shipStats_SO.ammunitionProgressionRate = 1.0f;
+                break;
+            default:
+                break;
+        }       
+
+        uIManager_SO.canUpdadeHUD = true;        
+    }
+
+    
+
 }

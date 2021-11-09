@@ -21,8 +21,8 @@ public class ProjectileBase : MonoBehaviour
 
     [SerializeField]
     private float _bulletSpeed;
-    
-
+    [SerializeField]
+    private int _bulletDamage;
 
     // Start is called before the first frame update
     void Start()
@@ -94,6 +94,11 @@ public class ProjectileBase : MonoBehaviour
             other.GetComponent<EnemyBehaviorShieldedTurret>().visualEffectPrefab.GetComponentInChildren<VisualEffect>().initialEventName = "Custom";
             other.GetComponent<EnemyBehaviorShieldedTurret>().visualEffectPrefab.GetComponentInChildren<VisualEffect>().Reinit();
         }
+    }
+
+    public int GetBulletDamage()
+    {
+        return _bulletDamage;
     }
 
 }

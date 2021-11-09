@@ -506,6 +506,120 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "ChangeAmmo",
+            "id": "6ba959bb-7342-4e04-97d0-bece816e59c0",
+            "actions": [
+                {
+                    "name": "AmmoChanger",
+                    "type": "Button",
+                    "id": "7ed12174-578b-4a57-8340-92b722de4acd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "653ae477-fc4b-40b2-8af9-3530ac56dace",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AmmoChanger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "899a2890-355f-4003-8a50-566e743ebea8",
+                    "path": "<XInputController>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AmmoChanger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "CancelClosePanel",
+            "id": "157e3d6c-ac62-4b8e-bb7b-1ee0d04c6276",
+            "actions": [
+                {
+                    "name": "CancelClose",
+                    "type": "Button",
+                    "id": "7989e417-fe5f-405f-bc1a-56846df41a3d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d119ce2d-04c3-4220-a6d0-74720a9d5e0f",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CancelClose",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cf426f61-78ac-454b-b13d-dc3d5f464579",
+                    "path": "<XInputController>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CancelClose",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "OpenMenuEscape",
+            "id": "2a9973ff-d4f2-4fb0-94e1-eef51c77ab69",
+            "actions": [
+                {
+                    "name": "Escape",
+                    "type": "Button",
+                    "id": "57c47b21-d0e5-4656-ac89-7066939ce895",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a97c0767-deeb-4ad0-b0ca-0952668e1ab0",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f12b9eed-f4ce-48da-9aae-0b60ecaa7a68",
+                    "path": "<XInputController>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

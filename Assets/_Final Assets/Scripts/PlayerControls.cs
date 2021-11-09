@@ -519,6 +519,120 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""ChangeAmmo"",
+            ""id"": ""6ba959bb-7342-4e04-97d0-bece816e59c0"",
+            ""actions"": [
+                {
+                    ""name"": ""AmmoChanger"",
+                    ""type"": ""Button"",
+                    ""id"": ""7ed12174-578b-4a57-8340-92b722de4acd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""653ae477-fc4b-40b2-8af9-3530ac56dace"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AmmoChanger"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""899a2890-355f-4003-8a50-566e743ebea8"",
+                    ""path"": ""<XInputController>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AmmoChanger"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""CancelClosePanel"",
+            ""id"": ""157e3d6c-ac62-4b8e-bb7b-1ee0d04c6276"",
+            ""actions"": [
+                {
+                    ""name"": ""CancelClose"",
+                    ""type"": ""Button"",
+                    ""id"": ""7989e417-fe5f-405f-bc1a-56846df41a3d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""d119ce2d-04c3-4220-a6d0-74720a9d5e0f"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CancelClose"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cf426f61-78ac-454b-b13d-dc3d5f464579"",
+                    ""path"": ""<XInputController>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CancelClose"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""OpenMenuEscape"",
+            ""id"": ""2a9973ff-d4f2-4fb0-94e1-eef51c77ab69"",
+            ""actions"": [
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""57c47b21-d0e5-4656-ac89-7066939ce895"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""a97c0767-deeb-4ad0-b0ca-0952668e1ab0"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f12b9eed-f4ce-48da-9aae-0b60ecaa7a68"",
+                    ""path"": ""<XInputController>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -538,6 +652,15 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         // Shooting
         m_Shooting = asset.FindActionMap("Shooting", throwIfNotFound: true);
         m_Shooting_FireButton = m_Shooting.FindAction("FireButton", throwIfNotFound: true);
+        // ChangeAmmo
+        m_ChangeAmmo = asset.FindActionMap("ChangeAmmo", throwIfNotFound: true);
+        m_ChangeAmmo_AmmoChanger = m_ChangeAmmo.FindAction("AmmoChanger", throwIfNotFound: true);
+        // CancelClosePanel
+        m_CancelClosePanel = asset.FindActionMap("CancelClosePanel", throwIfNotFound: true);
+        m_CancelClosePanel_CancelClose = m_CancelClosePanel.FindAction("CancelClose", throwIfNotFound: true);
+        // OpenMenuEscape
+        m_OpenMenuEscape = asset.FindActionMap("OpenMenuEscape", throwIfNotFound: true);
+        m_OpenMenuEscape_Escape = m_OpenMenuEscape.FindAction("Escape", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -739,6 +862,105 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public ShootingActions @Shooting => new ShootingActions(this);
+
+    // ChangeAmmo
+    private readonly InputActionMap m_ChangeAmmo;
+    private IChangeAmmoActions m_ChangeAmmoActionsCallbackInterface;
+    private readonly InputAction m_ChangeAmmo_AmmoChanger;
+    public struct ChangeAmmoActions
+    {
+        private @PlayerControls m_Wrapper;
+        public ChangeAmmoActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @AmmoChanger => m_Wrapper.m_ChangeAmmo_AmmoChanger;
+        public InputActionMap Get() { return m_Wrapper.m_ChangeAmmo; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ChangeAmmoActions set) { return set.Get(); }
+        public void SetCallbacks(IChangeAmmoActions instance)
+        {
+            if (m_Wrapper.m_ChangeAmmoActionsCallbackInterface != null)
+            {
+                @AmmoChanger.started -= m_Wrapper.m_ChangeAmmoActionsCallbackInterface.OnAmmoChanger;
+                @AmmoChanger.performed -= m_Wrapper.m_ChangeAmmoActionsCallbackInterface.OnAmmoChanger;
+                @AmmoChanger.canceled -= m_Wrapper.m_ChangeAmmoActionsCallbackInterface.OnAmmoChanger;
+            }
+            m_Wrapper.m_ChangeAmmoActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @AmmoChanger.started += instance.OnAmmoChanger;
+                @AmmoChanger.performed += instance.OnAmmoChanger;
+                @AmmoChanger.canceled += instance.OnAmmoChanger;
+            }
+        }
+    }
+    public ChangeAmmoActions @ChangeAmmo => new ChangeAmmoActions(this);
+
+    // CancelClosePanel
+    private readonly InputActionMap m_CancelClosePanel;
+    private ICancelClosePanelActions m_CancelClosePanelActionsCallbackInterface;
+    private readonly InputAction m_CancelClosePanel_CancelClose;
+    public struct CancelClosePanelActions
+    {
+        private @PlayerControls m_Wrapper;
+        public CancelClosePanelActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @CancelClose => m_Wrapper.m_CancelClosePanel_CancelClose;
+        public InputActionMap Get() { return m_Wrapper.m_CancelClosePanel; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CancelClosePanelActions set) { return set.Get(); }
+        public void SetCallbacks(ICancelClosePanelActions instance)
+        {
+            if (m_Wrapper.m_CancelClosePanelActionsCallbackInterface != null)
+            {
+                @CancelClose.started -= m_Wrapper.m_CancelClosePanelActionsCallbackInterface.OnCancelClose;
+                @CancelClose.performed -= m_Wrapper.m_CancelClosePanelActionsCallbackInterface.OnCancelClose;
+                @CancelClose.canceled -= m_Wrapper.m_CancelClosePanelActionsCallbackInterface.OnCancelClose;
+            }
+            m_Wrapper.m_CancelClosePanelActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @CancelClose.started += instance.OnCancelClose;
+                @CancelClose.performed += instance.OnCancelClose;
+                @CancelClose.canceled += instance.OnCancelClose;
+            }
+        }
+    }
+    public CancelClosePanelActions @CancelClosePanel => new CancelClosePanelActions(this);
+
+    // OpenMenuEscape
+    private readonly InputActionMap m_OpenMenuEscape;
+    private IOpenMenuEscapeActions m_OpenMenuEscapeActionsCallbackInterface;
+    private readonly InputAction m_OpenMenuEscape_Escape;
+    public struct OpenMenuEscapeActions
+    {
+        private @PlayerControls m_Wrapper;
+        public OpenMenuEscapeActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Escape => m_Wrapper.m_OpenMenuEscape_Escape;
+        public InputActionMap Get() { return m_Wrapper.m_OpenMenuEscape; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(OpenMenuEscapeActions set) { return set.Get(); }
+        public void SetCallbacks(IOpenMenuEscapeActions instance)
+        {
+            if (m_Wrapper.m_OpenMenuEscapeActionsCallbackInterface != null)
+            {
+                @Escape.started -= m_Wrapper.m_OpenMenuEscapeActionsCallbackInterface.OnEscape;
+                @Escape.performed -= m_Wrapper.m_OpenMenuEscapeActionsCallbackInterface.OnEscape;
+                @Escape.canceled -= m_Wrapper.m_OpenMenuEscapeActionsCallbackInterface.OnEscape;
+            }
+            m_Wrapper.m_OpenMenuEscapeActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Escape.started += instance.OnEscape;
+                @Escape.performed += instance.OnEscape;
+                @Escape.canceled += instance.OnEscape;
+            }
+        }
+    }
+    public OpenMenuEscapeActions @OpenMenuEscape => new OpenMenuEscapeActions(this);
     public interface ILocomotionTopViewActions
     {
         void OnSideMove(InputAction.CallbackContext context);
@@ -757,5 +979,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     public interface IShootingActions
     {
         void OnFireButton(InputAction.CallbackContext context);
+    }
+    public interface IChangeAmmoActions
+    {
+        void OnAmmoChanger(InputAction.CallbackContext context);
+    }
+    public interface ICancelClosePanelActions
+    {
+        void OnCancelClose(InputAction.CallbackContext context);
+    }
+    public interface IOpenMenuEscapeActions
+    {
+        void OnEscape(InputAction.CallbackContext context);
     }
 }

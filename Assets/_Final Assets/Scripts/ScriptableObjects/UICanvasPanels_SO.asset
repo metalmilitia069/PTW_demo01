@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cddd2cd16aa14f488e2ff90b7fc14ae, type: 3}
+  m_Name: UICanvasPanels_SO
+  m_EditorClassIdentifier: 
+  IsUIPanelOn: 0
+  uIUnlockPanelTitle:
+  - Triple Shot Unlocked!
+  - Diagonal Shot Unlocked!
+  uiUnlockPanelContent:
+  - Pilot, I just learned that by redirecting some power from the ship's  Reactor
+    Core, I can provide extra energy to create additional bursts in form of projectiles.
+    We can call it "Triple Shot" for obvious reasons, all you need to do is press
+    "E" to switch fire modes. Be advised that some Enemies equipped shields that
+    can block the Triple Shot's energy wave, therefore, if the enemy's shield's color
+    is not BLUE, or if it does not match Triple Shot's color, you should probably
+    switch to another fire mode. Have a Nice Hunt!
+  - Pilot, I just learned that by redirecting some power from the ship's  Reactor
+    Core, I can provide extra energy to create additional bursts in form of projectiles.
+    We can call it "Diagonal Shot" for obvious reasons, all you need to do is press
+    "E" to switch fire modes. Be advised that some Enemies equipped shields that
+    can block the Triple Shot's energy wave, therefore, if the enemy's shield's color
+    is not BLUE, or if it does not match Triple Shot's color, you should probably
+    switch to another fire mode. Have a Nice Hunt!
+  videoClips:
+  - {fileID: 32900000, guid: c7ef085f9ca3bcc41a7299e25b9054e3, type: 3}
+  - {fileID: 32900000, guid: 208e8bedc2391134fb467fe48bc3b06c, type: 3}
