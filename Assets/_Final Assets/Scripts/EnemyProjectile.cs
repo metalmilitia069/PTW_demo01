@@ -12,10 +12,19 @@ public class EnemyProjectile : MonoBehaviour
 
     public GameObject ExplosionVFXPrefab;
 
+    public bool isScenic = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(this.gameObject, 5);
+        if (isScenic)
+        {
+            Destroy(this.gameObject, 30);
+        }
+        else
+        {
+            Destroy(this.gameObject, 5);
+        }
     }
 
     // Update is called once per frame
