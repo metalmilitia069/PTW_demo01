@@ -10,13 +10,14 @@ public class CutSceneCanvas : MonoBehaviour
     public GameObject lowerPanel;
     public GameObject upperPanel;
 
-    
+    public GameObject triangleUI;
 
     // Start is called before the first frame update
     void Start()
     {
         //LeanTween.moveY(upperPanel, 2160, 0.5f);
         //LeanTween.moveY(lowerPanel, 0, .5f);
+        ActivateTriangleUI();
     }
 
     // Update is called once per frame
@@ -54,5 +55,11 @@ public class CutSceneCanvas : MonoBehaviour
     {
         lowerPanel.gameObject.SetActive(false);
         upperPanel.gameObject.SetActive(false);
+    }
+
+    public void ActivateTriangleUI()
+    {
+        LeanTween.alpha(triangleUI, 0, 1.0f);//.setAlpha();
+            
     }
 }
