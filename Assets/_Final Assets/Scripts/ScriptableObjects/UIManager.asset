@@ -47,6 +47,6 @@ MonoBehaviour:
   videoClipNumber: 0
   panelNumber: 0
   IsUIPanelOn: 0
-  canOpenUIPanel: 1
   canCloseUIPanel: 0
   canTogglePauseMenu: 0
+  isCutSceneStarting: 0
