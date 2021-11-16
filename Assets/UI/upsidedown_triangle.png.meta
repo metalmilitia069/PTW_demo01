@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: 9399cc88db4a62e44a4fc57151a76135
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -4636459259163143961
+    second: upsidedown_triangle_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -137,7 +140,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: upsidedown_triangle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 1999
+        height: 1732
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e0920a6edcf7afb0800000000000000
+      internalID: -4636459259163143961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

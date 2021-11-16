@@ -11,6 +11,8 @@ public class CutSceneCanvas : MonoBehaviour
     public GameObject upperPanel;
 
     public GameObject triangleUI;
+    public Sprite sprite;
+    public CanvasGroup canvasGroup;
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +61,8 @@ public class CutSceneCanvas : MonoBehaviour
 
     public void ActivateTriangleUI()
     {
-        LeanTween.alpha(triangleUI, 0, 1.0f);//.setAlpha();
+        //LeanTween.alpha(triangleUI, 0, 1.0f);//.setAlpha();
+        LeanTween.alphaCanvas(canvasGroup, to: 1, 1.0f).setLoopClamp();
             
     }
 }
