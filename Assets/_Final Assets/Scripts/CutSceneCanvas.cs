@@ -10,8 +10,6 @@ public class CutSceneCanvas : MonoBehaviour
     public GameObject lowerPanel;
     public GameObject upperPanel;
 
-    public GameObject triangleUI;
-    public Sprite sprite;
     public CanvasGroup canvasGroup;
 
     // Start is called before the first frame update
