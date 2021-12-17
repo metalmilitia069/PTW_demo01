@@ -116,5 +116,10 @@ public class UICanvasPanels : MonoBehaviour
         }        
     }
 
+    public void QuitApplication()
+    {
+        Application.Quit();
+    }
+
     
 }

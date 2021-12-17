@@ -39,6 +39,10 @@ public class UIManager_SO : ScriptableObject
     public bool canTogglePauseMenu = false;
 
 
+    [Header("CutScene Panels")]
+    public bool isCutSceneStarting = false;
+
+
 
     public void SetupUnlockedShotPanel(int title, int content, int videoDemo, int panelNumberRef)
     {
@@ -76,5 +80,7 @@ public class UIManager_SO : ScriptableObject
         IsUIPanelOn = false;
         //canOpenUIPanel = true;
         canCloseUIPanel = false;
+
+        isCutSceneStarting = false;
     }
 }
